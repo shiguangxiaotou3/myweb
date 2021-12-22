@@ -65,8 +65,5 @@ common\assets\webslidesAssets::register($this);
     </article>
 <?php $this->endBody() ?>
 </body>
-<script>
-    window.ws = new WebSlides();
-</script>
 </html>
 <?php $this->endPage() ?>

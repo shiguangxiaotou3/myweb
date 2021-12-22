@@ -430,3 +430,14 @@ function getTime(){
     return $s."-".intval($arr[0]*1000);
 
 }
+
+/**
+ * 生成图表
+ * @param $name
+ * @return string
+ */
+function addFa($name){
+    if(!empty($name)){
+        return "<svg class='".$name."'><use xlink:href='#".$name."'></use></svg>";
+    }
+}
