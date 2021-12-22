@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="com.jieweifu.plugins.barcode" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>barcode</name>
+  <description>JieWeiFu barcode cordova plugin</description>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <js-module src="www/barcode.js">
+    <clobbers target="com.jieweifu.plugins.barcode" />
+  </js-module>
+
+  <platform name="android">
+	<hook type="after_plugin_add" src="scripts/android-install.js" />
+    <hook type="after_plugin_install" src="scripts/android-install.js" />
+    <hook type="before_plugin_rm" src="scripts/android-install.js" />
+    <hook type="before_plugin_uninstall" src="scripts/android-install.js" />
+  
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Barcode">
+        <param name="android-package" value="com.jieweifu.plugins.barcode.BarcodePlugin"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+		<activity
+            android:name="com.jieweifu.plugins.barcode.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+		<uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.CAMERA" />
+		<uses-permission android:name="android.permission.FLASHLIGHT" />
+		<uses-permission android:name="android.permission.VIBRATE" />
+		<uses-feature android:name="android.hardware.camera" />
+		<uses-feature android:name="android.hardware.camera.autofocus" />
+    </config-file>
+
+    <source-file src="src/android/libs/armeabi/libzbar.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/src/com/jieweifu/plugins/barcode/BarcodePlugin.java" target-dir="src/com/jieweifu/plugins/barcode"/>
+    <source-file src="src/android/src/com/jieweifu/plugins/barcode/CaptureActivity.java" target-dir="src/com/jieweifu/plugins/barcode"/>
+    <source-file src="src/android/src/com/jieweifu/plugins/barcode/ZbarManager.java" target-dir="src/com/zbar/lib"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/camera/AutoFocusCallback.java" target-dir="src/com/jieweifu/plugins/barcode/camera"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/camera/CameraConfigurationManager.java" target-dir="src/com/jieweifu/plugins/barcode/camera"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/camera/CameraManager.java" target-dir="src/com/jieweifu/plugins/barcode/camera"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/camera/FlashlightManager.java" target-dir="src/com/jieweifu/plugins/barcode/camera"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/camera/PreviewCallback.java" target-dir="src/com/jieweifu/plugins/barcode/camera"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/decode/CaptureActivityHandler.java" target-dir="src/com/jieweifu/plugins/barcode/decode"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/decode/DecodeHandler.java" target-dir="src/com/jieweifu/plugins/barcode/decode"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/decode/DecodeThread.java" target-dir="src/com/jieweifu/plugins/barcode/decode"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/decode/FinishListener.java" target-dir="src/com/jieweifu/plugins/barcode/decode"/>
+	<source-file src="src/android/src/com/jieweifu/plugins/barcode/decode/InactivityTimer.java" target-dir="src/com/jieweifu/plugins/barcode/decode"/>
+	
+	<source-file src="src/android/res/drawable-xhdpi/btn_back.xml" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/btn_flash.xml" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/capture.9.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/common_titlebar_btn_back_light.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/common_titlebar_btn_back_light_pressed.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/kakalib_scan_ray.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/qrcode_ligth_on_normal.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/qrcode_ligth_on_pressed.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/scan_line.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/drawable-xhdpi/scan_mask.png" target-dir="res/drawable-xhdpi"/>
+	<source-file src="src/android/res/layout/activity_qr_scan.xml" target-dir="res/layout"/>
+	<source-file src="src/android/res/values/ids.xml" target-dir="res/values"/>
+	<source-file src="src/android/res/raw/beep.ogg" target-dir="res/raw"/>
+	
+  </platform>
+  
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="Barcode">
+				<param name="ios-package" value="CDVBarcodeScanner" />
+			</feature>
+		</config-file>
+
+		<resource-file src="src/ios/res/BarcodeScannerViewController.xib" />
+		<resource-file src="src/ios/res/beep.wav" />
+		<resource-file src="src/ios/res/scan_1@2x.png" />
+		<resource-file src="src/ios/res/scan_2@2x.png" />
+		<resource-file src="src/ios/res/scan_3@2x.png" />
+		<resource-file src="src/ios/res/scan_4@2x.png" />
+		<resource-file src="src/ios/res/scan_net@2x.png" />
+		<resource-file src="src/ios/res/common_titlebar_btn_back_light.png" />
+		<resource-file src="src/ios/res/common_titlebar_btn_back_light_pressed.png" />
+		<resource-file src="src/ios/res/qrcode_ligth_on_normal.png" />
+		<resource-file src="src/ios/res/qrcode_ligth_on_pressed.png" />
+
+		<header-file src="src/ios/src/BarcodeScannerViewController.h" />
+		<source-file src="src/ios/src/BarcodeScannerViewController.m" />
+		<header-file src="src/ios/src/CDVBarcodeScanner.h" />
+		<source-file src="src/ios/src/CDVBarcodeScanner.m" />
+	</platform>
+
+</plugin>

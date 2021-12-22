@@ -52,12 +52,12 @@ use common\widgets\Card;
         ]
     );
     ?>
-</div>
+</div>  
 
 <div class="row">
-    <section class="col-lg-7 connectedSortable">
+    <section class="col-lg-7 ">
         <!-- 定位图 -->
-        <div class="box box-success bg-light-blue-gradient">
+        <div class="box box-success">
             <div class="box-header with-border">
                 <h3 class="box-title">地图</h3>
                 <div class="box-tools pull-right">
