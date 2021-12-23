@@ -171,7 +171,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Requests password reset.
+     * 请求密码重置。
      *
      * @return mixed
      */
@@ -181,10 +181,8 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
                 Yii::$app->session->setFlash('success', Yii::t("app", 'Check your email for further instructions.'));
-
                 return $this->goHome();
             }
-
             Yii::$app->session->setFlash('error', Yii::t("app", 'Sorry, we are unable to reset password for the provided email address.'));
         }
 
@@ -194,7 +192,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Resets password.
+     * 重置密码
      *
      * @param string $token
      * @return mixed
@@ -220,7 +218,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Verify email address
+     * 验证电子邮件地址
      *
      * @param string $token
      * @throws BadRequestHttpException
@@ -243,7 +241,7 @@ class SiteController extends Controller
     }
 
     /**
-     * Resend verification email
+     * 重新发送验证电子邮件
      *
      * @return mixed
      */

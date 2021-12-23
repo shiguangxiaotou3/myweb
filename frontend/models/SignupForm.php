@@ -23,17 +23,17 @@ class SignupForm extends Model
     {
         return [
             ['username', 'trim'],
-            ['username', 'required'],
+            ['username', 'required','message' => '用户命不能为空'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => '此用户名已被占用.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
-            ['email', 'required'],
+            ['email', 'required','message' => '邮箱不能为空'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => '此电子邮件地址已被占用.'],
 
-            ['password', 'required'],
+            ['password', 'required','message' => '密码不能为空'],
             ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
         ];
     }

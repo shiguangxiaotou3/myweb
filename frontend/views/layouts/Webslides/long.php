@@ -1,7 +1,6 @@
 <?php
-use backend\assets\AppAsset;
+use common\widgets\Alert;
 use yii\helpers\Html;
-use dmstr\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -63,69 +62,9 @@ common\assets\webslidesAssets::register($this);
     <!-- 容器 -->
     <main role="main">
         <article id="webslides">
+            <?= Alert::widget() ?>
         <?= $content ?>
     </article>
-
-    <!-- 页脚 -->
-    <footer role="contentinfo">
-        <div class="wrap">
-            <div class="grid">
-                <div class="column">
-                    <h3>公司</h3>
-                    <ul>
-                        <li><a href="#">关于</a></li>
-                        <li>团队</a></li>
-                        <li><a href="#">博客</a></li>
-                    </ul>
-                </div>
-                <!-- .end .column -->
-                <div class="column">
-                    <h3>支持</h3>
-                    <ul>
-                        <li><a href="#">运输和退货</a></li>
-                        <li><a href="#">常问问题</a></li>
-                        <li><a href="#">接触</a></li>
-                    </ul>
-                </div>
-                <!-- .end .column -->
-                <div class="column">
-                    <h3>合法的</h3>
-                    <ul>
-                        <li><a href="#">服务条款</a></li>
-                        <li><a href="#">隐私政策</a></li>
-                        <li><a href="#">饼干</a></li>
-                    </ul>
-                </div>
-                <!-- .end .column -->
-                <div class="column">
-                    <h3>社区</h3>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <?= addFa("fa-facebook") ?>
-                                Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <?= addFa("fa-youtube") ?>
-                                YouTube
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <?= addFa("fa-twitter") ?>
-                                推特
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- .end .column -->
-            </div>
-            <!-- .end .grid -->
-        </div>
-        <!-- .end .wrap -->
-    </footer>
 
 <?php $this->endBody() ?>
 </body>

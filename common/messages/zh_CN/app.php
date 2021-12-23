@@ -16,6 +16,7 @@ return [
     'email'=>'邮箱',
     'password'=>'密码',
     'About'=>'关于我',
+    'rememberMe'=>'记住我',
     'There is no user with this email address.'=>'没有具有此电子邮件地址的用户。',
 
     'Reset password'=>'重置密码',
@@ -38,6 +39,7 @@ return [
     'Wrong verify email token.'=>'错误的验证电子邮件令牌。',
     'Your email has been confirmed!'=>'您的电子邮件已确认！',
     'Wrong password reset token.'=>'错误的密码重置令牌。',
+    'Please choose your new password:'=>'请选择您的新密码：',
 
     'Save'=>'保存',
     'Edit'=>'编辑',
