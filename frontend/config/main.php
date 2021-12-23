@@ -7,7 +7,7 @@ $params = array_merge(
 );
 
 return [
-    'name'=>'前台',
+    'name'=>'vba',
     'language'=>'zh_CN',
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),

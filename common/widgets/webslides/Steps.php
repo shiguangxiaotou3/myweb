@@ -18,7 +18,7 @@ class Steps extends Widget
         ['icon'=>'fa-users','lable'=>"ad",'content'=>'When you\'re really passionate about your job, you can change the world.'],
     ];
     public $Options=[
-        'class'=>'wrap',
+        'class'=>'wrap-80',
     ];
     public $stpes=[];
     public $_i =1;
