@@ -121,6 +121,7 @@ EOT;
                 type:模块类型 int 必须 1或0
             </li>
             <li>describe:说明 str</li>
+             <li>keyword:关键字 用于搜索 str</li>
             <li>
                 inherit:继承关系 str<br>
             </li>

@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\yii\shell;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -280,6 +281,10 @@ class SiteController extends Controller
      */
     public function actionTest(){
         //$this->layout ='main';
+       $model = new shell();
+       $model ->tableName ='module';
+       echo $model->ConstructShell('frontend');
+       die();
         return $this->render('ppt');
     }
 }
