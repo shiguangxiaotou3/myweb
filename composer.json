@@ -26,7 +26,8 @@
         "chenkby/yii2-region": "dev-master",
         "phpoffice/phpspreadsheet": "^1.20",
         "practically/yii2-chartjs": "^1.1",
-        "dmstr/yii2-adminlte-asset": "^2.1"
+        "dmstr/yii2-adminlte-asset": "^2.1",
+        "tijsverkoyen/css-to-inline-styles": "^2.2"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

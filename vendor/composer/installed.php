@@ -1,12 +1,12 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
-        'name' => 'yiisoft/yii2-app-advanced',
+        'reference' => '016f99019fe514d9c107e57d28cf414b48b28077',
+        'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
     'versions' => array(
@@ -846,6 +846,15 @@
             'reference' => '6231e315f73e4f62d72b73f3d6d78ff0eed93c31',
             'dev_requirement' => false,
         ),
+        'shiguangxiaotou3/myweb' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '016f99019fe514d9c107e57d28cf414b48b28077',
+            'dev_requirement' => false,
+        ),
         'swiftmailer/swiftmailer' => array(
             'pretty_version' => 'v6.3.0',
             'version' => '6.3.0.0',
@@ -880,7 +889,7 @@
             'install_path' => __DIR__ . '/../symfony/css-selector',
             'aliases' => array(),
             'reference' => '44b933f98bb4b5220d10bed9ce5662f8c2d13dcc',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v2.5.0',
@@ -1012,7 +1021,7 @@
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
             'aliases' => array(),
             'reference' => '1100343ed1a92e3a38f9ae122fc0eb21602547be',
-            'dev_requirement' => true,
+            'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(
             'pretty_version' => 'v1.1.2',
@@ -1050,6 +1059,15 @@
             'reference' => '34a41e998c2183e22995f158c581e7b5e755ab9e',
             'dev_requirement' => true,
         ),
+        'tijsverkoyen/css-to-inline-styles' => array(
+            'pretty_version' => '2.2.4',
+            'version' => '2.2.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tijsverkoyen/css-to-inline-styles',
+            'aliases' => array(),
+            'reference' => 'da444caae6aca7a19c0c140f68c6182e337d5b1c',
+            'dev_requirement' => false,
+        ),
         'webmozart/assert' => array(
             'pretty_version' => '1.10.0',
             'version' => '1.10.0.0',
@@ -1066,15 +1084,6 @@
             'install_path' => __DIR__ . '/../yiisoft/yii2',
             'aliases' => array(),
             'reference' => 'f370955faa3067d9b27879aaf14b0978a805cd59',
-            'dev_requirement' => false,
-        ),
-        'yiisoft/yii2-app-advanced' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => NULL,
             'dev_requirement' => false,
         ),
         'yiisoft/yii2-bootstrap' => array(

@@ -7,7 +7,7 @@ namespace console\controllers;
 use common\models\yii\shell;
 use yii\console\Controller;
 
-class Add extends Controller
+class AddController extends Controller
 {
 
     public function actionIndex(){
