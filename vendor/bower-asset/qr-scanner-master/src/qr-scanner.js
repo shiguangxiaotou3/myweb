@@ -11,12 +11,9 @@ export default class QrScanner {
         if (!navigator.mediaDevices) return Promise.resolve([]);
 
         // Note that enumerateDevices can always be called and does not prompt the user for permission.
-        //请注意，始终可以调用enumerateDevices，并且不会提示用户获得权限
         // However, enumerateDevices only includes device labels if served via https and an active media stream exists
-        //但是，如果通过https提供服务并且存在活动媒体流，则枚举设备仅包括设备标签
         // or permission to access the camera was given. Therefore, ask for camera permission by opening a stream, if
         // labels were requested.
-        //或者允许进入摄像机。因此，如果需要标签，可以通过打开流来请求相机许可。
         let openedStream = null;
         return (requestLabels
             ? navigator.mediaDevices.getUserMedia({ audio: false, video: true })

@@ -22,14 +22,16 @@ class QrController extends Controller
      * 说明页面
      */
     public function actionAbout(){
-
+        $this->layout ='Webslides/main';
+        return $this->render('scanner');
     }
 
     /**
      * 扫描页面
      */
     public function actionScanner(){
-        $this->layout ='qr/main';
+        $this->layout= 'qr/blank';
+        return $this->render('scanner');
     }
 
 

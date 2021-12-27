@@ -4,11 +4,11 @@
 use \yii\helpers\Url;
 use \common\widgets\webslides\Steps;
 $this->title = '地图测试';
-$dir = Yii::$app->urlManager->createUrl(['/img/']);
+$dir = Yii::$app->urlManager->createUrl(['/img']);
 ?>
 <!-- 第1页 -->
 <section class="bg-black-blue aligncenter">
-    <span class="background dark" style="background-image:url('<?=  $dir."campaign-creators-pypeCEaJeZY-unsplash.jpg" ?>')"></span>
+    <span class="background dark" style="background-image:url('<?=  $dir."/campaign-creators-pypeCEaJeZY-unsplash.jpg" ?>')"></span>
     <!--.wrap = container (width: 90%) -->
     <div class="wrap">
         <div class="cta text-serif">
@@ -33,7 +33,7 @@ $dir = Yii::$app->urlManager->createUrl(['/img/']);
     <h3><strong>为什么使用vbaCloud?</strong></h3>
     <p>
         <a href="http://www.shiguangxiaotou.com" title="大卫杨">
-            <img class="avatar-40" src="<?= $dir.'author.jpg' ?>" alt="时光小偷">
+            <img class="avatar-40" src="<?= $dir.'/author.jpg' ?>" alt="时光小偷">
         </a>时光小偷
     </p>
     <p class="text-intro">

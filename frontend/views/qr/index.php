@@ -1,15 +1,16 @@
 <?php
 
 /* @var $this yii\web\View */
+/* @var $img string */
 use \yii\helpers\Url;
 use \common\widgets\webslides\Steps;
 $this->title = '地图测试';
 
-$dir = Yii::$app->urlManager->createUrl(['/img']);
+$img = Yii::$app->urlManager->createUrl(['/img']);
 ?>
 <!-- 第1页 -->
 <section class="bg-black-blue aligncenter">
-    <span class="background dark" style="background-image:url('<?=  $dir."/qr.jpg" ?>')"></span>
+    <span class="background dark" style="background-image:url('<?=  $img."/qr.jpg" ?>')"></span>
     <!--.wrap = container (width: 90%) -->
     <div class="wrap">
         <div class="cta text-serif">
@@ -31,21 +32,22 @@ $dir = Yii::$app->urlManager->createUrl(['/img']);
     <!-- .wrap = container (width: 90%) -->
     <div class="wrap">
         <h2><strong>在几秒钟内开始</strong></h2>
-        <p class="text-intro">立即创建您自己的演示文稿。<br>120 多个预制幻灯片随时可用。</p>
+        <p class="text-intro">立即创建您自己的应用。</p>
         <p>
-            <a href="<?= $dir."index.xlsx" ?>" class="button" title="下载网页幻灯片">
+            <a href="<?= Url::to(['/qr/scanner']) ?>" class="button" title="下载网页幻灯片">
                 <?= addFa('fa-cloud-download') ?>
-                免费下载
+                开始使用
             </a>
-            <a href="<?= Url::to('sit/word') ?>" class="button" title="下载网页幻灯片">
+            <a href="<?= Url::to('/qr/about') ?>" class="button" title="下载网页幻灯片">
                 <?= addFa('fa-file-word-o') ?>
                 阅读文档
             </a>
             <span class="try">
-                <a href="https://www.paypal.me/jlantunez/8" title="好人缘:)">
+                <a href="https://www.paypal.me/jlantunez/8" title="打赏)">
                     <?= addFa('fa-paypal') ?>
-                  付你想要的。
+                  打赏作者
                 </a>
+                退款无时间限制
             </span>
         </p>
     </div>

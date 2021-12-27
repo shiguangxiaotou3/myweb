@@ -17,6 +17,7 @@ use yii\bootstrap\Html;
     </head>
     <body >
     <?php $this->beginBody() ?>
+        <div>asdas</div>
             <?= $content ?>
     <?php $this->endBody() ?>
     </body>
