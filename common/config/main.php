@@ -42,5 +42,8 @@ return [
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>",
             ],
         ],
+        'authManager'=>[
+            'class'=>'yii\rbac\DbManager',
+        ],
     ],
 ];

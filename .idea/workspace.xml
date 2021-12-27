@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fileColors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/.eslintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/Gruntfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README_android.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README_date.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README_numeric.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README_other.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/README_phone.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/component.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/css/inputmask.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/bindings/inputmask.binding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.jqlite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/dependencyLibs/inputmask.dependencyLib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/global/document.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/global/window.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.date.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.numeric.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.phone.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/inputmask.regex.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/jquery.inputmask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/phone-codes/phone-be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/phone-codes/phone-nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/phone-codes/phone-ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/phone-codes/phone-uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/inputmask/phone-codes/phone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/jquery.inputmask.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/bindings/inputmask.binding.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/dependencyLibs/inputmask.dependencyLib.jqlite.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/dependencyLibs/inputmask.dependencyLib.jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/dependencyLibs/inputmask.dependencyLib.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/global/document.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/global/window.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.date.extensions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.extensions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.numeric.extensions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.phone.extensions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/inputmask.regex.extensions.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/jquery.inputmask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/phone-codes/phone-be.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/phone-codes/phone-nl.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/phone-codes/phone-ru.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/phone-codes/phone-uk.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/inputmask/phone-codes/phone.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/dist/min/jquery.inputmask.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/bindings/inputmask.binding.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/dependencyLibs/inputmask.dependencyLib.jqlite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/dependencyLibs/inputmask.dependencyLib.jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/dependencyLibs/inputmask.dependencyLib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/global/document.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/global/window.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.date.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.numeric.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.phone.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/inputmask.regex.extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/jquery.inputmask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/phone-codes/phone-be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/phone-codes/phone-nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/phone-codes/phone-ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/phone-codes/phone-uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/js/phone-codes/phone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/nuspecs/Inputmask.nuspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/nuspecs/Readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/nuspecs/jquery.inputmask.nuspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/prototypeExtensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/qunit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/simulator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_alternations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_attributes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_dynamic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_escape.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_formatvalidate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_initialvalue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_inputeventonly.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_ip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_jitmasking.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_jquery_inputmask.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_keepStatic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_multi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_numeric.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_numericinput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_option.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_optional.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_paste.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_phone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_phone_world.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_phonebe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_phonenl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_phoneru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_regex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/tests_setvalue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/qunit/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/inputmask/webpack.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bower-asset/qr-scanner-master/qr-scanner.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/bower-asset/qr-scanner-master/qr-scanner.min.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-bootstrap4-dropdown" />
+      <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-bootstrap5-dropdown" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-fileinput" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datetimepicker" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/scotthuangzl/yii2-google-chart" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
+      <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/qr-scanner-master" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/BarcodeScanner-master" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/webslides" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-asserts" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-filesystem" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
+      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-yii2" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <path value="$PROJECT_DIR$/vendor/practically/yii2-chartjs" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/npm-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/johnitvn/yii2-ajaxcrud" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="22eIcahLoHg9bN7xDRDnNWDSgfP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="full.screen.before.presentation.mode" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/common/models" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="codeception.yml" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings scope="ConfigurationFile" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="" />
+      <created>1640191707124</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640191707124</updated>
+      <workItem from="1640191710049" duration="251000" />
+      <workItem from="1640192061278" duration="11601000" />
+      <workItem from="1640258536672" duration="25973000" />
+      <workItem from="1640360528712" duration="1060000" />
+      <workItem from="1640361828770" duration="11751000" />
+      <workItem from="1640421851212" duration="7929000" />
+      <workItem from="1640484215166" duration="3342000" />
+      <workItem from="1640522133146" duration="6165000" />
+      <workItem from="1640598572689" duration="14757000" />
+      <workItem from="1640620833631" duration="1833000" />
+      <workItem from="1640622712403" duration="2335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
