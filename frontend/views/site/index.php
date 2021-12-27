@@ -4,7 +4,7 @@
 use \yii\helpers\Url;
 use \common\widgets\webslides\Steps;
 $this->title = '地图测试';
-$dir = Url::to('img/');
+$dir = Yii::$app->urlManager->createUrl(['/img/']);
 ?>
 <!-- 第1页 -->
 <section class="bg-black-blue aligncenter">
