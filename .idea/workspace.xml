@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="" />
+    <list default="true" id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/dev/backend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/environments/dev/backend/web/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/dev/frontend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/environments/dev/frontend/web/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/prod/backend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/environments/prod/backend/web/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments/prod/frontend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/environments/prod/frontend/web/index.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +173,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -211,6 +218,7 @@
       <workItem from="1640598572689" duration="14757000" />
       <workItem from="1640620833631" duration="1833000" />
       <workItem from="1640622712403" duration="2689000" />
+      <workItem from="1640790091996" duration="2646000" />
     </task>
     <servers />
   </component>
