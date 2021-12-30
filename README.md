@@ -20,12 +20,29 @@ DIRECTORY STRUCTURE
 ```
 common
     assets/              二次开发前段资源依赖
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-    widgets/            二次开发小部件
-
+        AdminAssets                 AdminLTE Asset Bundle后台模版资源类
+        ChartAssets                 chart.js资源包类
+        daterangepickerAssets       时间日期控件资源包
+        IoniconsAssets              矢量图标资源包
+        MapAssets                   jvectormap矢量图资源包
+        QrScannerAssets             二维码扫码资源包
+        webslidesAssets             网页ppt资源包
+    config/              公用配置文件
+    mail/                邮件视图
+    messages/            翻译小部件
+    models/              模型
+    tests/               测试  
+    widgets/             二次开发小部件
+        charts/             chart.js封装小部件
+            Charts.php          chart.js封装小部件 折线图 面积图 饼图 柱状图
+            MapWidget.php       世界矢量图，世界热力图封装小部件
+       webslides/ 
+    function.php        全局函数，在index.php中引入
+backebnd                
+vba
+api
+    
+    
 ```
 ### 卡片
 ```php

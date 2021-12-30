@@ -19,7 +19,7 @@ class AddController extends Controller
     }
 
     public function actionAddrbac(){
-        system('sudo php /Library/WebServer/Documents/myweb/yii migrate');
+        //system('sudo php /Library/WebServer/Documents/myweb/yii migrate');
         system('sudo php /Library/WebServer/Documents/myweb/yii migrate/up --migrationPath=@yii/rbac/migrations ');
     }
 
