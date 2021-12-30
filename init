@@ -131,6 +131,15 @@ function getFileList($root, $basePath = '')
     return $files;
 }
 
+/**
+ * 复制文件
+ * @param $root
+ * @param $source
+ * @param $target
+ * @param $all
+ * @param $params
+ * @return bool
+ */
 function copyFile($root, $source, $target, &$all, $params)
 {
     if (!is_file($root . '/' . $source)) {
@@ -175,6 +184,15 @@ function copyFile($root, $source, $target, &$all, $params)
     return true;
 }
 
+
+/**
+ * 删除文件
+ * @param $root
+ * @param $target
+ * @param $all
+ * @param $params
+ * @return bool
+ */
 function removeFile($root, $target, &$all, $params)
 {
 	if (is_file($root . '/' . $target)) {
@@ -227,6 +245,11 @@ function getParams()
     return $params;
 }
 
+/**
+ * 设置可写目录权限
+ * @param $root
+ * @param $paths
+ */
 function setWritable($root, $paths)
 {
     foreach ($paths as $writable) {
@@ -242,6 +265,11 @@ function setWritable($root, $paths)
     }
 }
 
+/**
+ * 设置可执行目录权限
+ * @param $root
+ * @param $paths
+ */
 function setExecutable($root, $paths)
 {
     foreach ($paths as $executable) {
@@ -257,6 +285,11 @@ function setExecutable($root, $paths)
     }
 }
 
+/**
+ * 设置密钥
+ * @param $root
+ * @param $paths
+ */
 function setCookieValidationKey($root, $paths)
 {
     foreach ($paths as $file) {
