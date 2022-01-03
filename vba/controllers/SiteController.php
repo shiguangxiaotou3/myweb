@@ -280,11 +280,16 @@ class SiteController extends Controller
     /**
      */
     public function actionTest(){
-        //$this->layout ='main';
-       $model = new shell();
-       $model ->tableName ='module';
-       echo $model->ConstructShell('frontend');
-       die();
-        return $this->render('ppt');
+        $this->layout ='main';
+
+        return $this->render('test2');
+    }
+
+    /**
+     * 文档
+     * @return string
+     */
+    public function actionManual(){
+        return $this->render('manual');
     }
 }

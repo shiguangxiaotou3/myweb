@@ -1,5 +1,18 @@
+Array
+(
+    [username] => 时光小偷
+    [password] => 757402123
+)
+Array
+(
+    [----------------------------529180609080311579718840
+Content-Disposition:_form-data;_name] => "username"
 
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend/web/img
+时光小偷
+----------------------------529180609080311579718840
+Content-Disposition: form-data; name="password"
+
+757402123
+----------------------------529180609080311579718840--
+
+)

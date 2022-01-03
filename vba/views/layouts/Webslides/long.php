@@ -30,6 +30,9 @@ common\assets\webslidesAssets::register($this);
                     <?= Html::a("<em>家</em>" ,['/'],['title'=>'家']) ?>
                 </li>
                 <li>
+                    <?= Html::a("<em>文档</em>" ,['/site/manual'],['title'=>'文档']) ?>
+                </li>
+                <li>
                     <?= Html::a("<em>关于</em>" ,['/site/about'],['title'=>'关于']) ?>
                 </li>
                 <li>
@@ -39,9 +42,7 @@ common\assets\webslidesAssets::register($this);
                 <li>
                     <?= Html::a("<em>登陆</em>" ,['/site/login'],['title'=>'登陆']) ?>
                 </li>
-                <li>
-                    <?= Html::a("<em>测试</em>" ,['/site/test'],['title'=>'登陆']) ?>
-                </li>
+
                 <?php
                 if(Yii::$app->user->isGuest){
                     echo "<li>".Html::a("<em>注册</em>" ,['/site/signup'],['title'=>'注册'])."</li>";

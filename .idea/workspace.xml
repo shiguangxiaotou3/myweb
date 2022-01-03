@@ -2,9 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/controllers/ModuleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/ApiLoginForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/Module.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/widgets/BaiduMap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vba/views/site/test2.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/controllers/AddController.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/controllers/AddController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/assets/AppAsset.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/codeception.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/codeception.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/QrController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/ContactForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/PasswordResetRequestForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/ResendVerificationEmailForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/ResetPasswordForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/VbaUser.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/VerifyEmailForm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/ar/Module.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/query/ModuleQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/_data/login_data.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/_data/login_data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/_data/user.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/_support/FunctionalTester.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/_support/FunctionalTester.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/_support/UnitTester.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/_support/UnitTester.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/acceptance.suite.yml.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/acceptance/HomeCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/acceptance/_bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional.suite.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/functional.suite.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/AboutCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/ContactCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/HomeCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/LoginCest.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/functional/LoginCest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/ResendVerificationEmailCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/SignupCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/functional/VerifyEmailCest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit.suite.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/tests/unit.suite.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/ContactFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/PasswordResetRequestFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/ResendVerificationEmailFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/ResetPasswordFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/SignupFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/tests/unit/models/VerifyEmailFormTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/Webslides/long.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/Webslides/main.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/blank.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/layouts/blank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/qr/blank.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/layouts/qr/main.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/qr/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/qr/scanner.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/about.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/contact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/views/site/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/ppt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/requestPasswordResetToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/resendVerificationEmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/resetPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/signup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views/site/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api/web/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/css/img/biyunfei-yang-_IO0RUOsBfE-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/css/site.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/img/author.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/img/campaign-creators-pypeCEaJeZY-unsplash.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/img/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/img/qr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/index-test.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/web/index-test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/LoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/LoginForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vba/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vba/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vba/views/layouts/Webslides/long.php" beforeDir="false" afterPath="$PROJECT_DIR$/vba/views/layouts/Webslides/long.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vba/views/site/ppt.php" beforeDir="false" afterPath="$PROJECT_DIR$/vba/views/site/manual.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,6 +241,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -176,15 +251,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/models" />
+      <recent name="$PROJECT_DIR$/api/web" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/common/models" />
     </key>
@@ -215,11 +294,20 @@
       <workItem from="1640620833631" duration="1833000" />
       <workItem from="1640622712403" duration="2689000" />
       <workItem from="1640790091996" duration="6564000" />
-      <workItem from="1640866653087" duration="4290000" />
+      <workItem from="1640866653087" duration="7566000" />
+      <workItem from="1640956091403" duration="3667000" />
+      <workItem from="1641010269778" duration="6962000" />
+      <workItem from="1641053864615" duration="2230000" />
+      <workItem from="1641094799905" duration="8060000" />
+      <workItem from="1641132953817" duration="12186000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
