@@ -1,5 +1,0 @@
-
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend
-/Library/WebServer/Documents/myweb/frontend/web/img
