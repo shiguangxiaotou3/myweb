@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\models\yii;
+namespace common\models\gii;
 
 
 use yii\base\Model;

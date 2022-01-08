@@ -5,7 +5,7 @@ namespace console\controllers;
 
 
 use api\models\ar\Module;
-use common\models\yii\shell;
+use common\models\gii\shell;
 use yii\console\Controller;
 
 class AddController extends Controller

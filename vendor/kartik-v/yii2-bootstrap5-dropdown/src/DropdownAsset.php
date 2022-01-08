@@ -3,7 +3,7 @@
  * @package   yii2-bootstrap5-dropdown
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2021
- * @version   1.0.0
+ * @version   1.0.1
  */
 
 namespace kartik\bs5dropdown;
@@ -11,7 +11,7 @@ namespace kartik\bs5dropdown;
 use kartik\base\PluginAssetBundle;
 
 /**
- * Dropdown asset bundle.
+ * DropdownAsset is the asset bundle used in rendering the [[Dropdown]] widget.
  */
 class DropdownAsset extends PluginAssetBundle
 {

@@ -19,24 +19,26 @@ function dumpInfo($conf){
     file_put_contents("a.txt","\r\n".$str,FILE_APPEND);
 }
 
-
 /**
  * 将字符串记录到日志中
  * @param $str
  */
 function logStr($str){
+    $s='//===============数据开始======================'."\r\n";
     $conf =debug_backtrace();
     dumpInfo($conf);
-    file_put_contents("a.txt","\r\n".$str,FILE_APPEND);
+    file_put_contents("a.txt","\r\n".$str.$s,FILE_APPEND);
 }
+
 /**
  * 将对象记录到日志文件中
  * @param $obj
  */
 function logObject($obj){
+    $s='//===============数据结束======================'."\r\n";
     $conf=debug_backtrace();
     dumpInfo($conf);
-    file_put_contents("a.txt", "\r\n".print_r($obj, true),FILE_APPEND);
+    file_put_contents("a.txt", print_r($obj, true)."\r\n".$s,FILE_APPEND);
 }
 
 /**

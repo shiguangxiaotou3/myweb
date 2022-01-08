@@ -21,7 +21,9 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
@@ -42,7 +44,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         's' => 
         array (
             'setasign\\Fpdi\\' => 14,
-            'scotthuangzl\\googlechart\\' => 25,
         ),
         'r' => 
         array (
@@ -74,6 +75,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         array (
             'johnitvn\\ajaxcrud\\' => 18,
         ),
+        'i' => 
+        array (
+            'ipinfo\\ipinfo\\' => 14,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -90,10 +95,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
-        ),
-        'T' => 
-        array (
-            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
         ),
         'S' => 
         array (
@@ -116,6 +117,7 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'Sabre\\Cache\\' => 12,
         ),
         'P' => 
         array (
@@ -141,6 +143,8 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -201,10 +205,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'setasign\\Fpdi\\' => 
         array (
             0 => __DIR__ . '/..' . '/setasign/fpdi/src',
-        ),
-        'scotthuangzl\\googlechart\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/scotthuangzl/yii2-google-chart',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
@@ -280,6 +280,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         array (
             0 => __DIR__ . '/..' . '/johnitvn/yii2-ajaxcrud/src',
         ),
+        'ipinfo\\ipinfo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ipinfo/ipinfo/src',
+        ),
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
@@ -299,10 +303,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
-        ),
-        'TijsVerkoyen\\CssToInlineStyles\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -380,6 +380,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Sabre\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sabre/cache/lib',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -432,6 +436,14 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Faker\\' => 
         array (

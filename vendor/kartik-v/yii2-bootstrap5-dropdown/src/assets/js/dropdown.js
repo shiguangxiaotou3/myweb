@@ -2,7 +2,7 @@
  * @package   yii2-bootstrap5-dropdown
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2021
- * @version   1.0.0
+ * @version   1.0.1
  *
  * Bootstrap 4 Dropdown Nested Submenu Script
  * 
@@ -14,10 +14,10 @@
     $('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
         var $el = $(this), $parent = $el.offsetParent(".dropdown-menu"), $subMenu, $subMenuParent;
 
-        $el.parents('.dropdown-menu').first().find('.dropdown-toggle.show').each(function(){
-           if (!$(this).is($el)) {
-               $(this).removeClass('show');
-           }
+        $el.parents('.dropdown-menu').first().find('.dropdown-toggle.show').each(function () {
+            if (!$(this).is($el)) {
+                $(this).removeClass('show');
+            }
         });
 
         $subMenu = $el.next('.dropdown-menu');
@@ -30,6 +30,30 @@
             }
         });
         $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
+
+        // fix for correct styling of each dropdown menu container to fit each of the enclosed dropdown items
+        setTimeout(function () {
+            var $menu = $parent.find('.dropdown-menu:visible'), vInset = $menu.css('inset');
+            if (!vInset) {
+                return;
+            }
+            vInset = vInset.trim().split(/\s+/);
+            if (vInset[2]) {
+                vInset[2] = 'auto';
+            }
+            vInset = vInset.join(' ');
+            $menu.css({inset: vInset}).data('inputProp', vInset);
+
+        }, 100);
+        // maintain the open dropdown menu container style after scroll
+        $(window).off('scroll.kvdropdown').on('scroll.kvdropdown', function () {
+            $('.dropdown-menu:visible').each(function () {
+                var vInset = $(this).data('inputProp');
+                if (vInset) {
+                    $(this).css({inset: vInset});
+                }
+            });
+        });
         return false;
     });
 })(window.jQuery);
