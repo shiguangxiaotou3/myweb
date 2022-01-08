@@ -8,6 +8,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-api',
+    'name'=>'vbaCloud',
+    'language'=>'zh_CN',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'api\controllers',
     'bootstrap' => ['log'],
@@ -16,16 +18,29 @@ return [
         'request' => [
             'csrfParam' => '_csrf-api',
         ],
+
+        //格式化响应组件
+        'response'=>[
+            'class'=>'yii\web\Response',
+            'on beforeSen'=>function($event){
+                /** @var $response \yii\web\Response  */
+                $response = $event->sender;
+                $response->data =[
+                    'success'=>$response->isSuccessful,
+                    'code'=>$response->getStatusCode(),
+                    'data'=>$response->data,
+                    'message'=>$response->statusText,
+                ];
+                $response->statusCode = '200';
+            }
+        ],
         'user' => [
             'identityClass' => 'api\models\User',
             'enableAutoLogin' => true,
             'enableSession' => false,
             //'identityCookie' => ['name' => '_identity-api', 'httpOnly' => true],
         ],
-        /*'session' => [
-            // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-api',
-        ],*/
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -35,15 +50,22 @@ return [
                 ],
             ],
         ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'enableStrictParsing' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'module'],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    //'pluralize'=>false,//禁用复数
+                    'controller' => 'module'
+                ],
+
                 ['class' => 'yii\rest\UrlRule',
                     //'except'=>[], //可以的动作
                     'pluralize'=>false,//禁用复数

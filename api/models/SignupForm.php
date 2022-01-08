@@ -14,6 +14,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    private $_user;
 
 
     /**
@@ -52,20 +53,27 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
+        $user->token =
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
-
-        return $user->save() && $this->sendEmail($user);
+        if($user->save()){
+            $this->_user =$user;
+            if($this->sendEmail()){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
      * Sends confirmation email to user
-     * @param User $user user model to with email should be send
+     * @param \api\models\User $user user model to with email should be send
      * @return bool whether the email was sent
      */
-    protected function sendEmail($user)
+    protected function sendEmail()
     {
+        $user =$this->_user;
         return Yii::$app
             ->mailer
             ->compose(
@@ -74,7 +82,13 @@ class SignupForm extends Model
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)
-            ->setSubject('Account registration at ' . Yii::$app->name)
+            ->setSubject(Yii::t('app','Account registration at ') . Yii::$app->name)
             ->send();
+    }
+
+    public function verificationToken(){
+        $verifyLink = Yii::$app->urlManager
+            ->createAbsoluteUrl(['site/verify-email', 'token' => $this->_user->verification_token]);
+        return $verifyLink;
     }
 }

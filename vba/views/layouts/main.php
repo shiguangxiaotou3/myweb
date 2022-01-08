@@ -31,7 +31,10 @@ use yii\bootstrap4\Html;
         <?= $content ?>
     </div>
 </main>
+<div style="margin: auto">
+<canvas
 
+</div>
 
 <?php $this->endBody() ?>
 </body>

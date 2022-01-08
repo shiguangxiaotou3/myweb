@@ -13,7 +13,7 @@ use yii\base\Model;
 class shell extends Model
 {
 
-    /** @var $path */
+    /** @var $path 执行目录 */
     public $path = "sudo php /Library/WebServer/Documents/myweb/yii gii/model ";
 
     //数据库链接id
@@ -57,7 +57,9 @@ class shell extends Model
 
 
     /**
-     *
+     * 调用gii生成数据库模型
+     * @param $appName
+     * @return string
      */
     public function ConstructShell($appName){
         $str = $this->path;
@@ -74,7 +76,5 @@ class shell extends Model
 
         }
         return $str;
-
-
     }
 }

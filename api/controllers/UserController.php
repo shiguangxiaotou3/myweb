@@ -7,6 +7,7 @@ use api\models\SignupForm;
 use api\models\ApiLoginForm;
 use yii\rest\ActiveController;
 use yii\web\Request;
+use Yii;
 
 class UserController extends ActiveController
 {
@@ -15,6 +16,7 @@ class UserController extends ActiveController
     /**
      * 登陆返回token
      * @return ApiLoginForm|array
+     * @throws \yii\base\InvalidConfigException
      */
     public function actionLogin(){
         $request = new Request();
@@ -37,8 +39,8 @@ class UserController extends ActiveController
         $request = new Request();
         $model = new SignupForm();
         $model->load($request->getBodyParams(),'');
-        if($model->signup()()){
-            //return [''=>$model->login()];
+        if($model->signup()){
+            return ['message'=>'注册成功，请前往邮箱验证','url'=>$model->verificationToken()];
         }else{
             $model->validate();
             return $model;

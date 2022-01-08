@@ -1,8 +1,9 @@
 <?php
 
-namespace api\models;
+namespace api\models\ar;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "module".
@@ -42,19 +43,6 @@ class Module extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * 删除条作者id及常见事件修改事件
-     */
-    public function fields()
-    {
-        $fields = parent::fields();
-        // 删除一些包含敏感信息的字段
-        unset($fields['user_id'], $fields['created_at'], $fields['updated_at']);
-
-        return $fields;
-    }
-
-    /**
-     * {@inheritdoc}
      */
     public function attributeLabels()
     {
@@ -73,10 +61,25 @@ class Module extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return \frontend\models\query\ModuleQuery the active query used by this AR class.
+     * @return \api\models\query\ModuleQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \frontend\models\query\ModuleQuery(get_called_class());
+        return new \api\models\query\ModuleQuery(get_called_class());
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return array[]
+     */
+    public function behaviors(){
+        return [
+            [
+                'class' => TimestampBehavior::className(),
+                'createdAtAttribute' => 'created_at',// 自己根据数据库字段修改
+                'updatedAtAttribute' => 'updated_at', // 自己根据数据库字段修改
+                'value' => time(),
+            ],
+        ];
     }
 }

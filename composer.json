@@ -20,14 +20,12 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "kartik-v/yii2-widget-datetimepicker": "*",
         "kartik-v/yii2-widget-typeahead": "dev-master",
-        "scotthuangzl/yii2-google-chart": "dev-master",
         "kartik-v/yii2-widget-fileinput": "dev-master",
         "johnitvn/yii2-ajaxcrud": "*",
         "chenkby/yii2-region": "dev-master",
         "phpoffice/phpspreadsheet": "^1.20",
         "practically/yii2-chartjs": "^1.1",
-        "dmstr/yii2-adminlte-asset": "^2.1",
-        "tijsverkoyen/css-to-inline-styles": "^2.2"
+        "dmstr/yii2-adminlte-asset": "^2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -44,6 +42,9 @@
         "process-timeout": 1800,
         "fxp-asset": {
             "enabled": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
         }
     },
     "repositories": [

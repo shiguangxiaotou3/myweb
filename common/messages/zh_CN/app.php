@@ -7,7 +7,8 @@ return [
     'If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.'=>'如果您有业务咨询或其他问题，请填写以下表格与我们联系。非常感谢。',
     'Please fill out the following fields to login'=>'请填写以下字段以登录',
     'Contact'=>"联系我",
-
+    'Account registration at '=>'帐户注册地址',
+    "Follow the link below to verify your email:"=>'请按照以下链接验证您的电子邮件:',
     'Login'=>'登录',
     'If you forgot your password you can'=>'如果您忘记了密码，则无法',
     'reset it'=>"重置",

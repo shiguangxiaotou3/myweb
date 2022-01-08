@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/console/models/shell/WriteFile.php" afterDir="false" />
+    <list default="true" id="58d29457-4648-45ce-bc36-74536efd65a1" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/controllers/TestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/web/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vba/views/site/map.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/AppAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/AppAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/QrController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/ModuleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/ApiLoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/ApiLoginForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/Module.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/web/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api/web/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mail/emailVerify-html.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/emailVerify-html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/messages/zh_CN/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/zh_CN/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/yii/shell.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/yii/shell.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/controllers/AddController.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/controllers/AddController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/UserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/VbaUser.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/ar/Module.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/query/ModuleQuery.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/Webslides/long.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/Webslides/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/blank.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/qr/blank.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/qr/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/qr/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/qr/scanner.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/ppt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/requestPasswordResetToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/requestPasswordResetToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/resendVerificationEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/resendVerificationEmail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/resetPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/resetPassword.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/signup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/.htaccess" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/a.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/css/img/biyunfei-yang-_IO0RUOsBfE-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/img/author.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/img/campaign-creators-pypeCEaJeZY-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/web/img/qr.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/web/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vba/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/vba/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2-gii/src/generators/model/default/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2-gii/src/generators/model/default/model.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,23 +38,8 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="composer.json" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -98,6 +71,7 @@
       <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-typeahead" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/php-master" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-fileinput" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-bootstrap5-dropdown" />
@@ -180,6 +154,7 @@
       <path value="$PROJECT_DIR$/vendor/codeception/verify" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-yii2" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
@@ -193,41 +168,23 @@
       <path value="$PROJECT_DIR$/vendor/johnitvn/yii2-ajaxcrud" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
-      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
-  <component name="ProjectId" id="22eIcahLoHg9bN7xDRDnNWDSgfP" />
+  <component name="ProjectId" id="23Q6i677KkmqPbWsg4Dt5i0JAfF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="full.screen.before.presentation.mode" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api/models" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/api/models" />
-      <recent name="$PROJECT_DIR$/api/web" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/common/models" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="codeception.yml" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -237,40 +194,18 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="580a7fc1-26a4-40d6-a432-3b1e31be00e9" name="Default Changelist" comment="" />
-      <created>1640191707124</created>
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="58d29457-4648-45ce-bc36-74536efd65a1" name="默认变更列表" comment="" />
+      <created>1641654087946</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1640191707124</updated>
-      <workItem from="1640191710049" duration="251000" />
-      <workItem from="1640192061278" duration="11601000" />
-      <workItem from="1640258536672" duration="25973000" />
-      <workItem from="1640360528712" duration="1060000" />
-      <workItem from="1640361828770" duration="11751000" />
-      <workItem from="1640421851212" duration="7929000" />
-      <workItem from="1640484215166" duration="3342000" />
-      <workItem from="1640522133146" duration="6165000" />
-      <workItem from="1640598572689" duration="14757000" />
-      <workItem from="1640620833631" duration="1833000" />
-      <workItem from="1640622712403" duration="2689000" />
-      <workItem from="1640790091996" duration="6564000" />
-      <workItem from="1640866653087" duration="7566000" />
-      <workItem from="1640956091403" duration="3667000" />
-      <workItem from="1641010269778" duration="6962000" />
-      <workItem from="1641053864615" duration="2230000" />
-      <workItem from="1641094799905" duration="8060000" />
-      <workItem from="1641132953817" duration="12186000" />
-      <workItem from="1641178622968" duration="961000" />
-      <workItem from="1641221251537" duration="847000" />
+      <updated>1641654087946</updated>
+      <workItem from="1641654089132" duration="33000" />
+      <workItem from="1641654142866" duration="2951000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

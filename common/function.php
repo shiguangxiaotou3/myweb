@@ -5,20 +5,38 @@
  */
 
 /**
+ * @param $conf 被调用位置
+ */
+function dumpInfo($conf){
+    $path =$conf[0]['file'];
+    $line =$conf[0]['line'];
+    unset($conf);
+    $str ='//==========================================='."\r\n";
+    $str .='// 被调用文件:'.$path."\r\n";
+    $str .='// 被调用行数:'." 第".$line."行被调用\r\n";
+    $str .='// 被调用时间:'.date('Y-m-d hh:mm:ss',time())."\r\n";
+    $str .='//==========================================='."\r\n";
+    file_put_contents("a.txt","\r\n".$str,FILE_APPEND);
+}
+
+
+/**
  * 将字符串记录到日志中
  * @param $str
  */
 function logStr($str){
+    $conf =debug_backtrace();
+    dumpInfo($conf);
     file_put_contents("a.txt","\r\n".$str,FILE_APPEND);
-
 }
-
 /**
  * 将对象记录到日志文件中
  * @param $obj
  */
 function logObject($obj){
-    file_put_contents("a.txt", print_r($obj, true),FILE_APPEND);
+    $conf=debug_backtrace();
+    dumpInfo($conf);
+    file_put_contents("a.txt", "\r\n".print_r($obj, true),FILE_APPEND);
 }
 
 /**

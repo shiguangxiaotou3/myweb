@@ -2,8 +2,10 @@
 
 namespace frontend\controllers;
 
+use common\models\User;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
+use Mpdf\Tag\U;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -256,4 +258,25 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+
+
+    public function test(){
+        //查询
+        $user = User::find()
+            ->where([
+                'username'=>"adas",
+                'password'=>'dasda'])
+            ->asArray()
+            ->one();
+        //插入
+        $model = new User();
+        $model->username ='ASD';
+        $model->password ='ASDA';
+        $model->save();
+
+
+
+    }
+
 }

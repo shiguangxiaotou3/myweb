@@ -2,10 +2,12 @@
 
 namespace api\models;
 
+use setasign\Fpdi\PdfParser\CrossReference\ReaderInterface;
 use Yii;
 use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\filters\RateLimitInterface;
 use yii\web\IdentityInterface;
 
 /**
@@ -23,8 +25,10 @@ use yii\web\IdentityInterface;
  * @property integer $updated_at
  * @property string $password write-only password
  * @property integer $token
+ * @property integer $allowance write-only password
+ * @property integer $allowance_update_at
  */
-class User extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_INACTIVE = 9;
@@ -73,7 +77,8 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
+        return self::findOne(['token'=>$token]);
+       // throw new NotSupportedException('"findIdentityByAccessToken" is not implemented.');
     }
 
     /**
@@ -111,7 +116,8 @@ class User extends ActiveRecord implements IdentityInterface
      * @param string $token verify email token
      * @return static|null
      */
-    public static function findByVerificationToken($token) {
+    public static function findByVerificationToken($token)
+    {
         return static::findOne([
             'verification_token' => $token,
             'status' => self::STATUS_INACTIVE
@@ -130,7 +136,7 @@ class User extends ActiveRecord implements IdentityInterface
             return false;
         }
 
-        $timestamp = (int) substr($token, strrpos($token, '_') + 1);
+        $timestamp = (int)substr($token, strrpos($token, '_') + 1);
         $expire = Yii::$app->params['user.passwordResetTokenExpire'];
         return $timestamp + $expire >= time();
     }
@@ -215,9 +221,46 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * 生成token
      */
-    public function generateAccessToken(){
-        $this->token =Yii::$app->security->generateRandomString();
+    public function generateAccessToken()
+    {
+        $this->token = Yii::$app->security->generateRandomString();
         return $this->token;
 
+    }
+
+    /**
+     * Returns the maximum number of allowed requests and the window size.
+     * @param \yii\web\Request $request the current request
+     * @param \yii\base\Action $action the action to be executed
+     * @return array an array of two elements. The first element is the maximum number of allowed requests,
+     * and the second element is the size of the window in seconds.
+     */
+    public function getRateLimit($request, $action){
+        //请求次数，时间长度
+        return [3,10];
+    }
+
+    /**
+     * Loads the number of allowed requests and the corresponding timestamp from a persistent storage.
+     * @param \yii\web\Request $request the current request
+     * @param \yii\base\Action $action the action to be executed
+     * @return array an array of two elements. The first element is the number of allowed requests,
+     * and the second element is the corresponding UNIX timestamp.
+     */
+    public function loadAllowance($request, $action){
+        return [$this->allowance,$this->allowance_update_at];
+    }
+
+    /**
+     * Saves the number of allowed requests and the corresponding timestamp to a persistent storage.
+     * @param \yii\web\Request $request the current request
+     * @param \yii\base\Action $action the action to be executed
+     * @param int $allowance the number of allowed requests remaining.
+     * @param int $timestamp the current timestamp.
+     */
+    public function saveAllowance($request, $action, $allowance, $timestamp){
+        $this->allowance =$allowance;
+        $this->allowance_update_at =$timestamp;
+        $this->save();
     }
 }
