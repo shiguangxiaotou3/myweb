@@ -9,7 +9,6 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-
         'i18n' => [
             'translations' => [
                 'app' => [
@@ -23,7 +22,6 @@ return [
                 ],
             ],
         ],
-
         "urlManager" => [
             //用于表明urlManager是否启用URL美化功能，在Yii1.1中称为path格式URL，
             // Yii2.0中改称美化。

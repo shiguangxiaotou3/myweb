@@ -1,8 +1,12 @@
 <?php
 use yii\helpers\Html;
-
-/* @var $this \yii\web\View */
-/* @var $content string */
+use common\models\ar\Messages;
+/* @var $this yii\web\View */
+/* @var $directoryAsset yii\web\AssetManager */
+/* @var $messages common\models\ar\Messages */
+/** @var $user common\models\User */
+$messages =new Messages();
+$username = Yii::$app->user->identity->username;
 ?>
 
 <header class="main-header">
@@ -23,10 +27,10 @@ use yii\helpers\Html;
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="label label-success">4</span>
+                        <span class="label label-success"><?= $messages->getUnreadNumber($user->id) ?></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 4 messages</li>
+                        <li class="header">You have<?= $messages->getUnreadNumber($user->id) ?> messages</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
                             <ul class="menu">
@@ -101,6 +105,8 @@ use yii\helpers\Html;
                         <li class="footer"><a href="#">See All Messages</a></li>
                     </ul>
                 </li>
+
+                <!-- 通知 -->
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-bell-o"></i>
@@ -230,7 +236,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?= $username ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->

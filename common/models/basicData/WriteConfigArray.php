@@ -6,13 +6,7 @@ use yii\base\Model;
 
 class WriteConfigArray extends Model{
 
-    /** @var $appname string*/
-    public $appname;
 
-
-    public function rules(){
-
-    }
 
     /**
      * @param string $app 应用名称
@@ -21,7 +15,8 @@ class WriteConfigArray extends Model{
      */
     public function saveConfig($app,$file,$array){
         $dir = Yii::getAlias($app);
-        $data = require($dir.$file);
+        $file =$dir.$file;
+        $data = self::autoData($file);
         $arr = array_merge($data,$array);
         $str = "<?php\r\nreturn [\r\n";  // 拼接数组字符串-开头
         $str .= self::arraytostr($str, $arr,1);  // 拼接数组字符串-中间
@@ -29,6 +24,29 @@ class WriteConfigArray extends Model{
         file_put_contents($dir.$file, $str);
     }
 
+    /**
+     * 添加翻译,如果键重复，默认是不会添加
+     * @param array $arr
+     * @param string $category
+     * @param false $options
+     * @return false|int
+     */
+    public static function addI18n($arr,$category = 'app',$options =false){
+        $dir = Yii::getAlias("@common").'/messages/zh_CN/';
+        $file = $dir.$category.'.php';
+        self::autoCreatePath($file);
+        $data = self::loadData($file);
+        //如果为false，则覆盖已经被定义的
+        if($options == false){
+            $res = array_merge($data,$arr);
+        }else{
+            $res = self::merge($data,$arr);
+        }
+        return self::writeArray($file,$res);
+
+    }
+
+    //=================================================
     /**
      * 构造写入数据
      * @param $str
@@ -50,35 +68,15 @@ class WriteConfigArray extends Model{
             }
         }
     }
-
-
-    public static function addI18n($category,$arr,$options =false){
-        $dir = Yii::getAlias("@common").'/messages/zh_CN/';
-        $file = $dir.$category.'.php';
-        $data = self::autoData($file);
-        //如果为false，则覆盖已经被定义的
-        if($options == false){
-            $res = array_merge($data,$arr);
-        }else{
-            $res = self::merge($data,$arr);
-        }
-        
-        $str = "<?php\r\nreturn [\r\n";  // 拼接数组字符串-开头
-        $str .= self::arraytostr($str, $res,1);  // 拼接数组字符串-中间
-        $str .= "];";  //
-        file_put_contents($file, $str);
-
-    }
-
     /**
-     * 自动创建目录，返回文件的数据
+     * 递归创建文件或目录,成功返回true，否则返回false
      * @param $path
      * @return mixed
      */
-    public static function autoData($path){
+    public static function autoCreatePath($path){
         //如果文件存在直接返回,配置数据
        if(file_exists($path)){
-           return self::loadData($path);
+          return true;
        }else{
            //如果目录不存在，则创建目录
            $dir = dirname($path);
@@ -86,24 +84,20 @@ class WriteConfigArray extends Model{
                //创建目录，并创建文件
                if(self::createDir($dir)){
                    self::createFile($path);
-                   return self::loadData($path);
+                  return true;
                }else{
                    return false;
                }
-           }else{  //创建文件
-            self::createFile($path);
-            return self::loadData($path);
+           }else{
+               self::createFile($path);
+                return true;
            }
        }
-
-
-
-
-
     }
-
     /**
+     * 递归创建目录
      * @param $dir
+     * @return bool
      */
     public static function createDir($dir){
         try {
@@ -123,8 +117,8 @@ class WriteConfigArray extends Model{
             return  false;
         }
     }
-
     /**
+     * 创建文件
      * @param string $file
      * @return mixed
      */
@@ -136,14 +130,19 @@ class WriteConfigArray extends Model{
         }
         return false;
     }
-
-
+    /**
+     * 获取配置数据
+     * @param $file
+     * @return mixed
+     */
     public static function loadData($file){
         return require($file);
     }
-
     /**
-     *
+     * 将根据键名称合并数组
+     * @param $data
+     * @param $add_array
+     * @return mixed
      */
     public static function merge($data,$add_array){
         $keys = array_keys($data);
@@ -155,8 +154,19 @@ class WriteConfigArray extends Model{
 
         return $data;
     }
-
-
-
-
+    /**
+     * 构造写入字符串,并写入文件中
+     * @param $file
+     * @param $arr
+     * @return false|int
+     */
+    public static function writeArray($file,$arr){
+        if(file_exists($file)){
+            $str = "<?php\r\nreturn [\r\n";  // 拼接数组字符串-开头
+            $str .= self::arraytostr($str, $arr,1);  // 拼接数组字符串-中间
+            $str .= "];";  //
+            return file_put_contents($file, $str);
+        }
+        return false;
+    }
 }

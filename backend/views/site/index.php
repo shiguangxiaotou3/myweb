@@ -18,11 +18,10 @@ use common\widgets\Card;
     );
 
     //销售金额
-
     echo Card::widget(
         [
             'bg' => 'bg-green',
-            'titer' => '<h3>1213<sup style="font-size: 20px">元</sup></h3>',
+            'titer' => '<h3>'.Yii::$app->user->getId().'<sup style="font-size: 20px">元</sup></h3>',
             'lable' => '<p>销售金额</p>',
             'icon' => 'ion-stats-bars',
             'url' => ['#'],
@@ -30,7 +29,6 @@ use common\widgets\Card;
     );
 
     //用户
-
     echo Card::widget(
         [
             'bg' => 'bg-yellow',
@@ -70,10 +68,24 @@ use common\widgets\Card;
                 <div class="pad">
                     <!-- Map will be created here -->
                     <?php
-                        $markers =[
+                        $model = \common\models\ar\Ip::find()
+                            ->select(['city','loc'])
+                            ->andWhere(['not', ['city' => null]])
+                            ->asArray()->all();
+
+                        $markers=[];
+                        foreach ($model as $item){
+                            $markers[] =array(
+                                'latLng'=> explode(",",$item['loc']),
+                                'name'=>$item['city'],
+                            );
+                        }
+
+
+                        /*$markers =[
                             ['latLng'=> [28.12,112.59 ], 'name'=>'长沙'],
                             ['latLng'=> [30.51667,114.31667 ], 'name'=> '武汉' ],
-                        ];
+                        ];*/
                         echo \common\widgets\charts\Mapwidget::widget([
                             'markers'=>$markers
                         ]);
@@ -82,6 +94,7 @@ use common\widgets\Card;
             </div>
         </div>
     </section>
+
     <section class="col-lg-5 connectedSortable">
         <!-- 热力图 -->
         <div class="box box-solid bg-light-blue-gradient">
@@ -124,92 +137,3 @@ use common\widgets\Card;
         </div>
     </section>
 </div>
-<?php
-$js = <<<JS
-   /* jVector Maps
-   * ------------
-   * Create a world map with markers
-   */
-  $('#world-map-markers').vectorMap({
-    map              : 'world_mill_en',
-    normalizeFunction: 'polynomial',
-    hoverOpacity     : 0.7,
-    hoverColor       : false,
-    backgroundColor  : 'transparent',
-    regionStyle      : {
-      initial      : {
-        fill            : 'rgba(210, 214, 222, 1)',
-        'fill-opacity'  : 1,
-        stroke          : 'none',
-        'stroke-width'  : 0,
-        'stroke-opacity': 1
-      },
-      hover        : {
-        'fill-opacity': 0.7,
-        cursor        : 'pointer'
-      },
-      selected     : {
-        fill: 'yellow'
-      },
-      selectedHover: {}
-    },
-    markerStyle      : {
-      initial: {
-        fill  : '#00a65a',
-        stroke: '#111'
-      }
-    },
-    markers          : [
-      { latLng: [28.12,112.59 ], name: '长沙' },
-      { latLng: [30.51667,114.31667 ], name: '武汉' },
-      
-    ]
-  });
-JS;
-
-$js1 =<<<JS
-var visitorsData = {
-    US: 398, // USA
-    SA: 400, // Saudi Arabia
-    CA: 1000, // Canada
-    DE: 500, // Germany
-    FR: 760, // France
-    CN: 300, // China
-    AU: 700, // Australia
-    BR: 600, // Brazil
-    IN: 800, // India
-    GB: 320, // Great Britain
-    RU: 3000 // Russia
-  };
-  // World map by jvectormap
-  $('#map19').vectorMap({
-    map              : 'world_mill_en',
-    backgroundColor  : 'transparent',
-    regionStyle      : {
-      initial: {
-        fill            : '#e4e4e4',
-        'fill-opacity'  : 1,
-        stroke          : 'none',
-        'stroke-width'  : 0,
-        'stroke-opacity': 1
-      }
-    },
-    series           : {
-      regions: [
-        {
-          values           : visitorsData,
-          scale            : ['#92c1dc', '#ebf'],
-          normalizeFunction: 'polynomial'
-        }
-      ]
-    },
-    onRegionLabelShow: false
-  });
-JS;
-
-$this->registerJs($js)
-?>
-<script>
-
-
-</script>

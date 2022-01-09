@@ -40,7 +40,6 @@ class MapWidget extends Widget
     public function jvectorMapJs(){
         $id = $this->tagId;
         $visitorsData =str_replace('"','',json_encode($this->visitorsData));
-
 $js =<<<JS
   var visitorsData = {$visitorsData};
   // World map by jvectormap
@@ -72,8 +71,6 @@ $js =<<<JS
     }
   });      
 JS;
-
-
         return $js;
     }
 

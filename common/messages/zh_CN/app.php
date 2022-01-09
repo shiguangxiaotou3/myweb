@@ -14,8 +14,11 @@ return [
     'reset it' => '重置',
     'Need new verification email?' => '需要新的验证电子邮件吗？',
     'Resend' => '重发',
+    'username'=>'用户民',
     'email' => '邮箱',
     'password' => '密码',
+    'Incorrect username or password.'=>'用户名或密码不正确',
+    'Sign in to start your session'=>'登录以开始您的会话',
     'About' => '关于我',
     'rememberMe' => '记住我',
     'There is no user with this email address.' => '没有具有此电子邮件地址的用户。',
@@ -60,5 +63,5 @@ return [
     '{modelClass} #{id}' => '{modelClass} #{id}',
     'Update {modelClass} #{id}' => '更新{modelClass}#{id}',
     'Order' => '订单',
-    'About2' => '关于我',
+    'hello word' => '你好世界',
 ];

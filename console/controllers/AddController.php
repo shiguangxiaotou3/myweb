@@ -18,8 +18,8 @@ class AddController extends Controller
      * app/models/query
      */
     public function actionIndex(){
-        $appname ='api';
-        $table ='module';
+        $appname ='common';
+        $table ='login_record';
         $model = new shell();
         $model->tableName =$table;
         system($model->ConstructShell($appname));

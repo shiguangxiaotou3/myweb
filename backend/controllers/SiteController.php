@@ -2,12 +2,16 @@
 
 namespace backend\controllers;
 
-use common\models\LoginForm;
+
+use common\models\ar\Login_record;
 use Yii;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\web\Response;
+use yii\web\Controller;
+use yii\filters\VerbFilter;
+use common\models\LoginForm;
+use yii\filters\AccessControl;
+
+
 
 /**
  * Site controller
@@ -101,4 +105,5 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
 }
