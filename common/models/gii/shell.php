@@ -3,7 +3,7 @@
 
 namespace common\models\gii;
 
-
+use Yii;
 use yii\base\Model;
 
 /**
@@ -56,13 +56,14 @@ class shell extends Model
     public $messageCategory = 'app';
 
 
+
     /**
      * 调用gii生成数据库模型
      * @param $appName
      * @return string
      */
     public function ConstructShell($appName){
-        $str = $this->path;
+        $str =  "sudo php ".dirname(Yii::getAlias("@common"))."/yii gii/model ";
         if(!empty($this->tableName)){
             $str .= " --tableName=".$this->tableName;
             $str .= " --modelClass=".ucfirst($this->tableName);
@@ -77,4 +78,5 @@ class shell extends Model
         }
         return $str;
     }
+
 }

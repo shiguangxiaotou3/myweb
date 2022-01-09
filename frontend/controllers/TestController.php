@@ -6,6 +6,7 @@ namespace frontend\controllers;
 use common\models\ar\Ip;
 use common\models\ar\Messages;
 use common\models\basicData\Clear;
+use common\models\gii\shell;
 use Yii;
 use common\models\basicData\WriteConfigArray;
 use ipinfo\ipinfo\IPinfo;
@@ -77,8 +78,10 @@ class TestController extends Controller
 //            $mode = new Ip();
 //            $mode->auto();
 
-                echo Ip::deleteAll();
-
+               // echo Ip::deleteAll();
+            $model = new shell();
+            $model->tableName ='ip';
+            echo $model->ConstructShell('api');
 
 
         die();
