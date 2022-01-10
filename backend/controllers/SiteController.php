@@ -12,7 +12,6 @@ use common\models\LoginForm;
 use yii\filters\AccessControl;
 
 
-
 /**
  * Site controller
  */
@@ -55,6 +54,7 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'layout'=>'blank',
             ],
         ];
     }

@@ -443,7 +443,10 @@ function addStrFile($file,$str,$number=0){
 }
 
 
-
+/**
+ * 获取当前毫秒
+ * @return string
+ */
 function getTime(){
     $s =time();
     $arr = explode(' ',microtime());
@@ -460,4 +463,68 @@ function addFa($name){
     if(!empty($name)){
         return "<svg class='".$name."'><use xlink:href='#".$name."'></use></svg>";
     }
+}
+
+/**
+ * 计算两个时间相隔，年月入
+ * @param string|integer $starttiem
+ * @param string|integer $endtime
+ * @return array
+ * @throws Exception
+ */
+function SendTimeDiffer($starttiem,$endtime){
+    try {
+        if(gettype($starttiem) == 'integer'){
+            $starttiem = date('y-m-d h:i:s',$starttiem);
+        }
+        if(gettype($endtime) == 'integer'){
+            $endtime = date('y-m-d h:i:s',$endtime);
+        }
+        $start = new DateTime($starttiem);
+        $end = new DateTime($endtime);
+        $res=[];
+        $diff= $start->diff($end);
+        $res['year']=$diff->format('%y');
+        $res['month']=$diff->format('%m');
+        $res['day']=$diff->format('%d');
+        $res['hour']=$diff->format('%h');
+        $res['minute']=$diff->format('%i');
+        $res['second']=$diff->format('%s');
+        return $res;
+    }catch (Exception $e){
+        return false;
+    }
+
+}
+
+/**
+ * 计算两个时间的最大间隔单位
+ * @param $starttiem
+ * @param $endtime
+ * @return false|string
+ * @throws Exception
+ */
+function MaxDifferTime($starttiem,$endtime){
+    $data = SendTimeDiffer($starttiem,$endtime);
+    if($data){
+        if($data['year'] >0){
+            return $data['year']."年";
+        }elseif ($data['month'] >0){
+            return $data['month']."月";
+        }elseif ($data['day'] >0){
+            return $data['day']."天";
+        }elseif ($data['hour'] >0){
+            return $data['hour']."小时";
+        }elseif ($data['minute'] >0){
+            return $data['minute']."分钟";
+        }elseif ($data['second'] >0){
+            return $data['second']."秒";
+        }
+    }else{
+        return false;
+    }
+
+
+
+
 }

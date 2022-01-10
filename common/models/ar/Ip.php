@@ -114,20 +114,21 @@ class Ip extends \yii\db\ActiveRecord
                     /** @var  $client IPinfo */
                     $client = new IPinfo($token);
                     $details = $client->getDetails($model->ip);
-                    $model->hostname = $details->hostname;
+                    //$model->hostname = $details->hostname;
                     $model->city = $details->city;
                     $model->region = $details->region;
                     $model->country = $details->country;
                     $model->loc = $details->loc;
-                    $model->org = $details->org;
-                    $model->postal = $details->postal;
+                    //$model->org = $details->org;
+                    //$model->postal = $details->postal;
                     $model->timezone = $details->timezone;
                     $model->country_name = $details->country_name;
                     $model->latitude = $details->latitude;
-                    $model->longitude = $details->longitude;
+                    //$model->longitude = $details->longitude;
                     $model->save(false);
                 }
             }catch (\Exception $e){
+                logObject($e->getMessage());
                 continue;
             }
 
@@ -147,18 +148,19 @@ class Ip extends \yii\db\ActiveRecord
                 /** @var  $client IPinfo */
                 $client = new IPinfo($token);
                 $details = $client->getDetails($model->ip);
-                $model->hostname = $details->hostname;
+                //$model->hostname = $details->hostname;
                 $model->city = $details->city;
                 $model->region = $details->region;
                 $model->country = $details->country;
                 $model->loc = $details->loc;
-                $model->org = $details->org;
-                $model->postal = $details->postal;
+                //$model->org = $details->org;
+                //$model->postal = $details->postal;
                 $model->timezone = $details->timezone;
                 $model->country_name = $details->country_name;
                 $model->latitude = $details->latitude;
-                $model->longitude = $details->longitude;
+                //$model->longitude = $details->longitude;
                 $model->save(false);
+
             }
         }catch (\Exception $e){
 

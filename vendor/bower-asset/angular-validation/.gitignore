@@ -1,0 +1,29 @@
+# --------------------
+# OS Files
+# --------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# --------------------
+# Node Files
+# --------------------
+npm-debug.log
+node_modules/
+bower_components/
+
+# --------------------
+# Editor Files
+# --------------------
+.idea/
+*.swp
+*.vim
+
+# --------------------
+# coverage
+# --------------------
+coverage

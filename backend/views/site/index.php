@@ -3,6 +3,7 @@
 /* @var $this \yii\web\View */
 
 use common\widgets\Card;
+use common\widgets\charts\MapWidget;
 ?>
 <!-- 第一行 -->
 <div class="row">
@@ -82,11 +83,13 @@ use common\widgets\Card;
                         }
 
 
+
+
                         /*$markers =[
                             ['latLng'=> [28.12,112.59 ], 'name'=>'长沙'],
                             ['latLng'=> [30.51667,114.31667 ], 'name'=> '武汉' ],
                         ];*/
-                        echo \common\widgets\charts\Mapwidget::widget([
+                        echo MapWidget::widget([
                             'markers'=>$markers
                         ]);
                     ?>

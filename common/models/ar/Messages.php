@@ -2,6 +2,7 @@
 
 namespace common\models\ar;
 
+use common\models\User;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 
@@ -83,7 +84,7 @@ class Messages extends \yii\db\ActiveRecord
      * @param $receive_user_id
      * @return bool|int|string|null
      */
-    public function getUnreadNumber($receive_user_id){
+    public static function getUnreadNumber($receive_user_id){
        return  self::find()
            ->where(['receive_user_id'=>$receive_user_id,'status'=>0])
            ->count();;
@@ -94,7 +95,7 @@ class Messages extends \yii\db\ActiveRecord
      * @param $receive_user_id
      * @return array
      */
-    public function getUnreadData($receive_user_id){
+    public static function getUnreadData($receive_user_id){
         $send_user = self::find()
             ->select(['send_user_id'])
             ->where(['receive_user_id'=>$receive_user_id,'status'=>0])
@@ -109,6 +110,8 @@ class Messages extends \yii\db\ActiveRecord
                     ->one();
                 $res[] =array(
                     'send_user_id'=>$id,
+                    'send_user_name'=>'测试',//User::findOne($id)->username,
+                    'send_user_img'=>'',
                     'message'=>$model->messages,
                     'time'=>$model->created_at,
                 );

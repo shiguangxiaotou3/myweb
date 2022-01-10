@@ -57,9 +57,10 @@ class TestController extends Controller
 //        echo "cg";
 
 //        $token ="7265d1b29d49c2";
-//        $model = Ip::findOne(2);
+//        //$model = Ip::findOne(2);
 //        $client = new IPinfo($token);
-//        $details = $client->getDetails($model->ip);
+//        $details = $client->getDetails('119.96.13.253');
+//        dump($details);
 //            $model->hostname = $details->hostname;
 //            $model->city = $details->city;
 //            $model->region = $details->region;
@@ -78,11 +79,14 @@ class TestController extends Controller
 //            $mode = new Ip();
 //            $mode->auto();
 
-               // echo Ip::deleteAll();
-            $model = new shell();
-            $model->tableName ='ip';
-            echo $model->ConstructShell('api');
-
+//               // echo Ip::deleteAll();
+//            $model = new shell();
+//            $model->tableName ='ip';
+//            echo $model->ConstructShell('api');
+        echo gettype(1541833120) == 'integer';
+        dump( SendTimeDiffer(1641733574,"2021-11-08 13:24:05"));
+        echo time();
+        //echo date('Y-m-d h:m:s',strtotime("2021-11-08 13:42:05") - strtotime("2020-10-02 10:23:03"));
 
         die();
     }

@@ -1,0 +1,13 @@
+{
+    "js": [
+        "js/jquery.dataTables.js",
+        "js/jquery.dataTables.min.js"
+    ],
+    "css": [],
+    "types": [
+        "types/types.d.ts"
+    ],
+    "src-repo": "http://github.com/DataTables/DataTablesSrc",
+    "last-tag": "1.11.3",
+    "last-sync": "79772b97fe6d45af67057cc13fa6af3f00c873ea"
+}
