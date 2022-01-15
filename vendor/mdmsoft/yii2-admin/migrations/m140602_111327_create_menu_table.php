@@ -17,7 +17,7 @@ class m140602_111327_create_menu_table extends \yii\db\Migration
      */
     public function safeUp()
     {
-        $menuTable = Configs::menuTable();
+        $menuTable = '{{%menu}}';
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';

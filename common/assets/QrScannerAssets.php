@@ -8,16 +8,18 @@ use yii\web\AssetBundle;
 
 class QrScannerAssets extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower-asset/qr-scanner-master';
+    public $sourcePath = '@vendor/bower-asset/jsQR-master/docs';
     public $baseUrl = '@web';
     public $css = [
-
+        'qr.css'
     ];
     public $js = [
-        'qr-scanner.min.js',
-        'qr-scanner-worker.min.js'
+        'jsQR.js',
     ];
     public $depends = [
 
+    ];
+    public  $jsOptions =[
+        'position'=>\yii\web\View::POS_HEAD,
     ];
 }

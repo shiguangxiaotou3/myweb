@@ -3,8 +3,8 @@
 /**
  * @package   yii2-krajee-base
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2021
- * @version   3.0.1
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2022
+ * @version   3.0.2
  */
 
 namespace kartik\base;
@@ -27,8 +27,6 @@ use yii\web\View;
  */
 trait WidgetTrait
 {
-    use BootstrapTrait;
-
     /**
      * @var string the module identifier if this widget is part of a module. If not set, the module identifier will
      * be auto derived based on the \yii\base\Module::getInstance method. This can be useful, if you are setting
@@ -46,7 +44,7 @@ trait WidgetTrait
 
     /**
      * @var boolean enable pop state fix for pjax container on press of browser back & forward buttons.
-     * - DEPRECATED since v3.0.1 and replaced with [[pjaxDuplicationFix]]
+     * - DEPRECATED since v3.0.2 and replaced with [[pjaxDuplicationFix]]
      */
     public $enablePopStateFix = false;
 
@@ -78,7 +76,7 @@ trait WidgetTrait
     public $pluginOptions = [];
 
     /**
-     * @var array widget plugin options.
+     * @var array default plugin options for the widget
      */
     public $defaultPluginOptions = [];
 

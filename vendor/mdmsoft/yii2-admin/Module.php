@@ -16,7 +16,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
     public $userClassName;
     public $idField = 'id';
     public $usernameField = 'username';
-    public $layout = 'main';
+   // public $layout = 'main';
 
     /**
      * @inheritdoc
@@ -30,7 +30,7 @@ class Module extends \yii\base\Module implements BootstrapInterface
         if (!isset(Yii::$app->i18n->translations['rbac-admin'])) {
             Yii::$app->i18n->translations['rbac-admin'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en',
+                'sourceLanguage' => 'zh-CN',
                 'basePath' => '@mdm/admin/messages'
             ];
         }

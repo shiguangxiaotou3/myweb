@@ -4,7 +4,6 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 use yii\bootstrap\Html;
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -18,8 +17,8 @@ use yii\bootstrap\Html;
 </head>
 <body >
 <?php $this->beginBody() ?>
- <?= $content ?>
+<?= $content ?>
 <?php $this->endBody() ?>
 </body>
 </html>
-<?php $this->endPage();?>
+<?php $this->endPage();

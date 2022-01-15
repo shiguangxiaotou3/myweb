@@ -3,8 +3,8 @@
 /**
  * @package   yii2-krajee-base
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
- * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2021
- * @version   3.0.1
+ * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2022
+ * @version   3.0.2
  */
 
 namespace kartik\base;
@@ -39,6 +39,7 @@ class InputWidget extends YiiInputWidget implements BootstrapInterface
 {
     use TranslationTrait;
     use WidgetTrait;
+    use BootstrapTrait;
 
     /**
      * @var string the HTML markup for widget loading indicator
@@ -307,7 +308,7 @@ class InputWidget extends YiiInputWidget implements BootstrapInterface
             return;
         }
         $attrib = $type . 'Format';
-        $format = Yii::$app->formatter->$attrib ?? '';
+        $format = isset(Yii::$app->formatter->$attrib) ? Yii::$app->formatter->$attrib : '';
         if (empty($format)) {
             throw new InvalidConfigException("Error parsing '{$type}' format.");
         }
