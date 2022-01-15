@@ -1,11 +1,13 @@
 Yii2 Admin Change Log
 ==========================
-3.0
-----
-- Chg: Use angularjs for javascript framework (mdmunir).
 
+2.5
+-----
 
-2.0 Under Development
+- Enh: Add code testing (mdmunir).
+- Enh: Add more documentation (mdmunir).
+
+2.0
 ---------------------
 
 - Chg: Remove dependenci to `yiisoft/yii2-jui` (mdmunir).

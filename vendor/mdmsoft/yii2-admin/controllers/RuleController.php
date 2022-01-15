@@ -4,9 +4,12 @@ namespace mdm\admin\controllers;
 
 use Yii;
 use mdm\admin\models\BizRule;
-use yii\rest\Controller;
+use yii\web\Controller;
+use mdm\admin\models\searchs\BizRule as BizRuleSearch;
+use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
-use mdm\admin\classes\MenuHelper;
+use mdm\admin\components\Helper;
+use mdm\admin\components\Configs;
 
 /**
  * Description of RuleController
@@ -17,14 +20,18 @@ use mdm\admin\classes\MenuHelper;
 class RuleController extends Controller
 {
 
-    protected function verbs()
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
     {
-        return[
-            'index' => ['GET', 'HEAD'],
-            'view' => ['GET', 'HEAD'],
-            'create' => ['POST'],
-            'update' => ['POST'],
-            'delete' => ['DELETE'],
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
         ];
     }
 
@@ -34,9 +41,13 @@ class RuleController extends Controller
      */
     public function actionIndex()
     {
-        return array_values(array_map(function($item) {
-                return new BizRule($item);
-            }, Yii::$app->getAuthManager()->getRules()));
+        $searchModel = new BizRuleSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
+
+        return $this->render('index', [
+                'dataProvider' => $dataProvider,
+                'searchModel' => $searchModel,
+        ]);
     }
 
     /**
@@ -48,7 +59,7 @@ class RuleController extends Controller
     {
         $model = $this->findModel($id);
 
-        return $model;
+        return $this->render('view', ['model' => $model]);
     }
 
     /**
@@ -59,10 +70,13 @@ class RuleController extends Controller
     public function actionCreate()
     {
         $model = new BizRule(null);
-        if ($model->load(Yii::$app->request->post(), '') && $model->save()) {
-            MenuHelper::invalidate();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Helper::invalidate();
+
+            return $this->redirect(['view', 'id' => $model->name]);
+        } else {
+            return $this->render('create', ['model' => $model,]);
         }
-        return $model;
     }
 
     /**
@@ -74,10 +88,13 @@ class RuleController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post(), '') && $model->save()) {
-            MenuHelper::invalidate();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Helper::invalidate();
+
+            return $this->redirect(['view', 'id' => $model->name]);
         }
-        return $model;
+
+        return $this->render('update', ['model' => $model,]);
     }
 
     /**
@@ -89,10 +106,10 @@ class RuleController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-        Yii::$app->authManager->remove($model->item);
-        MenuHelper::invalidate();
+        Configs::authManager()->remove($model->item);
+        Helper::invalidate();
 
-        return true;
+        return $this->redirect(['index']);
     }
 
     /**
@@ -104,7 +121,7 @@ class RuleController extends Controller
      */
     protected function findModel($id)
     {
-        $item = Yii::$app->authManager->getRule($id);
+        $item = Configs::authManager()->getRule($id);
         if ($item) {
             return new BizRule($item);
         } else {

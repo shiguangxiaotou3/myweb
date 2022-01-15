@@ -1,8 +1,8 @@
 
 //===========================================
-// 被调用文件:/Library/WebServer/Documents/myweb/common/models/LoginForm.php
-// 被调用行数: 第101行被调用
-// 被调用时间:2022-01-09 0303:0101:5252
+// 被调用文件:/Library/WebServer/Documents/myweb/common/models/ar/Ip.php
+// 被调用行数: 第171行被调用
+// 被调用时间:2022-01-15 0707:0101:2222
 //===========================================
-127.0.0.1
+Undefined property: ipinfo\ipinfo\Details::$hostname
 //===============数据结束======================

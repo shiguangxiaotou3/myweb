@@ -2,9 +2,16 @@
 
 namespace mdm\admin\models;
 
+use mdm\admin\components\Configs;
+use mdm\admin\components\Helper;
+use mdm\admin\controllers\AssignmentController;
+use mdm\admin\Module;
 use Yii;
-use yii\rbac\Item;
+use yii\base\Model;
 use yii\helpers\Json;
+use yii\helpers\Url;
+use yii\rbac\Item;
+use yii\rbac\Rule;
 
 /**
  * This is the model class for table "tbl_auth_item".
@@ -20,14 +27,13 @@ use yii\helpers\Json;
  * @author Misbahul D Munir <misbahuldmunir@gmail.com>
  * @since 1.0
  */
-class AuthItem extends \yii\base\Model
+class AuthItem extends Model
 {
     public $name;
     public $type;
     public $description;
     public $ruleName;
     public $data;
-    private $_data;
 
     /**
      * @var Item
@@ -39,7 +45,7 @@ class AuthItem extends \yii\base\Model
      * @param Item  $item
      * @param array $config
      */
-    public function __construct($item, $config = [])
+    public function __construct($item = null, $config = [])
     {
         $this->_item = $item;
         if ($item !== null) {
@@ -58,23 +64,23 @@ class AuthItem extends \yii\base\Model
     public function rules()
     {
         return [
-            [['ruleName'], 'in',
-                'range' => array_keys(Yii::$app->authManager->getRules()),
-                'message' => 'Rule not exists'],
+            [['ruleName'], 'checkRule'],
             [['name', 'type'], 'required'],
-            [['name'], 'unique', 'when' => function() {
-                return $this->isNewRecord || ($this->_item->name != $this->name);
-            }],
+            [['name'], 'checkUnique', 'when' => function () {
+                    return $this->isNewRecord || ($this->_item->name != $this->name);
+                }],
             [['type'], 'integer'],
             [['description', 'data', 'ruleName'], 'default'],
             [['name'], 'string', 'max' => 64],
-            [['data'], 'jsonDecode'],
         ];
     }
 
-    public function unique()
+    /**
+     * Check role is unique
+     */
+    public function checkUnique()
     {
-        $authManager = Yii::$app->authManager;
+        $authManager = Configs::authManager();
         $value = $this->name;
         if ($authManager->getRole($value) !== null || $authManager->getPermission($value) !== null) {
             $message = Yii::t('yii', '{attribute} "{value}" has already been taken.');
@@ -86,35 +92,24 @@ class AuthItem extends \yii\base\Model
         }
     }
 
-    public function jsonDecode()
+    /**
+     * Check for rule
+     */
+    public function checkRule()
     {
-        if (is_array($this->data)) {
-            $this->addError('data', Yii::t('rbac-admin', 'Invalid JSON data.'));
-            return;
-        }
-        $decode = json_decode((string) $this->data, true);
-        switch (json_last_error()) {
-            case JSON_ERROR_NONE:
-                $this->_data = $decode;
-                break;
-            case JSON_ERROR_DEPTH:
-                $this->addError('data', 'The maximum stack depth has been exceeded.');
-                break;
-            case JSON_ERROR_CTRL_CHAR:
-                $this->addError('data', 'Control character error, possibly incorrectly encoded.');
-                break;
-            case JSON_ERROR_SYNTAX:
-                $this->addError('data', 'Syntax error.');
-                break;
-            case JSON_ERROR_STATE_MISMATCH:
-                $this->addError('data', 'Invalid or malformed JSON.');
-                break;
-            case JSON_ERROR_UTF8:
-                $this->addError('data', 'Malformed UTF-8 characters, possibly incorrectly encoded.');
-                break;
-            default:
-                $this->addError('data', 'Unknown JSON decoding error.');
-                break;
+        $name = $this->ruleName;
+        if (!Configs::authManager()->getRule($name)) {
+            try {
+                $rule = Yii::createObject($name);
+                if ($rule instanceof Rule) {
+                    $rule->name = $name;
+                    Configs::authManager()->add($rule);
+                } else {
+                    $this->addError('ruleName', Yii::t('rbac-admin', 'Invalid rule "{value}"', ['value' => $name]));
+                }
+            } catch (\Exception $exc) {
+                $this->addError('ruleName', Yii::t('rbac-admin', 'Rule "{value}" does not exists', ['value' => $name]));
+            }
         }
     }
 
@@ -148,8 +143,7 @@ class AuthItem extends \yii\base\Model
      */
     public static function find($id)
     {
-        $item = Yii::$app->authManager->getRole($id);
-        $item = $item ? : Yii::$app->authManager->getPermission($id);
+        $item = Configs::authManager()->getRole($id);
         if ($item !== null) {
             return new self($item);
         }
@@ -164,7 +158,7 @@ class AuthItem extends \yii\base\Model
     public function save()
     {
         if ($this->validate()) {
-            $manager = Yii::$app->authManager;
+            $manager = Configs::authManager();
             if ($this->_item === null) {
                 if ($this->type == Item::TYPE_ROLE) {
                     $this->_item = $manager->createRole($this->name);
@@ -179,17 +173,157 @@ class AuthItem extends \yii\base\Model
             $this->_item->name = $this->name;
             $this->_item->description = $this->description;
             $this->_item->ruleName = $this->ruleName;
-            $this->_item->data = $this->_data;
+            $this->_item->data = $this->data === null || $this->data === '' ? null : Json::decode($this->data);
             if ($isNew) {
                 $manager->add($this->_item);
             } else {
                 $manager->update($oldName, $this->_item);
             }
-
+            Helper::invalidate();
             return true;
         } else {
             return false;
         }
+    }
+
+    /**
+     * Adds an item as a child of another item.
+     * @param array $items
+     * @return int
+     */
+    public function addChildren($items)
+    {
+        $manager = Configs::authManager();
+        $success = 0;
+        if ($this->_item) {
+            foreach ($items as $name) {
+                $child = $manager->getPermission($name);
+                if ($this->type == Item::TYPE_ROLE && $child === null) {
+                    $child = $manager->getRole($name);
+                }
+                try {
+                    $manager->addChild($this->_item, $child);
+                    $success++;
+                } catch (\Exception $exc) {
+                    Yii::error($exc->getMessage(), __METHOD__);
+                }
+            }
+        }
+        if ($success > 0) {
+            Helper::invalidate();
+        }
+        return $success;
+    }
+
+    /**
+     * Remove an item as a child of another item.
+     * @param array $items
+     * @return int
+     */
+    public function removeChildren($items)
+    {
+        $manager = Configs::authManager();
+        $success = 0;
+        if ($this->_item !== null) {
+            foreach ($items as $name) {
+                $child = $manager->getPermission($name);
+                if ($this->type == Item::TYPE_ROLE && $child === null) {
+                    $child = $manager->getRole($name);
+                }
+                try {
+                    $manager->removeChild($this->_item, $child);
+                    $success++;
+                } catch (\Exception $exc) {
+                    Yii::error($exc->getMessage(), __METHOD__);
+                }
+            }
+        }
+        if ($success > 0) {
+            Helper::invalidate();
+        }
+        return $success;
+    }
+
+    /**
+     * Get items
+     * @return array
+     */
+    public function getItems()
+    {
+        $manager = Configs::authManager();
+        $advanced = Configs::instance()->advanced;
+        $available = [];
+        if ($this->type == Item::TYPE_ROLE) {
+            foreach (array_keys($manager->getRoles()) as $name) {
+                $available[$name] = 'role';
+            }
+        }
+        foreach (array_keys($manager->getPermissions()) as $name) {
+            $available[$name] = $name[0] == '/' || $advanced && $name[0] == '@' ? 'route' : 'permission';
+        }
+
+        $assigned = [];
+        foreach ($manager->getChildren($this->_item->name) as $item) {
+            $assigned[$item->name] = $item->type == 1 ? 'role' : ($item->name[0] == '/' || $advanced && $item->name[0] == '@'
+                    ? 'route' : 'permission');
+            unset($available[$item->name]);
+        }
+        unset($available[$this->name]);
+        ksort($available);
+        ksort($assigned);
+        return [
+            'available' => $available,
+            'assigned' => $assigned,
+        ];
+    }
+
+    public function getUsers()
+    {
+        $module = Yii::$app->controller->module;
+        if (!$module || !$module instanceof Module) {
+            return [];
+        }
+        $ctrl = $module->createController('assignment');
+        $result = [];
+        if ($ctrl && $ctrl[0] instanceof AssignmentController) {
+            $ctrl = $ctrl[0];
+            $class = $ctrl->userClassName;
+            $idField = $ctrl->idField;
+            $usernameField = $ctrl->usernameField;
+
+            $manager = Configs::authManager();
+            $ids = $manager->getUserIdsByRole($this->name);
+
+            $provider = new \yii\data\ArrayDataProvider([
+                'allModels' => $ids,
+                'pagination' => [
+                    'pageSize' => Configs::userRolePageSize(),
+                ]
+            ]);
+            $users = $class::find()
+                    ->select(['id' => $idField, 'username' => $usernameField])
+                    ->where([$idField => $provider->getModels()])
+                    ->asArray()->all();
+
+            $route = '/' . $ctrl->uniqueId . '/view';
+            foreach ($users as &$row) {
+                $row['link'] = Url::to([$route, 'id' => $row['id']]);
+            }
+            $result['users'] = $users;
+            $currentPage = $provider->pagination->getPage();
+            $pageCount = $provider->pagination->getPageCount();
+            if ($pageCount > 0) {
+                $result['first'] = 0;
+                $result['last'] = $pageCount - 1;
+                if ($currentPage > 0) {
+                    $result['prev'] = $currentPage - 1;
+                }
+                if ($currentPage < $pageCount - 1) {
+                    $result['next'] = $currentPage + 1;
+                }
+            }
+        }
+        return $result;
     }
 
     /**
@@ -202,23 +336,6 @@ class AuthItem extends \yii\base\Model
     }
 
     /**
-     * 
-     * @param Item $a
-     * @param Item $b
-     * @return int 
-     */
-    public static function compare($a, $b)
-    {
-        if ($a->type != $b->type) {
-            return $a->type > $b->type ? 1 : -1;
-        } elseif (($a->name[0] == '/' || $b->name[0] == '/') && ($a->name[0] != $b->name[0])) {
-            return $a->name[0] == '/' ? 1 : -1;
-        } else {
-            return $a->name > $b->name ? 1 : -1;
-        }
-    }
-
-    /**
      * Get type name
      * @param  mixed $type
      * @return string|array
@@ -227,62 +344,12 @@ class AuthItem extends \yii\base\Model
     {
         $result = [
             Item::TYPE_PERMISSION => 'Permission',
-            Item::TYPE_ROLE => 'Role'
+            Item::TYPE_ROLE => 'Role',
         ];
         if ($type === null) {
             return $result;
         }
 
         return $result[$type];
-    }
-    private $_avaliables;
-    private static $_rules;
-    private $_children;
-
-    public function getChildren()
-    {
-        if ($this->_children === null) {
-            $manager = Yii::$app->getAuthManager();
-            $this->_children = array_values($manager->getChildren($this->name));
-            usort($this->_children, [get_called_class(), 'compare']);
-        }
-        return $this->_children;
-    }
-
-    public function getAvaliables()
-    {
-        if ($this->_avaliables === null) {
-            $manager = Yii::$app->getAuthManager();
-            $items = [];
-            if ($this->type == Item::TYPE_ROLE) {
-                $items = array_merge($manager->getRoles(), $manager->getPermissions());
-            } elseif ($this->type == Item::TYPE_PERMISSION) {
-                $items = $manager->getPermissions();
-            }
-            uasort($items, [get_called_class(), 'compare']);
-            foreach ($this->getChildren() as $item) {
-                unset($items[$item->name]);
-            }
-            $this->_avaliables = array_values($items);
-        }
-        return $this->_avaliables;
-    }
-
-    public function getRules()
-    {
-        $manager = Yii::$app->getAuthManager();
-        if (self::$_rules === null) {
-            self::$_rules = array_keys($manager->getRules());
-        }
-        return self::$_rules;
-    }
-
-    public function extraFields()
-    {
-        return[
-            'children',
-            'avaliables',
-            'rules',
-        ];
     }
 }

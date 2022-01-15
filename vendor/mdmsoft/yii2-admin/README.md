@@ -1,14 +1,29 @@
 RBAC Manager for Yii 2
 ======================
+GUI manager for RBAC (Role Base Access Control) Yii2. Easy to manage authorization of user :smile:.
+
+[![Latest Unstable Version](https://poser.pugx.org/mdmsoft/yii2-admin/v/unstable)](https://packagist.org/packages/mdmsoft/yii2-admin)
+[![Total Downloads](https://poser.pugx.org/mdmsoft/yii2-admin/downloads.png)](https://packagist.org/packages/mdmsoft/yii2-admin)
+[![Daily Downloads](https://poser.pugx.org/mdmsoft/yii2-admin/d/daily)](https://packagist.org/packages/mdmsoft/yii2-admin)
+[![License](https://poser.pugx.org/mdmsoft/yii2-admin/license)](https://packagist.org/packages/mdmsoft/yii2-admin)
+[![Reference Status](https://www.versioneye.com/php/mdmsoft:yii2-admin/reference_badge.svg)](https://www.versioneye.com/php/mdmsoft:yii2-admin/references)
+[![Build Status](https://img.shields.io/travis/mdmsoft/yii2-admin.svg)](http://travis-ci.org/mdmsoft/yii2-admin)
+[![Dependency Status](https://www.versioneye.com/php/mdmsoft:yii2-admin/dev-master/badge.png)](https://www.versioneye.com/php/mdmsoft:yii2-admin/dev-master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mdmsoft/yii2-admin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mdmsoft/yii2-admin/?branch=master)
+[![Code Climate](https://img.shields.io/codeclimate/github/mdmsoft/yii2-admin.svg)](https://codeclimate.com/github/mdmsoft/yii2-admin)
 
 Documentation
 -------------
+> **Important: If you install version 3.x, please see [this readme](https://github.com/mdmsoft/yii2-admin/blob/3.master/README.md#upgrade-from-2x).**
+
 
 - [Change Log](CHANGELOG.md).
 - [Authorization Guide](http://www.yiiframework.com/doc-2.0/guide-security-authorization.html). Important, read this first before you continue.
+- [Basic Configuration](docs/guide/configuration.md)
 - [Basic Usage](docs/guide/basic-usage.md).
+- [User Management](docs/guide/user-management.md).
 - [Using Menu](docs/guide/using-menu.md).
-- [Api](http://mdmsoft.github.io/yii2-admin/index.html)
+- [Api](https://mdmsoft.github.io/yii2-admin/index.html).
 
 Installation
 ------------
@@ -20,13 +35,15 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require mdmsoft/yii2-admin "~3.0"
+php composer.phar require mdmsoft/yii2-admin "~1.0"
+or
+php composer.phar require mdmsoft/yii2-admin "~2.0"
 ```
 
 or for the dev-master
 
 ```
-php composer.phar require mdmsoft/yii2-admin "dev-3.master"
+php composer.phar require mdmsoft/yii2-admin "2.x-dev"
 ```
 
 Or, you may add
@@ -47,78 +64,12 @@ return [
     ...
     'aliases' => [
         '@mdm/admin' => 'path/to/your/extracted',
-        // for example: '@mdm/admin' => '@app/extensions/mdm/yii2-admin-3.0.0',
+        // for example: '@mdm/admin' => '@app/extensions/mdm/yii2-admin-2.0.0',
         ...
     ]
 ];
 ```
 
-Usage
------
+[**More...**](docs/guide/configuration.md)
 
-Once the extension is installed, simply modify your application configuration as follows:
-
-```php
-return [
-    'bootstrap' => [
-        'admin', // required
-        ...
-    ],
-    'modules' => [
-        'admin' => [
-            'class' => 'mdm\admin\Module',
-            ...
-        ]
-        ...
-    ],
-    ...
-    'components' => [
-        ...
-        'authManager' => [
-            'class' => 'yii\rbac\PhpManager', // or use 'yii\rbac\DbManager'
-        ]
-    ],
-    'as access' => [
-        'class' => 'mdm\admin\classes\AccessControl',
-        'allowActions' => [
-            'site/*',
-            'admin/*',
-            'some-controller/some-action',
-            // The actions listed here will be allowed to everyone including guests.
-            // So, 'admin/*' should not appear here in the production, of course.
-            // But in the earlier stages of your development, you may probably want to
-            // add a lot of actions here until you finally completed setting up rbac,
-            // otherwise you may not even take a first step.
-        ]
-    ],
-];
-```
-See [Yii RBAC](http://www.yiiframework.com/doc-2.0/guide-security-authorization.html#role-based-access-control-rbac) for more detail.
-You can then access Auth manager through the following URL:
-
-```
-http://localhost/path/to/index.php/admin
-http://localhost/path/to/index.php/admin#/route
-http://localhost/path/to/index.php/admin#/permission
-http://localhost/path/to/index.php/admin#/menu
-http://localhost/path/to/index.php/admin#/role
-http://localhost/path/to/index.php/admin#/assignment
-```
-
-To use the menu manager (optional), execute the migration here:
-```
-yii migrate --migrationPath=@mdm/admin/migrations
-```
-
-If you use database (class 'yii\rbac\DbManager') to save rbac data, execute the migration here:
-```
-yii migrate --migrationPath=@yii/rbac/migrations
-```
-
-Upgrade From 2.x
-----------------
-
-- All classes under namespace `mdm\admin\components` moved to `mdm\admin\classes`.
-So you must change it.
-- Version 3.x only work with enable prety url.
-- You must add module to application bootstrap in config.
+[screenshots](https://goo.gl/r8RizT)

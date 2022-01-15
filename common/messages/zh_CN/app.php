@@ -64,4 +64,5 @@ return [
     'Update {modelClass} #{id}' => '更新{modelClass}#{id}',
     'Order' => '订单',
     'hello word' => '你好世界',
+    'Admin'=>'rbac'
 ];

@@ -74,14 +74,27 @@ if (Yii::$app->controller->action->id === 'login') {
     //参数部分
     var parameter = window.location.search;
 
-    var str =pathname;
+    var str = pathname;
 
-    jQuery("[href*='"+ pathname +"']").each(function () {
-        var str = this.href;
-        if(url.indexOf(str) === 0){
-            jQuery(this).parent().addClass('active');
-            jQuery(this).parent().parent().parent().addClass('active');
-            jQuery(this).parent().parent().parent().addClass('menu-open');
-        }
-    });
+    var obj = jQuery("[href*='"+ pathname +"']");
+   if(obj.length == 0){
+       var n = pathname.lastIndexOf('/');
+       jQuery("[href*='"+ pathname.slice(0,n) +"']").each(function () {
+           var str = this.href;
+           if(url.indexOf(str) === 0){
+               jQuery(this).parent().addClass('active');
+               jQuery(this).parent().parent().parent().addClass('active');
+               jQuery(this).parent().parent().parent().addClass('menu-open');
+           }
+       });
+   }else {
+       obj.each(function () {
+           var str = this.href;
+           if(url.indexOf(str) === 0){
+               jQuery(this).parent().addClass('active');
+               jQuery(this).parent().parent().parent().addClass('active');
+               jQuery(this).parent().parent().parent().addClass('menu-open');
+           }
+       });
+   }
 </script>

@@ -73,7 +73,6 @@ use common\widgets\charts\MapWidget;
                             ->select(['city','loc'])
                             ->andWhere(['not', ['city' => null]])
                             ->asArray()->all();
-
                         $markers=[];
                         foreach ($model as $item){
                             $markers[] =array(
@@ -81,14 +80,6 @@ use common\widgets\charts\MapWidget;
                                 'name'=>$item['city'],
                             );
                         }
-
-
-
-
-                        /*$markers =[
-                            ['latLng'=> [28.12,112.59 ], 'name'=>'长沙'],
-                            ['latLng'=> [30.51667,114.31667 ], 'name'=> '武汉' ],
-                        ];*/
                         echo MapWidget::widget([
                             'markers'=>$markers
                         ]);

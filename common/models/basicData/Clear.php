@@ -5,6 +5,10 @@ use Yii;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
+/**
+ * 清理app应用 缓存文件 日志文件 临时文件 已发布资源包
+ * @package common\models\basicData
+ */
 class Clear extends Model{
 
 

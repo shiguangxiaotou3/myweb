@@ -42,11 +42,13 @@ class TestController extends Controller
 
 //        $model = new Messages();
 //        echo $model->getUnreadNumber(14);
+        $token ="7265d1b29d49c2";
+        $client = new IPinfo($token);
+        dump($client->getRequestDetails('219.140.80.162'));
+        echo "<br>";
+        dump($client->getDetails('219.140.80.162'));
 
-//        $access_token = '7265d1b29d49c2';
-//         $client = new IPinfo($access_token);
-//         $ip_address = '216.239.36.21';
-//         $details = $client->getDetails($ip_address);
+//
 //        dump($details);
 //        for ($i=1;$i<100;$i++){
 //        $model = new  Ip();
@@ -83,12 +85,12 @@ class TestController extends Controller
 //            $model = new shell();
 //            $model->tableName ='ip';
 //            echo $model->ConstructShell('api');
-        echo gettype(1541833120) == 'integer';
-        dump( SendTimeDiffer(1641733574,"2021-11-08 13:24:05"));
-        echo time();
-        //echo date('Y-m-d h:m:s',strtotime("2021-11-08 13:42:05") - strtotime("2020-10-02 10:23:03"));
-
-        die();
+//        echo gettype(1541833120) == 'integer';
+//        dump( SendTimeDiffer(1641733574,"2021-11-08 13:24:05"));
+//        echo time();
+//        //echo date('Y-m-d h:m:s',strtotime("2021-11-08 13:42:05") - strtotime("2020-10-02 10:23:03"));
+//
+//        die();
     }
 
 }

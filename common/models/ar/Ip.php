@@ -28,6 +28,9 @@ use yii\behaviors\TimestampBehavior;
  */
 class Ip extends \yii\db\ActiveRecord
 {
+
+    private $token ="7265d1b29d49c2";
+
     /**
      * {@inheritdoc}
      */
@@ -100,70 +103,65 @@ class Ip extends \yii\db\ActiveRecord
         ];
     }
 
-
     /**
      * 根据ip地质，解析登陆者物理位置
      * 注意一个账号一个月只有5000次机会
      */
     public function auto(){
-        $token ="7265d1b29d49c2";
+
         /** @var  $model  self */
+        /** @var  $client IPinfo */
         foreach (self::find()->each(10) as $model){
-            try {
-                if($model->city !== ''){
-                    /** @var  $client IPinfo */
-                    $client = new IPinfo($token);
-                    $details = $client->getDetails($model->ip);
-                    //$model->hostname = $details->hostname;
-                    $model->city = $details->city;
-                    $model->region = $details->region;
-                    $model->country = $details->country;
-                    $model->loc = $details->loc;
-                    //$model->org = $details->org;
-                    //$model->postal = $details->postal;
-                    $model->timezone = $details->timezone;
-                    $model->country_name = $details->country_name;
-                    $model->latitude = $details->latitude;
-                    //$model->longitude = $details->longitude;
-                    $model->save(false);
-                }
-            }catch (\Exception $e){
-                logObject($e->getMessage());
+
+            if(self::ParseIP($model) == false){
                 continue;
             }
-
         }
     }
 
     /**
-     * 更新一条ip的地址信息
-     * @param $model
+     * 更新一个ip的地址信息
+     * @param $model Ip
+     * @return false
      */
-    public static function ParseIP($model){
-        $token ="7265d1b29d49c2";
-        //不解析的白名单
-        $ips =['127.0.0.1'];
+    public  function ParseIP($model){
+        $client = new IPinfo($this->token);
+        $ips = self::Ips();
         try {
             if($model->city !== '' &&  !in_array($model->ip,$ips) ){
-                /** @var  $client IPinfo */
-                $client = new IPinfo($token);
-                $details = $client->getDetails($model->ip);
-                //$model->hostname = $details->hostname;
-                $model->city = $details->city;
-                $model->region = $details->region;
-                $model->country = $details->country;
-                $model->loc = $details->loc;
-                //$model->org = $details->org;
-                //$model->postal = $details->postal;
-                $model->timezone = $details->timezone;
-                $model->country_name = $details->country_name;
-                $model->latitude = $details->latitude;
-                //$model->longitude = $details->longitude;
-                $model->save(false);
+                $details = $client->getRequestDetails($model->ip);
+                if(isset($details['city'])){
+                    $model->city = $details['city'];
+                }
+                if(isset($details['region'])){
+                    $model->region = $details['region'];
+                }
+                if(isset($details['country'])){
+                    $model->country = $details['country'];
+                }
+                if(isset($details['loc'])){
+                    $model->loc = $details['loc'];
+                }
+                if(isset($details['org'])){
+                    $model->org = $details['org'];
+                }
+                if(isset($details['timezone'])){
+                    $model->timezone = $details['timezone'];
+                }
 
+                $model->save(false);
             }
         }catch (\Exception $e){
-
+            logObject($e->getMessage());
+            return false;
         }
+    }
+
+    /**
+     * 不解析的ip名单
+     * @return array
+     */
+    public static function Ips(){
+        return ['127.0.0.1'];
     }
 }

@@ -36,8 +36,6 @@ return array(
     'johnitvn\\ajaxcrud\\' => array($vendorDir . '/johnitvn/yii2-ajaxcrud/src'),
     'ipinfo\\ipinfo\\' => array($vendorDir . '/ipinfo/ipinfo/src'),
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
-    'dee\\angular\\' => array($vendorDir . '/deesoft/yii2-angular'),
-    'dee\\adminlte\\' => array($vendorDir . '/deesoft/yii2-adminlte'),
     'chenkby\\region\\' => array($vendorDir . '/chenkby/yii2-region'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),

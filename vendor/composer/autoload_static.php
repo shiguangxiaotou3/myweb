@@ -86,8 +86,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'd' => 
         array (
             'dmstr\\' => 6,
-            'dee\\angular\\' => 12,
-            'dee\\adminlte\\' => 13,
         ),
         'c' => 
         array (
@@ -297,14 +295,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
-        ),
-        'dee\\angular\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/deesoft/yii2-angular',
-        ),
-        'dee\\adminlte\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/deesoft/yii2-adminlte',
         ),
         'chenkby\\region\\' => 
         array (

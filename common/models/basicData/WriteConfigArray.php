@@ -4,10 +4,11 @@ namespace common\models\basicData;
 use Yii;
 use yii\base\Model;
 
+/**
+ * 将配置信息写入php配置文件
+ * @package common\models\basicData
+ */
 class WriteConfigArray extends Model{
-
-
-
     /**
      * @param string $app 应用名称
      * @param string $file 相对路径

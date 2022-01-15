@@ -42,32 +42,21 @@ $username = Yii::$app->user->identity->username;
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    //rbac
                     [
-                        'label' => 'Some tools',
-                        'icon' => 'share',
-                        'url' => '#',
-                        'items' => [
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
+                        'label' => '访问控制', 'icon' => 'dashboard', 'url' => ['/admin'],
+                        'items'=>[
+                            ['label' => '用户管理', 'icon' => 'dashboard', 'url' => ['/admin/user'],],
+                            ['label' => '授权管理', 'icon' => 'dashboard', 'url' => ['/admin/assignment'],],
+                            ['label' => '角色管理', 'icon' => 'dashboard', 'url' => ['/admin/role'],],
+                            ['label' => '权限管理', 'icon' => 'dashboard', 'url' => ['/admin/permission'],],
+                            ['label' => '权限管理', 'icon' => 'dashboard', 'url' => ['/admin/route'],],
+                            ['label' => '规则', 'icon' => 'dashboard', 'url' => ['/admin/rule'],],
+                            ['label' => '菜单', 'icon' => 'dashboard', 'url' => ['/admin/menu'],],
                         ],
                     ],
+                    ['label' => '自动化操作', 'icon' => 'dashboard', 'url' => ['/action'],],
+
                 ],
             ]
         ) ?>
