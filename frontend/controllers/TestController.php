@@ -21,7 +21,7 @@ class TestController extends Controller
 
         $model = new DownloadAssets();
 
-        $data = $model->openDomainDownloadAssets('https://jvectormap.com');
+        $data = $model->openDomainDownloadAssets('https://y.qq.com/n/ryqq/player');
       dump($data);
 //        echo \Yii::getAlias('@runtime/download/');
 //        echo "<br>";
