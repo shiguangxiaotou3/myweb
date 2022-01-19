@@ -1,8 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
-use \yii\helpers\Url;
-use \common\widgets\webslides\Steps;
+use yii\helpers\Url;
+use common\widgets\webslides\Steps;
 $this->title = '地图测试';
 $dir = Yii::$app->urlManager->createUrl(['/img']);
 ?>
@@ -38,20 +38,14 @@ $dir = Yii::$app->urlManager->createUrl(['/img']);
     </p>
     <p class="text-intro">
        在日常工作中经常要vba处理本地数据，但是每次都重新编写代码比较麻烦，作为一个web开发者于是萌生了一个想法。能否在客户端自动加载云端代码以提高办公效力。<br>
-        <strong>答案是可以的</strong>
+        <strong>答案是:可以的</strong>
     </p>
 
     <h3><strong>原理:</strong></h3>
     <ol >
-        <li>
-            客户端发出post请求。只允许post
-        </li>
-        <li>
-            服务端收到请求以后，查询数据库，返回包含vba代码的json数据
-        </li>
-        <li>
-            客户端收到json数据后，解析json数据。并将vab代码写入模块或类模版中。
-        </li>
+        <li>客户端发出post请求。只允许post</li>
+        <li>服务端收到请求以后，查询数据库，返回包含vba代码的json数据</li>
+        <li>客户端收到json数据后，解析json数据。并将vab代码写入模块或类模版中。</li>
     </ol>
     <h3><strong>优势</strong></h3>
     <ol>
@@ -72,7 +66,7 @@ $dir = Yii::$app->urlManager->createUrl(['/img']);
             <ul class="flexblock reasons">
                 <li>
                     <h2>vbaCloud是一个人网站.</h2>
-                    <p>由于时间有限部分功能还需要完善希望大家谅解<a href='' title="">choose a demo</a> and customize it in minutes. Be memorable! </p>
+                    <p>由于时间有限部分功能还需要完善希望大家谅解!</p>
                 </li>
                 <li>
                     <h2>安全性</h2>
@@ -91,8 +85,6 @@ $dir = Yii::$app->urlManager->createUrl(['/img']);
         </div>
     </div>
 </section>
-
-
 
 <!--第4页 -->
 <section>
@@ -201,6 +193,7 @@ EOT;
     </div>
 </section>
 
+<!--第6页 -->
 <section class="aligncenter slide current" >
     <!-- .wrap = container (width: 90%) -->
     <div class="wrap">
@@ -224,5 +217,3 @@ EOT;
         </p>
     </div>
 </section>
-
-<span class="fa-file-word-o"></span>

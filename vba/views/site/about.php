@@ -2,45 +2,37 @@
 
 /* @var $this yii\web\View */
 
-use yii\helpers\Html;
-use \common\widgets\webslides\Catalogue;
+
+use common\widgets\webslides\Catalogue;
 $this->title = '关于';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <section class="slide-top slide current">
-<div class="wrap">
+    <div class="wrap">
 	<div class="card-50 bg-white">
-              <figure>
-                <iframe src="" width="800" height="600" allowfullscreen=""></iframe>
-                <figcaption>
-                  <a href="https://maps.google.com" title="谷歌地图">
-                    <svg class="fa-maps">
-                      
-                    </svg><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                    谷歌地图
-                  </font></font></a>
-                </figcaption>
-              </figure>
-              <!-- end figure-->
-              <div class="flex-content">
-                <h2>
-                  时光小偷
-                </h2>
-                
-                <ul class="description">
-                  <li>
-                    <strong title="密度">邮箱：</strong> 757402123@qq.com
-                  </li>
-                  <li>
-                    <strong title="密度">博客：</strong> <a href="http://www.shiguangxiaotou.com">www.shiguangxiaotou.com</a>
-                  </li>
-                  
-                </ul>
-                <p>一个web开发者，精通php js html+css linux</p>
-              </div>
-              <!-- end .flex-content-->
-            </div>
+        <figure>
+            <iframe src="" width="800" height="600" allowfullscreen=""></iframe>
+            <figcaption>
+                <a href="https://maps.google.com" title="谷歌地图">
+                    <svg class="fa-maps"></svg>谷歌地图
+                </a>
+            </figcaption>
+        </figure>
+        <!-- end figure-->
+        <div class="flex-content">
+            <h2>时光小偷</h2>
+            <ul class="description">
+                <li>
+                    <strong title="密度">邮箱:</strong> 757402123@qq.com
+                </li>
+                <li>
+                    <strong title="密度">博客:</strong> <a href="http://www.shiguangxiaotou.com">www.shiguangxiaotou.com</a>
+                </li>
+            </ul>
+            <p>一个web开发者，精通php js html+css linux</p>
+        </div>
+    </div>
 </div>
 </section>
 
@@ -48,19 +40,19 @@ $this->params['breadcrumbs'][] = $this->title;
 <section class="slide current">
 <?php
     echo Catalogue::widget([
-        "data"=>[
-            ['lable'=>'asd1','number'=>"001",'url'=>'#slide=1','items'=>[
-                ['lable'=>'asd2','number'=>"002",'url'=>'#slide=4'],
-                ['lable'=>'asd3','number'=>"003",'url'=>'#'],
-                ['lable'=>'asd4','number'=>"004",'url'=>'#'],
+        "data" => [
+            ['lable' => 'asd1', 'number' => "001", 'url' => '#slide=1', 'items' => [
+                ['lable' => 'asd2', 'number' => "002", 'url' => '#slide=4'],
+                ['lable' => 'asd3', 'number' => "003", 'url' => '#'],
+                ['lable' => 'asd4', 'number' => "004", 'url' => '#'],
             ]],
-            ['lable'=>'asd2','number'=>"002",'url'=>'#', 'items'=>[
-                ['lable'=>'asd2','number'=>"002",'url'=>'#'],
-                ['lable'=>'asd3','number'=>"003",'url'=>'#'],
-                ['lable'=>'asd4','number'=>"004",'url'=>'#'],
+            ['lable' => 'asd2', 'number' => "002", 'url' => '#', 'items' => [
+                ['lable' => 'asd2', 'number' => "002", 'url' => '#'],
+                ['lable' => 'asd3', 'number' => "003", 'url' => '#'],
+                ['lable' => 'asd4', 'number' => "004", 'url' => '#'],
             ]],
-            ['lable'=>'asd3','number'=>"003",'url'=>'#'],
-            ['lable'=>'asd4','number'=>"004",'url'=>'#'],
+            ['lable' => 'asd3', 'number' => "003", 'url' => '#'],
+            ['lable' => 'asd4', 'number' => "004", 'url' => '#'],
         ]
     ]);
 ?>

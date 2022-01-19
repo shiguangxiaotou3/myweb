@@ -3,6 +3,8 @@ include:
     - common
     - frontend
     - backend
+    - api
+    - vba
 paths:
     log: console/runtime/logs
 settings:

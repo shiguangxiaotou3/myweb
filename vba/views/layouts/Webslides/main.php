@@ -49,7 +49,7 @@ common\assets\webslidesAssets::register($this);
                 echo "<li>"
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
                 . Html::submitButton(
-                    '注销 (' . Yii::$app->user->identity->username . ')',
+                    '注销 (' . Yii::$app->user->identity->username . ')'
                 )
                 . Html::endForm()
                     ."</li>";
