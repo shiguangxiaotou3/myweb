@@ -2,7 +2,7 @@
 
 
 namespace api\controllers;
-//use yii\filters\auth\QueryParamAuth;
+
 use yii\filters\RateLimiter;
 use yii\rest\ActiveController;
 use yii\filters\auth\CompositeAuth;
