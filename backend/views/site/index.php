@@ -80,6 +80,12 @@ use common\widgets\charts\MapWidget;
                                 'name'=>$item['city'],
                             );
                         }
+                        $data=[
+                                [
+                                  'latLng' =>'204.781,210.7',
+                                  'name'=>'武汉'
+                                ],
+                        ];
                         echo MapWidget::widget([
                             'markers'=>$markers
                         ]);
@@ -109,17 +115,19 @@ use common\widgets\charts\MapWidget;
             <div class="box-body">
                <?php
                     $visitorsData = [
-                        'US' => 398, // USA
-                        'SA' => 400, // Saudi Arabia
-                        'CA' => 1000, // Canada
-                        'DE' => 500, // Germany
-                        'FR' => 60, // France
-                        'CN' => 300, // China
-                        'AU' => 700, // Australia
-                        'BR' => 600, // Brazil
-                        'IN' => 800, // India
-                        'GB' => 320, // Great Britain
-                        'RU' => 3000 // Russia
+//                        'US' => 398, // USA
+//                        'SA' => 400, // Saudi Arabia
+//                        'CA' => 1000, // Canada
+//                        'DE' => 500, // Germany
+//                        'FR' => 60, // France
+//                        'CN' => 300, // China
+//                        'AU' => 700, // Australia
+//                        'BR' => 600, // Brazil
+//                        'IN' => 800, // India
+//                        'GB' => 320, // Great Britain
+//                        'RU' => 3000 // Russia
+                        'TAI'=>300,
+                        'FUJ'=>300,
                     ];
                     //common\assets\MapAssets::register($this)
                     echo \common\widgets\charts\Mapwidget::widget([

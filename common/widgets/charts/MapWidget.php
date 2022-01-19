@@ -45,6 +45,7 @@ $js =<<<JS
   // World map by jvectormap
   $("#{$id}").vectorMap({
     map              : 'world_mill_en',
+    //map              : 'map_format_cn',
     backgroundColor  : 'transparent',
     regionStyle      : {
       initial: {

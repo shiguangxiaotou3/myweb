@@ -106,7 +106,7 @@ class Clear extends Model{
                     }
                 }
             }
-            return array($dirNumber,$fileNumber);
+            return array('dirnumber'=>$dirNumber,'filename'=>$fileNumber);
         }else{
             return  false;
         }

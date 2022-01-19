@@ -11,11 +11,11 @@ function dumpInfo($conf){
     $path =$conf[0]['file'];
     $line =$conf[0]['line'];
     unset($conf);
-    $str ='//==========================================='."\r\n";
-    $str .='// 被调用文件:'.$path."\r\n";
-    $str .='// 被调用行数:'." 第".$line."行被调用\r\n";
-    $str .='// 被调用时间:'.date('Y-m-d hh:mm:ss',time())."\r\n";
-    $str .='//==========================================='."\r\n";
+    $str ='/*=========================================start=========================================*\\'."\r\n";
+    $str .='//调用文件:'.$path."\r\n";
+    $str .='//调用行数:'." 第".$line."行被调用\r\n";
+    $str .='//调用时间:'.date('Y-m-d h:m:s',time())."\r\n";
+    $str .='/*=========================================data=========================================*\\'."\r\n";
     file_put_contents("a.txt","\r\n".$str,FILE_APPEND);
 }
 
@@ -24,7 +24,7 @@ function dumpInfo($conf){
  * @param $str
  */
 function logStr($str){
-    $s='//===============数据开始======================'."\r\n";
+    $s= '\*=========================================end data=========================================*/'."\r\n";
     $conf =debug_backtrace();
     dumpInfo($conf);
     file_put_contents("a.txt","\r\n".$str.$s,FILE_APPEND);
@@ -35,7 +35,7 @@ function logStr($str){
  * @param $obj
  */
 function logObject($obj){
-    $s='//===============数据结束======================'."\r\n";
+    $s='/*=========================================end data=========================================*\\'."\r\n";
     $conf=debug_backtrace();
     dumpInfo($conf);
     file_put_contents("a.txt", print_r($obj, true)."\r\n".$s,FILE_APPEND);

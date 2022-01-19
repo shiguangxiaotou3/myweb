@@ -155,6 +155,7 @@ class WriteConfigArray extends Model{
 
         return $data;
     }
+
     /**
      * 构造写入字符串,并写入文件中
      * @param $file
