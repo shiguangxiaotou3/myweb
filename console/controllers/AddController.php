@@ -3,6 +3,7 @@
 
 namespace console\controllers;
 
+use common\models\User;
 use Yii;
 use common\models\gii\shell;
 use yii\console\Controller;
@@ -30,6 +31,15 @@ class AddController extends Controller
     public function actionRbac(){
         $PATH =  "sudo php ".dirname(Yii::getAlias("@common"))."/yii  ";
         system($PATH.' migrate/up --migrationPath=@yii/rbac/migrations ');
+    }
+
+
+    public function actionDelUser(){
+       User::deleteAll();
+       logObject('asd');
+       echo '删除成功\r\n';
+
+
     }
 
 }

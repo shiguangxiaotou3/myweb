@@ -14,7 +14,7 @@ class QrController extends Controller
      * 初始页面
      */
     public function actionIndex(){
-        $this->layout ='Webslides/main';
+        $this->layout ='webslides/main';
         return $this->render('index');
     }
 

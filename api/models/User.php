@@ -2,13 +2,12 @@
 
 namespace api\models;
 
-use setasign\Fpdi\PdfParser\CrossReference\ReaderInterface;
+
 use Yii;
-use yii\base\NotSupportedException;
-use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
-use yii\filters\RateLimitInterface;
 use yii\web\IdentityInterface;
+use yii\filters\RateLimitInterface;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * User model
@@ -223,15 +222,15 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
      */
     public function generateAccessToken()
     {
-        $this->token = Yii::$app->security->generateRandomString();
+        $this->token = Yii::$app->security->generateRandomString(32);
         return $this->token;
 
     }
 
     /**
      * Returns the maximum number of allowed requests and the window size.
-     * @param \yii\web\Request $request the current request
-     * @param \yii\base\Action $action the action to be executed
+     * @param yii\web\Request $request the current request
+     * @param yii\base\Action $action the action to be executed
      * @return array an array of two elements. The first element is the maximum number of allowed requests,
      * and the second element is the size of the window in seconds.
      */
@@ -242,8 +241,8 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
 
     /**
      * Loads the number of allowed requests and the corresponding timestamp from a persistent storage.
-     * @param \yii\web\Request $request the current request
-     * @param \yii\base\Action $action the action to be executed
+     * @param yii\web\Request $request the current request
+     * @param yii\base\Action $action the action to be executed
      * @return array an array of two elements. The first element is the number of allowed requests,
      * and the second element is the corresponding UNIX timestamp.
      */
@@ -253,8 +252,8 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
 
     /**
      * Saves the number of allowed requests and the corresponding timestamp to a persistent storage.
-     * @param \yii\web\Request $request the current request
-     * @param \yii\base\Action $action the action to be executed
+     * @param yii\web\Request $request the current request
+     * @param yii\base\Action $action the action to be executed
      * @param int $allowance the number of allowed requests remaining.
      * @param int $timestamp the current timestamp.
      */

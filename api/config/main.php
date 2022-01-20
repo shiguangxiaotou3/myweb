@@ -21,18 +21,17 @@ return [
 
         //格式化响应组件
         'response'=>[
-            'class'=>'yii\web\Response',
-            'on beforeSen'=>function($event){
-                /** @var $response \yii\web\Response  */
+            'charset' => 'UTF-8',
+            'on beforeSend' => function ($event) {
                 $response = $event->sender;
-                $response->data =[
-                    'success'=>$response->isSuccessful,
-                    'code'=>$response->getStatusCode(),
-                    'data'=>$response->data,
-                    'message'=>$response->statusText,
+                $response->data = [
+                    'success' => $response->isSuccessful,
+                    'code' => $response->getStatusCode(),
+                    'message' => $response->statusText,
+                    'data' => $response->data,
                 ];
-                $response->statusCode = '200';
-            }
+                $response->statusCode = 200;
+            },
         ],
         'user' => [
             'identityClass' => 'api\models\User',
