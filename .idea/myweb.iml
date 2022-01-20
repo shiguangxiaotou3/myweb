@@ -138,6 +138,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/jsQR-master" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mdmsoft/yii2-admin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/jvectormap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/syntaxhighlighter" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

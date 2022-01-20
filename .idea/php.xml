@@ -133,6 +133,7 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/jsQR-master" />
       <path value="$PROJECT_DIR$/vendor/mdmsoft/yii2-admin" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/jvectormap" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/syntaxhighlighter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration">

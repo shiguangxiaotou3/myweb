@@ -3,6 +3,7 @@
 
 namespace api\controllers;
 
+use vba\models\ar\Module;
 use yii\filters\RateLimiter;
 use yii\rest\ActiveController;
 use yii\filters\auth\CompositeAuth;
@@ -31,8 +32,17 @@ class ModuleController extends ActiveController
                 QueryParamAuth::class,
             ],
         ];
-        logObject($behaviors);
         return $behaviors;
+    }
+
+    public function actionSearch(){
+        $request = \Yii::$app->request;
+        $keyword = $request->post("keyword");
+        if(empty($keyword)){
+            return  Module::find()->where(['keyword'=>$keyword]);
+        }else{
+            return ['message'=>'关键字不能为空'];
+        }
     }
 
 }

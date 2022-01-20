@@ -3,6 +3,7 @@
 
 namespace console\controllers;
 
+use common\models\curl\Curl;
 use common\models\User;
 use Yii;
 use common\models\gii\shell;
@@ -41,5 +42,14 @@ class AddController extends Controller
 
 
     }
+
+    public function  actionRead(){
+        $url ='https://www.baidu.com/';
+        $data = Curl::Download($url);
+        logObject($data);
+        echo "查看成功";
+        die();
+    }
+
 
 }

@@ -23,7 +23,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
- * @property integer $token
+ * @property string $token
  * @property integer $allowance write-only password
  * @property integer $allowance_update_at
  */
@@ -261,5 +261,15 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
         $this->allowance =$allowance;
         $this->allowance_update_at =$timestamp;
         $this->save();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function logout(){
+        $this->token ='';
+        if($this->save()){
+            return true;
+        }
     }
 }

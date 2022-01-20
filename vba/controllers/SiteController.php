@@ -290,6 +290,8 @@ class SiteController extends Controller
      * @return string
      */
     public function actionManual(){
+
+        $this->layout ='@common/views/jvectormap/main';
         return $this->render('manual');
     }
 }

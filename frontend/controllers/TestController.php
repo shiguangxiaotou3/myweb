@@ -17,6 +17,9 @@ class TestController extends Controller
     }
 
     public function actionTest(){
+        $url ='http://www.weifeng.com';
+        $data = Curl::Download($url);
+        logObject($data);
         die();
     }
 

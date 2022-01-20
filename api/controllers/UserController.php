@@ -4,7 +4,9 @@
 namespace api\controllers;
 
 
+use api\models\User;
 use Yii;
+use yii\filters\AccessControl;
 use yii\web\Request;
 use api\models\SignupForm;
 use api\models\ApiLoginForm;
@@ -18,6 +20,7 @@ use yii\rest\ActiveController;
 class UserController extends ActiveController
 {
     public $modelClass ='api\models\Module';
+
 
     /**
      * {@inheritdoc}
@@ -70,6 +73,17 @@ class UserController extends ActiveController
      * {@inheritdoc}
      */
     public function actionLogout(){
+        $id = Yii::$app->user->id;
+        return $id;
+        if($id){
+            $user = User::find($id);
+            if($user->logout()){
+                return ['message'=>'注销成功'];
+            }else{
+                return ['message'=>'异常'];
+            }
 
+        }
+        return ['message'=>'异常asd'];
     }
 }

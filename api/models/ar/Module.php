@@ -2,7 +2,10 @@
 
 namespace api\models\ar;
 
+
 use Yii;
+use common\models\User;
+use api\models\query\ModuleQuery;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -34,8 +37,11 @@ class Module extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'describe', 'created_at', 'updated_at'], 'required'],
-            [['user_id', 'type', 'created_at', 'updated_at'], 'integer'],
+            ['user_id','default','value'=>function(){
+                return Yii::$app->user->getId();
+            }],
+            [['user_id',/*'describe'*//* 'created_at', 'updated_at'*/], 'required'],
+            [['user_id', 'type', /* 'created_at', 'updated_at'*/], 'integer'],
             [['name'], 'string', 'max' => 20],
             [['keyword', 'describe', 'inherit'], 'string', 'max' => 255],
         ];
@@ -61,11 +67,11 @@ class Module extends \yii\db\ActiveRecord
 
     /**
      * {@inheritdoc}
-     * @return \api\models\query\ModuleQuery the active query used by this AR class.
+     * @return ModuleQuery the active query used by this AR class.
      */
     public static function find()
     {
-        return new \api\models\query\ModuleQuery(get_called_class());
+        return new ModuleQuery(get_called_class());
     }
 
     /**
@@ -80,6 +86,25 @@ class Module extends \yii\db\ActiveRecord
                 'updatedAtAttribute' => 'updated_at', // 自己根据数据库字段修改
                 'value' => time(),
             ],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     * @return array[]
+     */
+    public function  fields(){
+        /** @var User $model  */
+        return [
+            'id' ,
+            'name',
+            'type',
+            'keyword',
+            'describe',
+            'author'=>function($molde){
+                    return User::findOne($molde->user_id)->username;
+            },
+            'inherit',
         ];
     }
 }

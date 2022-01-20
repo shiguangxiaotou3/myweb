@@ -72,6 +72,7 @@ return [
                     'extraPatterns'=>[
                         'POST login'=>'login',//绑定方法
                         'POST signup'=>'signup',//绑定方法
+                        'POST logout'=>'logout',//绑定方法
                     ]
                 ]
             ],
