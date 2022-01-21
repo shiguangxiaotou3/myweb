@@ -4,11 +4,15 @@
 namespace common\models\basicData;
 
 
-use yii\base\Model;
+use yii\base\Exception;
 
-class File extends Model
+
+/**
+ * Class File
+ * @package common\models\basicData
+ */
+class File
 {
-
 
     /**
      * @param $dir
@@ -16,16 +20,22 @@ class File extends Model
      * @return bool
      */
     public static function  CreateDir($dir,$permissions =0777){
-        $data = explode("/",$dir);
-        $path ='/';
-        foreach ($data as $i){
-            if($i !== ""){
-                if(! is_dir($path."/".$i)){
-                    mkdir($path."/".$i,$permissions,true);
+        try {
+            $data = explode("/",$dir);
+            $path ='/';
+            foreach ($data as $i){
+                if($i !== ""){
+                    if(! is_dir($path."/".$i)){
+                        mkdir($path."/".$i,$permissions,true);
+                    }
+                    $path .="/".$i;
                 }
-                $path .="/".$i;
             }
+            return  true;
+        }catch (Exception $exception){
+            return false;
         }
+
     }
 
     /**
@@ -165,4 +175,20 @@ class File extends Model
             return false;
         }
     }
+
+    /**
+     * 读取文件类容
+     * @param $path
+     * @return bool
+     */
+    public static function readFile($path){
+        if(file_exists($path)){
+            //$str = file_get_contents($path);//将整个文件内容读入到一个字符串中
+            //$str = str_replace("\r\n","<br />",$str);
+            return file_get_contents($path);
+        }else{
+            return  false;
+        }
+    }
+
 }

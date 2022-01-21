@@ -501,6 +501,13 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
             ),
         ),
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
+        ),
         'H' => 
         array (
             'HTMLPurifier' => 

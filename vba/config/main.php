@@ -14,6 +14,12 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'vba\controllers',
     'components' => [
+        //自动解析markdown文件
+        'markdown'=>[
+            'class'=>'common\components\Md',
+            'markdown_path'=>'md',  //markdown文件目录
+            'html_path'=>'html',    //解析后的文件目录
+        ],
         'request' => [
             'csrfParam' => '_csrf-vba',
         ],

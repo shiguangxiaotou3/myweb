@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '57f2f2cd9397f40249625421ccca9161a785981b',
+        'reference' => '4edebd2b96f36afb1ad801c2d1ee24ea548cd869',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -217,6 +217,15 @@
             'install_path' => __DIR__ . '/../egulias/email-validator',
             'aliases' => array(),
             'reference' => 'ee0db30118f661fb166bcffbf5d82032df484697',
+            'dev_requirement' => false,
+        ),
+        'erusev/parsedown' => array(
+            'pretty_version' => '1.7.4',
+            'version' => '1.7.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../erusev/parsedown',
+            'aliases' => array(),
+            'reference' => 'cb17b6477dfff935958ba01325f2e8a2bfa6dab3',
             'dev_requirement' => false,
         ),
         'ezyang/htmlpurifier' => array(
@@ -898,7 +907,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '57f2f2cd9397f40249625421ccca9161a785981b',
+            'reference' => '4edebd2b96f36afb1ad801c2d1ee24ea548cd869',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

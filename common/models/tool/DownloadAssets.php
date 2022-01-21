@@ -24,8 +24,8 @@ class DownloadAssets extends Model
      * 下载某个网站的前端资源文件
      * @param string $host  域名
      * @param string $path  资源文件保存位置 注意:通过yii2:getAlias别名返回的绝对路径
-     * @param string $array 要下载的资源文件数组
-     * @return bool
+     * @param array $array 要下载的资源文件数组
+     * @return array
      */
     public static function  DownloadAssets($host, $path,$array){
         if(is_array($array) and !empty($array)){
@@ -49,6 +49,8 @@ class DownloadAssets extends Model
                 }
             }
             return $res;
+        }else{
+            return false;
         }
     }
 
@@ -56,8 +58,7 @@ class DownloadAssets extends Model
     /**
      * 打开一个网页，通过html获取其中的js css和图片
      * 并保存到本地
-     * @param $url
-     * @param $alias
+     * @param string $url
      * @return bool
      */
     public function openDomainDownloadAssets($url){

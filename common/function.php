@@ -27,7 +27,7 @@ function dumpInfo($conf){
 function logStr($str){
     $file = dirname(__DIR__)."/a.txt";
     $s= '\*=========================================end data=========================================*/'."\r\n";
-    $conf =debug_backtrace();
+    $conf = debug_backtrace();
     dumpInfo($conf);
     file_put_contents($file,"\r\n".$str.$s,FILE_APPEND);
 }

@@ -3,15 +3,16 @@
 
 namespace frontend\controllers;
 
+
 use Yii;
 use common\models\curl\Curl;
 use common\models\tool\DownloadAssets;
-use yii\helpers\Html;
+use yii\helpers\Markdown;
 use yii\web\Controller;
 
 class TestController extends Controller
 {
-    public $layout = '@common/views/jvectormap/mian';
+    public $layout = '@common/views/jvectormap/main';
     public function actionIndex(){
         return $this->render('index');
     }
@@ -80,6 +81,18 @@ class TestController extends Controller
 
         die();
 
+    }
+
+    public function actionReadMarkdown(){
+        $this->layout ='@common/views/jvectormap/main';
+        $path = Yii::getAlias("@vendor/almasaeed2010/adminlte/README.md");
+
+        $text = file_get_contents($path);
+        //logObject($text);
+        $html = Markdown::process($text);
+        echo $html;
+
+    die();
     }
 
 
