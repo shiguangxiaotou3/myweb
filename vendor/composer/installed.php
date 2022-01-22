@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4edebd2b96f36afb1ad801c2d1ee24ea548cd869',
+        'reference' => '8eaee9bd68b1f757f66f0dc2e84ef390bd62cd43',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -907,7 +907,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4edebd2b96f36afb1ad801c2d1ee24ea548cd869',
+            'reference' => '8eaee9bd68b1f757f66f0dc2e84ef390bd62cd43',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

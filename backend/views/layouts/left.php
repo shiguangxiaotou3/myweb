@@ -36,7 +36,7 @@ $username = Yii::$app->user->identity->username;
 
         <?= Menu::widget(
             [
-                'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
+                'options' => ['class' => '', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => '菜 单', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],

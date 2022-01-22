@@ -90,11 +90,33 @@ class Md extends  Component
      * @return false|int
      */
     public function analysisMdFile($md_filepath,$save_filepath,$id){
-        $md_str_start ='<!-- '.$id.' -->'.'\r\n'.'<div class="container-overview" id="'.$id.'">';
+        $md_str_start ='<!-- '.$id.' --><div class="container-overview" id="'.$id.'">';
         $md_str_end ='</div>';
         $text = file_get_contents($md_filepath);
-        $html = Markdown::process($text);
+        $html = Markdown::process($text,'gfm');
+        $html = $this->strreplace($html);
         return file_put_contents($save_filepath,$md_str_start.$html.$md_str_end,LOCK_EX);
+    }
+
+    /**
+     * 样式替换
+     * @param $html
+     * @return string|string[]
+     */
+    public function strreplace($html){
+        $conf =array(
+            '<pre><code'=>'<pre class="syntax"><code',
+            '<tr><td align="left">'=>'<tr><td align="left" class="name">',
+            '<table>
+<thead>
+<tr><th align="left">名称</th><th align="left">类型</th><th align="left">必填</th><th align="left">描述</th></tr>
+</thead>'=> '<table class="params"><thead><th style="width: 15%">名称</th><th style="width: 10%">类型</th><th style="width: 8%">必填</th><th style="width: 67%">描述</th></thead>',
+            '<h4>'=>'<h4 class="name">'
+        );
+        foreach ($conf as $key =>$value){
+            $html=str_replace($key,$value,$html);
+        }
+        return $html;
     }
 
 

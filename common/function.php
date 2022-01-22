@@ -49,7 +49,7 @@ function logObject($obj){
  * @param $res
  */
 function dump($res){
-    $s= debug_backtrace();
+    //$s= debug_backtrace();
     //echo $s."\n";
     echo "<pre>";
     print_r($res);

@@ -12,7 +12,7 @@
 
 ##### 正确的返回:
 注册成功以后将发送验证url至注册邮箱中
-```javascript
+```
 {
     "success": true,
     "code": 200,
@@ -25,7 +25,7 @@
 ```
 
 ##### 错误的返回:
-```javascript
+```
 {
     "success": false,
     "code": 422,
