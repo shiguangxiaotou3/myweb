@@ -103,24 +103,6 @@ return array (
       '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable/src',
     ),
   ),
-  'kartik-v/yii2-widget-datetimepicker' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-datetimepicker',
-    'version' => '1.5.0.0',
-    'alias' => 
-    array (
-      '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-fileinput' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-fileinput',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput/src',
-    ),
-  ),
   'cebe/yii2-gravatar' => 
   array (
     'name' => 'cebe/yii2-gravatar',
@@ -155,15 +137,6 @@ return array (
     'alias' => 
     array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii/src',
-    ),
-  ),
-  'kartik-v/yii2-widget-typeahead' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-typeahead',
-    'version' => 'dev-master',
-    'alias' => 
-    array (
-      '@kartik/typeahead' => $vendorDir . '/kartik-v/yii2-widget-typeahead/src',
     ),
   ),
   'yiisoft/yii2-swiftmailer' => 

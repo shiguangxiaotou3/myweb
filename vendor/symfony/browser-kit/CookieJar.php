@@ -33,26 +33,22 @@ class CookieJar
      * (this behavior ensures a BC behavior with previous versions of
      * Symfony).
      *
-     * @param string $name   The cookie name
-     * @param string $path   The cookie path
-     * @param string $domain The cookie domain
-     *
-     * @return Cookie|null A Cookie instance or null if the cookie does not exist
+     * @return Cookie|null
      */
-    public function get($name, $path = '/', $domain = null)
+    public function get(string $name, string $path = '/', string $domain = null)
     {
         $this->flushExpiredCookies();
 
         foreach ($this->cookieJar as $cookieDomain => $pathCookies) {
             if ($cookieDomain && $domain) {
                 $cookieDomain = '.'.ltrim($cookieDomain, '.');
-                if ($cookieDomain !== substr('.'.$domain, -\strlen($cookieDomain))) {
+                if (!str_ends_with('.'.$domain, $cookieDomain)) {
                     continue;
                 }
             }
 
             foreach ($pathCookies as $cookiePath => $namedCookies) {
-                if (0 !== strpos($path, $cookiePath)) {
+                if (!str_starts_with($path, $cookiePath)) {
                     continue;
                 }
                 if (isset($namedCookies[$name])) {
@@ -60,6 +56,8 @@ class CookieJar
                 }
             }
         }
+
+        return null;
     }
 
     /**
@@ -68,12 +66,8 @@ class CookieJar
      * You should never use an empty domain, but if you do so,
      * all cookies for the given name/path expire (this behavior
      * ensures a BC behavior with previous versions of Symfony).
-     *
-     * @param string $name   The cookie name
-     * @param string $path   The cookie path
-     * @param string $domain The cookie domain
      */
-    public function expire($name, $path = '/', $domain = null)
+    public function expire(string $name, ?string $path = '/', string $domain = null)
     {
         if (null === $path) {
             $path = '/';
@@ -111,10 +105,9 @@ class CookieJar
     /**
      * Updates the cookie jar from a response Set-Cookie headers.
      *
-     * @param array  $setCookies Set-Cookie headers from an HTTP response
-     * @param string $uri        The base URL
+     * @param string[] $setCookies Set-Cookie headers from an HTTP response
      */
-    public function updateFromSetCookie(array $setCookies, $uri = null)
+    public function updateFromSetCookie(array $setCookies, string $uri = null)
     {
         $cookies = [];
 
@@ -139,11 +132,8 @@ class CookieJar
 
     /**
      * Updates the cookie jar from a Response object.
-     *
-     * @param Response $response A Response object
-     * @param string   $uri      The base URL
      */
-    public function updateFromResponse(Response $response, $uri = null)
+    public function updateFromResponse(Response $response, string $uri = null)
     {
         $this->updateFromSetCookie($response->getHeader('Set-Cookie', false), $uri);
     }
@@ -151,7 +141,7 @@ class CookieJar
     /**
      * Returns not yet expired cookies.
      *
-     * @return Cookie[] An array of cookies
+     * @return Cookie[]
      */
     public function all()
     {
@@ -172,12 +162,9 @@ class CookieJar
     /**
      * Returns not yet expired cookie values for the given URI.
      *
-     * @param string $uri             A URI
-     * @param bool   $returnsRawValue Returns raw value or urldecoded value
-     *
-     * @return array An array of cookie values
+     * @return array
      */
-    public function allValues($uri, $returnsRawValue = false)
+    public function allValues(string $uri, bool $returnsRawValue = false)
     {
         $this->flushExpiredCookies();
 
@@ -212,11 +199,9 @@ class CookieJar
     /**
      * Returns not yet expired raw cookie values for the given URI.
      *
-     * @param string $uri A URI
-     *
-     * @return array An array of cookie values
+     * @return array
      */
-    public function allRawValues($uri)
+    public function allRawValues(string $uri)
     {
         return $this->allValues($uri, true);
     }

@@ -60,17 +60,13 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         ),
         'k' => 
         array (
-            'kartik\\typeahead\\' => 17,
             'kartik\\popover\\' => 15,
             'kartik\\plugins\\popover\\' => 23,
-            'kartik\\plugins\\fileinput\\' => 25,
             'kartik\\mpdf\\' => 12,
             'kartik\\grid\\' => 12,
             'kartik\\form\\' => 12,
-            'kartik\\file\\' => 12,
             'kartik\\editable\\' => 16,
             'kartik\\dialog\\' => 14,
-            'kartik\\datetime\\' => 16,
             'kartik\\bs5dropdown\\' => 19,
             'kartik\\bs4dropdown\\' => 19,
             'kartik\\base\\' => 12,
@@ -228,10 +224,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         array (
             0 => __DIR__ . '/..' . '/mdmsoft/yii2-admin',
         ),
-        'kartik\\typeahead\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-typeahead/src',
-        ),
         'kartik\\popover\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-popover-x/src',
@@ -239,10 +231,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'kartik\\plugins\\popover\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/bootstrap-popover-x',
-        ),
-        'kartik\\plugins\\fileinput\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
         ),
         'kartik\\mpdf\\' => 
         array (
@@ -256,10 +244,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-activeform/src',
         ),
-        'kartik\\file\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
-        ),
         'kartik\\editable\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-editable/src',
@@ -267,10 +251,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'kartik\\dialog\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog/src',
-        ),
-        'kartik\\datetime\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker/src',
         ),
         'kartik\\bs5dropdown\\' => 
         array (
@@ -499,13 +479,6 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
             'cebe\\gravatar\\' => 
             array (
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
-            ),
-        ),
-        'P' => 
-        array (
-            'Parsedown' => 
-            array (
-                0 => __DIR__ . '/..' . '/erusev/parsedown',
             ),
         ),
         'H' => 
