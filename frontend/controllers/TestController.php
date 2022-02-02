@@ -4,6 +4,11 @@
 namespace frontend\controllers;
 
 
+
+
+use abhimanyu\systemInfo\os\Linux;
+use common\models\ar\Ip;
+use abhimanyu\systemInfo\SystemInfo;
 use Yii;
 use common\models\curl\Curl;
 use common\models\tool\DownloadAssets;
@@ -18,9 +23,12 @@ class TestController extends Controller
     }
 
     public function actionTest(){
-        $url ='http://www.weifeng.com';
-        $data = Curl::Download($url);
-        logObject($data);
+//        $url ='http://www.weifeng.com';
+//        $data = Curl::Download($url);
+//        logObject($data);
+//        var_dump(User::findUsernameById(1));
+//
+        Author::find()->where(['id'=>2]);
         die();
     }
 
@@ -94,6 +102,26 @@ class TestController extends Controller
 
     die();
     }
+
+
+    public function actionIp(){
+
+     $conf=   array(
+           'Ox'=>php_uname('s'),
+            'HostName'=>php_uname('n'),
+            'Version'=>php_uname('r'),
+            'VersionInformation'=>php_uname('v'),
+            'MachineType'=>php_uname('m'),
+
+     );
+
+     echo PHP_OS;
+     dump($conf);
+        //echo file_get_contents('/etc/issue');
+
+        die( );
+    }
+
 
 
 }

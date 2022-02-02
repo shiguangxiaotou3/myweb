@@ -4,7 +4,7 @@
 namespace common\widgets;
 
 
-use common\assets\IoniconsAssets;
+use common\assets\adminlte\components\IoniconsAssets;
 
 use yii\helpers\Html;
 
@@ -60,6 +60,7 @@ class Card  extends  \yii\bootstrap\Widget
 
         $view = $this->getView();
         IoniconsAssets::register($view );
+
         $options= $this->options;
         $bg = $this->bg;
         $titer =$this->titer;

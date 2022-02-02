@@ -2,8 +2,7 @@
 
 namespace common\models\ar;
 
-use ipinfo\ipinfo\IPinfo;
-use Yii;
+use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -26,10 +25,8 @@ use yii\behaviors\TimestampBehavior;
  * @property int|null $created_at 创建时间
  * @property int|null $updated_at 修改时间
  */
-class Ip extends \yii\db\ActiveRecord
+class Ip extends ActiveRecord
 {
-
-    private $token ="7265d1b29d49c2";
 
     /**
      * {@inheritdoc}
@@ -79,14 +76,6 @@ class Ip extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     * @return \common\models\query\IpQuery the active query used by this AR class.
-     */
-    public static function find()
-    {
-        return new \common\models\query\IpQuery(get_called_class());
-    }
 
     /**
      * {@inheritdoc}
@@ -104,64 +93,56 @@ class Ip extends \yii\db\ActiveRecord
     }
 
     /**
-     * 根据ip地质，解析登陆者物理位置
-     * 注意一个账号一个月只有5000次机会
+     * 判断一个IP地址是否，已经解析物理地址
+     * @param $ip
+     * @return bool
      */
-    public function auto(){
-
-        /** @var  $model  self */
-        /** @var  $client IPinfo */
-        foreach (self::find()->each(10) as $model){
-
-            if(self::ParseIP($model) == false){
-                continue;
-            }
+    public function is_empty($ip){
+        $n = self::find()->where(['ip'=>$ip])->count();
+        if($n == 0){
+            return false;
+        }else{
+            return true;
         }
     }
 
     /**
-     * 更新一个ip的地址信息
-     * @param $model Ip
-     * @return false
+     * 访问量加1
+     * @param $ip
+     * @return mixed
      */
-    public  function ParseIP($model){
-        $client = new IPinfo($this->token);
-        $ips = self::Ips();
-        try {
-            if($model->city !== '' &&  !in_array($model->ip,$ips) ){
-                $details = $client->getRequestDetails($model->ip);
-                if(isset($details['city'])){
-                    $model->city = $details['city'];
-                }
-                if(isset($details['region'])){
-                    $model->region = $details['region'];
-                }
-                if(isset($details['country'])){
-                    $model->country = $details['country'];
-                }
-                if(isset($details['loc'])){
-                    $model->loc = $details['loc'];
-                }
-                if(isset($details['org'])){
-                    $model->org = $details['org'];
-                }
-                if(isset($details['timezone'])){
-                    $model->timezone = $details['timezone'];
-                }
+    public function sum_count($ip){
+       $model = self::find()->where(['ip'=>$ip])->one();
+       $model->visits ++;
+       return $model->save(false);
+    }
 
-                $model->save(false);
+    /**
+     * 获取所有地区的访问量
+     * @return array|false
+     */
+    public function visitsDataByCountry(){
+        $data =self::find()->select(['country'])->where(['not',['country'=>null]])
+            ->indexBy('country')->asArray()->all();
+       $country = array_keys($data);
+        if(!empty($country)){
+            $res = array();
+            foreach ($country as $value){
+                $res[$value] = self::find()->where(['country'=>$value])->sum('visits');
             }
-        }catch (\Exception $e){
-            logObject($e->getMessage());
+        }else{
             return false;
         }
+        return $res;
     }
 
+
     /**
-     * 不解析的ip名单
-     * @return array
+     * 获取所有登陆的城市
+     * @return array|Ip[]|ActiveRecord[]
      */
-    public static function Ips(){
-        return ['127.0.0.1'];
+    public function visitsDataByCity(){
+       return self::find()->select(['city','loc'])->where(['not',['city'=>null]])
+            ->indexBy('city')->asArray()->all();
     }
 }

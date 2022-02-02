@@ -62,10 +62,14 @@ return [
                 [
                     'class' => 'yii\rest\UrlRule',
                     //'pluralize'=>false,//禁用复数
-                    'controller' => 'module'
+                    'controller' => 'module',
+                    'extraPatterns'=>[
+                        //'GET search'=>'search',//绑定方法
+                    ]
                 ],
 
-                ['class' => 'yii\rest\UrlRule',
+                [
+                    'class' => 'yii\rest\UrlRule',
                     //'except'=>[], //可以的动作
                     'pluralize'=>false,//禁用复数
                     'controller' => 'user',

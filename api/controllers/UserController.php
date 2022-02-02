@@ -6,7 +6,6 @@ namespace api\controllers;
 
 use api\models\User;
 use Yii;
-use yii\filters\AccessControl;
 use yii\web\Request;
 use api\models\SignupForm;
 use api\models\ApiLoginForm;
@@ -54,8 +53,8 @@ class UserController extends ActiveController
 
     /**
      * 用户注册
-     * @return SignupForm
-     * @throws \yii\base\InvalidConfigException
+     * @return array SignupForm
+     * @throws yii\base\InvalidConfigException
      */
     public function actionSignup(){
         $request = new Request();
@@ -74,9 +73,8 @@ class UserController extends ActiveController
      */
     public function actionLogout(){
         $id = Yii::$app->user->id;
-        return $id;
         if($id){
-            $user = User::find($id);
+            $user = User::findOne($id);
             if($user->logout()){
                 return ['message'=>'注销成功'];
             }else{

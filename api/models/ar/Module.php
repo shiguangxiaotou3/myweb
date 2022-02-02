@@ -2,9 +2,9 @@
 
 namespace api\models\ar;
 
-
+use api\models\User;
 use Yii;
-use common\models\User;
+use api\models\Author;
 use api\models\query\ModuleQuery;
 use yii\behaviors\TimestampBehavior;
 
@@ -23,6 +23,7 @@ use yii\behaviors\TimestampBehavior;
  */
 class Module extends \yii\db\ActiveRecord
 {
+
     /**
      * {@inheritdoc}
      */
@@ -94,17 +95,17 @@ class Module extends \yii\db\ActiveRecord
      * @return array[]
      */
     public function  fields(){
-        /** @var User $model  */
         return [
             'id' ,
             'name',
             'type',
             'keyword',
             'describe',
-            'author'=>function($molde){
-                    return User::findOne($molde->user_id)->username;
+            'author'=> function($model){
+                return User::findIdentity($model->user_id)->username;
             },
             'inherit',
         ];
     }
+
 }

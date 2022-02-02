@@ -4,10 +4,12 @@
 
 use common\widgets\Card;
 use common\widgets\charts\MapWidget;
+$this->title =Yii::t('app', '家');
 ?>
 <!-- 第一行 -->
 <div class="row">
     <?php
+
     echo Card::widget(
         [
             'bg' => 'bg-aqua',

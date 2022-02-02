@@ -33,15 +33,12 @@ $username = Yii::$app->user->identity->username;
             </div>
         </form>
         <!-- /.search form -->
-
         <?= Menu::widget(
             [
-                'options' => ['class' => '', 'data-widget'=> 'tree'],
+                'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     ['label' => '菜 单', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+
                     //rbac
                     [
                         'label' => '访问控制', 'icon' => 'dashboard', 'url' => ['/admin'],
@@ -55,7 +52,11 @@ $username = Yii::$app->user->identity->username;
                             ['label' => '菜单', 'icon' => 'dashboard', 'url' => ['/admin/menu'],],
                         ],
                     ],
+                    ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/settings/index'],],
                     ['label' => '自动化操作', 'icon' => 'dashboard', 'url' => ['/action'],],
+                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
+                    ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
+                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
 
                 ],
             ]

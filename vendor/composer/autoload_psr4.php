@@ -34,6 +34,7 @@ return array(
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
     'chenkby\\region\\' => array($vendorDir . '/chenkby/yii2-region'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'abhimanyu\\systemInfo\\' => array($vendorDir . '/abhi1693/yii2-system-info'),
     'ZipStream\\' => array($vendorDir . '/maennchen/zipstream-php/src'),
     'Webmozart\\Assert\\' => array($vendorDir . '/webmozart/assert/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),

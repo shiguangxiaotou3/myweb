@@ -1,8 +1,9 @@
 <?php
 namespace  common\widgets\charts;
-use common\assets\MapAssets;
+
 use yii\base\Widget;
 use yii\helpers\Html;
+use common\assets\adminlte\plugins\JvectormapAssets;
 
 class MapWidget extends Widget
 {
@@ -150,10 +151,10 @@ JS;
             $this->Options['id'] = $this->addId();
         }
         if (!empty($this->visitorsData)) {
-            MapAssets::register($view);
+            JvectormapAssets::register($view);
             $js = $this->jvectorMapJs();
         } elseif (!empty($this->markers)) {
-            MapAssets::register($view);
+            JvectormapAssets::register($view);
             $js = $this->vectorMapJs();
         } else {
             return false;

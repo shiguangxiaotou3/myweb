@@ -26,6 +26,13 @@ return [
     ],
     //组件
     'components' => [
+        'ip'=>[
+            'class'=>'common\components\Ip',
+        ],
+        'server'=>[
+            'class'=>'common\components\ServerConfig',
+        ],
+
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],

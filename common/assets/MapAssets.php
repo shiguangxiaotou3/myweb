@@ -16,7 +16,7 @@ class MapAssets extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'bower_components/font-awesome/css/font-awesome.min.css',
-        'bower_components/jvectormap/jquery-jvectormap.css  '
+        'bower_components/jvectormap/jquery-jvectormap.css'
     ];
     public $js = [
         'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',

@@ -263,13 +263,5 @@ class User extends ActiveRecord implements IdentityInterface,RateLimitInterface
         $this->save();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function logout(){
-        $this->token ='';
-        if($this->save()){
-            return true;
-        }
-    }
+
 }

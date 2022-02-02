@@ -88,6 +88,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
             'chenkby\\region\\' => 15,
             'cebe\\markdown\\' => 14,
         ),
+        'a' => 
+        array (
+            'abhimanyu\\systemInfo\\' => 21,
+        ),
         'Z' => 
         array (
             'ZipStream\\' => 10,
@@ -283,6 +287,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'abhimanyu\\systemInfo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abhi1693/yii2-system-info',
         ),
         'ZipStream\\' => 
         array (
