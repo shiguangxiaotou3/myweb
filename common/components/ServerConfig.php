@@ -36,4 +36,18 @@ class ServerConfig extends Component
 
     }
 
+    public function Apache2(){
+        return array(
+            'Version'=> apache_get_version(),
+            'Modules'=>apache_get_modules(),
+            //'env'=>apache_getenv(),
+        );
+    }
+
+    public function composer(){
+        $path =dirname(dirname(__DIR__))."/composer.json" ;
+
+        return  json_decode(file_get_contents($path),true);
+    }
+
 }

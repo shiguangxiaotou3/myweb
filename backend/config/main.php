@@ -21,8 +21,9 @@ return [
             'class' => 'mdm\admin\Module',
            // 'layout' => 'left-menu'
         ],
-
-
+        'email' => [
+            'class' => 'common\modules\Email',
+        ],
     ],
     //组件
     'components' => [

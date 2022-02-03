@@ -14,7 +14,7 @@ class Clear extends Model{
 
     /**
      * 临时文件目录
-     * @return \string[][]
+     * @return string[][]
      */
     public static function config(){
         return [
@@ -121,7 +121,7 @@ class Clear extends Model{
     public function countDirSize($dir){
         if(is_dir($dir)){
             $handle = opendir($dir);
-            $sizeResult =0;
+            $sizeResult=0;
             while (false!==($FolderOrFile = readdir($handle))) {
                 if($FolderOrFile != "." && $FolderOrFile != "..") {
                     if(is_dir("$dir/$FolderOrFile")) {
@@ -132,7 +132,7 @@ class Clear extends Model{
                 }
             }
             closedir($handle);
-            return $sizeResult;
+            return round($sizeResult/1024/1024, 2) ;
         }else{
             return  false;
         }
@@ -154,7 +154,5 @@ class Clear extends Model{
         }
         return $res;
     }
-
-
 
 }

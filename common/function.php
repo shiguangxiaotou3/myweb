@@ -71,11 +71,11 @@ function isTF($a){
 
 /**
  * 获取二维数组的两个列，合并为新数组
- * @param $classname 完整类名
- * @param $key 作为键的字段
- * @param $value 作为值的字段
+ * @param string $classname 完整类名
+ * @param string $key 作为键的字段
+ * @param string|number $value 作为值的字段
  * @return array|false
- * @throws \yii\base\InvalidConfigException
+ * @throws yii\base\InvalidConfigException
  */
 function Array_key_value($classname,$key,$value){
     $ActiveRecord = Yii::createObject([
@@ -95,8 +95,7 @@ function getServerIp()
 {
     $externalContent = file_get_contents('http://checkip.dyndns.com/');
     preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
-    $Ip = $m[1];
-    return $Ip;
+    return $m[1];
 }
 
 /**
@@ -168,14 +167,14 @@ function getUrl($filename){
     //发送Post请求
     $res = request_post($url, $bodys);
     //解析返回结果
-    $arr = json_decode($res,true);
-    return $arr;
+    return json_decode($res,true);
+
 }
 
 /**
  * 获取模型字段注释
- * @param $model \yii\db\ActiveRecord
- * @param $field 字段
+ * @param yii\db\ActiveRecord $model
+ * @param string $field 字段
  * @return string
  */
 function getModelFileComment($model,$field){
@@ -184,9 +183,9 @@ function getModelFileComment($model,$field){
 }
 
 /**
- * @param $number 第一年的初始值
- * @param $growth_rate 年增长率
- * @param $year_number 第几年
+ * @param integer $number 第一年的初始值
+ * @param float $growth_rate 年增长率
+ * @param integer $year_number 第几年
  * @return float|int
  */
 function getMoney($number,$growth_rate,$year_number){
@@ -211,7 +210,7 @@ function getMoney($number,$growth_rate,$year_number){
  * @return array
  */
 function ECharts_line_config($title,$height,$xAxis,$series){
-    $config =[
+    return [
         'responsive' => true,
         'options' => [
             'style' => "height: ".$height."px;"
@@ -253,7 +252,6 @@ function ECharts_line_config($title,$height,$xAxis,$series){
             ],
         ],
     ];
-    return $config;
 }
 
 /**
@@ -377,10 +375,8 @@ function array_rsort($arr,$isvalues=false)
                 $i++;
             }
             $arr = $a;
-        }
-        //多维数组
-        else
-        {
+        } else {
+            //多维数组
             //添加临时key值
             foreach($arr AS $key=>$value){
                 $value["okey"] = $key;
@@ -405,10 +401,8 @@ function array_rsort($arr,$isvalues=false)
                     $c[$value["okey"]] = $value["value"];
                 }
             }
-        }
-        //多维数组去除临时key值
-        else
-        {
+        } else {
+            //多维数组去除临时key值
             foreach($b AS $key=>$value)  {
                 unset($value["okey"]);
                 if($isvalues){
@@ -472,7 +466,7 @@ function addFa($name){
  * 计算两个时间相隔，年月入
  * @param string|integer $starttiem
  * @param string|integer $endtime
- * @return array
+ * @return array|bool
  * @throws Exception
  */
 function SendTimeDiffer($starttiem,$endtime){

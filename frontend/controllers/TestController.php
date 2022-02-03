@@ -9,6 +9,7 @@ namespace frontend\controllers;
 use abhimanyu\systemInfo\os\Linux;
 use common\models\ar\Ip;
 use abhimanyu\systemInfo\SystemInfo;
+use common\models\basicData\Clear;
 use Yii;
 use common\models\curl\Curl;
 use common\models\tool\DownloadAssets;
@@ -105,18 +106,22 @@ class TestController extends Controller
 
 
     public function actionIp(){
+//
+//     $conf=   array(
+//           'Ox'=>php_uname('s'),
+//            'HostName'=>php_uname('n'),
+//            'Version'=>php_uname('r'),
+//            'VersionInformation'=>php_uname('v'),
+//            'MachineType'=>php_uname('m'),
+//
+//     );
 
-     $conf=   array(
-           'Ox'=>php_uname('s'),
-            'HostName'=>php_uname('n'),
-            'Version'=>php_uname('r'),
-            'VersionInformation'=>php_uname('v'),
-            'MachineType'=>php_uname('m'),
+        $path =Yii::getAlias('@backend/web/assets');
+        $model = new Clear();
+     echo   $model->countDirSize($path);
 
-     );
-
-     echo PHP_OS;
-     dump($conf);
+//     echo PHP_OS;
+//     dump($conf);
         //echo file_get_contents('/etc/issue');
 
         die( );

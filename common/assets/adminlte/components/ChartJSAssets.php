@@ -10,7 +10,7 @@ class ChartJSAssets extends AssetBundle
     public $js = [
         'Chart.js'
     ];
-    public $depends = [];
+    public $depends = [ 'dmstr\web\AdminLteAsset'];
 
 //    /**
 //     * @inheritdoc
