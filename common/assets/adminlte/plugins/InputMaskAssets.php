@@ -8,15 +8,17 @@ class InputMaskAssets extends AssetBundle
     public $sourcePath = '@vendor/almasaeed2010/adminlte/plugins/input-mask';
     public $css = [];
     public $js = [
-        'dist/jquery.js'
+        'jquery.inputmask.js',
+        'jquery.inputmask.date.extensions.js',
+        'jquery.inputmask.extensions.js'
     ];
     public $depends = [];
 
-    /**
-     * @inheritdoc
-     */
-    public $jsOptions = [
-        'position' => yii\web\View::POS_HEAD,   // 这是设置所有js放置的位置
-    ];
+//    /**
+//     * @inheritdoc
+//     */
+//    public $jsOptions = [
+//        'position' => yii\web\View::POS_HEAD,   // 这是设置所有js放置的位置
+//    ];
 
 }

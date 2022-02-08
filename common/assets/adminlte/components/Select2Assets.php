@@ -6,17 +6,15 @@ use yii;
 class Select2Assets extends AssetBundle
 {
     public $sourcePath = '@vendor/almasaeed2010/adminlte/bower_components/select2';
-    public $css = [];
-    public $js = [
-        'dist/jquery.js'
+    public $css = [
+        'dist/css/select2.min.css'
     ];
-    public $depends = [];
+    public $js = [
+        'dist/js/select2.full.min.js'
+    ];
+    public $depends = [
+        'dmstr\web\AdminLteAsset'
+    ];
 
-//    /**
-//     * @inheritdoc
-//     */
-//    public $jsOptions = [
-//        'position' => yii\web\View::POS_HEAD,   // 这是设置所有js放置的位置
-//    ];
 
 }

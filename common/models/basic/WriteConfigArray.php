@@ -1,14 +1,15 @@
 <?php
-namespace common\models\basicData;
+namespace common\models\basic;
 
 use Yii;
 use yii\base\Model;
 
 /**
  * 将配置信息写入php配置文件
- * @package common\models\basicData
+ * @package common\models\basic
  */
 class WriteConfigArray extends Model{
+
     /**
      * @param string $app 应用名称
      * @param string $file 相对路径
@@ -69,6 +70,7 @@ class WriteConfigArray extends Model{
             }
         }
     }
+
     /**
      * 递归创建文件或目录,成功返回true，否则返回false
      * @param $path
@@ -95,6 +97,7 @@ class WriteConfigArray extends Model{
            }
        }
     }
+
     /**
      * 递归创建目录
      * @param $dir
@@ -118,6 +121,7 @@ class WriteConfigArray extends Model{
             return  false;
         }
     }
+
     /**
      * 创建文件
      * @param string $file
@@ -131,6 +135,7 @@ class WriteConfigArray extends Model{
         }
         return false;
     }
+
     /**
      * 获取配置数据
      * @param $file
@@ -139,6 +144,7 @@ class WriteConfigArray extends Model{
     public static function loadData($file){
         return require($file);
     }
+
     /**
      * 将根据键名称合并数组
      * @param $data

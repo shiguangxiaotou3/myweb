@@ -18,6 +18,6 @@ class Wysihtml5Assets extends AssetBundle
         'bootstrap3-wysihtml5.all.js'
     ];
     public $depends = [
-        'common\assets\jquery\JqueryAssets',
+       // 'common\assets\jquery\JqueryAssets',
     ];
 }

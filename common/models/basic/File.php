@@ -9,7 +9,7 @@ use yii\base\Exception;
 
 /**
  * Class File
- * @package common\models\basicData
+ * @package common\models\basic
  */
 class File
 {

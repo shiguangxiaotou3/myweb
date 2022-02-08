@@ -13,6 +13,4 @@ class SettingsController extends Controller
         return $this->render('index');
     }
 
-
-
 }

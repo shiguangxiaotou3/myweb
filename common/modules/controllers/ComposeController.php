@@ -3,10 +3,10 @@
 
 namespace common\modules\controllers;
 
-
-use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
 use yii\web\Controller;
+use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
+use common\modules\models\EmailSendForm;
 
 class ComposeController extends  Controller
 {
@@ -44,5 +44,15 @@ class ComposeController extends  Controller
                 'layout'=>'blank',
             ],
         ];
+    }
+
+    public function actionIndex(){
+        $request = \Yii::$app->request;
+        $model = new EmailSendForm();
+        if($request->isPost){
+//            $model->load($request);
+           logObject($request->post());
+        }
+        return $this->render('index',['model'=>$model]);
     }
 }

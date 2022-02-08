@@ -6,13 +6,13 @@ namespace frontend\controllers;
 
 
 
-use abhimanyu\systemInfo\os\Linux;
+
 use common\models\ar\Ip;
-use abhimanyu\systemInfo\SystemInfo;
 use common\models\basicData\Clear;
 use Yii;
-use common\models\curl\Curl;
+
 use common\models\tool\DownloadAssets;
+
 use yii\helpers\Markdown;
 use yii\web\Controller;
 
@@ -106,27 +106,30 @@ class TestController extends Controller
 
 
     public function actionIp(){
-//
-//     $conf=   array(
-//           'Ox'=>php_uname('s'),
-//            'HostName'=>php_uname('n'),
-//            'Version'=>php_uname('r'),
-//            'VersionInformation'=>php_uname('v'),
-//            'MachineType'=>php_uname('m'),
-//
-//     );
+    $component =Yii::$app->ip;
+    $model = new Ip();
+    $data=    $component->autoAnalysis('47.108.198.52');
+    dump($data);
+    $model->attributes =$data;
+        if($model->validate() && $model->save()){
+            echo "保存成功";
 
-        $path =Yii::getAlias('@backend/web/assets');
-        $model = new Clear();
-     echo   $model->countDirSize($path);
 
-//     echo PHP_OS;
-//     dump($conf);
-        //echo file_get_contents('/etc/issue');
+        //$model->save();
+    }else{
+            dump($model->errors);
+        }
+       // dump($model);
+//    dump($model->attributes);
+//   var_dump( );
 
         die( );
     }
 
+    public function actionD(){
+            echo '<h1>Hello word!</h1>';
+            die();
+    }
 
 
 }

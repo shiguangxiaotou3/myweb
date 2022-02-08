@@ -42,12 +42,14 @@ class Ip extends ActiveRecord
     public function rules()
     {
         return [
-            [['org', 'postal','visits', /*'created_at', 'updated_at'*/], 'integer'],
+            [['city','country'],'required'],
+            [[ 'postal','visits', /*'created_at', 'updated_at'*/], 'integer'],
             [['latitude', 'longitude'], 'number'],
             [['ip', 'hostname', 'loc', 'country_name'], 'string', 'max' => 255],
             [['city', 'region'], 'string', 'max' => 100],
             [['country'], 'string', 'max' => 10],
             [['timezone'], 'string', 'max' => 30],
+            ['org', 'string', 'max' => 255],
         ];
     }
 
@@ -97,7 +99,7 @@ class Ip extends ActiveRecord
      * @param $ip
      * @return bool
      */
-    public function is_empty($ip){
+    public static function is_empty($ip){
         $n = self::find()->where(['ip'=>$ip])->count();
         if($n == 0){
             return false;
@@ -111,7 +113,7 @@ class Ip extends ActiveRecord
      * @param $ip
      * @return mixed
      */
-    public function sum_count($ip){
+    public static function sum_count($ip){
        $model = self::find()->where(['ip'=>$ip])->one();
        $model->visits ++;
        return $model->save(false);
@@ -133,16 +135,26 @@ class Ip extends ActiveRecord
         }else{
             return false;
         }
-        return $res;
+        return ['visitorsData'=>$res];
     }
 
 
     /**
      * 获取所有登陆的城市
-     * @return array|Ip[]|ActiveRecord[]
+     * @return array
      */
     public function visitsDataByCity(){
-       return self::find()->select(['city','loc'])->where(['not',['city'=>null]])
+        $data = self::find()->select(['city','loc'])->where(['not',['city'=>null]])
             ->indexBy('city')->asArray()->all();
+        if($data){
+            $markers =array();
+            foreach ($data as $datum){
+                $markers[] =array(
+                    'latLng'=> explode(",", $datum['loc']),
+                    'name'=> $datum['city'],
+                );
+            }
+            return ['markers'=>$markers];
+        }
     }
 }

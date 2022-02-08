@@ -4,11 +4,13 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2advanced',
+            'dsn' => 'mysql:host=localhost;dbname=myweb',
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8',
         ],
+
+
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
@@ -18,7 +20,7 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.qq.com',  //每种邮箱的host配置不一样，这里是QQ发送！
                 'username' => '757402123@qq.com',  //这里是你本人的QQ邮箱
-                'password' => 'zzyizivpgbtrbbia',  //qq授权码（可以在邮箱设置/账户/）
+                'password' => 'wjogofdzwmlcbdjg',  //qq授权码（可以在邮箱设置/账户/）
                 'port' => '465',
                 'encryption' => 'ssl',
             ],
@@ -27,5 +29,8 @@ return [
                 'from'=>['757402123@qq.com'=>'时光小偷']  //这里邮箱是你本人邮箱
             ],
         ],
+
+
+
     ],
 ];

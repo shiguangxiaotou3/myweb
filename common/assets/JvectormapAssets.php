@@ -32,14 +32,6 @@ class JvectormapAssets extends AssetBundle
         'js/jquery-jvectormap-2.0.5.min.js',
         'js/jquery-jvectormap-world-mill.js',
     ];
-    public $depends = [
-        'common\assets\jquery\JqueryAssets34'
-    ];
+    public $depends = [];
 
-    /**
-     * @inheritdoc
-     */
-//    public $jsOptions = [
-//        'position' => \yii\web\View::POS_HEAD,   // 这是设置所有js放置的位置
-//    ];
 }

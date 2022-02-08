@@ -3,6 +3,8 @@
 
 namespace console\controllers;
 
+use common\models\ar\Ip;
+use common\models\basicData\Clear;
 use common\models\curl\Curl;
 use common\models\User;
 use Yii;
@@ -36,7 +38,7 @@ class AddController extends Controller
 
 
     public function actionDelUser(){
-       User::deleteAll();
+       Ip::deleteAll();
        logObject('asd');
        echo '删除成功\r\n';
 
@@ -51,8 +53,11 @@ class AddController extends Controller
         die();
     }
 
-
-
+    public function actionClear(){
+        Clear::delAll();
+        echo 'hello word\n';
+        return false;
+    }
 
 }
 

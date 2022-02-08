@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 
+use common\components\IpEvent;
 use common\models\ar\Login_record;
 use Yii;
 use yii\web\Response;
@@ -17,6 +18,16 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+    const EVENT_ANALYSIS_IP ='analysisIp';
+
+    /**
+     * 附加事件
+     */
+    public function init(){
+        parent::init();
+        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,'autoAnalysis']);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -73,8 +84,7 @@ class SiteController extends Controller
      *
      * @return string|Response
      */
-    public function actionLogin()
-    {
+    public function actionLogin(){
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -83,6 +93,9 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            $event = new IpEvent();
+            $event->ip = Yii::$app->request->userIP;
+            $this->trigger(self::EVENT_ANALYSIS_IP,$event);
             return $this->goBack();
         }
 
@@ -91,6 +104,7 @@ class SiteController extends Controller
         return $this->render('login', [
             'model' => $model,
         ]);
+
     }
 
     /**

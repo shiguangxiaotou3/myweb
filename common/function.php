@@ -303,26 +303,29 @@ function ECharts_bar_config($title,$height,$legend,$xAxis,$series){
 
 function deldir($dir) {
     //先删除目录下的文件：
-    $dh=opendir($dir);
-    while ($file=readdir($dh)) {
+    $dh = opendir($dir);
+    while ($file = readdir($dh)) {
         if($file!="." && $file!="..") {
-            $fullpath=$dir."/".$file;
-            if(!is_dir($fullpath)) {
-                unlink($fullpath);
-            } else {
-                deldir($fullpath);
+            if($file != '.gitignore'){
+                $fullpath = $dir."/".$file;
+                if(!is_dir($fullpath)) {
+                    unlink($fullpath);
+                } else {
+                    deldir($fullpath);
+                }
             }
         }
     }
+
 }
 
-//去除二维数组重复值,默认重复保留前面的值
-/*
-  *array 二维数组
-  *keyid 需要判断是否重复的项目
-  *desc 为true时保留后面的
-*/
 
+ /**
+  * 去除二维数组重复值,默认重复保留前面的值
+  * @param array $array 二维数组
+  * @param string $keyid 需要判断是否重复的项目
+  *  @param bool $desc 为true时保留后面的
+  */
 function array_repeat($array,$keyid="id",$desc=false)
 {
     $array = array_values($array);
@@ -463,9 +466,17 @@ function addFa($name){
 }
 
 /**
- * 计算两个时间相隔，年月入
- * @param string|integer $starttiem
- * @param string|integer $endtime
+ * 计算两个时间相隔，返回
+ * [
+ *      'year'=>2,      年
+ *      'month'=>2,     月
+ *      'day'=>2,       天
+ *      'hour'=>2,      小时
+ *      'minute'=>2,    分
+ *      'second'=>2,    秒
+ * ]
+ * @param string|integer $starttiem uinx
+ * @param string|integer $endtime   uinx
  * @return array|bool
  * @throws Exception
  */

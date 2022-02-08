@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9f27c9c9384103c6275523effca76e1f33baccc6',
+        'reference' => 'e3e369e6d5cdcb68e66b7f14ee72a092fdeb2be3',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -530,6 +530,15 @@
             'reference' => '93ebd0014cab80c4ea9f5e297ea48672f1b87706',
             'dev_requirement' => true,
         ),
+        'phpmailer/phpmailer' => array(
+            'pretty_version' => 'v6.5.3',
+            'version' => '6.5.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmailer/phpmailer',
+            'aliases' => array(),
+            'reference' => 'baeb7cde6b60b1286912690ab0693c7789a31e71',
+            'dev_requirement' => false,
+        ),
         'phpoffice/phpspreadsheet' => array(
             'pretty_version' => '1.21.0',
             'version' => '1.21.0.0',
@@ -869,7 +878,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9f27c9c9384103c6275523effca76e1f33baccc6',
+            'reference' => 'e3e369e6d5cdcb68e66b7f14ee72a092fdeb2be3',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

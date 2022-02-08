@@ -44,7 +44,7 @@ class m220109_113149_create_table_ip extends Migration
             'region'=>$this->string(100)->comment('地区'),
             'country' => $this->string(10)->comment('国家代码'),
             'loc' => $this->string()->comment('经纬度'),
-            'org' => $this->smallInteger()->comment('单位'),
+            'org' => $this->string()->comment('组织'),
             'postal' => $this->integer(6)->comment('邮政编码'),
             'timezone' => $this->string(30)->comment('时区'),
             'country_name' => $this->string()->comment('国家名称'),

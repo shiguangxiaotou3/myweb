@@ -3,13 +3,12 @@
 
 namespace backend\controllers;
 
+
 use Yii;
 use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
-use \yii\web\Response;
-use yii\web\Controller;
-use common\models\ar\Ip;
 
+use yii\web\Controller;
+use common\models\basic\Clear;
 /**
  * 后台自动化执行工具
  * @package backend\controllers
@@ -32,36 +31,23 @@ class ActionController extends Controller
         ];
     }
 
-
     /**
      * 自动化操作面板
      * @return string
      */
     public function actionIndex(){
-        return $this->render('index',$this->config());
+        return $this->render('index');
     }
-
-
-
-
-    public function config(){
-        return [];
-    }
-
 
     /**
-     *
-     * @return bool
+     * 面板清理的pajx 控制器
+     * @return string
      */
-    public function actionIp(){
-        $request = Yii::$app->request;
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        if($request->isAjax) {
-            $model = new Ip();
-            $model ->auto();
-            return ['asd'=>'成功'];
-        }else{
-            return ['asd'=>'失败'];
-        }
+    public function actionClear(){
+            $number =  Clear::delAll();
+
+            Yii::$app->session->setFlash('success', '临时文件清理成功');
+            return $this->renderAjax('clear');
     }
+
 }
