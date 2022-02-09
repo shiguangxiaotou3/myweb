@@ -7,7 +7,8 @@ use yii\bootstrap\Html;
 use common\assets\JvectormapAssets;
 
 JvectormapAssets::register($this);
-$Asset = Yii::$app->assetManager->getPublishedUrl('@vendor/bower-asset/jvectormap');
+$Asset = Yii::$app->assetManager
+    ->getPublishedUrl('@vendor/bower-asset/jvectormap');
 ?>
 
 <?php $this->beginPage() ?>

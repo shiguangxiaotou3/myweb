@@ -1,13 +1,14 @@
 <?php
 
-/* @var $this \yii\web\View */
+/* @var $this yii\web\View */
 /* @var $content string */
 
 use yii\bootstrap\Html;
 use common\assets\JvectormapAssets;
 
     JvectormapAssets::register($this);
-    $asset = Yii::$app->assetManager->getPublishedUrl('@vendor/bower-asset/jvectormap');
+    $asset = Yii::$app->assetManager
+        ->getPublishedUrl('@vendor/bower-asset/jvectormap');
 ?>
 
 <?php $this->beginPage() ?>
@@ -25,20 +26,16 @@ use common\assets\JvectormapAssets;
     </head>
     <body class="d-flex flex-column h-100">
     <?php $this->beginBody() ?>
-
         <!-- 头部-->
         <?= $this->render('header.php', ['asset' => $asset]) ?>
-
         <!-- 类容 -->
         <div id="main">
             <div class="wrapper clearfix">
                 <?= $content ?>
             </div>
         </div>
-
         <!--页脚 -->
         <?= $this->render('footer.php', ['asset' => $asset]) ?>
-
     <?php $this->endBody() ?>
     </body>
     </html>

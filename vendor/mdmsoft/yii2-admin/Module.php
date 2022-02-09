@@ -94,7 +94,7 @@ class Module extends \yii\base\Module
         if (!isset(Yii::$app->i18n->translations['rbac-admin'])) {
             Yii::$app->i18n->translations['rbac-admin'] = [
                 'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en',
+                'sourceLanguage' => 'zh_CN',
                 'basePath' => '@mdm/admin/messages',
             ];
         }

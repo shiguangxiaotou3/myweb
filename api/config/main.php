@@ -9,7 +9,7 @@ $params = array_merge(
 return [
     'id' => 'app-api',
     'name'=>'vbaCloud',
-    'language'=>'zh_CN',
+    'language'=>'zh-CN',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'api\controllers',
     'bootstrap' => ['log'],

@@ -259,24 +259,4 @@ class SiteController extends Controller
         ]);
     }
 
-
-
-    public function test(){
-        //查询
-        $user = User::find()
-            ->where([
-                'username'=>"adas",
-                'password'=>'dasda'])
-            ->asArray()
-            ->one();
-        //插入
-        $model = new User();
-        $model->username ='ASD';
-        $model->password ='ASDA';
-        $model->save();
-
-
-
-    }
-
 }

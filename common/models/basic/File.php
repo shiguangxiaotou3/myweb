@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\models\basicData;
+namespace common\models\basic;
 
 
 use yii\base\Exception;

@@ -1,7 +1,7 @@
 
 <?php
 
-/* @var $this \yii\web\View */
+/* @var $this yii\web\View */
 /* @var $content string */
 use yii\bootstrap\Html;
 ?>
@@ -17,7 +17,7 @@ use yii\bootstrap\Html;
 </head>
 <body >
 <?php $this->beginBody() ?>
-<?= $content ?>
+    <?= $content ?>
 <?php $this->endBody() ?>
 </body>
 </html>

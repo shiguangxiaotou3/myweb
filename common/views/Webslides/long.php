@@ -1,10 +1,13 @@
 <?php
-use common\widgets\Alert;
-use yii\helpers\Html;
 
-/* @var $this \yii\web\View */
+use yii\helpers\Html;
+use common\widgets\Alert;
+use common\assets\webslidesAssets;
+
+/* @var $this yii\web\View */
 /* @var $content string */
-common\assets\webslidesAssets::register($this);
+
+webslidesAssets::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -18,16 +21,14 @@ common\assets\webslidesAssets::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-
-
+    <!-- 头部 -->
+    <?= $this->render('header.php') ?>
     <!-- 容器 -->
     <main role="main">
         <article id="webslides">
             <?= Alert::widget() ?>
         <?= $content ?>
     </article>
-
 <?php $this->endBody() ?>
 </body>
 </html>

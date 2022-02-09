@@ -4,7 +4,7 @@ namespace common\components;
 
 use yii\base\Component;
 use yii\helpers\Markdown;
-use common\models\basicData\File;
+use common\models\basic\File;
 /**
  * Class MarkDown
  * @property string $markdown_path
@@ -42,7 +42,7 @@ class Md extends  Component
         $mds = $this->markdownFile();
         if($mds){
             foreach ($mds as $value){
-                $name =str_replace(".md","",$value);
+                $name = str_replace(".md","",$value);
                 //md文件路径
                 $md_filepath = $this->_viewDir.'/'.$this->markdown_path.'/'.$name.'.md';
                 //解析后的保存文件路径

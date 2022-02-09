@@ -14,7 +14,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'language'=>'zh_CN',
+    'language'=>'zh-CN',
     //模块
     'modules' => [
         'admin' => [

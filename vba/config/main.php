@@ -8,7 +8,7 @@ $params = array_merge(
 
 return [
     'name'=>'vba',
-    'language'=>'zh_CN',
+    'language'=>'zh-CN',
     'id' => 'app-vba',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],

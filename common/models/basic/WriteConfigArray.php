@@ -34,7 +34,7 @@ class WriteConfigArray extends Model{
      * @return false|int
      */
     public static function addI18n($arr,$category = 'app',$options =false){
-        $dir = Yii::getAlias("@common").'/messages/zh_CN/';
+        $dir = Yii::getAlias("@common").'/messages/zh-CN/';
         $file = $dir.$category.'.php';
         self::autoCreatePath($file);
         $data = self::loadData($file);

@@ -25,7 +25,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public $layout  ='Webslides/long';
+    public $layout  ='@common/views/webSlides/main';
 
     public function behaviors()
     {
