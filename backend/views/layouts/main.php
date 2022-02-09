@@ -65,6 +65,7 @@ if (Yii::$app->controller->action->id === 'login') {
     // $(document).ready(function () {
     //域名
     var domain = document.domain;
+
     //完整rum
     var url =window.location.href;
     //相对路由

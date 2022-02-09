@@ -160,6 +160,6 @@ JS;
             return false;
         }
         $view->registerJs($js);
-        return Html::beginTag('div', $this->Options) . Html::beginTag('div');
+        return Html::beginTag('div', $this->Options) . Html::endTag('div');
     }
 }

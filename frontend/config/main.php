@@ -16,9 +16,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
-        'ip'=>[
-            'class'=>'common\components\Ip',
-        ],
+
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,

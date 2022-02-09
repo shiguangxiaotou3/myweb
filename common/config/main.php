@@ -9,6 +9,9 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'ip'=>[
+            'class'=>'common\components\Ip',
+        ],
         'i18n' => [
             'translations' => [
                 'app' => [

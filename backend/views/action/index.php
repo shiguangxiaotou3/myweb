@@ -52,9 +52,10 @@ use common\models\basic\Clear;
         </div>
     </div>
     <!-- 配置面板 -->
+    <!--
     <div class="col-md-6">
         <div class="nav-tabs-custom">
-            <!-- 面板分页 -->
+
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#server" data-toggle="tab" aria-expanded="true">Server</a></li>
                 <li><a href="#apache2" data-toggle="tab" aria-expanded="false">Apache</a></li>
@@ -63,7 +64,7 @@ use common\models\basic\Clear;
                 <li><a href="#composer" data-toggle="tab" aria-expanded="false">Composer</a></li>
             </ul>
             <div class="tab-content">
-                <!-- 服务器配置 -->
+
                 <div class="tab-pane active" id="server">
                     <dl class="dl-horizontal">
                         <dt>主机名称</dt><dd><?= $server['HostName'] ?></dd>
@@ -72,14 +73,14 @@ use common\models\basic\Clear;
                         <dt>CPU</dt><dd><?= $server['MachineType'] ?></dd>
                     </dl>
                 </div>
-                <!-- apache配置 -->
+
                 <div class="tab-pane" id="apache2">
                     <dl class="dl-horizontal">
                         <dt>版 本</dt><dd><?= $apache['Version'] ?></dd>
                         <dt>拓 展</dt><dd><?= implode(' ',$apache['Modules']) ?></dd>
                     </dl>
                 </div>
-                <!-- php配置 -->
+
                 <div class="tab-pane" id="php">
                     <dl class="dl-horizontal">
                         <?php
@@ -90,7 +91,7 @@ use common\models\basic\Clear;
 
                     </dl>
                 </div>
-                <!-- mysql配置 -->
+
                 <div class="tab-pane" id="mysql">
                     <dl class="dl-horizontal">
                         <?php if($mysql){ ?>
@@ -102,7 +103,7 @@ use common\models\basic\Clear;
                         <?php } ?>
                     </dl>
                 </div>
-                <!-- composer配置 -->
+
                 <div class="tab-pane" id="composer">
                     <dl class="dl-horizontal">
                         <?php
@@ -121,4 +122,5 @@ use common\models\basic\Clear;
             </div>
         </div>
     </div>
+    -->
 </div>

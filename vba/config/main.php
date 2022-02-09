@@ -20,6 +20,9 @@ return [
             'markdown_path'=>'md',  //markdown文件目录
             'html_path'=>'html',    //解析后的文件目录
         ],
+        'ip'=>[
+            'class'=>'common\components\Ip',
+        ],
         'request' => [
             'csrfParam' => '_csrf-vba',
         ],
