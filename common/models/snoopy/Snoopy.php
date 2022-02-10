@@ -84,7 +84,7 @@ class Snoopy
     var $timed_out		=	false;				// if a read operation timed out
     var	$status			=	0;					// http request status
 
-    var $temp_dir		=	"/Library/WebServer/Documents/myweb/frontend/web/tmp";				// temporary directory that the webserver
+    var $temp_dir		=	"/Library/WebServer/Documents/myweb/frontend/web/file";				// temporary directory that the webserver
     // has permission to write to.
     // under Windows, this should be C:\temp
 

@@ -28,7 +28,7 @@ return [
     //组件
     'components' => [
         'server'=>[
-            'class'=>'common\components\ServerConfig',
+            'class'=>'common\components\server\ServerConfig',
         ],
 
         'request' => [

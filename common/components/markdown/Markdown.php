@@ -1,9 +1,9 @@
 <?php
 
-namespace common\components;
+namespace common\components\markdown;
 
 use yii\base\Component;
-use yii\helpers\Markdown;
+use yii\helpers\Markdown as md;
 use common\models\basic\File;
 /**
  * Class MarkDown
@@ -11,7 +11,7 @@ use common\models\basic\File;
  * @property string $html_path
  * @package common\components
  */
-class Md extends  Component
+class Markdown extends  Component
 {
     public $markdown_path ='md';
     public $html_path ='html';
@@ -24,13 +24,13 @@ class Md extends  Component
      * @param array $config
      */
     public function __construct($markdown_path, $html_path, $config = []){
-        $this->html_path =$html_path;
-        $this->markdown_path =$markdown_path;
+        $this->html_path = $html_path;
+        $this->markdown_path = $markdown_path;
         parent::__construct($config);
     }
 
     /**
-     *
+     * 自动获取试图目录中的
      */
     public function auto(){
         //获取被调用的位置
@@ -87,13 +87,14 @@ class Md extends  Component
      * 解析md文件
      * @param $md_filepath
      * @param $save_filepath
+     * @param $id
      * @return false|int
      */
     public function analysisMdFile($md_filepath,$save_filepath,$id){
         $md_str_start ='<!-- '.$id.' --><div class="container-overview" id="'.$id.'">';
         $md_str_end ='</div>';
         $text = file_get_contents($md_filepath);
-        $html = Markdown::process($text,'gfm');
+        $html = md::process($text,'gfm');
         $html = $this->strreplace($html);
         return file_put_contents($save_filepath,$md_str_start.$html.$md_str_end,LOCK_EX);
     }
@@ -103,7 +104,7 @@ class Md extends  Component
      * @param $html
      * @return string|string[]
      */
-    public function strreplace($html){
+    public function strReplace($html){
         $conf =array(
             '<pre><code'=>'<pre class="syntax"><code',
             '<tr><td align="left">'=>'<tr><td align="left" class="name">',
@@ -118,8 +119,5 @@ class Md extends  Component
         }
         return $html;
     }
-
-
-
 
 }

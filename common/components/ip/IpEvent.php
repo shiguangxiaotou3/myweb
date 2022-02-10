@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\components;
+namespace common\components\ip;
 use yii\base\Event;
 
 class IpEvent extends Event

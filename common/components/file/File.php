@@ -1,0 +1,453 @@
+<?php
+
+
+namespace common\components\file;
+use Yii;
+use yii\base\Component;
+use yii\helpers\ArrayHelper;
+use \common\models\basic\File as  BasicFile;
+
+
+/**
+ * Class File
+ *
+ * @property $alias
+ * @property $tmpAlias
+ * @property-read $path
+ * @property-read $group 所属组
+ * @property-read $owner 所有者
+ * @property-read $children
+ * @property-read $tmpSize
+ * @property-read $size
+ * @property-read $permissionsNumber    权限十进制数字
+ * @property-read $permissionsStr       所有权限字符串
+ * @package common\components\file
+ */
+class File extends  Component{
+
+    /* @var $tmp_alias */
+    public $tmpAlias = [
+        'backend'=>[
+            'cache'=>'@backend/runtime/cache',
+            'debug'=>'@backend/runtime/debug',
+            'HTML'=>'@backend/runtime/HTML',
+            'logs'=>'@backend/runtime/logs',
+            'URI'=>'@backend/runtime/URI',
+            'assets'=>'@backend/web/assets',
+
+        ],
+        'api'=>[
+            'cache'=>'@api/runtime/cache',
+            'debug'=>'@api/runtime/debug',
+            'HTML'=>'@api/runtime/HTML',
+            'logs'=>'@api/runtime/logs',
+            'URI'=>'@api/runtime/URI',
+            'assets'=>'@api/web/assets',
+
+        ],
+        'frontend'=>[
+            'cache'=>'@frontend/runtime/cache',
+            'debug'=>'@frontend/runtime/debug',
+            'HTML'=>'@frontend/runtime/HTML',
+            'logs'=>'@frontend/runtime/logs',
+            'URI'=>'@frontend/runtime/URI',
+            'assets'=>'@frontend/web/assets',
+
+        ],
+        'vba'=>[
+            'cache'=>'@vba/runtime/cache',
+            'debug'=>'@vba/runtime/debug',
+            'HTML'=>'@vba/runtime/HTML',
+            'logs'=>'@vba/runtime/logs',
+            'URI'=>'@vba/runtime/URI',
+            'assets'=>'@vba/web/assets',
+
+        ],
+        'console'=>[
+            'cache'=>'@console/runtime/cache',
+            //'debug'=>'@console/runtime/debug',
+            //'HTML'=>'@console/runtime/HTML',
+            'logs'=>'@console/runtime/logs',
+            //'URI'=>'@console/runtime/URI',
+            'assets'=>'@console/web/assets',
+        ],
+    ];
+    private $_alias;
+    private $_path;
+
+    /**
+     * @return mixed
+     */
+    public function getAlias(){
+        return $this->_alias;
+    }
+
+    /**
+     * @param $alias
+     */
+    public function setAlias($alias){
+        $this->_alias = $alias;
+    }
+
+    /**
+     * 获取绝对路径
+     * @return false|string
+     */
+    public function getPath(){
+        return Yii::getAlias($this->_alias);
+    }
+
+    /**
+     * 创建子目录
+     * @param $dirname
+     * @param int $permissions
+     * @return bool
+     */
+    public function createDir($dirname,$permissions = 0777 ){
+        return mkdir($this->path."/".$dirname,$permissions,true);
+    }
+
+    /**
+     * 删除子目录
+     * @param string $relative_path 相对路径
+     * @return bool
+     */
+    public function delDir($relative_path){
+        return rmdir($this->path.'/'.$relative_path);
+    }
+
+    /**
+     * 获取目录下的子目录和子文件
+     * @return array[]|false
+     */
+    public function getChildren(){
+        return self::dirChildren($this->path);
+    }
+
+    /**
+     * 清空当前目录
+     */
+    public function clear(){
+       return self::clearDir($this->path);
+    }
+
+    /**
+     * 获取当前目录的大小,返回字节数
+     * @return false|int
+     */
+    public function getSize(){
+        return self::dirSize($this->path);
+    }
+
+    /**
+     * 所属组
+     * @param $path
+     * @return false|int
+     */
+    public function getGroup(){
+        return filegroup($this->path);
+    }
+
+    /**
+     * 所有者
+     * @param $path
+     * @return false|int
+     */
+    public function getOwner(){
+        return fileowner($this->path);
+    }
+
+    /**
+     * 获取当前目录权限，返回数字
+     * @return false|string|integer
+     */
+    public function getPermissionsNumber(){
+        return substr(sprintf('%o', fileperms($this->path)), -4);
+    }
+
+    /**
+     *  获取当前目录权限，返回字符传
+     * @return string
+     */
+    public function getPermissionsStr(){
+        return self::permissionsStr($this->path);
+    }
+
+    /**
+     * 获取临时文件目录大小
+     * @return array
+     */
+    public function getTmpSize(){
+        $data = $this->tmpAlias;
+        $res =array();
+        foreach ($data as $key =>$datum){
+            $row =array();
+            foreach ($datum as $field =>$value){
+                $this->alias = $value;
+                $row[$field] = round(self::dirSize($this->path)/1024/1024,2);
+            }
+            $res[] = array('label'=>$key,'data'=>$row);
+        }
+        return $res;
+    }
+
+
+
+
+    /**
+     * 获取文件配置信息
+     * @param $path
+     * @return array
+     */
+    public static function fileInfo($path){
+        if (is_file($path)){
+            $config = [
+                //返回路径中的文件名部分
+                'basename'=>basename($path),
+                //返回路径中的目录部分
+                'dirname'=>dirname($path),
+                //取得文件的上次访问时间
+                'atime'=>fileatime($path),
+                //取得文件的 inode 修改时间
+                'ctime'=>filectime($path),
+                //取得文件的 inode
+                'inode'=>fileinode($path),
+                //取得文件修改时间
+                'mtime'=>filemtime($path),
+                //取得文件的组
+                'group'=>filegroup($path),
+                //取得文件的所有者
+                'owner'=>fileowner($path),
+                //取得文件的权限
+
+                //取得文件大小
+                'size'=>filesize($path),
+                //取得文件类型
+                'type'=>filetype($path),
+            ];
+            $info = pathinfo($path);
+            $stat = stat($path);
+            //文件拓展名
+            $config['extension']=$info['extension'];
+            //文件名
+            $config['filename']=$info['filename'];
+            $con =[
+               'dev',       //设备名
+               'nlink',     // 被连接数目
+               'rdev',      //设备类型，如果是 inode 设备的话
+               'mode',      //inode 保护模式
+               'blksize',   // 文件系统 IO 的块大小
+               'blocks'     //所占据块的数目
+            ];
+           foreach ($con as $item ){
+               if(isset($stat[$item])){
+                  $config[$item]= $stat[$item];
+               }
+           }
+            //权限
+            $config['perms'] = self::permissions($path);
+
+           return $config;
+
+        }
+    }
+
+    /**
+     * 获取目录下的所文件和名称
+     * @param $path
+     * @return array[]|false
+     */
+    public static function dirChildren($path){
+        if(self::is_Null($path)){
+           return null;
+        }else{
+            if(is_dir($path)){
+                $res = [];
+                $arr = scandir($path);
+                foreach ($arr as $item){
+                    if ($item != '.' && $item != '..'){
+                        if (is_dir($path.'/'.$item)){
+                            array_push($res['dir'],$item);
+                        }else{
+                            array_push($res['fire'],$item);
+                        }
+                    }
+                }
+                return  $res;
+            }else{
+                return  false;
+            }
+        }
+
+    }
+
+    /**
+     * 获取目录或文件大小
+     * @param $path
+     * @return false|int
+     */
+    public static function dirSize($path){
+        return disk_total_space($path);
+    }
+
+    /**
+     * 递归删除文件
+     * @param $path
+     */
+    public static function recursionDelFile($path){
+        $dh = opendir($path);
+        while ($file = readdir($dh)) {
+            if ($file != '.' && $file != ".." && $file != '.gitignore') {
+                $pathName = $path . "/" . $file;
+                if (is_dir($pathName)) {
+                    if (!unlink($pathName)) {
+                        continue;
+                    }
+                } else {
+                    self::recursionDelFile($pathName);
+                }
+            }
+        }
+        closedir($dh);
+    }
+
+    /**
+     * 递归目录
+     * 如何目录不为空或者没有权限，则跳过
+     * @param $path
+     * @return bool
+     */
+    public static function recursionDelDir($path){
+        if(is_dir($path)){
+            //如果为空,则直接删除
+            if(self::is_Null($path)){
+               return rmdir($path);
+            }else{
+                $name = scandir($path);
+                foreach ($name as $pathName){
+                    if(is_dir($path.'/'.$pathName) ){
+                        //如果为空则删除目录;不为空则进入子目录
+                        if(self::is_Null($path.'/'.$pathName)){
+                            //删除失败，退出当前循环
+                            if( !rmdir($path.'/'.$pathName)){
+                                continue;
+                            }
+                        }else{
+                            self::recursionDelDir($path.'/'.$pathName);
+                        }
+                    }else{
+                        continue;
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * 清空当前目录
+     * 没有权限或者存在
+     * @param $path
+     * @return bool
+     */
+    public static function clearDir($path){
+        if(self::is_Null($path)){
+            return true;
+        }else{
+            $name = scandir($path);
+            foreach ($name as $pathName){
+                if ($pathName != '.' && $pathName !=".." && $pathName !='.gitignore'){
+                    if (is_dir($path."/".$pathName)){
+                        //递归删除文件
+                        self::recursionDelFile($path."/".$pathName);
+                        //递归删除目录
+                        self::recursionDelDir($path."/".$pathName);
+                    }else{
+                        unlink($path."/".$pathName);
+                    }
+                }
+            }
+            //最后检测是否为空
+            return self::is_Null($path);
+        }
+    }
+
+    /**
+     * 判断一个目录是否为空
+     * @param $path
+     * @return bool
+     */
+    public static function is_Null($path){
+        if(is_dir($path)){
+            $isNull =array_diff(scandir($path),array('..','.'));
+            if (empty($isNull)){
+                return true;
+            }
+        }
+        return  false;
+    }
+
+    /**
+     * 获取文件权限
+     * @param $path
+     * @return array
+     */
+    public static function permissions($path){
+      return  [
+          fileperms($path),
+          substr(sprintf('%o', fileperms($path)), -4),
+          self::permissionsStr($path),
+      ];
+    }
+
+    /**
+     * 获取文件或目录权限
+     * @param $path
+     * @return string
+     */
+    public static function permissionsStr($path){
+        $perms = fileperms($path);
+        if (($perms & 0xC000) == 0xC000) {
+            // Socket
+            $info = 's';
+        } elseif (($perms & 0xA000) == 0xA000) {
+            // Symbolic Link
+            $info = 'l';
+        } elseif (($perms & 0x8000) == 0x8000) {
+            // Regular
+            $info = '_';
+        } elseif (($perms & 0x6000) == 0x6000) {
+            // Block special
+            $info = 'b';
+        } elseif (($perms & 0x4000) == 0x4000) {
+            // Directory
+            $info = 'd';
+        } elseif (($perms & 0x2000) == 0x2000) {
+            // Character special
+            $info = 'c';
+        } elseif (($perms & 0x1000) == 0x1000) {
+            // FIFO pipe
+            $info = 'p';
+        } else {
+            // Unknown
+            $info = 'u';
+        }
+
+        // Owner
+        $info .= (($perms & 0x0100) ? 'r' : '_');
+        $info .= (($perms & 0x0080) ? 'w' : '_');
+        $info .= (($perms & 0x0040) ? (($perms & 0x0800) ? 's' : 'x' ) : (($perms & 0x0800) ? 'S' : '_'));
+
+        // Group
+        $info .= (($perms & 0x0020) ? 'r' : '_');
+        $info .= (($perms & 0x0010) ? 'w' : '_');
+        $info .= (($perms & 0x0008) ? (($perms & 0x0400) ? 's' : 'x' ) : (($perms & 0x0400) ? 'S' : '_'));
+
+        // World
+        $info .= (($perms & 0x0004) ? 'r' : '_');
+        $info .= (($perms & 0x0002) ? 'w' : '_');
+        $info .= (($perms & 0x0001) ? (($perms & 0x0200) ? 't' : 'x' ) : (($perms & 0x0200) ? 'T' : '_'));
+
+        return $info;
+    }
+}
+

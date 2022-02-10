@@ -13,44 +13,8 @@ use yii\base\Exception;
  */
 class File
 {
-
-    /**
-     * @param $dir
-     * @param int $permissions
-     * @return bool
-     */
-    public static function  CreateDir($dir,$permissions =0777){
-        try {
-            $data = explode("/",$dir);
-            $path ='/';
-            foreach ($data as $i){
-                if($i !== ""){
-                    if(! is_dir($path."/".$i)){
-                        mkdir($path."/".$i,$permissions,true);
-                    }
-                    $path .="/".$i;
-                }
-            }
-            return  true;
-        }catch (Exception $exception){
-            return false;
-        }
-
-    }
-
-    /**
-     * 创建并写入文件
-     * @param $file
-     * @param $str
-     * @return bool
-     */
-    public static function CreateFile($file,$str){
-        if(!file_exists($file)){
-            file_put_contents($file,$str,FILE_APPEND);
-            return true;
-        }
-        return false;
-    }
+    //file_put_contents($file,$str,FILE_APPEND);
+    //file_get_contents($path);
 
     /**
      * 获取目录大小
@@ -108,7 +72,7 @@ class File
                     }
                 }
             }
-            return array('dirnumber'=>$dirNumber,'filename'=>$fileNumber);
+            return array('dirNumber'=>$dirNumber,'fileName'=>$fileNumber);
         }else{
             return  false;
         }
@@ -120,7 +84,7 @@ class File
      * @param $path
      * @return array[]|false
      */
-    public static function getDirChildrens($path){
+    public static function getDirChildren($path){
         if(is_dir($path)){
             $arr = scandir($path);
             $res = array(
@@ -153,7 +117,7 @@ class File
      * @param $path
      * @return array[]|false
      */
-    public static function getDirHideChildrens($path){
+    public static function getDirHideChildren($path){
         if(is_dir($path)){
             $arr = scandir($path);
             $res = array(
@@ -183,8 +147,6 @@ class File
      */
     public static function readFile($path){
         if(file_exists($path)){
-            //$str = file_get_contents($path);//将整个文件内容读入到一个字符串中
-            //$str = str_replace("\r\n","<br />",$str);
             return file_get_contents($path);
         }else{
             return  false;

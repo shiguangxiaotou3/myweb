@@ -8,7 +8,7 @@ use yii\base\Model;
  * 将配置信息写入php配置文件
  * @package common\models\basic
  */
-class WriteConfigArray extends Model{
+class WriteConfigArray extends File {
 
     /**
      * @param string $app 应用名称
@@ -55,7 +55,7 @@ class WriteConfigArray extends Model{
      * @param $array
      * @param int $space
      */
-    public static function arrayToStr(&$str, $array, $space=0){
+    public static function ConfigToStr(&$str, $array, $space = 0){
         $spaces = '';
         for($i=0; $i<$space*4;$i++){
             $spaces .= " ";
@@ -63,7 +63,7 @@ class WriteConfigArray extends Model{
         foreach($array as $k=>$item){
             if(is_array($item)){
                 $str .= "$spaces'$k' => [\r\n";
-                $str .= self::arrayToStr($str, $item, $space+1);
+                $str .= self::ConfigToStr($str, $item, $space+1);
                 $str .= "$spaces],\r\n";
             }else{
                 $str .= "$spaces'$k' => '$item',\r\n";

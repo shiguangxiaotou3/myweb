@@ -10,7 +10,38 @@ return [
             'class' => 'yii\caching\FileCache',
         ],
         'ip'=>[
-            'class'=>'common\components\Ip',
+            'class'=>'common\components\ip\Ip',
+        ],
+        'file'=>[
+            'class'=>'common\components\file\File',
+            'tmpAlias'=>[
+                'backend'=>[
+                    'cache'=>'@backend/runtime/cache',
+                    'debug'=>'@backend/runtime/debug',
+                    'HTML'=>'@backend/runtime/HTML',
+                    'logs'=>'@backend/runtime/logs',
+                    'URI'=>'@backend/runtime/URI',
+                    'assets'=>'@backend/web/assets',
+
+                ],
+                'frontend'=>[
+                    'cache'=>'@frontend/runtime/cache',
+                    'debug'=>'@frontend/runtime/debug',
+                    'HTML'=>'@frontend/runtime/HTML',
+                    'logs'=>'@frontend/runtime/logs',
+                    'URI'=>'@frontend/runtime/URI',
+                    'assets'=>'@frontend/web/assets',
+
+                ],
+                'console'=>[
+                    'cache'=>'@console/runtime/cache',
+                    //'debug'=>'@console/runtime/debug',
+                    //'HTML'=>'@console/runtime/HTML',
+                    'logs'=>'@console/runtime/logs',
+                    //'URI'=>'@console/runtime/URI',
+                    'assets'=>'@console/web/assets',
+                ],
+            ],
         ],
         'i18n' => [
             'translations' => [

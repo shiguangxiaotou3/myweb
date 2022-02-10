@@ -46,7 +46,7 @@ class ActionController extends Controller
     public function actionClear(){
             $number =  Clear::delAll();
 
-            Yii::$app->session->setFlash('success', '临时文件清理成功');
+           // Yii::$app->session->setFlash('success', '临时文件清理成功');
             return $this->renderAjax('clear');
     }
 
