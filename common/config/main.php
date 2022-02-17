@@ -6,12 +6,21 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        //缓存组件
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        //markdown解析文件
+        'markdown'=>[
+            'class'=>'common\components\markdown\Markdown',
+        ],
+        //ip解析组件
         'ip'=>[
             'class'=>'common\components\ip\Ip',
         ],
+        //读取邮箱组件
+
+        //文件组件
         'file'=>[
             'class'=>'common\components\file\File',
             'tmpAlias'=>[
@@ -21,7 +30,18 @@ return [
                     'HTML'=>'@backend/runtime/HTML',
                     'logs'=>'@backend/runtime/logs',
                     'URI'=>'@backend/runtime/URI',
+                    'mail'=>'@backend/runtime/mail',
                     'assets'=>'@backend/web/assets',
+
+                ],
+                'api'=>[
+                    'cache'=>'@api/runtime/cache',
+                    'debug'=>'@api/runtime/debug',
+                    'HTML'=>'@api/runtime/HTML',
+                    'logs'=>'@api/runtime/logs',
+                    'URI'=>'@api/runtime/URI',
+                    'mail'=>'@api/runtime/mail',
+                    'assets'=>'@api/web/assets',
 
                 ],
                 'frontend'=>[
@@ -30,7 +50,18 @@ return [
                     'HTML'=>'@frontend/runtime/HTML',
                     'logs'=>'@frontend/runtime/logs',
                     'URI'=>'@frontend/runtime/URI',
+                    'mail'=>'@frontend/runtime/mail',
                     'assets'=>'@frontend/web/assets',
+
+                ],
+                'vba'=>[
+                    'cache'=>'@vba/runtime/cache',
+                    'debug'=>'@vba/runtime/debug',
+                    'HTML'=>'@vba/runtime/HTML',
+                    'logs'=>'@vba/runtime/logs',
+                    'URI'=>'@vba/runtime/URI',
+                    'mail'=>'@vba/runtime/mail',
+                    'assets'=>'@vba/web/assets',
 
                 ],
                 'console'=>[
@@ -39,10 +70,12 @@ return [
                     //'HTML'=>'@console/runtime/HTML',
                     'logs'=>'@console/runtime/logs',
                     //'URI'=>'@console/runtime/URI',
+                    'mail'=>'@console/runtime/mail',
                     'assets'=>'@console/web/assets',
                 ],
-            ],
+            ]
         ],
+        //翻译组件
         'i18n' => [
             'translations' => [
                 'app' => [

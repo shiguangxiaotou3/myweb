@@ -45,7 +45,6 @@ class WriteConfigArray extends File {
             $res = self::merge($data,$arr);
         }
         return self::writeArray($file,$res);
-
     }
 
     //=================================================

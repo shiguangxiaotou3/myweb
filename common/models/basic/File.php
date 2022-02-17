@@ -16,6 +16,7 @@ class File
     //file_put_contents($file,$str,FILE_APPEND);
     //file_get_contents($path);
 
+
     /**
      * 获取目录大小
      * @param $path

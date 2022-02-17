@@ -164,6 +164,7 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Common\\Lexer\\' => 22,
             'DeepCopy\\' => 9,
+            'Ddeboer\\Imap\\' => 13,
         ),
         'C' => 
         array (
@@ -465,6 +466,10 @@ class ComposerStaticInit9f2895b38eb65c8a77c2f7769b6665c2
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Ddeboer\\Imap\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ddeboer/imap/src',
         ),
         'Complex\\' => 
         array (

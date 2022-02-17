@@ -22,7 +22,19 @@ return [
            // 'layout' => 'left-menu'
         ],
         'email' => [
-            'class' => 'common\modules\Email',
+            'class' => 'common\modules\email\Email',
+            'components' => [
+                'imap'=>[
+                    'class'=>'common\modules\email\components\Imap',
+//                    'path' => "@app/runtime/mail",
+//                    'host' => 'imap.qq.com',
+//                    'username' =>'757402123@qq.com',
+//                    'password' =>'bjhxxjyxnrgibbeg',
+//                    'port' => '993',
+//                    'flags' =>'/imap/ssl',
+                ],
+            ],
+
         ],
     ],
     //组件

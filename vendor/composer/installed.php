@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e3e369e6d5cdcb68e66b7f14ee72a092fdeb2be3',
+        'reference' => 'd5ff678203617d140c5307d53bbad1ce2dbf6cde',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -193,6 +193,15 @@
             'aliases' => array(),
             'reference' => 'fa0bb946b6d61279f461bcc5a677ac0ed5eab9b3',
             'dev_requirement' => true,
+        ),
+        'ddeboer/imap' => array(
+            'pretty_version' => '1.12.2',
+            'version' => '1.12.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ddeboer/imap',
+            'aliases' => array(),
+            'reference' => '5f1d8ed40b365386c028e038658376410c59e8a8',
+            'dev_requirement' => false,
         ),
         'dmstr/yii2-adminlte-asset' => array(
             'pretty_version' => '2.6.2',
@@ -878,7 +887,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e3e369e6d5cdcb68e66b7f14ee72a092fdeb2be3',
+            'reference' => 'd5ff678203617d140c5307d53bbad1ce2dbf6cde',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

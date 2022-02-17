@@ -175,12 +175,13 @@ $this->title =Yii::t('app', '家');
             </div>
         </div>
         <!-- 文件 -->
+        <?php Pjax::begin(['id' => 'assets','enablePushState'=>false]); ?>
         <div class="box box-primary ">
             <div class="box-header with-border ">
                 <i class="fa fa-folder-o"></i><h3 class="box-title">临时文件</h3>
                 <div class="box-tools">
-                    <?=Html::a("清空", '', ['class' => 'btn',
-                        'onclick'=>"$.pjax({url: '/action/clear', container: '#assets'});"
+                    <?=Html::a("清空", ['/action/clear'], ['class' => 'btn',
+                       // 'onclick'=>"$.pjax({url: '/action/clear', container: '#assets'});"
                     ]);?>
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" ><i class="fa fa-minus"></i></button>
                 </div>
@@ -188,25 +189,16 @@ $this->title =Yii::t('app', '家');
             <div class="box-body">
                 <div class="chart">
                     <?php
-                    Pjax::begin(['id' => 'assets','enablePushState'=>false]);
-                    $size = new Clear();
-                    $arr = $size->getSizeAll();
-                    $data = [
-                        'labels' => array_keys($arr['backend']),
-                        'datasets' => [
-                            ['label' => '后台', 'data' =>array_map(function($i){return round($i/1024/1024,2);}, array_values($arr['backend'])),],
-                            ['label' => '前台', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['frontend'])),],
-                            ['label' => '控制台', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['console'])),],
-                            ['label' => 'api', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['api'])),],
-                            ['label' => 'vba', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['vba'])),],
-                        ]
-                    ];
-                    echo Charts::widget(['type' => 'bar', 'data' => $data,]);
-                    Pjax::end();
+
+                        $component =Yii::$app->file;
+                        $data = ['labels' => $component->tmpLabels, 'datasets' => $component->tmpSize,];
+                        echo Charts::widget(['type' => 'bar', 'data' => $data,]);
+
                     ?>
                 </div>
             </div>
         </div>
+        <?php   Pjax::end();?>
     </div>
 </div>
 

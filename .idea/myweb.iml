@@ -142,6 +142,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/yii2-gravatar" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fortawesome/font-awesome" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpmailer/phpmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ddeboer/imap" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

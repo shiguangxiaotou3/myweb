@@ -4,21 +4,31 @@
 namespace common\components\file;
 use Yii;
 use yii\base\Component;
-use yii\helpers\ArrayHelper;
-use \common\models\basic\File as  BasicFile;
 
 
 /**
  * Class File
  *
  * @property $alias
- * @property $tmpAlias
- * @property-read $path
+
+ * @property $path
+ * @property-read $baseName
+ * @property-read $fileName
+ * @property-read $dirname
+ * @property-read $extension
+ * @property-read $size
+ *
+ * @property-read
+ * @property-read
  * @property-read $group 所属组
  * @property-read $owner 所有者
  * @property-read $children
+ *
+ * @property $tmpAlias
  * @property-read $tmpSize
- * @property-read $size
+ * @property-read $tmpLabels
+ *
+
  * @property-read $permissionsNumber    权限十进制数字
  * @property-read $permissionsStr       所有权限字符串
  * @package common\components\file
@@ -27,51 +37,36 @@ class File extends  Component{
 
     /* @var $tmp_alias */
     public $tmpAlias = [
-        'backend'=>[
-            'cache'=>'@backend/runtime/cache',
-            'debug'=>'@backend/runtime/debug',
-            'HTML'=>'@backend/runtime/HTML',
-            'logs'=>'@backend/runtime/logs',
-            'URI'=>'@backend/runtime/URI',
-            'assets'=>'@backend/web/assets',
+            'backend'=>[
+                'cache'=>'@backend/runtime/cache',
+                'debug'=>'@backend/runtime/debug',
+                'HTML'=>'@backend/runtime/HTML',
+                'logs'=>'@backend/runtime/logs',
+                'URI'=>'@backend/runtime/URI',
+                'mail'=>'@backend/runtime/mail',
+                'assets'=>'@backend/web/assets',
 
-        ],
-        'api'=>[
-            'cache'=>'@api/runtime/cache',
-            'debug'=>'@api/runtime/debug',
-            'HTML'=>'@api/runtime/HTML',
-            'logs'=>'@api/runtime/logs',
-            'URI'=>'@api/runtime/URI',
-            'assets'=>'@api/web/assets',
+            ],
+            'frontend'=>[
+                'cache'=>'@frontend/runtime/cache',
+                'debug'=>'@frontend/runtime/debug',
+                'HTML'=>'@frontend/runtime/HTML',
+                'logs'=>'@frontend/runtime/logs',
+                'URI'=>'@frontend/runtime/URI',
+                'mail'=>'@frontend/runtime/mail',
+                'assets'=>'@frontend/web/assets',
 
-        ],
-        'frontend'=>[
-            'cache'=>'@frontend/runtime/cache',
-            'debug'=>'@frontend/runtime/debug',
-            'HTML'=>'@frontend/runtime/HTML',
-            'logs'=>'@frontend/runtime/logs',
-            'URI'=>'@frontend/runtime/URI',
-            'assets'=>'@frontend/web/assets',
+            ],
+            'console'=>[
+                'cache'=>'@console/runtime/cache',
+                'mail'=>'@console/runtime/mail',
+                //'debug'=>'@console/runtime/debug',
+                //'HTML'=>'@console/runtime/HTML',
+                'logs'=>'@console/runtime/logs',
+                //'URI'=>'@console/runtime/URI',
+            ],
+        ];
 
-        ],
-        'vba'=>[
-            'cache'=>'@vba/runtime/cache',
-            'debug'=>'@vba/runtime/debug',
-            'HTML'=>'@vba/runtime/HTML',
-            'logs'=>'@vba/runtime/logs',
-            'URI'=>'@vba/runtime/URI',
-            'assets'=>'@vba/web/assets',
-
-        ],
-        'console'=>[
-            'cache'=>'@console/runtime/cache',
-            //'debug'=>'@console/runtime/debug',
-            //'HTML'=>'@console/runtime/HTML',
-            'logs'=>'@console/runtime/logs',
-            //'URI'=>'@console/runtime/URI',
-            'assets'=>'@console/web/assets',
-        ],
-    ];
     private $_alias;
     private $_path;
 
@@ -87,6 +82,7 @@ class File extends  Component{
      */
     public function setAlias($alias){
         $this->_alias = $alias;
+        $this->_path =Yii::getAlias($alias);
     }
 
     /**
@@ -94,7 +90,15 @@ class File extends  Component{
      * @return false|string
      */
     public function getPath(){
-        return Yii::getAlias($this->_alias);
+        return $this->_path;
+    }
+
+    /**
+     * 设置路由
+     * @param $path
+     */
+    public function setPath($path){
+        $this->_path = $path;
     }
 
     /**
@@ -141,7 +145,6 @@ class File extends  Component{
 
     /**
      * 所属组
-     * @param $path
      * @return false|int
      */
     public function getGroup(){
@@ -150,7 +153,6 @@ class File extends  Component{
 
     /**
      * 所有者
-     * @param $path
      * @return false|int
      */
     public function getOwner(){
@@ -191,13 +193,39 @@ class File extends  Component{
         return $res;
     }
 
+    /**
+     * 获取图表x轴
+     * @return array
+     */
+    public function getTmpLabels(){
+        return array_keys($this->tmpAlias['backend']);
+    }
 
-
+    public function getBaseName(){
+        return basename($this->path);
+    }
+    public function getFileName(){
+        if (is_file($this->path)){
+            return pathinfo($this->path)['filename'];
+        }else{
+            return false;
+        }
+    }
+    public function getDirname(){
+        return dirname($this->path);
+    }
+    public function getExtension(){
+        if (is_file($this->path)){
+            return pathinfo($this->path)['extension'];
+        }else{
+            return false;
+        }
+    }
 
     /**
      * 获取文件配置信息
      * @param $path
-     * @return array
+     * @return array|bool
      */
     public static function fileInfo($path){
         if (is_file($path)){
@@ -249,6 +277,8 @@ class File extends  Component{
 
            return $config;
 
+        }else{
+            return false;
         }
     }
 
@@ -262,18 +292,19 @@ class File extends  Component{
            return null;
         }else{
             if(is_dir($path)){
-                $res = [];
+                $dir = [];
+                $file= [];
                 $arr = scandir($path);
                 foreach ($arr as $item){
                     if ($item != '.' && $item != '..'){
                         if (is_dir($path.'/'.$item)){
-                            array_push($res['dir'],$item);
+                            array_push($dir,$item);
                         }else{
-                            array_push($res['fire'],$item);
+                            array_push($file,$item);
                         }
                     }
                 }
-                return  $res;
+                return  ['dir'=>$dir,'file'=>$file];
             }else{
                 return  false;
             }
@@ -287,7 +318,23 @@ class File extends  Component{
      * @return false|int
      */
     public static function dirSize($path){
-        return disk_total_space($path);
+        if (is_dir($path)){
+            $handle = opendir($path);
+            $sizeResult = 0;
+            while (false !== ($FolderOrFile = readdir($handle))){
+                if ($FolderOrFile != "." && $FolderOrFile != ".."){
+                    if (is_dir($path.'/'.$FolderOrFile)){
+                        $sizeResult += self::dirSize($path.'/'.$FolderOrFile);
+                    }else{
+                        $sizeResult += filesize($path."/".$FolderOrFile);
+                    }
+                }
+            }
+            closedir($handle);
+            return $sizeResult;
+        }else{
+            return  false;
+        }
     }
 
     /**
@@ -448,6 +495,75 @@ class File extends  Component{
         $info .= (($perms & 0x0001) ? (($perms & 0x0200) ? 't' : 'x' ) : (($perms & 0x0200) ? 'T' : '_'));
 
         return $info;
+    }
+
+
+    /**
+     * 构造写入字符串,并写入文件中
+     * @param $filePath
+     * @param $config
+     * @return false|int
+     */
+    public static function writeConfig($filePath, $config){
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+        $str = "<?php\r\nreturn [\r\n";  // 拼接数组字符串-开头
+        $str .= self::ConfigToStr($str, $config,1);  // 拼接数组字符串-中间
+        $str .= "];";  //
+        return file_put_contents($filePath, $str,FILE_APPEND);
+    }
+
+    /**
+     * 构造写入数据
+     * @param $str
+     * @param $array
+     * @param int $space
+     */
+    public static function ConfigToStr(&$str, $array, $space = 0){
+         $s ='' ;
+        for($i=0; $i<$space*4;$i++){
+            $s .= " ";
+        }
+        foreach($array as $k=>$item){
+            if(is_array($item)){
+                $str .= "$s'$k' => [\r\n";
+                $str .= self::ConfigToStr($str, $item, $space+1);
+                $str .= "$s],\r\n";
+            }else{
+                $str .= "$s'$k' => '$item',\r\n";
+            }
+        }
+    }
+
+    /**
+     * 合并数据
+     * @param $path
+     * @param $config
+     * @return false|int
+     */
+    public static function saveConfig($path,$config){
+        if(!file_exists($path)){
+            file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
+        }
+        $arr = require( $path);
+        $tmp = array_merge($arr , $config);
+        return self::writeConfig($path,$tmp);
+    }
+
+    /**
+     * 添加翻译,如果键重复，默认是不会添加
+     * @param array $arr
+     * @param string $category
+     * @param false $options
+     * @return false|int
+     */
+    public static function addI18n($arr,$category = 'app',$options =false){
+        $dir = Yii::getAlias("@common").'/messages/zh-CN/';
+        $path = $dir.$category.'.php';
+        $res = require($path);
+        $tmp = array_merge($res , $arr);
+        return  self::saveConfig($path,$tmp);
     }
 }
 

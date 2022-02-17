@@ -64,5 +64,14 @@ return [
     'Update {modelClass} #{id}' => '更新{modelClass}#{id}',
     'Order' => '订单',
     'hello word' => '你好世界',
-    'Admin'=>'rbac'
+    'Admin'=>'rbac',
+    'INBOX'=>'收信箱',
+    'Sent Messages'=>'已发送',
+    'Drafts'=>'草稿',
+    'Junk'=>'垃圾邮件',
+    'Deleted Messages'=>'已删除',
+    'Inbox'=>'收信箱',
+    'Sent'=>'已发送',
+    'Deleted'=>'已删除',
+
 ];

@@ -137,6 +137,7 @@
       <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
       <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/ddeboer/imap" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration">

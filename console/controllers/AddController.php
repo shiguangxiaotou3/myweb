@@ -4,9 +4,10 @@
 namespace console\controllers;
 
 use common\models\ar\Ip;
-use common\models\basicData\Clear;
+use common\models\basic\Clear;
 use common\models\curl\Curl;
 use common\models\User;
+use common\modules\email\components\Imap;
 use Yii;
 use common\models\gii\shell;
 use yii\console\Controller;
@@ -57,6 +58,9 @@ class AddController extends Controller
         Clear::delAll();
         echo 'hello word\n';
         return false;
+    }
+
+    public function actionImap(){
     }
 
 }

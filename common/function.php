@@ -217,17 +217,17 @@ function MaxDifferTime($startTime, $endTime){
     $data = SendTimeDiffer($startTime, $endTime);
     if($data){
         if($data['year'] >0){
-            return $data['year']."年";
+            return $data['year']." 年";
         }elseif ($data['month'] >0){
-            return $data['month']."月";
+            return $data['month']." 月";
         }elseif ($data['day'] >0){
-            return $data['day']."天";
+            return $data['day']." 天";
         }elseif ($data['hour'] >0){
-            return $data['hour']."小时";
+            return $data['hour']." 小时";
         }elseif ($data['minute'] >0){
-            return $data['minute']."分钟";
+            return $data['minute']." 分钟";
         }elseif ($data['second'] >0){
-            return $data['second']."秒";
+            return $data['second']." 秒";
         }
     }else{
         return false;

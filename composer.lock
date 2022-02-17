@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a595dce9bf57bf66917f6a9fff489da4",
+    "content-hash": "458b3f377edb8a83414c90856a515d04",
     "packages": [
         {
             "name": "abhi1693/yii2-system-info",
@@ -391,6 +391,81 @@
                 "source": "https://github.com/chenkby/yii2-region/tree/master"
             },
             "time": "2017-02-22T07:06:12+00:00"
+        },
+        {
+            "name": "ddeboer/imap",
+            "version": "1.12.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ddeboer/imap.git",
+                "reference": "5f1d8ed40b365386c028e038658376410c59e8a8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ddeboer/imap/zipball/5f1d8ed40b365386c028e038658376410c59e8a8",
+                "reference": "5f1d8ed40b365386c028e038658376410c59e8a8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "ext-imap": "*",
+                "ext-mbstring": "*",
+                "php": "^7.4 || ^8.0.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^v3.1.0",
+                "laminas/laminas-mail": "^2.15.0",
+                "malukenho/mcbumpface": "^1.1.5",
+                "phpstan/phpstan": "^0.12.99",
+                "phpstan/phpstan-phpunit": "^0.12.22",
+                "phpstan/phpstan-strict-rules": "^0.12.11",
+                "phpunit/phpunit": "^9.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ddeboer\\Imap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David de Boer",
+                    "email": "david@ddeboer.nl"
+                },
+                {
+                    "name": "Filippo Tessarotto",
+                    "email": "zoeslam@gmail.com"
+                },
+                {
+                    "name": "Community contributors",
+                    "homepage": "https://github.com/ddeboer/imap/graphs/contributors"
+                }
+            ],
+            "description": "Object-oriented IMAP for PHP",
+            "keywords": [
+                "email",
+                "imap",
+                "mail"
+            ],
+            "support": {
+                "issues": "https://github.com/ddeboer/imap/issues",
+                "source": "https://github.com/ddeboer/imap/tree/1.12.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Slamdunk",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/ddeboer",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-09-23T05:56:38+00:00"
         },
         {
             "name": "dmstr/yii2-adminlte-asset",
