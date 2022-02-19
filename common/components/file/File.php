@@ -10,32 +10,23 @@ use yii\base\Component;
  * Class File
  *
  * @property $alias
-
  * @property $path
  * @property-read $baseName
  * @property-read $fileName
  * @property-read $dirname
  * @property-read $extension
  * @property-read $size
- *
- * @property-read
- * @property-read
  * @property-read $group 所属组
  * @property-read $owner 所有者
  * @property-read $children
- *
- * @property $tmpAlias
  * @property-read $tmpSize
  * @property-read $tmpLabels
- *
-
  * @property-read $permissionsNumber    权限十进制数字
  * @property-read $permissionsStr       所有权限字符串
  * @package common\components\file
  */
 class File extends  Component{
 
-    /* @var array $tmpAlias */
     public $tmpAlias = [
             'backend'=>[
                 'cache'=>'@backend/runtime/cache',
@@ -66,15 +57,14 @@ class File extends  Component{
                 //'URI'=>'@console/runtime/URI',
             ],
         ];
-    /** @var string $_alias */
-    private $_alias;
-    /** @var string $_path */
+    private  $_alias;
     private $_path;
 
     /**
      * @return string
      */
-    public function getAlias(){
+    public function getAlias()
+    {
         return $this->_alias;
     }
 
@@ -108,7 +98,8 @@ class File extends  Component{
      * @param int $permissions
      * @return bool
      */
-    public function createDir($dirname,$permissions = 0777 ){
+    public function createDir($dirname,$permissions = 0777 )
+    {
         return mkdir($this->path."/".$dirname,$permissions,true);
     }
 
@@ -117,7 +108,8 @@ class File extends  Component{
      * @param string $relative_path 相对路径
      * @return bool
      */
-    public function delDir($relative_path){
+    public function delDir( $relative_path)
+    {
         return rmdir($this->path.'/'.$relative_path);
     }
 
@@ -132,7 +124,8 @@ class File extends  Component{
     /**
      * 清空当前目录
      */
-    public function clear(){
+    public function clear()
+    {
        return self::clearDir($this->path);
     }
 
@@ -175,36 +168,10 @@ class File extends  Component{
      *  获取当前目录权限，返回字符传
      * @return string
      */
-    public function getPermissionsStr(){
+    public function getPermissionsStr()
+    {
         return self::permissionsStr($this->path);
     }
-
-    /**
-     * 获取临时文件目录大小
-     * @return array
-     */
-    public function getTmpSize(){
-        $data = $this->tmpAlias;
-        $res =array();
-        foreach ($data as $key =>$datum){
-            $row =array();
-            foreach ($datum as $field =>$value){
-                $this->alias = $value;
-                $row[$field] = round(self::dirSize($this->path)/1024/1024,2);
-            }
-            $res[] = array('label'=>$key,'data'=>$row);
-        }
-        return $res;
-    }
-
-    /**
-     * 获取图表x轴
-     * @return array
-     */
-    public function getTmpLabels(){
-        return array_keys($this->tmpAlias['backend']);
-    }
-
     public function getBaseName()
     {
         return basename($this->path);
@@ -227,6 +194,46 @@ class File extends  Component{
             return false;
         }
     }
+
+
+    /**
+     * 获取临时文件目录大小
+     * @return array
+     */
+    public function getTmpSize()
+    {
+        $data = $this->tmpAlias;
+        $res =array();
+        foreach ($data as $key =>$datum){
+            $row =array();
+            foreach ($datum as $field =>$value){
+                $this->alias = $value;
+                $row[$field] = round(self::dirSize($this->path)/1024/1024,2);
+            }
+            $res[] = array('label'=>$key,'data'=>$row);
+        }
+        return $res;
+    }
+
+    /**
+     * 获取图表x轴
+     * @return array
+     */
+    public function getTmpLabels(){
+        return array_keys($this->tmpAlias['backend']);
+    }
+
+    public function clearTmp(){
+        $data = $this->tmpAlias;
+        foreach ($data as $datum){
+            foreach ($datum as $value){
+                $path = Yii::getAlias($value);
+                self::clearDir($path);
+            }
+        }
+    }
+
+
 
     /**
      * 获取文件配置信息
@@ -352,51 +359,23 @@ class File extends  Component{
      */
     public static function recursionDelFile($path){
         $dh = opendir($path);
-        while ($file = readdir($dh)) {
-            if ($file != '.' && $file != ".." && $file != '.gitignore') {
-                $pathName = $path . "/" . $file;
-                if (is_dir($pathName)) {
-                    if (!unlink($pathName)) {
-                        continue;
+        if($dh){
+            while ($file = readdir($dh)) {
+                if ($file != '.' && $file != ".." && $file != '.gitignore') {
+                    $pathName = $path . "/" . $file;
+                    if (is_dir($pathName)) {
+                        self::recursionDelFile($pathName);
+                        rmdir($pathName);
+                    } else {
+                        unlink($pathName);
                     }
-                } else {
-                    self::recursionDelFile($pathName);
                 }
             }
+            closedir($dh);
+        }else{
+            return false;
         }
-        closedir($dh);
-    }
 
-    /**
-     * 递归目录
-     * 如何目录不为空或者没有权限，则跳过
-     * @param $path
-     * @return bool
-     */
-    public static function recursionDelDir($path){
-        if(is_dir($path)){
-            //如果为空,则直接删除
-            if(self::is_Null($path)){
-               return rmdir($path);
-            }else{
-                $name = scandir($path);
-                foreach ($name as $pathName){
-                    if(is_dir($path.'/'.$pathName) ){
-                        //如果为空则删除目录;不为空则进入子目录
-                        if(self::is_Null($path.'/'.$pathName)){
-                            //删除失败，退出当前循环
-                            if( !rmdir($path.'/'.$pathName)){
-                                continue;
-                            }
-                        }else{
-                            self::recursionDelDir($path.'/'.$pathName);
-                        }
-                    }else{
-                        continue;
-                    }
-                }
-            }
-        }
     }
 
     /**
@@ -409,21 +388,24 @@ class File extends  Component{
         if(self::is_Null($path)){
             return true;
         }else{
-            $name = scandir($path);
-            foreach ($name as $pathName){
-                if ($pathName != '.' && $pathName !=".." && $pathName !='.gitignore'){
-                    if (is_dir($path."/".$pathName)){
-                        //递归删除文件
-                        self::recursionDelFile($path."/".$pathName);
-                        //递归删除目录
-                        self::recursionDelDir($path."/".$pathName);
-                    }else{
-                        unlink($path."/".$pathName);
+            if(is_dir($path)){
+                $name = scandir($path);
+                foreach ($name as $pathName){
+                    if ($pathName != '.' && $pathName !=".." && $pathName !='.gitignore'){
+                        if (is_dir($path."/".$pathName)){
+                            //递归删除文件
+                            self::recursionDelFile($path."/".$pathName);
+                            if (self::is_Null($path."/".$pathName)){
+                                rmdir($path."/".$pathName);
+                            }
+                        }else{
+                            unlink($path."/".$pathName);
+                        }
                     }
                 }
+                //最后检测是否为空
+                return self::is_Null($path);
             }
-            //最后检测是否为空
-            return self::is_Null($path);
         }
     }
 
@@ -506,7 +488,6 @@ class File extends  Component{
         return $info;
     }
 
-
     /**
      * 构造写入字符串,并写入文件中
      * @param $filePath
@@ -556,7 +537,7 @@ class File extends  Component{
             file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
         }
         /** @var array $arr */
-        $arr = require  ($path);
+        $arr = require($path);
         $tmp = array_merge($arr , $config);
         return self::writeConfig($path,$tmp);
     }
@@ -565,10 +546,9 @@ class File extends  Component{
      * 添加翻译,如果键重复，默认是不会添加
      * @param array $arr
      * @param string $category
-     * @param false $options
      * @return string
      */
-    public static function addI18n($arr,$category = 'app',$options =false){
+    public static function addI18n(array $arr, $category = 'app'){
         $dir = Yii::getAlias("@console").'/messages/zh-CN/';
         $path = $dir.$category.'.php';
         $res = require($path);

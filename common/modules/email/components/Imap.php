@@ -2,8 +2,7 @@
 
 namespace common\modules\email\components;
 
-
-use Ddeboer\Imap\MessageInterface;
+use common\components\file\File;
 use Yii;
 use Exception;
 use yii\base\Component;
@@ -14,41 +13,52 @@ use Ddeboer\Imap\Message;
 use yii\helpers\ArrayHelper;
 use Ddeboer\Imap\Connection;
 use Ddeboer\Imap\MessageIterator;
+use Ddeboer\Imap\MessageInterface;
 use Ddeboer\Imap\Message\AbstractMessage;
+use Ddeboer\Imap\MessageIteratorInterface;
 
 /**
  * Class Imap
- *
- * @property-read  Connection $connection imap链接对象
- * @property-read  string $server 服务器名称
- * @property-read  bool $Cache 是否启用文件缓存
- * @property-read  array $viewMailbox 要显示的邮箱集合
- * @property-read string $name 当前邮箱名称
- * @property Mailbox $mailbox      邮箱对象
- * @property array $messages    邮件集合
- * @property  Message|AbstractMessage $message    邮件实例
- * @property-read array $mailboxList 可用的操作
- * @property-read array $numbers
- * @property-read mixed $headers
+ * @property-read  string $server               服务器名称
+ * @property-read  Connection $connection       imap链接对象
+ * @property Mailbox $mailbox                   邮箱对象
+ * @property-read array $mailboxList            邮箱列表及邮件数量
+ * @property-read string $mailboxName           当前邮箱名称
+ * @property-read  MessageIterator $messages    邮件集合对象
+ * @property  Message $message                  邮件实例
+ * @property-read array $messageInfo            邮件的详细信息
+* @property-read string $messageId              邮件id
+ * @property-read integer $messageNumber        邮件uid
+ * @property-read string $messageSubject        邮件标题
+ * @property-read string $messageFrom           发件人
+ * @property-read array $messageTo              收件人
+ * @property-read integer $messageDate          时间
+ * @property-read bool $messageisAnswered       是不是回信
+ * @property-read bool $messageisDeleted        是否删除
+ * @property-read bool $messageisDraft          是不是草稿
+ * @property-read bool $messageisSeen           是否已发送
+ * @property-read string $messageBody           正文
+ * @property-read string $messageHeaders        标题
+ * @property-read bool $messageisAttachment         是否存在附件
+ * @property-read  $messageAttachments          附加对象
  * @property-read bool $cache
- * @property-read Connection $_connection 链接对象
  * @package common\modules\email\components\Imap
  */
-
-class Imap extends Component
-{
-
-    /**
-     * @var array
-     */
-    public array $servers = [
+class Imap extends Component{
+    public  $servers = [
         'qqMailer' => [
             'host' => 'imap.qq.com',
             'port' => 993,
             'flags' => '/imap/ssl',
             'username' => '757402123@qq.com',
             'password' => 'bjhxxjyxnrgibbeg',
-            'viewMailbox' => ['INBOX', 'Sent Messages', 'Drafts', 'Deleted Messages', 'Junk'],
+            //默认邮箱
+            'defaultMailbox'=>'INBOX',
+            //时差
+            "timeDifference"=>-16*60*60,
+            //是否下载文件
+            'downloadFile'=>false,
+            'mailboxs' => ['INBOX', 'Sent Messages', 'Drafts', 'Deleted Messages', 'Junk'],
         ],
         'outlook' => [
             'host' => 'outlook.office365.com',
@@ -56,21 +66,24 @@ class Imap extends Component
             'flags' => '/imap/ssl/validate-cert',
             'username' => 'wanlong757402@outlook.com',
             'password' => 'TIMETHIEF.',
-            'viewMailbox' => ['Inbox', 'Sent', 'Drafts', 'Deleted', 'Junk'],
+            //默认邮箱
+            'defaultMailbox'=>'Inbox',
+            //时差
+            "timeDifference"=>0,
+            //是否下载文件
+            'downloadFile'=>false,
+            'mailboxs' => ['Inbox', 'Sent', 'Drafts', 'Deleted', 'Junk'],
         ],
     ];
-    /** @p bool $cache 是否启用文件缓存 */
-    public $cache = true;
-    /** @var string $path 缓存存文件保存目录 */
+    public $cache = false;
     public $path = "@app/runtime/mail";
-    /** @var string $filename 缓存文件名称 */
     public $filename = 'data.php';
     public $defaultViewMailbox = ['Inbox'];
-
-    private $_connection;
-    private $_mailbox;
-    private $_message;
-    private $_server;
+    private $_server;               //服务器名称
+    private $_connection;           //链接对象实例
+    private $_mailbox;              //邮箱对象
+    private $_message;              //邮件对象
+    private $_timeDifference;      //服务器与客户端时间差
     private $_viewMailbox;
 
     /**
@@ -87,16 +100,13 @@ class Imap extends Component
         $flags = ArrayHelper::getValue($servers, $serverName . '.flags');
         $username = ArrayHelper::getValue($servers, $serverName . '.username');
         $password = ArrayHelper::getValue($servers, $serverName . '.password');
+        if (ArrayHelper::getValue($servers,$serverName."timeDifference")){
+            $this->_timeDifference =ArrayHelper::getValue($servers,$serverName."timeDifference");
+        }else{$this->_timeDifference =0;}
         $this->_server = $serverName;
-        if (isset($servers[$serverName]['viewMailbox'])) {
-            $this->_viewMailbox = ArrayHelper::getValue($servers, $serverName . '.viewMailbox');
-        } else {
-            $this->_viewMailbox = $this->defaultViewMailbox;
-        }
         $imap = new Server($host, $port, $flags);
         $this->_connection = $imap->authenticate($username, $password);
     }
-
     /**
      * 关闭连接
      * @return bool
@@ -105,15 +115,14 @@ class Imap extends Component
     {
         return $this->connection->close();
     }
-
     /**
+     * 获取服务名称
      * @return string
      */
     public function getServer()
     {
         return $this->_server;
     }
-
     /**
      * 返回链接对象
      * @return Connection
@@ -122,16 +131,12 @@ class Imap extends Component
     {
         return $this->_connection;
     }
-
     /**
-     * 获取服务器的所有邮箱列表
-     * @param $name
+     * 获取当前服务器的所有邮箱列表
      * @return array
      * @throws Exception
      */
-    public function getMailboxList($name)
-    {
-        $this->open($name);
+    public function getMailboxList(){
         $mailboxes = $this->connection->getMailboxes();
         $res = [];
         foreach ($mailboxes as $mailbox) {
@@ -141,13 +146,246 @@ class Imap extends Component
             }
             $res[$mailbox->getName()] = $mailbox->count();
         }
-        $this->close();
         return $res;
     }
+    /**
+     * 返回当前邮箱对象
+     * @return Mailbox
+     */
+    public function getMailbox()
+    {
+        return $this->_mailbox;
+    }
+    /**
+     * 设置当前服务器的 邮箱
+     * @param  $mailboxName
+     */
+    public function setMailbox($mailboxName ){
+        $this->_mailbox = $this->connection->getMailbox($mailboxName);
+    }
+    /**
+     * 删除邮箱
+     * @param $mailboxName
+     */
+    public function delMailbox($mailboxName){
+        return $this->connection->deleteMailbox($mailboxName);
+    }
+    /**
+     * 获取当前服务器的邮箱的名称
+     * @return string
+     */
+    public function getMailboxName()
+    {
+        return $this->mailbox->getName();
+    }
+    /**
+     * 获取当前服务器的 当前邮箱的所有邮件信息
+     * @return MessageIteratorInterface
+     */
+    public function getMessages()
+    {
+        return $this->mailbox->getMessages();
+
+    }
+    public function getMessageInfo(){
+        return [
+            'Id' => $this->messageId,
+            "Number" => $this->messageNumber,
+            'Subject' => $this->messageSubject,
+            'From' => $this->messageFrom,
+            'To' => $this->messageTo,
+            //'Date'=> $this->messageDate  ,
+            //回答
+            'isAnswered' => $this->messageisAnswered,
+            //删除
+            'isDeleted' => $this->messageisDeleted,
+            //草稿
+            'isDraft' => $this->messageisDraft,
+            'isSeen' => $this->messageisSeen,
+            'isAttachment' => $this->messageisAttachment,
+        ];
+    }
+    /**
+     * 获取邮件单例
+     * @return  Message
+     */
+    public function getMessage()
+    {
+        return $this->_message;
+    }
+    /**
+     * 设置邮件单例
+     * @param Message $message
+     */
+    public function setMessage($message)
+    {
+        $this->_message = $message;
+    }
+    public function getMessageId(){ return $this->message->getId();}
+    public function getMessageNumber(){return $this->message->getNumber();}
+    public function getMessageSubject(){return $this->message->getSubject();}
+    public function getMessageFrom(){return $this->message->getFrom()->getAddress();}
+    public function getMessageTo(){
+        $to =$this->message->getTo();
+        if(is_array($to)){
+            $res =[];
+            foreach ($to as $value){
+               $res[]= $value->getAddress();
+            }
+            return  $res;
+        }
+
+        return $this->message->getTo();
+    }
+    public function getMessageDate(){
+        return $this->message->getDate()->getTimestamp()+$this->_timeDifference;
+    }
+    public function getMessageisAnswered(){return $this->message->isAnswered();}
+    public function getMessageisDeleted(){return $this->message->isDeleted();}
+    public function getMessageisDraft(){return $this->message->isDraft();}
+    public function getMessageisSeen(){return $this->message->isSeen();}
+    public function getMessageBody(){return $this->message->getId();}
+    public function getMessageHeaders(){return $this->message->getHeaders();}
+    /**
+     * 返回邮件的附件对象
+     * @return bool
+     */
+    public function getMessageisAttachment(){return $this->message->getAttachments() ? true : false;}
+
+    /*------------------------------------------*\
+    / 邮件操作
+    /-------------------------------------------*/
+    /**
+     * 下载附件
+     * @param string $path
+     * @return Message\Attachment[]|Message\AttachmentInterface[]
+     */
+    public function DownloadMessageAttachments($path){
+       $Attachments =  $this->message->getAttachments();
+       if(isset($Attachments)){
+           foreach ($Attachments as $attachment){
+               $getFilename =$attachment->getFilename ();
+               $content =$attachment ->getDecodedContent();
+               if(is_dir($path) && !file_exists($path ."/".$getFilename)){
+                   try{
+                       file_put_contents ($path ."/".$getFilename, $content);
+                   }catch (Exception $exception){
+                       continue;
+                   }
+               }else{
+                   continue;
+               }
+           }
+       }
+    }
+
+    /**
+     * 移动邮件到另一个邮箱
+     * @param $mailboxName
+     * @return bool
+     */
+    public function messageMove($mailboxName){
+        $mailbox=$this->connection->getMailbox($mailboxName);
+        if($mailbox){
+            return $this->message->move($mailbox) ? true : false;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * 将邮件标记已读
+     * @return bool
+     */
+    public function messageMarkAsSeen (){
+       return $this->message->markAsSeen();
+    }
+
+    /**
+     * 设置邮件标记
+     * @param $tag
+     * @return bool
+     */
+    public function messageSetFlag($tag){ return $this->message->setFlag($tag);}
+
+    /**
+     * 取消邮件标记
+     * @param $tag
+     * @return bool
+     */
+    public function messageClearFlag($tag){return $this->message->ClearFlag($tag);}
+
+    /**
+     * 删除当前服务器的 邮件
+     * @return mixed
+     */
+    public function delMessage(){
+        $this->message->delete();
+        return $this->connection->expunge();
+    }
+
+    /*------------------------------------------*\
+    / 下面是方便客户端操作方法
+    /-------------------------------------------*/
+    public function fileCache(){
+        $servers = $this->servers;
+        $path = Yii::getAlias($this->path);
+        $data =[];
+        foreach ($servers as $server =>$config){
+            $this->open($server);
+            //获取邮箱列表
+            if(isset($servers[$server]['mailboxs'])){
+                $mailboxs =$servers[$server]['mailboxs'];
+            }else{
+                $mailboxs =array_keys($this->mailboxList);
+            }
+            foreach ($mailboxs as $mailbox){
+                $this->mailbox = $mailbox;
+                $messages = $this->messages;
+                foreach ($messages as $message){
+                    $this->message = $message;
+                    //获取邮件信息
+                    $messageData =$this->messageInfo;
+                    //创建目录
+                    $pathTmp =$path."/".$server."/".$mailbox.'/'.$messageData['Number'];
+                    if(!is_dir($pathTmp )){
+                        mkdir($pathTmp ,0775,true);
+                    }
+                    //下载文件
+                    if(isset($servers[$server]['downloadFile']) && $servers[$server]['downloadFile']){
+                        $this->DownloadMessageAttachments($pathTmp);
+                    }
+                    //写入正文
+                    $this->saveBody($message,$pathTmp."/bady.txt");
+                    $data[$server][$mailbox][]= $this->messageInfo;
+                }
+            }
+            $this->close();
+        }
+        File::saveConfig($path.'/'.$this->filename,$data);
+    }
+
+    /**
+     * 删除本地全部缓存文件
+     */
+    public function clearFileCache(){
+        File::clearDir(Yii::getAlias($this->path));
+    }
+
+
+
+
+
+
+
+
+
+
 
     public function getViewMailboxList($serverName)
     {
         if ($this->cache) {
+            //如果开启文件开启文件缓存，则从文件中获取数据
             $path = Yii::getAlias($this->path) . '/' . $this->filename;
             $data = require($path);
             $mailboxes = ArrayHelper::getValue($this->servers, $serverName . '.viewMailbox');
@@ -161,8 +399,9 @@ class Imap extends Component
             }
             return $res;
         } else {
+            //如果开启文件开启文件缓存，则从服务器中获取数据
             $this->open($serverName);
-            $mailboxes = $this->viewMailbox;
+            $mailboxes = $this->mailboxList;
             $res = [];
             foreach ($mailboxes as $mailbox) {
                 $this->mailbox = $mailbox;
@@ -173,8 +412,12 @@ class Imap extends Component
         }
     }
 
-    public function mailboxMessagesList($server, $mailboxName)
-    {
+    /**
+     * @param $server
+     * @param $mailboxName
+     * @return false|mixed
+     */
+    public function mailboxMessagesList($server, $mailboxName){
         if ($this->cache) {
             $path = Yii::getAlias($this->path) . '/' . $this->filename;
             $data = require($path);
@@ -182,235 +425,6 @@ class Imap extends Component
                 return $data[$server][$mailboxName];
             } else {
                 return false;
-            }
-
-        }
-    }
-
-    /**
-     * @return array
-     */
-    public function getViewMailbox()
-    {
-        return $this->_viewMailbox;
-    }
-
-    /**
-     * 获取当前邮箱的名称
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->mailbox->getName();
-    }
-
-    /**
-     * 返回当前邮箱对象
-     * @return Mailbox
-     */
-    public function getMailbox()
-    {
-        return $this->_mailbox;
-    }
-
-    /**
-     * 设置设置邮箱对象
-     * @param  $mailboxName
-     */
-    public function setMailbox($mailboxName = 'INBOX')
-    {
-        $this->_mailbox = $this->connection->getMailbox($mailboxName);
-    }
-
-    /**
-     * 获取邮箱的邮件列表
-     * @return array
-     */
-    public function getMessages()
-    {
-        $messages = $this->mailbox->getMessages();
-        $res = [];
-        foreach ($messages as $message) {
-            $res[] = [
-                'Id' => $message->getId(),
-                "Number" => $message->getNumber(),
-                'Subject' => $message->getSubject(),
-                'From' => $message->getFrom()->getAddress(),
-                'To' => $message->getTo()[0]->getAddress(),
-                //'Date'=> $message->getDate()  ,
-                //回答
-                'Answered' => $message->isAnswered(),
-                //删除
-                'Deleted' => $message->isDeleted(),
-                //草稿
-                'Draft' => $message->isDraft(),
-                'Seen' => $message->isSeen(),
-                //'html'=>$message->getBodyHtml(),
-                //'text'=>$message->getBodyText(),
-                //'Headers'=>$message->getHeaders(),
-            ];
-        }
-        return $res;
-    }
-
-    /**
-     * 获取邮件单例
-     * @return  Message
-     */
-    public function getMessage()
-    {
-        return $this->_message;
-    }
-
-    /**
-     * 设置邮件单例
-     * @param integer $number
-     */
-    public function setMessage($number)
-    {
-        $messages = $this->mailbox->getMessages();
-        $this->_message = $messages[$number];
-    }
-
-    /**
-     * 删除邮件
-     * @return mixed
-     */
-    public function delMessage()
-    {
-        $this->message->delete();
-        return $this->connection->expunge();
-
-    }
-
-    /**
-     * @param DateTimeImmutable $data
-     * @return false|string
-     */
-    public static function Unix($data)
-    {
-        $int = strtotime($data->format("Y-m-d H:m:s")) + 8 * 60 * 60;
-        if ($int) {
-            return $int;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * 更新本地缓存
-     * @param string $boxName
-     */
-    public function update($boxName = 'INBOX')
-    {
-
-//        $path = Yii::getAlias($this->path.'/'.$this->username."/".$boxName);
-//        //创建目录
-//        if(!is_dir($path)){
-//            mkdir($path,0775,true);
-//        }
-//        $this->mailbox = $boxName;
-//        $messages= $this->mailbox->getMessages();
-//        $data =[];
-//        /** @var Message|AbstractMessage $message */
-//        foreach ($messages as $message){
-//            $tmp = $message->getTo();
-//            $to =[];
-//            foreach ($tmp as $item){
-//                $to[] = $item->getAddress();
-//            }
-//            $key = $message->getNumber();
-//            $data[$key] =[
-//                'Id'=> $message->getId(),
-//                "Number"=> $key,
-//                'Subject'=>  $message->getSubject(),
-//                'From'=> $message->getFrom()->getAddress(),
-//                'To'=>$to,
-//                'Date'=> self::Unix($message->getDate())  ,
-//                //回答
-//                'Answered'=>$message->isAnswered(),
-//                //删除
-//                'Deleted'=>$message->isDeleted(),
-//                //草稿
-//                'Draft'=>$message->isDraft(),
-//                'Seen'=>$message->isSeen(),
-//                ];
-//
-//            //保存邮件正文
-//           $this->saveBody($message,$path,$key);
-//           //保存邮件头部
-//           $this->saveHeaders($message,$path,$key);
-//        }
-//        //将数据写入文件
-//        File::writeConfig($path."/data.php", $data);
-    }
-
-    /**
-     * 缓存服务器中的数据
-     * 这个方法允许时间很长
-     * @return false|int
-     * @throws Exception
-     */
-    public function saveServerList()
-    {
-        $path = Yii::getAlias($this->path);
-        $servers = array_keys($this->servers);
-        $arr = [];
-        foreach ($servers as $server) {
-            //创建目录
-            $this->createServerDir($server);
-            //打开链接
-            $this->open($server);
-            //获取邮箱列表
-            $ViewMailbox = $this->viewMailbox;
-            foreach ($ViewMailbox as $mailbox) {
-                //设置当前邮箱
-                $this->mailbox = $mailbox;
-                //读取当前邮箱的邮件列表
-                /** @var MessageIterator $messages */
-                $messages = $this->mailbox->getMessages();
-                foreach ($messages as $message) {
-                    $number = $message->getNumber();
-                    if (!file_exists($path . '/' . $server . "/" . $mailbox . '/' . $number . '.txt')) {
-                        //下载邮件正文
-                        $this->saveBody($message, $path . '/' . $server . "/" . $mailbox, $number);
-                    }
-                    //获取数据信箱
-                    $arr[$server][$mailbox][$number] = [
-                        'Id' => $message->getId(),
-                        "Number" => $message->getNumber(),
-                        'Subject' => $message->getSubject(),
-                        'From' => $message->getFrom()->getAddress(),
-                        'To' => $message->getTo()[0]->getAddress(),
-                        //'Date'=> $message->getDate()  ,
-                    ];
-                }
-            }
-            $this->close();
-        }
-        $path = Yii::getAlias($this->path) . '/' . $this->filename;
-        return self::saveConfig($path, $arr);
-    }
-
-    /**
-     * 创建数据目录
-     * @param $server
-     */
-    private function createServerDir($server)
-    {
-        $path = Yii::getAlias($this->path);
-        if (!is_dir($path . "/" . $server)) {
-            mkdir($path . "/" . $server, 0755, true);
-        }
-        if (!isset($this->servers[$server]['viewMailbox'])) {
-            $arr = $this->defaultViewMailbox;
-        } else {
-            $arr = $this->servers[$server]['viewMailbox'];
-        }
-        //创建邮件列表
-        foreach ($arr as $box) {
-            if (!is_dir($path . "/" . $server . "/" . $box)) {
-                mkdir($path . "/" . $server . "/" . $box, 0755, true);
             }
         }
     }
@@ -421,73 +435,31 @@ class Imap extends Component
      * @param string $path
      * @param integer $number
      */
-    private function saveBody($message, $path, $number)
-    {
+    private function saveBody($message, $path){
         if ($message->getBodyHtml()) {
             $txt = $message->getBodyHtml();
         } else {
             $txt = $message->getBodyText();
         }
-        if (!file_exists($path . "/" . $number . '.txt')) {
-
-            file_put_contents($path . "/" . $number . '.txt', $txt, FILE_APPEND);
-        }
-
-    }
-
-    /**
-     * 构造写入字符串,并写入文件中
-     * @param $filePath
-     * @param $config
-     * @return false|int
-     */
-    public static function writeConfig($filePath, $config)
-    {
-        if (file_exists($filePath)) {
-            unlink($filePath);
-        }
-        $str = "<?php\r\nreturn [\r\n";  // 拼接数组字符串-开头
-        $str .= self::ConfigToStr($str, $config, 1);  // 拼接数组字符串-中间
-        $str .= "];";  //
-        return file_put_contents($filePath, $str);
-    }
-
-    /**
-     * 构造写入数据
-     * @param $str
-     * @param $array
-     * @param int $space
-     */
-    public static function ConfigToStr(&$str, $array, $space = 0)
-    {
-        $s = '';
-        for ($i = 0; $i < $space * 4; $i++) {
-            $s .= " ";
-        }
-        foreach ($array as $k => $item) {
-            if (is_array($item)) {
-                $str .= "$s'$k' => [\r\n";
-                $str .= self::ConfigToStr($str, $item, $space + 1);
-                $str .= "$s],\r\n";
-            } else {
-                $str .= "$s'$k' => '$item',\r\n";
-            }
-        }
-    }
-
-    /**
-     * 合并数据
-     * @param $path
-     * @param $config
-     * @return false|int
-     */
-    public static function saveConfig($path, $config)
-    {
         if (!file_exists($path)) {
-            file_put_contents($path, "<?php\r\nreturn [\r\n" . "];");
+            file_put_contents($path, $txt, FILE_APPEND);
         }
-        $arr = require($path);
-        $tmp = array_merge($arr, $config);
-        return self::writeConfig($path, $tmp);
     }
+
+    /**
+     * @param $server
+     * @param $mailboxName
+     * @param $uid
+     * @return false|string
+     */
+    public function BodyContent($server,$mailboxName,$uid){
+        $path =Yii::getAlias($this->path)."/".$server."/".$mailboxName."/".$uid."body.txt";
+        if(file_exists($path)){
+            return file_get_contents($path);
+        }else{
+            return false;
+        }
+
+    }
+
 }

@@ -5,10 +5,8 @@ namespace backend\controllers;
 
 
 use Yii;
-use yii\filters\AccessControl;
-
 use yii\web\Controller;
-use common\models\basic\Clear;
+use yii\filters\AccessControl;
 /**
  * 后台自动化执行工具
  * @package backend\controllers
@@ -17,7 +15,7 @@ class ActionController extends Controller
 {
 
     /**
-     * {@inheritdoc}
+     * @return array
      */
     public function behaviors()
     {
@@ -40,13 +38,11 @@ class ActionController extends Controller
     }
 
     /**
-     * 面板清理的pajx 控制器
+     * 面板清理的Pajx 控制器
      * @return string
      */
     public function actionClear(){
-            $number =  Clear::delAll();
-
-           // Yii::$app->session->setFlash('success', '临时文件清理成功');
+        Yii::$app->file->clearTmp();
             return $this->renderAjax('clear');
     }
 

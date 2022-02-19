@@ -38,30 +38,15 @@ class AddController extends Controller
     }
 
 
+    /**
+     * 删除用户的登陆记录表
+     */
     public function actionDelUser(){
        Ip::deleteAll();
        logObject('asd');
        echo '删除成功\r\n';
-
-
     }
 
-    public function  actionRead(){
-        $url ='https://www.baidu.com/';
-        $data = Curl::Download($url);
-        logObject($data);
-        echo "查看成功";
-        die();
-    }
-
-    public function actionClear(){
-        Clear::delAll();
-        echo 'hello word\n';
-        return false;
-    }
-
-    public function actionImap(){
-    }
 
 }
 
