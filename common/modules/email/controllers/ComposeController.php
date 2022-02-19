@@ -6,7 +6,7 @@ namespace common\modules\email\controllers;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\modules\models\EmailSendForm;
+use common\modules\email\models\EmailSendForm;
 
 class ComposeController extends  Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright  Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2021
+ * @copyright  Copyright &copy; Kartik Visweswaran, Krajee.com, 2015 - 2022
  * @package    yii2-widgets
  * @subpackage yii2-widget-activeform
- * @version    1.6.0
+ * @version    1.6.1
  */
 
 namespace kartik\form;
@@ -21,9 +21,9 @@ use yii\widgets\ActiveForm as YiiActiveForm;
  * ActiveForm is a widget that builds an interactive HTML form for one or multiple data models and extends the
  * [[YiiActiveForm]] widget to handle various bootstrap form types and new functionality.
  *
- * Example:
+ * For example,
  *
- * ~~~
+ * ```php
  * // Horizontal Form
  * $form = ActiveForm::begin([
  *      'id' => 'form-signup',
@@ -41,9 +41,10 @@ use yii\widgets\ActiveForm as YiiActiveForm;
  *      'type' => ActiveForm::TYPE_HORIZONTAL
  *      'formConfig' => ['labelSpan' => 2, 'deviceSize' => ActiveForm::SIZE_SMALL]
  * ]);
- * ~~~
+ * ```
  *
  * @method ActiveField field(Model $model, string $attribute, array $options = [])
+ *
  * @author Kartik Visweswaran <kartikv2@gmail.com>
  * @since  1.0
  */
@@ -52,8 +53,7 @@ class ActiveForm extends YiiActiveForm implements BootstrapInterface
     use BootstrapTrait;
 
     /**
-     * @var bool whether to render tooltip styled error and success messages. Applicable only for [[bsVersion]] 4.x
-     * and above.
+     * @var bool whether to render tooltip styled error and success messages. Applicable only for [[bsVersion]] >= 4.
      */
     public $tooltipStyleFeedback = false;
 
@@ -118,7 +118,10 @@ class ActiveForm extends YiiActiveForm implements BootstrapInterface
      *   forms.
      * - `showHints`: _boolean_, whether to show hints (true) or hide errors (false). Defaults to `true`. The hint will be
      *   rendered only if a valid hint has been set through the `hint()` method.
-     * ~~~
+     *
+     * Defaults to,
+     *
+     * ```php
      * [
      *     'labelSpan' => 2,
      *     'deviceSize' => ActiveForm::SIZE_MEDIUM,
@@ -126,12 +129,16 @@ class ActiveForm extends YiiActiveForm implements BootstrapInterface
      *     'showErrors' => true,
      *     'showHints' => true
      * ],
-     * ~~~
+     * ```
      */
     public $formConfig = [];
 
     /**
-     * @var array HTML attributes for the form tag. Defaults to `['role' => 'form']`.
+     * @var array HTML attributes for the form tag. Defaults to:
+     *
+     * ```php
+     * ['role' => 'form']
+     * ```
      */
     public $options = ['role' => 'form'];
 
@@ -300,12 +307,14 @@ class ActiveForm extends YiiActiveForm implements BootstrapInterface
         if ($this->isHorizontal()) {
             $css[] = 'kv-form-horizontal';
         }
+        $formCss = 'kv-form-bs3';
         if ($bsVer !== 3) {
-            $css[] = 'kv-form-bs4';
+            $formCss = 'kv-form-bs4';
             if ($this->tooltipStyleFeedback) {
                 $css[] = 'tooltip-feedback';
             }
         }
+        $css[] = $formCss;
         Html::addCssClass($this->options, $css);
     }
 

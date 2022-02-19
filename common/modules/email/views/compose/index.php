@@ -1,27 +1,25 @@
 <?php
 
-use yii\helpers\Html;
-use \common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
 use yii\bootstrap\ActiveForm;
-
+use common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
+use common\assets\adminlte\components\Select2Assets;
 /** @var $this yii\web\View */
 /** @var $content string */
-/** @var common\modules\models\EmailSendForm $model  */
+/** @var common\modules\email\models\EmailSendForm $model */
 
 $this->title ='写邮件';
 BootstrapWysihtml5Assets::register($this);
-\common\assets\adminlte\components\Select2Assets::register($this);
-//\common\assets\adminlte\plugins\InputMaskAssets::register($this);
+Select2Assets::register($this);
 ?>
     <style>
         select {
             -webkit-appearance: none;
-            border-radius: 0px;
+            border-radius: 0;
         }
     </style>
 
 <div class="row">
-    <?= $this->render('../layouts/left.php') ?>
+    <?php // $this->render('../layouts/left.php') ?>
     <!-- /.col -->
     <div class="col-md-9">
         <div class="box box-primary">

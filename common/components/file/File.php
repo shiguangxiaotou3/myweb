@@ -35,7 +35,7 @@ use yii\base\Component;
  */
 class File extends  Component{
 
-    /* @var $tmp_alias */
+    /* @var array $tmpAlias */
     public $tmpAlias = [
             'backend'=>[
                 'cache'=>'@backend/runtime/cache',
@@ -66,12 +66,13 @@ class File extends  Component{
                 //'URI'=>'@console/runtime/URI',
             ],
         ];
-
+    /** @var string $_alias */
     private $_alias;
+    /** @var string $_path */
     private $_path;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAlias(){
         return $this->_alias;
@@ -139,7 +140,8 @@ class File extends  Component{
      * 获取当前目录的大小,返回字节数
      * @return false|int
      */
-    public function getSize(){
+    public function getSize()
+    {
         return self::dirSize($this->path);
     }
 
@@ -147,7 +149,8 @@ class File extends  Component{
      * 所属组
      * @return false|int
      */
-    public function getGroup(){
+    public function getGroup()
+    {
         return filegroup($this->path);
     }
 
@@ -155,7 +158,8 @@ class File extends  Component{
      * 所有者
      * @return false|int
      */
-    public function getOwner(){
+    public function getOwner()
+    {
         return fileowner($this->path);
     }
 
@@ -201,7 +205,8 @@ class File extends  Component{
         return array_keys($this->tmpAlias['backend']);
     }
 
-    public function getBaseName(){
+    public function getBaseName()
+    {
         return basename($this->path);
     }
     public function getFileName(){
@@ -211,7 +216,8 @@ class File extends  Component{
             return false;
         }
     }
-    public function getDirname(){
+    public function getDirname()
+    {
         return dirname($this->path);
     }
     public function getExtension(){
@@ -227,7 +233,8 @@ class File extends  Component{
      * @param $path
      * @return array|bool
      */
-    public static function fileInfo($path){
+    public static function fileInfo($path)
+    {
         if (is_file($path)){
             $config = [
                 //返回路径中的文件名部分
@@ -285,9 +292,10 @@ class File extends  Component{
     /**
      * 获取目录下的所文件和名称
      * @param $path
-     * @return array[]|false
+     * @return array|bool|null
      */
-    public static function dirChildren($path){
+    public static function dirChildren($path)
+    {
         if(self::is_Null($path)){
            return null;
         }else{
@@ -317,7 +325,8 @@ class File extends  Component{
      * @param $path
      * @return false|int
      */
-    public static function dirSize($path){
+    public static function dirSize($path)
+    {
         if (is_dir($path)){
             $handle = opendir($path);
             $sizeResult = 0;
@@ -546,7 +555,8 @@ class File extends  Component{
         if(!file_exists($path)){
             file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
         }
-        $arr = require( $path);
+        /** @var array $arr */
+        $arr = require  ($path);
         $tmp = array_merge($arr , $config);
         return self::writeConfig($path,$tmp);
     }
@@ -556,10 +566,10 @@ class File extends  Component{
      * @param array $arr
      * @param string $category
      * @param false $options
-     * @return false|int
+     * @return string
      */
     public static function addI18n($arr,$category = 'app',$options =false){
-        $dir = Yii::getAlias("@common").'/messages/zh-CN/';
+        $dir = Yii::getAlias("@console").'/messages/zh-CN/';
         $path = $dir.$category.'.php';
         $res = require($path);
         $tmp = array_merge($res , $arr);

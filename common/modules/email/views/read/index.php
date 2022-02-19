@@ -7,7 +7,6 @@ $this->title ='收件箱';
 ?>
 
 <div class="row">
-    <?= $this->render('../layouts/left.php') ?>
     <!-- /.col -->
     <div class="col-md-9">
         <div class="box box-primary">

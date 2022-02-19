@@ -39,8 +39,8 @@ use yii\validators\IpValidator;
  * @property string $baseUrl The relative URL for the application.
  * @property array|object $bodyParams The request parameters given in the request body. Note that the type of
  * this property differs in getter and setter. See [[getBodyParams()]] and [[setBodyParams()]] for details.
- * @property-read string $contentType Request content-type. Null is returned if this information is not
- * available.
+ * @property-read string $contentType Request content-type. Empty string is returned if this information is
+ * not available.
  * @property-read CookieCollection $cookies The cookie collection.
  * @property-read string $csrfToken The token used to perform CSRF validation.
  * @property-read string $csrfTokenFromHeader The CSRF token sent via [[CSRF_HEADER]] by browser. Null is
@@ -564,7 +564,7 @@ class Request extends \yii\base\Request
             }
 
             $rawContentType = $this->getContentType();
-            if (($pos = strpos($rawContentType, ';')) !== false) {
+            if (($pos = strpos((string)$rawContentType, ';')) !== false) {
                 // e.g. text/html; charset=UTF-8
                 $contentType = substr($rawContentType, 0, $pos);
             } else {
@@ -790,7 +790,7 @@ class Request extends \yii\base\Request
     public function getHostName()
     {
         if ($this->_hostName === null) {
-            $this->_hostName = parse_url($this->getHostInfo(), PHP_URL_HOST);
+            $this->_hostName = parse_url((string)$this->getHostInfo(), PHP_URL_HOST);
         }
 
         return $this->_hostName;
@@ -1467,7 +1467,7 @@ class Request extends \yii\base\Request
      * contained in [[getRawBody()]] or, in the case of the HEAD method, the
      * media type that would have been sent had the request been a GET.
      * For the MIME-types the user expects in response, see [[acceptableContentTypes]].
-     * @return string request content-type. Null is returned if this information is not available.
+     * @return string request content-type. Empty string is returned if this information is not available.
      * @link https://tools.ietf.org/html/rfc2616#section-14.17
      * HTTP 1.1 header field definitions
      */
@@ -1478,7 +1478,7 @@ class Request extends \yii\base\Request
         }
 
         //fix bug https://bugs.php.net/bug.php?id=66606
-        return $this->headers->get('Content-Type');
+        return $this->headers->get('Content-Type') ?: '';
     }
 
     private $_languages;

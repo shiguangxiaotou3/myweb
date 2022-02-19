@@ -3,8 +3,7 @@
 namespace backend\controllers;
 
 
-use common\components\IpEvent;
-use common\models\ar\Login_record;
+use common\components\ip\IpEvent;
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
@@ -14,7 +13,8 @@ use yii\filters\AccessControl;
 
 
 /**
- * Site controller
+ * Class SiteController
+ * @package backend\controllers
  */
 class SiteController extends Controller
 {
@@ -57,7 +57,7 @@ class SiteController extends Controller
     }
 
     /**
-     * {@inheritdoc}
+     * @return string[][]
      */
     public function actions()
     {
