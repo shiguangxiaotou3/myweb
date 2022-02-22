@@ -6,7 +6,6 @@
 use yii\helpers\Html;
 use \yii\widgets\Pjax;
 use common\widgets\charts\Charts;
-use common\models\basic\Clear;
 
     $this->title ='控制台';
     $server = Yii::$app->server->config();
@@ -31,20 +30,15 @@ use common\models\basic\Clear;
             <div class="box-body">
                 <div class="chart">
                     <?php
+
                         Pjax::begin(['id' => 'assets']);
-                            $size = new Clear();
-                            $arr = $size->getSizeAll();
-                            $data = [
-                                'labels' => array_keys($arr['backend']),
-                                'datasets' => [
-                                    ['label' => '后台', 'data' =>array_map(function($i){return round($i/1024/1024,2);}, array_values($arr['backend'])),],
-                                    ['label' => '前台', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['frontend'])),],
-                                    ['label' => '控制台', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['console'])),],
-                                    ['label' => 'api', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['api'])),],
-                                    ['label' => 'vba', 'data' =>array_map(function($i){return round($i/1024/1024,2);},array_values($arr['vba'])),],
-                                ]
-                            ];
-                            echo Charts::widget(['type' => 'bar', 'data' => $data,]);
+                            echo Charts::widget([
+                                'type' => 'bar',
+                                'data' => [
+                                    'labels' => Yii::$app->file->tmpLabels,
+                                    'datasets' => Yii::$app->file->tmpSize,
+                                ],
+                            ]);
                         Pjax::end();
                     ?>
                 </div>

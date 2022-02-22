@@ -4,6 +4,7 @@
 namespace common\components\file;
 use Yii;
 use yii\base\Component;
+use yii\helpers\ArrayHelper;
 
 
 /**
@@ -356,6 +357,7 @@ class File extends  Component{
     /**
      * 递归删除文件
      * @param $path
+     * @return false
      */
     public static function recursionDelFile($path){
         $dh = opendir($path);
@@ -538,7 +540,7 @@ class File extends  Component{
         }
         /** @var array $arr */
         $arr = require($path);
-        $tmp = array_merge($arr , $config);
+        $tmp = ArrayHelper::merge($arr , $config);
         return self::writeConfig($path,$tmp);
     }
 
@@ -546,13 +548,17 @@ class File extends  Component{
      * 添加翻译,如果键重复，默认是不会添加
      * @param array $arr
      * @param string $category
+     * @param string $alias
      * @return string
      */
-    public static function addI18n(array $arr, $category = 'app'){
-        $dir = Yii::getAlias("@console").'/messages/zh-CN/';
-        $path = $dir.$category.'.php';
+    public static function addI18n( $arr,$alias = "@common/messages/zh-CN", $category = 'app'){
+        $dir = Yii::getAlias($alias);
+        $path = $dir.'/'.$category  .'.php';
+        if(!file_exists($path)){
+            file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
+        }
         $res = require($path);
-        $tmp = array_merge($res , $arr);
+        $tmp =  ArrayHelper::merge($res,$arr);
         return  self::saveConfig($path,$tmp);
     }
 }

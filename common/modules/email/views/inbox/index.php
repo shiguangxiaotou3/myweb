@@ -18,15 +18,21 @@ $this->title ='收件箱';
     <div class="col-md-3">
         <a href="compose.html" class="btn btn-primary btn-block margin-bottom">Compose</a>
         <?php
-            echo MailboxListWidget::widget([
-                'label'=>'outlook',
-                'action' =>'/email/inbox/messages',
-                'data' => $imap->getViewMailboxList('outlook'),
-            ]) ;
-            echo MailboxListWidget::widget([
-                'label'=>'qqMailer',
-                'data' => $imap->getViewMailboxList('qqMailer'),
-            ]) ;
+
+            $imap->open('qqMailer');
+          dump( $imap->saveServer());
+            // $imap->mailbox=/*'Drafts';// */'Sent Messages';
+           // $imap->saveMailbox();
+//        dump($imap->getViewMailboxList('outlook'));
+//            echo MailboxListWidget::widget([
+//                'label'=>'outlook',
+//                'action' =>'/email/inbox/messages',
+//                'data' => $imap->getViewMailboxList('outlook'),
+//            ]) ;
+//            echo MailboxListWidget::widget([
+//                'label'=>'qqMailer',
+//                'data' => $imap->getViewMailboxList('qqMailer'),
+//            ]) ;
         ?>
     </div>
 

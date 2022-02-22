@@ -65,22 +65,22 @@ class InboxController extends Controller{
         }
     }
     public function actionMessages(){
-        $request = Yii::$app->request;
-        if($request->isAjax){
-            $server =$request->get('server','');
-            $mailbox =$request->get('mailbox','');
-            $imap =$this->getImap();
-            if ($server != '' and $mailbox != ''){
-                $data= $imap->mailboxMessagesList($server,$mailbox);
-                return $this->renderAjax('messages',['data'=>$data]);
-            }else{
-                //Yii::$app->runController('/email/inbox/index');
-                $this->redirect(['/email/inbox/index']);
-            }
-        }else{
-            //Yii::$app->runController('/email/inbox/index');
-            $this->redirect(['/email/inbox/index']);
-        }
+//        $request = Yii::$app->request;
+//        if($request->isAjax){
+//            $server =$request->get('server','');
+//            $mailbox =$request->get('mailbox','');
+//            $imap =$this->getImap();
+//            if ($server != '' and $mailbox != ''){
+//                $data= $imap->mailboxMessagesList($server,$mailbox);
+//                return $this->renderAjax('messages',['data'=>$data]);
+//            }else{
+//                //Yii::$app->runController('/email/inbox/index');
+//                $this->redirect(['/email/inbox/index']);
+//            }
+//        }else{
+//            //Yii::$app->runController('/email/inbox/index');
+//            $this->redirect(['/email/inbox/index']);
+//        }
     }
 
     private function getImap(){
