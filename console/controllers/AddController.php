@@ -3,15 +3,11 @@
 
 namespace console\controllers;
 
-use common\models\ar\Ip;
-use common\models\basic\Clear;
-use common\models\curl\Curl;
-use common\models\User;
-use common\modules\email\components\Imap;
+
 use Yii;
 use common\models\gii\shell;
 use yii\console\Controller;
-
+use frontend\models\SignupForm;
 class AddController extends Controller
 {
 
@@ -42,9 +38,20 @@ class AddController extends Controller
      * 删除用户的登陆记录表
      */
     public function actionDelUser(){
-       Ip::deleteAll();
-       logObject('asd');
-       echo '删除成功\r\n';
+    }
+
+
+    /**
+     * 注册用户
+     */
+    public function actionAddUser(){
+        $model  = new SignupForm();
+        $model->username ='';
+        $model->email ='';
+        $model->password ='';
+        if ( $model->signup()) {
+
+        }
     }
 
 

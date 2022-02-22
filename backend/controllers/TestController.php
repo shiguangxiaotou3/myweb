@@ -12,12 +12,17 @@ class TestController  extends Controller
 {
 
     public function actionIndex(){
-       $path =Yii::getAlias('@backend/runtime/mail')."/qq/asd/23.php";
-       $data = dirname($path);
+//       $path =Yii::getAlias('@backend/runtime/mail')."/qq/asd/23.php";
+//       $data = dirname($path);
 //        mkdir($path,0755,true);
-//       $module = Yii::$app->getModule('email');
-//       /** @var Imap $imap */
-//       $imap= $module->imap;
+       $module = Yii::$app->getModule('email');
+       /** @var Imap $imap */
+       $imap= $module->imap;
+       $imap->open('qqMailer');
+       $imap->saveServer();
+       $imap->close();
+
+       $data =['asd'.'ads'];
 //       //$data = $imap->clearFileCache();
 //        $data = $imap->fileCache();
 //       $data =['as'];

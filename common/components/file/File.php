@@ -227,9 +227,11 @@ class File extends  Component{
     public function clearTmp(){
         $data = $this->tmpAlias;
         foreach ($data as $datum){
-            foreach ($datum as $value){
+            foreach ($datum as$key => $value){
                 $path = Yii::getAlias($value);
-                self::clearDir($path);
+                if($key != 'cache'){
+                    self::clearDir($path);
+                }
             }
         }
     }
@@ -369,7 +371,11 @@ class File extends  Component{
                         self::recursionDelFile($pathName);
                         rmdir($pathName);
                     } else {
-                        unlink($pathName);
+                        if(is_writable($pathName)){
+                            unlink($pathName);
+                        }else{
+                            continue;
+                        }
                     }
                 }
             }
@@ -401,7 +407,11 @@ class File extends  Component{
                                 rmdir($path."/".$pathName);
                             }
                         }else{
-                            unlink($path."/".$pathName);
+                            if(is_writable($path."/".$pathName)){
+                                unlink($path."/".$pathName);
+                            }else{
+                                continue;
+                            }
                         }
                     }
                 }

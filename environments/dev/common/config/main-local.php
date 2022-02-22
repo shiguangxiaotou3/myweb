@@ -12,10 +12,20 @@ return [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@common/mail',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
+            //这句一定有，false发送邮件，true只是生成邮件在runtime文件夹下，不发邮件
+            'useFileTransport' =>false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.qq.com',  //每种邮箱的host配置不一样，这里是QQ发送！
+                'username' => 'xxxx@qq.com',  //这里是你本人的QQ邮箱
+                'password' => 'xxxx',  //qq授权码（可以在邮箱设置/账户/）
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],
+            'messageConfig'=>[
+                'charset'=>'UTF-8',
+                'from'=>['12344551@qq.com'=>'时光小偷']  //这里邮箱是你本人邮箱
+            ],
         ],
     ],
 ];
