@@ -4,6 +4,7 @@ use \yii\helpers\Html;
 /** @var $label string */
 /** @var $data string */
 /** @var $actionUpdate */
+/** @var $actionClaer */
 
 ?>
 
@@ -17,6 +18,13 @@ use \yii\helpers\Html;
                     'title'=>'更新',
                    'onclick'=>"$.ajax({url:'".$actionUpdate."?server=".$label."'})"
                ]);
+            ?>
+            <?php
+            echo Html::button('<i class="fa fa-times"></i>',[
+                'class'=>'btn btn-box-tool',
+                'title'=>'清空',
+                'onclick'=>"$.ajax({url:'".$actionClaer."?server=".$label."'})"
+            ]);
             ?>
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
         </div>

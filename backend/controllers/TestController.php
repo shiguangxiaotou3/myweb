@@ -3,6 +3,7 @@
 
 namespace backend\controllers;
 
+use common\components\file\File;
 use Yii;
 use yii\web\Controller;
 
@@ -11,9 +12,8 @@ class TestController  extends Controller
 
     public function actionIndex(){
 
-        $molde = Yii::$app->imap;
-        $molde->open( 'Gmail');
-        $data= $molde->mailboxList;
+       $data =[];
+
         return $this->render('index',['data'=>$data]);
     }
 

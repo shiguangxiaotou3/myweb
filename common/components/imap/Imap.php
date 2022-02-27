@@ -447,7 +447,7 @@ class Imap extends Component{
     /**
      * 显示视图的邮箱列表
      * @param $serverName
-     * @return array
+     * @return array|bool
      * @throws Exception
      */
     public function getViewMailboxList($serverName)
@@ -513,6 +513,29 @@ class Imap extends Component{
             return file_get_contents($path);
         }else{
             return false;
+        }
+    }
+    public function clearCache($server ='',$mailboxName='',$uid=''){
+        $path = Yii::getAlias($this->path);
+        $data = require($path . '/' . $this->filename);
+        if(empty($server)){//清空全部
+            return 0;
+            File::clearDir($path);
+        }elseif( !empty($server) and empty($mailboxName)){     //清空服务器
+            File::clearDir($path.'/'.$server);
+            rmdir($path.'/'.$server);
+            unset($data[$server]);
+            File::writeConfig($path . '/' . $this->filename,$data);
+        }elseif (!empty($server) and !empty($mailboxName) and empty($uid)){
+            File::clearDir($path.'/'.$server.'/'.$mailboxName);
+            rmdir($path.'/'.$server.'/'.$mailboxName);
+            unset($data[$server][$mailboxName]);
+            File::writeConfig($path . '/' . $this->filename,$data);
+        }elseif (!empty($server) and !empty($mailboxName) and !empty($uid)){
+            File::clearDir($path.'/'.$server.'/'.$mailboxName.'/'.$uid);
+            rmdir($path.'/'.$server.'/'.$mailboxName.'/'.$uid);
+            unset($data[$server][$mailboxName][$uid]);
+            File::writeConfig($path . '/' . $this->filename,$data);
         }
     }
 }

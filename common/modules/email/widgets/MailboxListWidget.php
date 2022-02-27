@@ -16,6 +16,7 @@ class MailboxListWidget extends Widget{
     public $url ='';
     public $action ='/email/inbox/index';
     public $actionUpdate ='/email/inbox/update';
+    public $actionClaer ='/email/inbox/clear';
     public $onclick = "$.pjax({url: '/action/clear', container: '#assets'});";
 
     /**
@@ -112,6 +113,7 @@ class MailboxListWidget extends Widget{
                 'data'=>$this->items(),
                 'label'=>$this->server,
                 'actionUpdate'=>$this->actionUpdate,
+                'actionClaer'=>$this->actionClaer,
             ]);
     }
 

@@ -24,10 +24,10 @@ class InboxController extends Controller{
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>  ['index','download','messages','view','update'],
+                'only' =>  ['index','download','messages','view','update','clear'],
                 'rules' => [
                     [
-                        'actions' => ['index','download','messages','view','update'],
+                        'actions' => ['index','download','messages','view','update','clear'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -66,7 +66,6 @@ class InboxController extends Controller{
             return $this->render('index',['imap'=> $imap]);
         }
     }
-
     /**
      * 显示消息列表
      * @return mixed|string|null
@@ -92,7 +91,13 @@ class InboxController extends Controller{
             }
         }
     }
-
+    /**
+     * 查看邮件
+     * @param $server
+     * @param $mailbox
+     * @param $number
+     * @return string
+     */
     public function actionView($server,$mailbox,$number){
         $imap = Yii::$app->imap;
         $res = $imap->getMesssgeData($server,$mailbox,$number);
@@ -108,13 +113,26 @@ class InboxController extends Controller{
             'mailbox'=>$mailbox,
             'number'=>$number]);
     }
-
+    /**
+     * 加载缓存文件
+     * @param $server
+     * @throws \Exception
+     */
     public function actionUpdate($server){
         $imap = Yii::$app->imap;
         $imap->open($server);
         $imap->saveServer();
         $imap->close();
     }
+    /**
+     * 清理服务器缓存文件
+     * @param $server
+     */
+    public function actionClear($server){
+        Yii::$app->imap->clearCache($server);
+    }
+
+
 
 
     /**
@@ -127,9 +145,16 @@ class InboxController extends Controller{
        if(!empty($data)){
            $i =0;
            $res =[];
+           $last_names = array_column($data,'date');
+           array_multisort($last_names,SORT_DESC,$data);
            foreach ($data as $row){
-               if($i>= $offset and $i < $offset+$limit){
+               if($i<$offset){
+                   $i++;
+                   continue;
+               }elseif ($i>= $offset and $i < $offset+$limit){
                    $res[]= $row;
+               }elseif($i >= $offset+$limit){
+                    break;
                }
                $i++;
            }
@@ -140,6 +165,13 @@ class InboxController extends Controller{
        }
     }
 
+    /**
+     * 显示邮件的html
+     * @param $server
+     * @param $mailbox
+     * @param $number
+     * @return false|string
+     */
     public function actionHtml($server,$mailbox,$number){
         $this->layout =false;
         $imap = Yii::$app->imap;
