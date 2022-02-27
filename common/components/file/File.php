@@ -533,6 +533,7 @@ class File extends  Component{
                 $str .= self::ConfigToStr($str, $item, $space+1);
                 $str .= "$s],\r\n";
             }else{
+                $item =str_replace('\'','\\\'',$item);
                 $str .= "$s'$k' => '$item',\r\n";
             }
         }

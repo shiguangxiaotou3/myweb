@@ -44,7 +44,7 @@ use Yii;
  *
  * @property-read \common\components\file\File $file 本地文件管理组件
  * @property-read \common\components\ip\Ip $ip 本地文件管理组件
- * @property-read \common\modules\email\components\Imap $imap 操作邮件服务器组件
+ * @property-read \common\components\imap\Imap $imap 操作邮件服务器组件
  * @property-read \common\components\markdown\Markdown $markdown 操作邮件服务器组件
  * @property-read \common\components\server\ServerConfig $server 操作邮件服务器组件
  * @author Qiang Xue <qiang.xue@gmail.com>

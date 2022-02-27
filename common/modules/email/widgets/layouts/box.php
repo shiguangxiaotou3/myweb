@@ -1,8 +1,9 @@
 <?php
+use \yii\helpers\Html;
 /** @var $this yii\web\View */
-/** @var $content string */
 /** @var $label string */
 /** @var $data string */
+/** @var $actionUpdate */
 
 ?>
 
@@ -10,10 +11,14 @@
     <div class="box-header with-border">
         <h3 class="box-title"><?= Yii::t('app',$label) ?></h3>
         <div class="box-tools">
-            <button type="button" class="btn btn-box-tool "><i class="fa fa-refresh"></i></button>
-
+            <?php
+               echo Html::button('<i class="fa fa-refresh"></i>',[
+                   'class'=>'btn btn-box-tool',
+                    'title'=>'更新',
+                   'onclick'=>"$.ajax({url:'".$actionUpdate."?server=".$label."'})"
+               ]);
+            ?>
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-
         </div>
     </div>
     <div class="box-body no-padding">

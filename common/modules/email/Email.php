@@ -2,14 +2,13 @@
 
 namespace common\modules\email;
 
-use common\modules\email\components\Imap;
+use yii\base\Module;
 
 /**
  * Class Email
- * @property-read Imap $imap
  * @package common\modules\email
  */
-class Email extends \yii\base\Module
+class Email extends Module
 {
     /**
      * {@inheritdoc}

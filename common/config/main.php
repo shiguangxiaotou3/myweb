@@ -18,6 +18,9 @@ return [
         'ip'=>[
             'class'=>'common\components\ip\Ip',
         ],
+        'imap'=>[
+            'class'=>'common\components\imap\Imap',
+        ],
         //读取邮箱组件
 
         //文件组件

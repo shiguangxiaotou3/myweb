@@ -67,10 +67,10 @@ class shell extends Model
         if(!empty($this->tableName)){
             $str .= " --tableName=".$this->tableName;
             $str .= " --modelClass=".ucfirst($this->tableName);
-            $str .= " --ns=".$appName."\\\models\\\ar";
-            $str .= ' --generateQuery=1';
-            $str .= ' --queryNs='.$appName."\\\models\\\query";
-            $str .= ' --queryClass='.ucfirst($this->tableName)."Query";
+            $str .= " --ns=".$appName."\\\modules\\\email\\\models";
+           // $str .= ' --generateQuery=1';
+           // $str .= ' --queryNs='.$appName."\\\models\\\query";
+           // $str .= ' --queryClass='.ucfirst($this->tableName)."Query";
             $str .= '  --generateLabelsFromComments=1';
             $str .= ' --enableI18N=0';
             $str .= ' --messageCategory=app';

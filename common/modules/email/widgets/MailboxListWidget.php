@@ -10,11 +10,12 @@ use yii\helpers\Html;
 class MailboxListWidget extends Widget{
 
     public $data = [];
-    public $label ='收箱箱';
+    public $server ='收箱箱';
     public $icon ='fa fa-';
     public $badgeClass='label pull-right label-';
     public $url ='';
-    public $action ='/email/inbox/messages';
+    public $action ='/email/inbox/index';
+    public $actionUpdate ='/email/inbox/update';
     public $onclick = "$.pjax({url: '/action/clear', container: '#assets'});";
 
     /**
@@ -75,36 +76,42 @@ class MailboxListWidget extends Widget{
     }
     /**
      * 构造邮箱的html
-     * @param $key
-     * @param $value
+     * @param $mailbox
+     * @param $number
      * @return string
      */
-    public function item($key,$value){
-        $category  = self::getTemplate($key);
-        if($value > 0){
-            $str ='<i class="'.$this->icon.$category['icon'].'" ></i>'. Html::encode(Yii::t('app',$key)).
-                    '<span class="'.$this->badgeClass.$category['badgeClass'].'">'. $value. '</span>';
+    public function item($mailbox,$number){
+        $category  = self::getTemplate($mailbox);
+        if($number > 0){
+            $str ='<i class="'.$this->icon.$category['icon'].'" ></i>'. Html::encode(Yii::t('app',$mailbox)).
+                    '<span class="'.$this->badgeClass.$category['badgeClass'].'">'. $number. '</span>';
 
             return '<li>'. Html::a( $str, false, [
-                        'onclick'=>"$.pjax({url: '".$this->getUrl($this->label,$key)."', container: '#messages'});"]).'</li>';
+                        'onclick'=>"$.pjax({url: '".$this->getUrl($this->server,$mailbox)."', container: '#messages'});"]).'</li>';
         }else{
-            $cont ='<i class="'.$this->icon.$category['icon'].'" ></i>'. Html::encode(Yii::t('app',$key));
+            $cont ='<i class="'.$this->icon.$category['icon'].'" ></i>'. Html::encode(Yii::t('app',$mailbox));
             return "<li>".Html::a( $cont,false,[
-                'onclick'=>"$.pjax({url: '".$this->getUrl($this->label,$key)."', container: '#messages'});"])."</li>";
+                'onclick'=>"$.pjax({url: '".$this->getUrl($this->server,$mailbox)."', container: '#messages'});"])."</li>";
         }
     }
     public function items(){
         $data = $this->data;
-        $str ='';
-        foreach ($data as $key =>$value){
-            $str .= $this->item($key,$value);
+        if($data){
+            $str ='';
+            foreach ($data as $mailbox =>$number){
+                $str .= $this->item($mailbox,$number);
+            }
+            return $str;
+        }else{
+            return '<li ><a href="#">没有缓存</a></li>';
         }
-        return $str;
+
     }
     public function run(){
         return $this->renderFile(__DIR__.'/layouts/box.php', [
                 'data'=>$this->items(),
-                'label'=>$this->label,
+                'label'=>$this->server,
+                'actionUpdate'=>$this->actionUpdate,
             ]);
     }
 
