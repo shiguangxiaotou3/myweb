@@ -52,7 +52,7 @@ class Imap extends Component{
             'port' => 993,
             'flags' => '/imap/ssl',
             'username' => '757402123@qq.com',
-            'password' => 'bjhxxjyxnrgibbeg',
+            'password' => 'xxxx',
             //默认邮箱
             'defaultMailbox'=>'INBOX',
             //时差
@@ -66,7 +66,7 @@ class Imap extends Component{
             'port' => 993,
             'flags' => '/imap/ssl/validate-cert',
             'username' => 'wanlong757402@outlook.com',
-            'password' => 'TIMETHIEF.',
+            'password' => 'xxxx',
             //默认邮箱
             'defaultMailbox'=>'Inbox',
             //时差
