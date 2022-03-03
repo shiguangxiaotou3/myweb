@@ -4,11 +4,14 @@
 namespace common\modules\email\controllers;
 
 
+
 use Yii;
+use Exception;
 use yii\web\Controller;
 use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use common\modules\email\models\EmailSendForm;
 
 /**
  *
@@ -24,10 +27,10 @@ class InboxController extends Controller{
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' =>  ['index','download','messages','view','update','clear'],
+                'only' =>  ['index','download','messages','view','update','clear','reply'],
                 'rules' => [
                     [
-                        'actions' => ['index','download','messages','view','update','clear'],
+                        'actions' => ['index','download','messages','view','update','clear','reply'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -99,24 +102,62 @@ class InboxController extends Controller{
      * @return string
      */
     public function actionView($server,$mailbox,$number){
-        $imap = Yii::$app->imap;
-        $res = $imap->getMesssgeData($server,$mailbox,$number);
-        $data = [
-            'from' => $res['info']['from'],
-            'subject' => $res['info']['subject'],
-            'to' => $res['info']['to'],
-            'date' => $res['info']['date'],
-            'html' => $res['html']];
-        return $this->renderAjax('view', [
-            'data'=>$data,
-            'server'=>$server,
-            'mailbox'=>$mailbox,
-            'number'=>$number]);
+        if(isset($server) and isset($mailbox) and isset($number)){
+            $imap = Yii::$app->imap;
+            $res = $imap->getMesssgeData($server,$mailbox,$number);
+            if($res){
+                return $this->renderAjax('view', ['data'=>$res]);
+            }else{
+                return $this->renderAjax('error');
+            }
+        }else{
+            return $this->renderAjax('error');
+        }
+
     }
+
+
+    public function actionReply(){
+        $request = Yii::$app->request;
+        $model = new EmailSendForm();
+        $model->to ='wanlong757402@outlook.com';
+        $model->subject ='测试邮件 '.date('Y-m-d H:m:s');
+        $to =$request->get('to');
+        if(!empty($to)){
+            $model ->to = $to;
+        }
+        if($request->isAjax){
+            if($request->post()){
+                logObject($request->post());
+                if($model->load($request->post()) && $model->validate()){
+                    $model->sendEmail();
+                }
+            }
+            return $this->renderAjax('reply', ['model'=>$model]);
+        }else{
+            if($request->post()){
+                logObject($request->post());
+                if($model->load($request->post()) && $model->validate()){
+                   if( $model->sendEmail()){
+                       echo "成功";
+
+                   }else{
+                       echo "不成功";
+                   }
+                    die();
+                }
+
+            }
+            return  $this->render('reply', ['model'=>$model]);
+        }
+
+    }
+
+
     /**
      * 加载缓存文件
      * @param $server
-     * @throws \Exception
+     * @throws Exception
      */
     public function actionUpdate($server){
         $imap = Yii::$app->imap;
@@ -175,8 +216,11 @@ class InboxController extends Controller{
     public function actionHtml($server,$mailbox,$number){
         $this->layout =false;
         $imap = Yii::$app->imap;
-        return $imap->BodyContent($server,$mailbox,$number);
+        $html = $imap->BodyContent($server,$mailbox,$number);
+        if($html){
+            return  $html;
+        }else{
+            return "<h1>什么也没有</h1>";
+        }
     }
-
-
 }

@@ -1,1 +1,3 @@
-sdfasdfasdf
+<?php
+echo $data;
+?>

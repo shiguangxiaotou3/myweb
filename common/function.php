@@ -234,4 +234,12 @@ function MaxDifferTime($startTime, $endTime){
     }
 }
 
-
+/**
+ * @param $content
+ * @return string|string[]
+ */
+function htmtocode($content) {
+    //$content = str_replace(" ", "", $content);
+    $content = str_replace(array("\r\n", "\r", "\n"), "<br>", $content);
+    return $content;
+}

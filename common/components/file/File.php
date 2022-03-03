@@ -569,8 +569,30 @@ class File extends  Component{
             file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
         }
         $res = require($path);
-        $tmp =  ArrayHelper::merge($res,$arr);
+        if(empty($res)){
+            $tmp =$arr;
+        }else{
+            $tmp =  ArrayHelper::merge($res,$arr);
+        }
+
         return  self::saveConfig($path,$tmp);
+    }
+
+    public static function addMailData($arr,$alias ="@app/runtime/mail", $category='data'){
+        $dir = Yii::getAlias($alias);
+        $path = $dir.'/'.$category  .'.php';
+        if(!file_exists($path)){
+            file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
+        }
+        $res = require($path);
+        foreach ($arr as $server =>$item){
+            foreach ($item as $mailbox =>$item2){
+                foreach ($item2 as $number =>$data){
+                    $res[$server][$mailbox][$number] =$data;
+                }
+            }
+        }
+        return self::saveConfig($path,$res);
     }
 }
 

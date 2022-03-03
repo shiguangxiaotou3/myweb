@@ -92,26 +92,6 @@ Select2Assets::register($this);
                             ->error(false);
 
                 ?>
-
-                <!--
-                <div class="form-group">
-                    <input class="form-control" placeholder="收件人:">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" placeholder="主题:">
-                </div>
-                <div class="form-group">
-                    <textarea id="compose-textarea" class="form-control" style="height: 300px">
-                    </textarea>
-                </div>
-                <div class="form-group">
-                    <div class="btn btn-default btn-file">
-                        <i class="fa fa-paperclip"></i> 附件
-                        <input type="file" name="attachment">
-                    </div>
-                    <p class="help-block">Max. 32MB</p>
-                </div>
-                -->
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
