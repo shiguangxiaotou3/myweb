@@ -411,6 +411,7 @@ class Imap extends Component{
             }
         }catch (Exception $exception){
             logObject($exception->getMessage());
+            return false;
         }
 
 

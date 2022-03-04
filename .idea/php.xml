@@ -135,7 +135,4 @@
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration">
-    <option name="suggestChangeDefaultLanguageLevel" value="false" />
-  </component>
 </project>
