@@ -2,12 +2,13 @@
 
 /* @var $this \yii\web\View */
 
-use common\widgets\Card;
-use common\widgets\charts\MapWidget;
+
+
 use yii\helpers\Html;
 use \yii\widgets\Pjax;
+use common\widgets\Card;
 use common\widgets\charts\Charts;
-use common\models\basic\Clear;
+use common\widgets\charts\MapWidget;
 
 $this->title ='控制台';
 $server = Yii::$app->server->config();

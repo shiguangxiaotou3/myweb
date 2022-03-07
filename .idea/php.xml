@@ -133,6 +133,8 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/jsQR-master" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
     </include_path>
   </component>
 </project>

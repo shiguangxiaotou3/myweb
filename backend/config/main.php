@@ -24,6 +24,9 @@ return [
         'email' => [
             'class' => 'common\modules\email\Email',
         ],
+        'ace' => [
+            'class' => 'common\modules\ace\Ace',
+        ],
     ],
     //组件
     'components' => [

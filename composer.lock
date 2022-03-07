@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "458b3f377edb8a83414c90856a515d04",
+    "content-hash": "7a2288afc89b6758b993c6d0a266bfd3",
     "packages": [
         {
             "name": "abhi1693/yii2-system-info",
@@ -105,6 +105,24 @@
                 "source": "https://github.com/ColorlibHQ/AdminLTE/tree/v2.4.18"
             },
             "time": "2019-08-29T08:20:20+00:00"
+        },
+        {
+            "name": "bower-asset/ace-builds",
+            "version": "v1.4.12",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ajaxorg/ace-builds.git",
+                "reference": "53be42342df216d2d25dc60a12dfcb263c6f0592"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ajaxorg/ace-builds/zipball/53be42342df216d2d25dc60a12dfcb263c6f0592",
+                "reference": "53be42342df216d2d25dc60a12dfcb263c6f0592"
+            },
+            "type": "bower-asset",
+            "license": [
+                "BSD"
+            ]
         },
         {
             "name": "bower-asset/bootstrap",
@@ -644,6 +662,51 @@
                 }
             ],
             "time": "2021-10-11T09:18:27+00:00"
+        },
+        {
+            "name": "eluhr/yii2-aceeditor",
+            "version": "0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eluhr/yii2-aceeditor.git",
+                "reference": "c9b7bdec3128b6b9d1cd7ecde31849332dc0b83d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eluhr/yii2-aceeditor/zipball/c9b7bdec3128b6b9d1cd7ecde31849332dc0b83d",
+                "reference": "c9b7bdec3128b6b9d1cd7ecde31849332dc0b83d",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/ace-builds": "^1.4",
+                "yiisoft/yii2": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "eluhr\\aceeditor\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Elias Luhr",
+                    "email": "elias.luhr@gmail.com"
+                }
+            ],
+            "description": "Yii2 wrapper for ace editor",
+            "keywords": [
+                "ace-editor",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/eluhr/yii2-aceeditor/issues",
+                "source": "https://github.com/eluhr/yii2-aceeditor/tree/master"
+            },
+            "time": "2019-03-29T07:52:21+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -7876,7 +7939,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=5.6.0",
+        "ext-curl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"

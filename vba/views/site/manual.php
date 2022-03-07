@@ -37,14 +37,14 @@ $dir = Yii::$app->urlManager->createUrl(['/img']);
                     $markdown->viewPath =__FILE__;
                     $file = Yii::$app->file;
                     $file->path = __FILE__;
-                    dump($markdown->markdownFile);
-                    dump($markdown->htmlFile);
+                    //dump($markdown->markdownFile);
+                    //dump($markdown->htmlFile);
             ?>
-<!--            --><?php ////Yii::$app->markdown->auto() ?>
-<!--            --><?php ////echo  $this->render(  'html/asd.php') ?>
-<!--            --><?php // echo  $this->render(  'html/test.php') ?>
+<!--            --><?php //Yii::$app->markdown->auto() ?>
+<!--            --><?php //echo  $this->render(  'html/asd.php') ?>
+<!--            --><?php  //echo  $this->render(  'html/test.php') ?>
 <!--            --><?php //echo  $this->render(  'html/signup.php') ?>
-<!--            --><?php // echo $this->render(  'html/login.php') ?>
+<!--            --><?php  //echo $this->render(  'html/login.php') ?>
         </article>
         <article class="jsdoc" id="module">
         </article>

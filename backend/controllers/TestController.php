@@ -3,50 +3,57 @@
 
 namespace backend\controllers;
 
-use common\components\file\File;
+
 use Yii;
-use yii\caching\DummyCache;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
+use common\components\file\File;
 
 class TestController  extends Controller
 {
 
     public function actionIndex(){
 
-       $imap = Yii::$app->imap;
-       $imap->open('qqMailer');
-       $imap->mailbox ='Drafts';
-        $arr1= $imap->saveMailbox(false);
-        $arr2 = [
-            'qqMailer' => [
-                'Drafts' => [
-                    '_28' => [
-                        'id' => '<tencent_69CEA2D599400652EA38A6F0EA3615A1DD06@qq.com>',
-                        'number' => '28',
-                        'subject' => '测试',
-                        'from' => '757402123@qq.com',
-                        'to' => 'wanlong757402123@qq.com',
-                        'date' => '1645291244',
-                        'isAnswered' => '',
-                        'isDeleted' => '',
-                        'isDraft' => '1',
-                        'isSeen' => '1',
-                        'isAttachment' => '1',
-                        'type' => 'multipart',
-                    ],
-                ],
-            ],
+        $path = Yii::getAlias("@vendor/bower-asset/ace-builds/src-noconflict");
+        $match =[
+            'ext'=>'/ext-[\w]*.js/',
+            'keybinding'=>'/keybinding-[\w]*.js/',
+            'mode'=>'/mode-[\w]*.js/',
+            'theme'=>'/theme-[\w]*.js/',
+            'worker'=>'/worker-[\w]*.js/',
         ];
+        $data = File::searchFile($path,$match);
 
-        $data = ArrayHelper::merge($arr1,$arr2);
+//        $res = [];
+//        foreach ($data as $str ){
+//            foreach ($match as $key =>$value){
+//                if(preg_match_all($value,$str,$name,PREG_SET_ORDER)){
+//                    $const  = strtoupper(str_replace(".js",'',$name[0][0]));
+//                    $const  = strtoupper(str_replace("-",'_',$const));
+//                    $str  = $name[0][0];
+//                    $str= str_replace($key."-",'',$str);
+//                    $str =str_replace(".js",'',$str);
+//                  $res[$key][]= "const ".$const." ='". $str."';";
+//                }
+//            }
+//        }
+//
+//        $str = '';
+//        $path = '/Library/WebServer/Documents/myweb/a.txt';
+//        foreach ($res as $row){
+//            foreach ($row as $value1){
+//                $str .= $value1."\r\n";
+//            }
+//
+//        }
+//        file_put_contents($path,$str);
+
+        logObject($data);
 
 
-
-        return $this->render('index',['data'=>['缓存'=>$arr2,'xin'=>$arr1,'合并'=>$data]]);
+       return $this->render('index',['data'=>  $data ]);
     }
 
-    public function actionTest(){
+    public function actionRead(){
+        return $this->render('read');
     }
-
 }

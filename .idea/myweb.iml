@@ -140,6 +140,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/jsQR-master" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-gii" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/ace-builds" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

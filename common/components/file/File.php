@@ -237,7 +237,6 @@ class File extends  Component{
     }
 
 
-
     /**
      * 获取文件配置信息
      * @param $path
@@ -299,8 +298,9 @@ class File extends  Component{
         }
     }
 
+
     /**
-     * 获取目录下的所文件和名称
+     * 获取目录下的所有目录和文件
      * @param $path
      * @return array|bool|null
      */
@@ -327,8 +327,55 @@ class File extends  Component{
                 return  false;
             }
         }
-
     }
+
+    /**
+     * 根据正则表达是,搜索文件
+     * @param $path string
+     * @param $match array
+     * @return array|false
+     */
+    public static function searchFile($path,$match){
+        $data = self::dirChildren($path);
+        if($data and isset($data['file']) and is_array($data['file']) and is_array($match)){
+            $res =[];
+            foreach ($data['file'] as $fileName){
+                foreach ($match as $key =>$value){
+                    if(preg_match_all($value,$fileName,$name,PREG_SET_ORDER)){
+                        $res[$key][] =$name[0][0];
+                    }
+                }
+            }
+            return  $res;
+        }else{
+            return false;
+        }
+    }
+
+    /**
+     * 根据正则表达是,搜索目录
+     * @param $path string
+     * @param $match array
+     * @return array|false
+     */
+    public static function searchDir($path,$match){
+        $data = self::dirChildren($path);
+        if($data and isset($data['dir']) and is_array($data['dir']) and is_array($match)){
+            $res =[];
+            foreach ($data['dir'] as $dirName){
+                foreach ($match as $key =>$value){
+                    if(preg_match_all($value,$dirName,$name,PREG_SET_ORDER)){
+                        $res[$key][] =$name[0][0];
+                    }
+                }
+            }
+            return  $res;
+        }else{
+            return false;
+        }
+    }
+
+
 
     /**
      * 获取目录或文件大小
@@ -576,23 +623,6 @@ class File extends  Component{
         }
 
         return  self::saveConfig($path,$tmp);
-    }
-
-    public static function addMailData($arr,$alias ="@app/runtime/mail", $category='data'){
-        $dir = Yii::getAlias($alias);
-        $path = $dir.'/'.$category  .'.php';
-        if(!file_exists($path)){
-            file_put_contents($path, "<?php\r\nreturn [\r\n"."];");
-        }
-        $res = require($path);
-        foreach ($arr as $server =>$item){
-            foreach ($item as $mailbox =>$item2){
-                foreach ($item2 as $number =>$data){
-                    $res[$server][$mailbox][$number] =$data;
-                }
-            }
-        }
-        return self::saveConfig($path,$res);
     }
 }
 

@@ -27,7 +27,9 @@
         "mdmsoft/yii2-admin": "~2.0",
         "abhi1693/yii2-system-info": "@dev",
         "phpmailer/phpmailer": "^6.5",
-        "ddeboer/imap": "^1.12"
+        "ddeboer/imap": "^1.12",
+        "ext-curl": "*",
+        "eluhr/yii2-aceeditor": "^0.0.6"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

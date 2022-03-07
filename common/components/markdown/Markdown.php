@@ -72,6 +72,5 @@ class Markdown extends  Component
         }else{
             return false;
         }
-
     }
 }

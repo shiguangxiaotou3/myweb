@@ -262,21 +262,6 @@ class SiteController extends Controller
         ]);
     }
 
-
-
-    /**
-     *
-     *   扫描二维码测试
-     */
-    public function actionRr(){
-        $this->layout ='main';
-        return $this->render('text');
-    }
-
-
-
-
-
     /**
      */
     public function actionTest(){

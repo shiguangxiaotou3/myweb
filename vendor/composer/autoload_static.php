@@ -79,6 +79,10 @@ class ComposerStaticInit6366fce40f39275b6700e5fad947046f
         array (
             'ipinfo\\ipinfo\\' => 14,
         ),
+        'e' => 
+        array (
+            'eluhr\\aceeditor\\' => 16,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -277,6 +281,10 @@ class ComposerStaticInit6366fce40f39275b6700e5fad947046f
         'ipinfo\\ipinfo\\' => 
         array (
             0 => __DIR__ . '/..' . '/ipinfo/ipinfo/src',
+        ),
+        'eluhr\\aceeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eluhr/yii2-aceeditor/src',
         ),
         'dmstr\\' => 
         array (

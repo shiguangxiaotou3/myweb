@@ -31,6 +31,7 @@ return array(
     'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base/src'),
     'johnitvn\\ajaxcrud\\' => array($vendorDir . '/johnitvn/yii2-ajaxcrud/src'),
     'ipinfo\\ipinfo\\' => array($vendorDir . '/ipinfo/ipinfo/src'),
+    'eluhr\\aceeditor\\' => array($vendorDir . '/eluhr/yii2-aceeditor/src'),
     'dmstr\\' => array($vendorDir . '/dmstr/yii2-adminlte-asset'),
     'chenkby\\region\\' => array($vendorDir . '/chenkby/yii2-region'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
