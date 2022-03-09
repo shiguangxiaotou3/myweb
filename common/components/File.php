@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\components\file;
+namespace common\components;
 use Yii;
 use yii\base\Component;
 use yii\helpers\ArrayHelper;
@@ -28,36 +28,7 @@ use yii\helpers\ArrayHelper;
  */
 class File extends  Component{
 
-    public $tmpAlias = [
-            'backend'=>[
-                'cache'=>'@backend/runtime/cache',
-                'debug'=>'@backend/runtime/debug',
-                'HTML'=>'@backend/runtime/HTML',
-                'logs'=>'@backend/runtime/logs',
-                'URI'=>'@backend/runtime/URI',
-                'mail'=>'@backend/runtime/mail',
-                'assets'=>'@backend/web/assets',
-
-            ],
-            'frontend'=>[
-                'cache'=>'@frontend/runtime/cache',
-                'debug'=>'@frontend/runtime/debug',
-                'HTML'=>'@frontend/runtime/HTML',
-                'logs'=>'@frontend/runtime/logs',
-                'URI'=>'@frontend/runtime/URI',
-                'mail'=>'@frontend/runtime/mail',
-                'assets'=>'@frontend/web/assets',
-
-            ],
-            'console'=>[
-                'cache'=>'@console/runtime/cache',
-                'mail'=>'@console/runtime/mail',
-                //'debug'=>'@console/runtime/debug',
-                //'HTML'=>'@console/runtime/HTML',
-                'logs'=>'@console/runtime/logs',
-                //'URI'=>'@console/runtime/URI',
-            ],
-        ];
+    public $tmpAlias = [];
     private  $_alias;
     private $_path;
 

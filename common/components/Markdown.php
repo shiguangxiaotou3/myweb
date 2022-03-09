@@ -1,9 +1,9 @@
 <?php
 
-namespace common\components\markdown;
+namespace common\components;
 
 use yii\base\Component;
-use  common\components\file\File;
+use  common\components\File;
 
 /**
  * Class Markdown

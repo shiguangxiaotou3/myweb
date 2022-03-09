@@ -3,13 +3,14 @@
 namespace backend\controllers;
 
 
-use common\components\ip\IpEvent;
+
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use common\models\LoginForm;
 use yii\filters\AccessControl;
+use common\components\event\IpEvent;
 
 
 /**
@@ -25,7 +26,7 @@ class SiteController extends Controller
      */
     public function init(){
         parent::init();
-        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,'autoAnalysis']);
+        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,self::EVENT_ANALYSIS_IP]);
     }
 
     /**
@@ -116,5 +117,4 @@ class SiteController extends Controller
         Yii::$app->user->logout();
         return $this->goHome();
     }
-
 }

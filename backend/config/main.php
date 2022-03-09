@@ -17,22 +17,23 @@ return [
     'language'=>'zh-CN',
     //模块
     'modules' => [
+        //权限管理模块
         'admin' => [
             'class' => 'mdm\admin\Module',
            // 'layout' => 'left-menu'
         ],
+        //邮件管理模块
         'email' => [
             'class' => 'common\modules\email\Email',
         ],
+        //在线编辑模块
         'ace' => [
             'class' => 'common\modules\ace\Ace',
         ],
     ],
     //组件
     'components' => [
-        'server'=>[
-            'class'=>'common\components\server\ServerConfig',
-        ],
+
 
         'request' => [
             'csrfParam' => '_csrf-backend',

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace common\components\ip;
+namespace common\components;
 
 
 
+use common\components\event\IpEvent;
 use Exception;
 use yii\base\Component;
-
-use ipinfo\ipinfo\IPinfo as http;
+use ipinfo\ipinfo\IPinfo;
 use common\models\ar\Ip  as ipModel;
 
 
@@ -54,7 +54,7 @@ class Ip extends  Component{
      * @return array|false
      */
     public function analysis($ip){
-        $client = new http($this->token);
+        $client = new IPinfo($this->token);
         try{
             return $client->getRequestDetails($ip);
         }catch (Exception $exception){

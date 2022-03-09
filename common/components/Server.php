@@ -1,7 +1,7 @@
 <?php
 
 
-namespace common\components\server;
+namespace common\components;
 
 use Yii;
 use yii\base\Component;
@@ -11,7 +11,7 @@ use abhimanyu\systemInfo\SystemInfo;
  * Class ServerConfig
  * @package common\components
  */
-class ServerConfig extends Component
+class Server extends Component
 {
 
 
@@ -60,7 +60,7 @@ class ServerConfig extends Component
      */
     public function composer(){
         //读取composer配置文件
-        $path = dirname(dirname(dirname(__DIR__))) . "/composer.json";
+        $path = dirname(dirname(__DIR__)) . "/composer.json";
         //转化为数组
         return  json_decode(file_get_contents($path),true);
     }

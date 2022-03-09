@@ -1,6 +1,6 @@
 <?php
 
-namespace common\components\imap;
+namespace common\components;
 
 
 use Yii;
@@ -11,7 +11,7 @@ use Ddeboer\Imap\Mailbox;
 use Ddeboer\Imap\Message;
 use yii\helpers\ArrayHelper;
 use Ddeboer\Imap\Connection;
-use common\components\file\File;
+//use common\components\File;
 use Ddeboer\Imap\MessageIterator;
 use Ddeboer\Imap\MessageIteratorInterface;
 
@@ -31,51 +31,22 @@ use Ddeboer\Imap\MessageIteratorInterface;
  * @property-read string $messageFrom           发件人
  * @property-read array $messageTo              收件人
  * @property-read integer $messageDate          时间
- * @property-read bool $messageisAnswered       是不是回信
- * @property-read bool $messageisDeleted        是否删除
+ * @property-read bool $messageIsAnswered       是不是回信
+ * @property-read bool $messageIsDeleted        是否删除
  * @property-read string  $messageType             是否删除
  * text multipart message application audio image video model other unknown 7bit 8bit binary
  * base64 quoted-printable unknown PLAIN HTML RFC822
- * @property-read bool $messageisDraft          是不是草稿
- * @property-read bool $messageisSeen           是否已发送
+ * @property-read bool $messageIsDraft          是不是草稿
+ * @property-read bool $messageIsSeen           是否已发送
  * @property-read string $messageBody           正文
  * @property-read string $messageHeaders        标题
- * @property-read bool $messagehasAttachments   是否存在附件
+ * @property-read bool $messageHasAttachments   是否存在附件
  * @property-read  Message\Attachment[]|Message\AttachmentInterface[]  $messageAttachments          附加对象
  * @property-read bool $cache
  * @package common\modules\email\components\Imap
  */
 class Imap extends Component{
-    public  $servers = [
-        'qqMailer' => [
-            'host' => 'imap.qq.com',
-            'port' => 993,
-            'flags' => '/imap/ssl',
-            'username' => '757402123@qq.com',
-            'password' => 'xxxx',
-            //默认邮箱
-            'defaultMailbox'=>'INBOX',
-            //时差
-            "timeDifference"=>-16*60*60,
-            //是否下载文件
-            'downloadFile'=>false,
-            'mailboxs' => ['INBOX', 'Sent Messages', 'Drafts', 'Deleted Messages', 'Junk'],
-        ],
-        'outlook' => [
-            'host' => 'outlook.office365.com',
-            'port' => 993,
-            'flags' => '/imap/ssl/validate-cert',
-            'username' => 'wanlong757402@outlook.com',
-            'password' => 'xxxx',
-            //默认邮箱
-            'defaultMailbox'=>'Inbox',
-            //时差
-            "timeDifference"=>0,
-            //是否下载文件
-            'downloadFile'=>false,
-            'mailboxs' => ['Inbox', 'Sent', 'Drafts', 'Deleted', 'Junk'],
-        ],
-    ];
+    public  $servers = [];
     public $cache = true;  //是否开启文件缓存
     public $path = "@app/runtime/mail";
     public $filename = 'data.php';
@@ -268,13 +239,13 @@ class Imap extends Component{
     public function getMessageType(){
         return $this->message->getType();
     }
-    public function getMessageisAnswered(){return $this->message->isAnswered();}
-    public function getMessageisDeleted(){return $this->message->isDeleted();}
-    public function getMessageisDraft(){return $this->message->isDraft();}
-    public function getMessageisSeen(){return $this->message->isSeen();}
+    public function getMessageIsAnswered(){return $this->message->isAnswered();}
+    public function getMessageIsDeleted(){return $this->message->isDeleted();}
+    public function getMessageIsDraft(){return $this->message->isDraft();}
+    public function getMessageIsSeen(){return $this->message->isSeen();}
     public function getMessageBody(){return $this->message->getId();}
     public function getMessageHeaders(){return $this->message->getHeaders();}
-    public function getMessagehasAttachments(){return $this->message->hasAttachments(); }
+    public function getMessageHasAttachments(){return $this->message->hasAttachments(); }
     public function getMessageAttachments (){return $this->message->getAttachments();}
 
     /*------------------------------------------*\

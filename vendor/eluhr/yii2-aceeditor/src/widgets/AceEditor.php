@@ -106,9 +106,9 @@ class AceEditor extends InputWidget
             $this->extensions[] = 'language_tools';
 
             $this->plugin_options = ArrayHelper::merge([
-                'enableBasicAutocompletion' => true,
-                'enableSnippets' => true,
-                'enableLiveAutocompletion' => true
+               'enableBasicAutocompletion' => true,
+               'enableSnippets' => true,
+               'enableLiveAutocompletion' => true
             ], $this->plugin_options);
         }
 

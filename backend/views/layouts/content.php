@@ -1,5 +1,5 @@
 <?php
-/* @var $this \yii\web\View */
+/* @var $this yii\web\View */
 /** @var $content string */
 
 
@@ -22,7 +22,7 @@ use dmstr\widgets\Alert;
                     echo Inflector::camel2words(
                         Inflector::id2camel($this->context->module->id)
                     );
-                    echo ($this->context->module->id !== \Yii::$app->id) ? '<small>Module</small>' : '';
+                    echo ($this->context->module->id !== Yii::$app->id) ? '<small>模块</small>' : '';
                 } ?>
             </h1>
         <?php } ?>
@@ -45,8 +45,7 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>版权 &copy; 2014-2015 <a href="http://www.shiguangxiaotou.com">时光小偷</a></strong> 所有
 </footer>
 
 <!-- Control Sidebar -->
@@ -63,7 +62,7 @@ use dmstr\widgets\Alert;
             <h3 class="control-sidebar-heading">Recent Activity</h3>
             <ul class='control-sidebar-menu'>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
                         <div class="menu-info">
@@ -74,7 +73,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <i class="menu-icon fa fa-user bg-yellow"></i>
 
                         <div class="menu-info">
@@ -85,7 +84,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
 
                         <div class="menu-info">
@@ -96,7 +95,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <i class="menu-icon fa fa-file-code-o bg-green"></i>
 
                         <div class="menu-info">
@@ -112,7 +111,7 @@ use dmstr\widgets\Alert;
             <h3 class="control-sidebar-heading">Tasks Progress</h3>
             <ul class='control-sidebar-menu'>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <h4 class="control-sidebar-subheading">
                             Custom Template Design
                             <span class="label label-danger pull-right">70%</span>
@@ -124,7 +123,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <h4 class="control-sidebar-subheading">
                             Update Resume
                             <span class="label label-success pull-right">95%</span>
@@ -136,7 +135,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <h4 class="control-sidebar-subheading">
                             Laravel Integration
                             <span class="label label-waring pull-right">50%</span>
@@ -148,7 +147,7 @@ use dmstr\widgets\Alert;
                     </a>
                 </li>
                 <li>
-                    <a href='javascript::;'>
+                    <a href=''>
                         <h4 class="control-sidebar-subheading">
                             Back End Framework
                             <span class="label label-primary pull-right">68%</span>
@@ -227,7 +226,7 @@ use dmstr\widgets\Alert;
                 <div class="form-group">
                     <label class="control-sidebar-subheading">
                         Delete chat history
-                        <a href="javascript::;" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                        <a href="" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
                     </label>
                 </div>
                 <!-- /.form-group -->

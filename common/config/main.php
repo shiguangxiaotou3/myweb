@@ -6,26 +6,25 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
+        //服务器信息组件
+        'server'=>[
+            'class'=>'common\components\Server',
+        ],
         //缓存组件
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         //markdown解析文件
         'markdown'=>[
-            'class'=>'common\components\markdown\Markdown',
+            'class'=>'common\components\Markdown',
         ],
         //ip解析组件
         'ip'=>[
-            'class'=>'common\components\ip\Ip',
+            'class'=>'common\components\Ip',
         ],
-        'imap'=>[
-            'class'=>'common\components\imap\Imap',
-        ],
-        //读取邮箱组件
-
-        //文件组件
+        //文件管理
         'file'=>[
-            'class'=>'common\components\file\File',
+            'class'=>'common\components\File',
             'tmpAlias'=>[
                 'backend'=>[
                     'cache'=>'@backend/runtime/cache',
@@ -35,16 +34,6 @@ return [
                     'URI'=>'@backend/runtime/URI',
                     'mail'=>'@backend/runtime/mail',
                     'assets'=>'@backend/web/assets',
-
-                ],
-                'api'=>[
-                    'cache'=>'@api/runtime/cache',
-                    'debug'=>'@api/runtime/debug',
-                    'HTML'=>'@api/runtime/HTML',
-                    'logs'=>'@api/runtime/logs',
-                    'URI'=>'@api/runtime/URI',
-                    'mail'=>'@api/runtime/mail',
-                    'assets'=>'@api/web/assets',
 
                 ],
                 'frontend'=>[
@@ -57,24 +46,47 @@ return [
                     'assets'=>'@frontend/web/assets',
 
                 ],
-                'vba'=>[
-                    'cache'=>'@vba/runtime/cache',
-                    'debug'=>'@vba/runtime/debug',
-                    'HTML'=>'@vba/runtime/HTML',
-                    'logs'=>'@vba/runtime/logs',
-                    'URI'=>'@vba/runtime/URI',
-                    'mail'=>'@vba/runtime/mail',
-                    'assets'=>'@vba/web/assets',
-
-                ],
                 'console'=>[
                     'cache'=>'@console/runtime/cache',
+                    'mail'=>'@console/runtime/mail',
                     //'debug'=>'@console/runtime/debug',
                     //'HTML'=>'@console/runtime/HTML',
                     'logs'=>'@console/runtime/logs',
                     //'URI'=>'@console/runtime/URI',
-                    'mail'=>'@console/runtime/mail',
-                    'assets'=>'@console/web/assets',
+                ],
+            ]
+        ],
+        //读取邮箱组件
+        'imap'=>[
+            'class'=>'common\components\Imap',
+            'servers' => [
+                'qqMailer' => [
+                    'host' => 'imap.qq.com',
+                    'port' => 993,
+                    'flags' => '/imap/ssl',
+                    'username' => '757402123@qq.com',
+                    'password' => 'bjhxxjyxnrgibbeg',
+                    //默认邮箱
+                    'defaultMailbox'=>'INBOX',
+                    //时差
+                    "timeDifference"=>-16*60*60,
+                    //是否下载文件
+                    'downloadFile'=>false,
+                    'mailboxs' => ['INBOX', 'Sent Messages', 'Drafts', 'Deleted Messages', 'Junk'],
+                ],
+                'outlook' => [
+                    'host' => 'outlook.office365.com',
+                    'port' => 993,
+                    'flags' => '/imap/ssl/validate-cert',
+                    'username' => 'wanlong757402@outlook.com',
+                    'password' => 'TIMETHIEF..',
+                    //默认邮箱
+                    'defaultMailbox'=>'Inbox',
+                    //时差
+                    "timeDifference"=>0,
+                    //是否下载文件
+                    'downloadFile'=>false,
+                    'mailboxs' => ['Inbox', 'Sent', 'Drafts', 'Deleted', 'Junk'],
                 ],
             ]
         ],
@@ -92,6 +104,7 @@ return [
                 ],
             ],
         ],
+        //url美化
         "urlManager" => [
             //用于表明urlManager是否启用URL美化功能，在Yii1.1中称为path格式URL，
             // Yii2.0中改称美化。
@@ -110,6 +123,7 @@ return [
                 "<controller:\w+>/<action:\w+>"=>"<controller>/<action>",
             ],
         ],
+        //权限管理
         'authManager'=>[
             'class'=>'yii\rbac\DbManager',
         ],

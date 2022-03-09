@@ -243,3 +243,14 @@ function htmtocode($content) {
     $content = str_replace(array("\r\n", "\r", "\n"), "<br>", $content);
     return $content;
 }
+
+function str_replace_all($arr,$replace){
+    $res =[];
+    foreach ($arr as $item){
+        foreach ($replace as $key =>$value){
+            $item = str_replace($key,$value,$item);
+        }
+        $res[] =$item;
+    }
+    return $res;
+}

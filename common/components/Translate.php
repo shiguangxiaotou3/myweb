@@ -6,9 +6,9 @@ use yii\base\Component;
 class Translate  extends Component
 {
     const CURL_TIMEOUT = 2000;
-    const URL = "https://openapi.youdao.com/api";
-    const APP_KEY = '27bb082802437b82';//"您的应用ID"
-    const SEC_KEY = '9gPGRT9Rfa7Yrtdpd6YJOjI3T8G0hwxD';//"您的应用密钥"
+    public $url = "https://openapi.youdao.com/api";
+    public $app_key = '27bb082802437b82';                   //"您的应用ID"
+    public $sec_key = '9gPGRT9Rfa7Yrtdpd6YJOjI3T8G0hwxD';   //"您的应用密钥"
 
     /**
      * @param string $q
@@ -21,7 +21,7 @@ class Translate  extends Component
         $salt = $this->create_guid();
         $args = array(
             'q' => $q,
-            'appKey' => self::APP_KEY,
+            'appKey' => $this->app_key,//$APP_KEY,
             'salt' => $salt,
         );
         $args['from'] = $from;
@@ -29,14 +29,23 @@ class Translate  extends Component
         $args['signType'] = 'v3';
         $curTime = strtotime("now");
         $args['curtime'] = $curTime;
-        $signStr = self::APP_KEY . $this->truncate($q) . $salt . $curTime . self::SEC_KEY;
+        $signStr = $this->app_key . $this->truncate($q) . $salt . $curTime . $this-> sec_key;
         $args['sign'] = hash("sha256", $signStr);
         //$args['vocabId'] = '您的用户词表ID';
-        return $this->call(self::URL, $args);
+        return $this->call($this->url, $args);
     }
 
-    // 发起网络请求
-    public function call($url, $args = null, $method = "post", $timeout = self::CURL_TIMEOUT, $headers = array())
+    /**
+     * 发起网络请求
+     * @param $url
+     * @param null $args
+     * @param string $method
+     * @param int $timeout
+     * @param array $headers
+     * @return bool|mixed|string
+     */
+    public function call($url, $args = null, $method = "post",
+         $timeout = self::CURL_TIMEOUT, $headers = array())
     {
         $ret = false;
         $i = 0;
@@ -52,7 +61,18 @@ class Translate  extends Component
         return $ret;
     }
 
-    public function callOnce($url, $args = null, $method = "post", $withCookie = false, $timeout = self::CURL_TIMEOUT, $headers = array())
+    /**
+     * @param string $url
+     * @param null $args
+     * @param string $method
+     * @param false $withCookie
+     * @param int $timeout
+     * @param array $headers
+     * @return bool|string
+     */
+    public function callOnce($url, $args = null,
+     $method = "post", $withCookie = false,
+     $timeout = self::CURL_TIMEOUT, $headers = array())
     {
         $ch = curl_init();
         if ($method == "post") {
@@ -83,6 +103,10 @@ class Translate  extends Component
         return $r;
     }
 
+    /**
+     * @param $args
+     * @return string
+     */
     public function convert(&$args)
     {
         $data = '';
@@ -101,7 +125,10 @@ class Translate  extends Component
         return $args;
     }
 
-    // uuid generator
+    /**
+     * uuid generator
+     * @return string
+     */
     public function create_guid()
     {
         $microTime = microtime();
@@ -125,6 +152,10 @@ class Translate  extends Component
         return $guid;
     }
 
+    /**
+     * @param $characters
+     * @return string
+     */
     public function create_guid_section($characters)
     {
         $return = "";
@@ -134,12 +165,20 @@ class Translate  extends Component
         return $return;
     }
 
+    /**
+     * @param $q
+     * @return string
+     */
     public function truncate($q)
     {
         $len = $this->abslength($q);
         return $len <= 20 ? $q : (mb_substr($q, 0, 10) . $len . mb_substr($q, $len - 10, $len));
     }
 
+    /**
+     * @param $str
+     * @return false|int
+     */
     public function abslength($str)
     {
         if (empty($str)) {
@@ -153,11 +192,15 @@ class Translate  extends Component
         }
     }
 
+    /**
+     * @param $string
+     * @param $length
+     */
     public function ensure_length(&$string, $length){
-        $strlen = strlen($string);
-        if ($strlen < $length) {
+        $str_len = strlen($string);
+        if ($str_len < $length) {
             $string = str_pad($string, $length, "0");
-        } else if ($strlen > $length) {
+        } else if ($str_len > $length) {
             $string = substr($string, 0, $length);
         }
     }

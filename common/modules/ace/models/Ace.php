@@ -38,6 +38,14 @@ class Ace extends Model
         }
     }
 
+    public function getContent(){
+        $path = Yii::getAlias($this->aliases);
+        if(file_exists($path)){
+           return $this->str = file_get_contents($path);
+        }else{
+            $this->str ='';
+        }
+    }
     public function getExtensionName(){
         $path =  Yii::getAlias($this->aliases);
         if(file_exists($path)){
@@ -48,6 +56,32 @@ class Ace extends Model
             return $extensionName;
         }
         return 'text';
+    }
+    public static function getModes(){
+        return [
+            self::MODE_PHP,
+            self::MODE_HAML,
+            self::MODE_JAVASCRIPT,
+            self::MODE_JSON,
+            self::MODE_TEX,
+            self::MODE_VBSCRIPT,
+            self::MODE_MARKDOWN,
+            self::MODE_SH,
+            self::MODE_SQL,
+            self::MODE_HAML,
+        ];
+    }
+    public static function getThemes(){
+        return [
+            self::THEME_DREAMWEAVER,
+            self::THEME_GITHUB,
+            self::THEME_ECLIPSE,
+            self::THEME_NORD_DARK,
+            self::THEME_XCODE,
+            self::THEME_,
+            self::THEME_DREAMWEAVER,
+
+        ];
     }
 
     const EXT_BEAUTIFY ='beautify';
@@ -247,6 +281,7 @@ class Ace extends Model
     const MODE_XQUERY ='xquery';
     const MODE_YAML ='yaml';
     const MODE_ZEEK ='zeek';
+
     const THEME_AMBIANCE ='ambiance';
     const THEME_CHAOS ='chaos';
     const THEME_CHROME ='chrome';

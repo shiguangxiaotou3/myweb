@@ -18,11 +18,11 @@ class AddController extends Controller
      * app/models/query
      */
     public function actionIndex(){
-        $appname ='common';
+        $appName ='common';
         $table ='mailbox';
         $model = new shell();
         $model->tableName =$table;
-        system($model->ConstructShell($appname));
+        system($model->ConstructShell($appName));
     }
     /**
      * 数据迁移生成 rbac数据表
@@ -31,11 +31,7 @@ class AddController extends Controller
         $PATH =  "sudo php ".dirname(Yii::getAlias("@common"))."/yii  ";
         system($PATH.' migrate/up --migrationPath=@yii/rbac/migrations ');
     }
-    /**
-     * 删除用户的登陆记录表
-     */
-    public function actionDelUser(){
-    }
+
     /**
      * 注册用户
      */
@@ -51,15 +47,18 @@ class AddController extends Controller
         }
     }
 
+    /**
+     * 邮箱配置验证
+     */
     public function actionOutlook(){
         Yii::$app
             ->outlook
             ->compose(
                 ['html' => 'index']
             )
-            ->setFrom(['wanlong757402@outlook.com'=> Yii::$app->name . ' robot'])
+            ->setFrom(['wanlong757402@outlook.com'=> "outlook"])
             ->setTo("757402123@qq.com")
-            ->setSubject('Account registration at ' . Yii::$app->name)
+            ->setSubject('邮件配置验证发送 '.'wanlong757402@outlook.com' . Yii::$app->name)
             ->send();
     }
 }
