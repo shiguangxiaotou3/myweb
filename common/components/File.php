@@ -603,7 +603,6 @@ class File extends  Component{
         foreach($file_arr as $item){
             if($item!=".." && $item !="." && $item != '.gitignore' && $item != '' && $item != '.DS_Store'){
                 if(is_dir($path."/".$item)){
-                    //$new_arr[$item] = self::recursionDir($path."/".$item);
                     $new_arr[] =[
                         'label' => $item,
                         'icon' => 'folder-open',
@@ -611,15 +610,15 @@ class File extends  Component{
                         'items'=>self::recursionDir($aliases."/".$item)
                     ];
                 }else{
-                    $new_arr[] = ['label' => $item, 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>$aliases."/".$item],];
+                    $new_arr[] = [
+                        'label' => substr($item,0,19),
+                        'icon' => 'files-o',
+                        'url' => ['/ace/index/index',"aliases"=>$aliases."/".$item],
+                    ];
                 }
             }
         }
         return $new_arr;
     }
-
-
-
-
 }
 
