@@ -8,7 +8,7 @@ use \eluhr\aceeditor\widgets\AceEditor;
 
     $model = new Ace();
     $model->aliases ='@basic/a.txt';
-    $model->str = file_get_contents(Yii::getAlias($model->aliases));
+    $model->str = $model->getContent(); //file_get_contents(Yii::getAlias($model->aliases));
 ?>
 <div class="row">
 
@@ -16,8 +16,8 @@ use \eluhr\aceeditor\widgets\AceEditor;
         <?php
         echo AceEditor::widget([
             'attribute' => 'str',
-            'theme'=>$model::THEME_TOMORROW_NIGHT_EIGHTIES,
-            'mode' => $model->extensionName,
+            'mode' => 'txt',
+            'theme'=>'github',
             'model' => $model,
             'plugin_options'=>[
                 'readOnly'=> false,

@@ -17,14 +17,12 @@ class IndexController extends Controller
     public function actionIndex()
     {
         $request = Yii::$app->request;
-        $path ='@vba/views/site/md/login.md';
         $model = new Ace();
-        $model ->aliases = $path;
-        $model->str = file_get_contents(Yii::getAlias($path));
-        if($request->isPost){
-            logObject($request->post());
+        $aliases = $request->get('aliases');
+        if(!empty($aliases)  ){
+            $model ->aliases = $aliases;
+            $model->str = $model->getContent();
         }
-
         return $this->render('index',['model'=>$model]);
     }
 }

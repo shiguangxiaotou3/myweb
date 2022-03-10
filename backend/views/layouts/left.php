@@ -61,12 +61,7 @@ $username = Yii::$app->user->identity->username;
                             ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email/read/index ']],
                         ],
                     ],
-                    [
-                        'label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],
-                        'items'=>[
-                            ['label' => '收件箱', 'icon' => 'dashboard', 'url' => ['/ace/index']],
-                        ],
-                    ],
+                    ['label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],
                     [
                         'label' => '测试', 'icon' => 'file-code-o', 'url' => ['/test'],

@@ -595,5 +595,31 @@ class File extends  Component{
 
         return  self::saveConfig($path,$tmp);
     }
+
+    public static function recursionDir($aliases){
+        $path =Yii::getAlias($aliases);
+        $file_arr = scandir($path);
+        $new_arr = [];
+        foreach($file_arr as $item){
+            if($item!=".." && $item !="." && $item != '.gitignore' && $item != '' && $item != '.DS_Store'){
+                if(is_dir($path."/".$item)){
+                    //$new_arr[$item] = self::recursionDir($path."/".$item);
+                    $new_arr[] =[
+                        'label' => $item,
+                        'icon' => 'folder-open',
+                        'url' => ['/ace/index/index',"aliases"=>$aliases."/".$item],
+                        'items'=>self::recursionDir($aliases."/".$item)
+                    ];
+                }else{
+                    $new_arr[] = ['label' => $item, 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>$aliases."/".$item],];
+                }
+            }
+        }
+        return $new_arr;
+    }
+
+
+
+
 }
 

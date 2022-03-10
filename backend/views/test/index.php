@@ -1,6 +1,6 @@
 <?php
 use \eluhr\aceeditor\widgets\AceEditor;
-
+use dmstr\widgets\Menu;
 /** @var $this yii\web\View */
 /** @var $content string */
 
@@ -12,4 +12,4 @@ use \eluhr\aceeditor\widgets\AceEditor;
 //        'readOnly'=> false
 //    ]
 //]);
-dump($data);
+?>

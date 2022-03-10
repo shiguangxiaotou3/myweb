@@ -33,16 +33,12 @@ return [
     ],
     //组件
     'components' => [
-
-
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
-
         'authManager' => [
             'class' => 'yii\rbac\DbManager', // or use 'yii\rbac\DbManager'
         ],
-
         'as access' => [
             'class' => 'mdm\admin\components\AccessControl',
             'allowActions' => [
