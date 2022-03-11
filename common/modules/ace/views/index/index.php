@@ -1,11 +1,16 @@
 <?php
+
+use \yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use \eluhr\aceeditor\widgets\AceEditor;
 /* @var $this yii\web\View */
+/* @var $data */
 /* @var $model common\modules\ace\models\Ace */
 
+$tmp =$data;
+$tmp[0]='/ace/index/index';
 ?>
-<div class="row">
+   <div class="row">
     <div class="col col-md-12 col-lg-12">
         <div class="box box-default color-palette-box">
             <?php $form = ActiveForm::begin(); ?>
@@ -34,7 +39,8 @@ use \eluhr\aceeditor\widgets\AceEditor;
                         <ul class="dropdown-menu">
                             <?php
                             foreach ($model->getModes() as $value){
-                                echo "<li><a>$value </a></li>";
+                                $tmp['mode']= $value;
+                                echo '<li>'.Html::a($value, $tmp)."</li>";
                             }
                             ?>
                         </ul>
@@ -47,7 +53,8 @@ use \eluhr\aceeditor\widgets\AceEditor;
                         <ul class="dropdown-menu">
                             <?php
                             foreach ($model->getThemes() as $value){
-                                echo "<li><a>$value </a></li>";
+                                $tmp['theme']=$value;
+                                echo '<li>'.Html::a($value,$tmp)."</li>";
                             }
                             ?>
                         </ul>
@@ -57,10 +64,12 @@ use \eluhr\aceeditor\widgets\AceEditor;
             </div>
             <div class="box-body no-padding">
             <?php
+                isset($data['theme']) ? $theme =$data['theme'] : $theme =$model->theme;
+                isset($data['mode']) ? $mode =$data['mode'] : $mode =$model->mode;
                 echo AceEditor::widget([
                     'attribute' => 'str',
-                    'mode' => $model->mode,
-                    'theme'=>$model->theme,
+                    'mode' => $mode,
+                    'theme'=>$theme,
                     'model' => $model,
                     'container_options'=>['style'=>'width:100%; min-height: 550px',],
                     'plugin_options'=>[

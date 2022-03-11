@@ -5,6 +5,7 @@ use common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
    BootstrapWysihtml5Assets::register($this);
 
 $this->title =Yii::t('app', '邮件');
+
 ?>
 
     <div class="row">

@@ -23,6 +23,9 @@ class IndexController extends Controller
             $model ->aliases = $aliases;
             $model->str = $model->getContent();
         }
-        return $this->render('index',['model'=>$model]);
+        return $this->render('index',[
+            'model'=>$model,
+            'data'=>$request->get(),
+        ]);
     }
 }
