@@ -9,19 +9,20 @@ use yii\behaviors\TimestampBehavior;
  * This is the model class for table "ip".
  *
  * @property int $id
- * @property string|null $ip ip地质
+ * @property string|null $ip ip地址
+ * @property int $user_id 用户
  * @property string|null $hostname 域名
  * @property string|null $city 城市
  * @property string|null $region 地区
  * @property string|null $country 国家代码
  * @property string|null $loc 经纬度
- * @property int|null $org 单位
- * @property int|null $postal 邮政编码
+ * @property string|null $org 组织
+ * @property string|null $postal 邮政编码
  * @property string|null $timezone 时区
  * @property string|null $country_name 国家名称
  * @property float|null $latitude 纬度
  * @property float|null $longitude 经度
- * @property float|null $visits 访问量
+ * @property int|null $visits 访问量
  * @property int|null $created_at 创建时间
  * @property int|null $updated_at 修改时间
  */
@@ -42,14 +43,13 @@ class Ip extends ActiveRecord
     public function rules()
     {
         return [
-            [['city','country'],'required'],
-            [[ 'postal','visits', /*'created_at', 'updated_at'*/], 'integer'],
+            [['user_id','country','city','loc'], 'required'],
+            [['user_id', 'visits',/* 'created_at', 'updated_at'*/], 'integer'],
             [['latitude', 'longitude'], 'number'],
-            [['ip', 'hostname', 'loc', 'country_name'], 'string', 'max' => 255],
+            [['ip', 'hostname', 'loc', 'org', 'postal', 'country_name'], 'string', 'max' => 255],
             [['city', 'region'], 'string', 'max' => 100],
             [['country'], 'string', 'max' => 10],
             [['timezone'], 'string', 'max' => 30],
-            ['org', 'string', 'max' => 255],
         ];
     }
 

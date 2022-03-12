@@ -19,8 +19,7 @@ use yii\base\Event;
 class Ip extends  Component{
 
     //const EVENT_BEFORE_LOGOUT = 'beforeLogout';
-
-    public $token = "7265d1b29d49c2";
+    public $token = '7265d1b29d49c2';//'7265d1b29d49c2'
     public $allowedIPs = ['127.0.0.1', '::1'];
     public $ip ='';
 
@@ -47,6 +46,7 @@ class Ip extends  Component{
                     file_put_contents($path,$str."ip:".$ip."解析成功"."\r\n",FILE_APPEND);
                 }else{
                     file_put_contents($path,$str."ip:".$ip."解析失败"."\r\n",FILE_APPEND);
+                    logObject($model->getErrors());
                 }
             }
 
@@ -62,7 +62,7 @@ class Ip extends  Component{
         try{
             return $client->getRequestDetails($ip);
         }catch (Exception $exception){
-            return false;
+            logObject($exception->getMessage());
         }
     }
 
