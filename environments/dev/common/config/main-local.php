@@ -4,9 +4,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=myweb',
+            'dsn' => 'mysql:host=localhost;dbname=myweb1',
             'username' => 'root',
-            'password' => 'root',
+            'password' => 'WanLong757402123.',
             'charset' => 'utf8',
         ],
 
