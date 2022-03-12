@@ -1,8 +1,8 @@
 <?php
-use \eluhr\aceeditor\widgets\AceEditor;
-use dmstr\widgets\Menu;
+
 /** @var $this yii\web\View */
 /** @var $content string */
+/** @var $data string|array|bool */
 
 //echo AceEditor::widget([
 //    'name' => 'editor',
@@ -12,4 +12,5 @@ use dmstr\widgets\Menu;
 //        'readOnly'=> false
 //    ]
 //]);
-?>
+
+dump($data);

@@ -10,7 +10,6 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use common\models\LoginForm;
 use yii\filters\AccessControl;
-use common\components\event\IpEvent;
 
 
 /**
@@ -21,13 +20,6 @@ class SiteController extends Controller
 {
     const EVENT_ANALYSIS_IP ='analysisIp';
 
-    /**
-     * 附加事件
-     */
-    public function init(){
-        parent::init();
-        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,self::EVENT_ANALYSIS_IP]);
-    }
 
     /**
      * {@inheritdoc}
@@ -89,14 +81,14 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $this->layout = 'blank';
+        $request= Yii::$app->request;
+
+        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,'autoAnalysis'], ['ip'=>$request->remoteIP]);
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            $event = new IpEvent();
-            $event->ip = Yii::$app->request->userIP;
-            $this->trigger(self::EVENT_ANALYSIS_IP,$event);
+        if ($model->load($request->post()) && $model->login()) {
+            $this->trigger(self::EVENT_ANALYSIS_IP);
             return $this->goBack();
         }
 

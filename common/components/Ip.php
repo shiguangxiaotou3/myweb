@@ -4,12 +4,12 @@
 namespace common\components;
 
 
-
-use common\components\event\IpEvent;
+use Yii;
 use Exception;
 use yii\base\Component;
 use ipinfo\ipinfo\IPinfo;
 use common\models\ar\Ip  as ipModel;
+use yii\base\Event;
 
 
 /**
@@ -27,22 +27,26 @@ class Ip extends  Component{
 
     /**
      * 自动记录用户的登陆ip
-     * @param IpEvent $event
+     * @param  $event Event
      */
     public function autoAnalysis($event){
-        $ip = $event->ip;
+        $data = $event->data;
+        $ip = $data['ip'];
+        $path = Yii::getAlias('@basic/log.txt');
+        $str = date("Y-m-d h:m:s",time())."    ";
         if(!in_array($ip,$this->allowedIPs)){
             //判断ip是否已经解析
             if(ipModel::is_empty($ip)){
                 ipModel::sum_count($ip);
+                file_put_contents($path,$str."ip:".$ip."访问量加1"."\r\n",FILE_APPEND);
             }else{
                 $data = $this-> analysis($ip);
                 $model = new ipModel();
                 $model->attributes =$data;
                 if($model->validate() && $model->save()){
-
+                    file_put_contents($path,$str."ip:".$ip."解析成功"."\r\n",FILE_APPEND);
                 }else{
-
+                    file_put_contents($path,$str."ip:".$ip."解析失败"."\r\n",FILE_APPEND);
                 }
             }
 
@@ -78,5 +82,9 @@ class Ip extends  Component{
     public function visitsDataByCity(){
         $model = new ipModel();
         return $model->visitsDataByCity();
+    }
+
+    public function test(){
+        logObject('登陆成功');
     }
 }
