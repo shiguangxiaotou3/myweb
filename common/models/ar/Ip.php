@@ -43,7 +43,7 @@ class Ip extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id','country','city','loc'], 'required'],
+            [['country','city','loc'], 'required'],
             [['user_id', 'visits',/* 'created_at', 'updated_at'*/], 'integer'],
             [['latitude', 'longitude'], 'number'],
             [['ip', 'hostname', 'loc', 'org', 'postal', 'country_name'], 'string', 'max' => 255],
