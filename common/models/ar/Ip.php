@@ -44,7 +44,7 @@ class Ip extends ActiveRecord
     {
         return [
             [['country','city','loc'], 'required'],
-            [['user_id', 'visits',/* 'created_at', 'updated_at'*/], 'integer'],
+            [[ 'visits',/* 'created_at', 'updated_at'*/], 'integer'],
             [['latitude', 'longitude'], 'number'],
             [['ip', 'hostname', 'loc', 'org', 'postal', 'country_name'], 'string', 'max' => 255],
             [['city', 'region'], 'string', 'max' => 100],

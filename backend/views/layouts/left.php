@@ -54,17 +54,18 @@ $username = Yii::$app->user->identity->username;
                         ],
                     ],
                     [
-                        'label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email'],
+                        'label' => '模块',
+                        'icon' => 'dashboard',
                         'items'=>[
-                            ['label' => '收件箱', 'icon' => 'dashboard', 'url' => ['/email/inbox']],
-                            ['label' => '写邮件', 'icon' => 'dashboard', 'url' => ['/email/compose/index']],
-                            ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email/read/index ']],
+                            ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email/inbox']],
+                            ['label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
                         ],
                     ],
-                    ['label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
+
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],
                     [
-                        'label' => '测试', 'icon' => 'file-code-o', 'url' => ['/test'],
+                        'label' => '测试',
+                        'icon' => 'file-code-o',
                         'items'=>[
                             ['label' => '运行测试', 'icon' => 'file-code-o', 'url' => ['/test/index'],],
                             ['label' => '测试结果', 'icon' => 'file-code-o', 'url' => ['/test/read'],],

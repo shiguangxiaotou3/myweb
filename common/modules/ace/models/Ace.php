@@ -24,7 +24,7 @@ class Ace extends Model
     public function rules(){
        return [
            [['aliases','str'],'string'],
-           ['str','string']
+           [['aliases'],'required'],
        ];
     }
 
@@ -146,6 +146,36 @@ class Ace extends Model
             'terminal','textmate','tomorrow','tomorrow_night','tomorrow_night_blue',
             'tomorrow_night_bright','tomorrow_night_eighties','twilight','vibrant_ink',
         ];
+    }
+
+    /**
+     * 保存文件
+     * @return false|int|string
+     */
+    public function saveFile(){
+
+        $path = Yii::getAlias($this->aliases);
+
+        // 是目录则返回fales
+        if(is_dir($path)){
+            return false;
+        }
+            //如果文件存在
+            if (file_exists($path)){
+                return file_put_contents($path,$this->str);
+            }else{
+                return '文件不存在'.$path;
+            }
+
+
+    }
+
+    /**
+     * 判断一个文件是否有写权限
+     * @return bool
+     */
+    public function writable(){
+        return !is_writable(Yii::getAlias($this->aliases));
     }
 
 

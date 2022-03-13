@@ -11,21 +11,36 @@ use common\modules\ace\models\Ace;
 class IndexController extends Controller
 {
     /**
-     * Renders the index view for the module
+     * 在线编辑
      * @return string
      */
-    public function actionIndex()
-    {
+    public function actionIndex(){
         $request = Yii::$app->request;
         $model = new Ace();
-        $aliases = $request->get('aliases');
-        if(!empty($aliases)  ){
-            $model ->aliases = $aliases;
-            $model->str = $model->getContent();
+        if($request->isGet){
+            $aliases = $request->get('aliases');
+            if(!empty($aliases) ){
+                $model ->aliases = $aliases;
+                $model->str = $model->getContent();
+            }
+            if($request->isAjax) {
+                return $this->renderAjax('index',['model'=>$model,'data'=>$request->get()]);
+            }else{
+                return $this->render('index',['model'=>$model,'data'=>$request->get()]);
+            }
+        }elseif ($request->isPost){
+            if($model->load($request->post()) && $model->validate()  ){
+               if($model->saveFile()){
+                   return  $this->render('index',['model'=>$model,'data'=>$request->get()]);
+               }
+            }else{
+                return  $this->render('index',['model'=>$model,'data'=>$request->get()]);
+            }
+        }else{
+            return $this->render('index',[
+                'model'=>$model,
+                'data'=>$request->get(),
+            ]);
         }
-        return $this->render('index',[
-            'model'=>$model,
-            'data'=>$request->get(),
-        ]);
     }
 }
