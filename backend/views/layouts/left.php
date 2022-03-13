@@ -59,6 +59,7 @@ $username = Yii::$app->user->identity->username;
                         'items'=>[
                             ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email/inbox']],
                             ['label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
+                            ['label' => 'DNS', 'icon' => 'dashboard', 'url' => ['/dns'],],
                         ],
                     ],
 

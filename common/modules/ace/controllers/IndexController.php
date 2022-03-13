@@ -3,6 +3,8 @@
 namespace common\modules\ace\controllers;
 
 use Yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use common\modules\ace\models\Ace;
 /**
@@ -10,6 +12,28 @@ use common\modules\ace\models\Ace;
  */
 class IndexController extends Controller
 {
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors(){
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' =>  ['index'],
+                'rules' => [
+                    [
+                        'actions' => ['index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+
+                ],
+            ],
+        ];
+    }
+
+
     /**
      * 在线编辑
      * @return string

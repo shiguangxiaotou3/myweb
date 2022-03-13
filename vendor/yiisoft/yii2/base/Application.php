@@ -51,6 +51,7 @@ use Yii;
  * @property-read \common\components\Markdown $markdown 操作邮件服务器组件
  * @property-read \common\components\Server $server 操作邮件服务器组件
  * @property-read \common\components\Translate $translate 有道翻译api
+ * @property-read \common\components\Dns $dns 阿里云dns api
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */

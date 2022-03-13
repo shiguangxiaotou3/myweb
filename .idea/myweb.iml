@@ -142,6 +142,15 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-bootstrap" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/eluhr/yii2-aceeditor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/ace-builds" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/openapi-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/alidns-20150109" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/endpoint-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/credentials" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/darabonba-openapi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/tea-utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/tea" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/adbario/php-dot-notation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lizhichao/one-sm" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

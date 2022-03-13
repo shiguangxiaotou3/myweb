@@ -30,6 +30,9 @@ return [
         'ace' => [
             'class' => 'common\modules\ace\Ace',
         ],
+        'dns'=>[
+            'class'=>'common\modules\dns\Dns'
+        ],
     ],
     //组件
     'components' => [

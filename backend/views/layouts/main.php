@@ -30,6 +30,7 @@ if (Yii::$app->controller->action->id === 'login') {
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
+        <link rel="shortcut icon" href="http://www.shiguangxiaotou.com/wp-content/uploads/2021/06/cropped-微信图片_20210606173046-1-192x192.jpg" />
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
     </head>

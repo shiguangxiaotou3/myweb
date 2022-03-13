@@ -22,6 +22,9 @@ return [
         'ip'=>[
             'class'=>'common\components\Ip',
         ],
+        'dns'=>[
+            'class'=>'common\components\Dns'
+        ],
         //文件管理
         'file'=>[
             'class'=>'common\components\File',

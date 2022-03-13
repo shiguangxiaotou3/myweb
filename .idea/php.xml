@@ -135,6 +135,15 @@
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
       <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
+      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
+      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

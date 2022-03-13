@@ -11,7 +11,6 @@ use Ddeboer\Imap\Mailbox;
 use Ddeboer\Imap\Message;
 use yii\helpers\ArrayHelper;
 use Ddeboer\Imap\Connection;
-//use common\components\File;
 use Ddeboer\Imap\MessageIterator;
 use Ddeboer\Imap\MessageIteratorInterface;
 
