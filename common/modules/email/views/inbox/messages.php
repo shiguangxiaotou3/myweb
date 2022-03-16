@@ -89,22 +89,6 @@ use \yii\helpers\Html;
         </div>
         <!-- 页脚 -->
         <div class="box-footer no-padding">
-            <!-- 操作按钮-->
-            <!--
-            <div class="mailbox-controls">
-                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
-                </button>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-reply"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-share"></i></button>
-                </div>
-
-                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
-
-            </div>
-            -->
         </div>
     </div>
 

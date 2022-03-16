@@ -7,8 +7,8 @@ class Translate  extends Component
 {
     const CURL_TIMEOUT = 2000;
     public $url = "https://openapi.youdao.com/api";
-    public $app_key = '27bb082802437b82';                   //"您的应用ID"
-    public $sec_key = '9gPGRT9Rfa7Yrtdpd6YJOjI3T8G0hwxD';   //"您的应用密钥"
+    public $app_key = '';   //"您的应用ID"
+    public $sec_key = '';   //"您的应用密钥"
 
     /**
      * @param string $q

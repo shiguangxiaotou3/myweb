@@ -18,13 +18,7 @@ return [
         'markdown'=>[
             'class'=>'common\components\Markdown',
         ],
-        //ip解析组件
-        'ip'=>[
-            'class'=>'common\components\Ip',
-        ],
-        'dns'=>[
-            'class'=>'common\components\Dns'
-        ],
+
         //文件管理
         'file'=>[
             'class'=>'common\components\File',
@@ -59,40 +53,7 @@ return [
                 ],
             ]
         ],
-        //读取邮箱组件
-        'imap'=>[
-            'class'=>'common\components\Imap',
-            'servers' => [
-                'qqMailer' => [
-                    'host' => 'imap.qq.com',
-                    'port' => 993,
-                    'flags' => '/imap/ssl',
-                    'username' => '757402123@qq.com',
-                    'password' => 'bjhxxjyxnrgibbeg',
-                    //默认邮箱
-                    'defaultMailbox'=>'INBOX',
-                    //时差
-                    "timeDifference"=>-16*60*60,
-                    //是否下载文件
-                    'downloadFile'=>false,
-                    'mailboxs' => ['INBOX', 'Sent Messages', 'Drafts', 'Deleted Messages', 'Junk'],
-                ],
-                'outlook' => [
-                    'host' => 'outlook.office365.com',
-                    'port' => 993,
-                    'flags' => '/imap/ssl/validate-cert',
-                    'username' => 'wanlong757402@outlook.com',
-                    'password' => 'TIMETHIEF..',
-                    //默认邮箱
-                    'defaultMailbox'=>'Inbox',
-                    //时差
-                    "timeDifference"=>0,
-                    //是否下载文件
-                    'downloadFile'=>false,
-                    'mailboxs' => ['Inbox', 'Sent', 'Drafts', 'Deleted', 'Junk'],
-                ],
-            ]
-        ],
+
         //翻译组件
         'i18n' => [
             'translations' => [

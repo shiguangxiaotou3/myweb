@@ -18,8 +18,7 @@ use yii\base\Event;
  */
 class Ip extends  Component{
 
-    //const EVENT_BEFORE_LOGOUT = 'beforeLogout';
-    public $token = '7265d1b29d49c2';//'7265d1b29d49c2'
+    public $token = '';
     public $allowedIPs = ['127.0.0.1', '::1'];
     public $ip ='';
 

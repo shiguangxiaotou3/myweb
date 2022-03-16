@@ -82,30 +82,47 @@ $dns =Yii::$app->dns;
                     </trbody>
                     <!-- 表格数据 -->
                     <table class="table table-hover table-striped">
-                        <!--
+
                         <thead>
                             <tr>
-                                <td>主机记录</td>
-                                <td>记录类型</td>
-                                <td>记录值</td>
-                                <td>备注</td>
+                                <td >Id</td>
+                                <td>rr</td>
+                                <td >type</td>
+                                <td>value</td>
+                                <td >status</td>
+                                <td>ttl</td>
+                                <td>weight</td>
+                                <td>remark</td>
                             </tr>
                         </thead>
+                        <!--
+                        <td><input type="checkbox"></td>
+                    <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                    <td class="mailbox-name"><a href="read-mail.html">Alexander Pierce</a></td>
+                    <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...
+                    </td>
+                    <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                    <td class="mailbox-date">28 mins ago</td>
                         -->
                         <trbody>
                             <?php
 
                                 $data = $dns->domainRecords($domainName);
                                if(!empty($data) && is_array($data) ){
-                                   foreach ($data as $datum){
-                                       echo "<tr>";
-                                       echo "<td class='mailbox-subject'>".$datum['RR']."</td>";
-                                       echo "<td class='mailbox'>".$datum['type']."</td>";
-                                       echo "<td  class='mailbox'>".$datum['value']."</td>";
-                                       echo "<td  class='mailbox-name'>".$datum['RR']."</td>";
-                                       echo "<td  class='mailbox-date'>".$datum['remark']."</td>";
-                                       echo "<tr>";
-                                   }
+                                   foreach ($data as $datum){?>
+                            <tr>
+                                <td><input type="checkbox" name="" value="<?=$datum['recordId'] ?>"></td>
+                                <td><?= $datum['rr'] ?></td>
+                                <td><?= $datum['type'] ?></td>
+                                <td><?= $datum['value'] ?></td>
+                                <td><?= $datum['status'] ?></td>
+                                <td><?= $datum['ttl'] ?></td>
+
+                                <td><?= $datum['weight'] ?></td>
+                                <td><?= $datum['remark'] ?></td>
+                            </tr>
+
+                           <?php        }
                                }
 
                             ?>

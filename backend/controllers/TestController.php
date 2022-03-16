@@ -16,7 +16,8 @@ class TestController  extends Controller
     public function actionIndex(){
 
         $dns = Yii::$app->dns;
-        $data= $dns->domains;
+        $data= $dns->domainRecords("shiguangxiaotou.com");
+        $dns->delDomainRecord("shiguangxiaotou.com",'_4a4f1af0789c15f6bf6c203ab1fe2f6a.backend');
 
 //       $data = $dns->domainStatistics('7574home.com','2022-03-03');
 //       $data = $dns->domain->domainName;

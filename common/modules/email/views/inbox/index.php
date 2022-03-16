@@ -6,7 +6,7 @@ use \common\modules\email\widgets\MailboxListWidget;
 /** @var $content string */
 $this->title ='收件箱';
 
-/** @var $imap  common\components\imap\Imap*/
+/** @var $imap  common\components\Imap*/
 /** @var $pages  yii\data\Pagination */
 ?>
 <div class="row">

@@ -14,11 +14,18 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
       <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
       <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
@@ -50,6 +57,8 @@
       <path value="$PROJECT_DIR$/vendor/opis/closure" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
@@ -120,11 +129,13 @@
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
       <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
+      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/practically/yii2-chartjs" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/jvectormap" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
       <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
       <path value="$PROJECT_DIR$/vendor/npm-asset/bootstrap" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
@@ -133,18 +144,9 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/jsQR-master" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
-      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
-      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
-      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpProjectSharedConfiguration">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
 </project>
