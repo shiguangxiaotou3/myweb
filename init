@@ -9,7 +9,7 @@
  */
 
 if (!extension_loaded('openssl')) {
-    die('The OpenSSL PHP extension is required by Yii2.');
+    die('Yii2需要OpenSSL PHP扩展.');
 }
 
 $params = getParams();
@@ -17,19 +17,19 @@ $root = str_replace('\\', '/', __DIR__);
 $envs = require "$root/environments/index.php";
 $envNames = array_keys($envs);
 
-echo "Yii Application Initialization Tool v1.0\n\n";
+echo "Yii应用程序初始化工具 v1.0\n\n";
 
 $envName = null;
 if (empty($params['env']) || $params['env'] === true) {
-    echo "Which environment do you want the application to be initialized in?\n\n";
+    echo "您希望在哪个环境中初始化应用程序?\n\n";
     foreach ($envNames as $i => $name) {
         echo "  [$i] $name\n";
     }
-    echo "\n  Your choice [0-" . (count($envs) - 1) . ', or "q" to quit] ';
+    echo "\n  你的选择 [0-" . (count($envs) - 1) . ', or "q" to quit] ';
     $answer = trim(fgets(STDIN));
 
     if (!ctype_digit($answer) || !in_array($answer, range(0, count($envs) - 1))) {
-        echo "\n  Quit initialization.\n";
+        echo "\n  退出初始化.\n";
         exit(0);
     }
 
@@ -42,28 +42,28 @@ if (empty($params['env']) || $params['env'] === true) {
 
 if (!in_array($envName, $envNames, true)) {
     $envsList = implode(', ', $envNames);
-    echo "\n  $envName is not a valid environment. Try one of the following: $envsList. \n";
+    echo "\n  $envName 不是有效的环境。尝试以下方法之一: $envsList. \n";
     exit(2);
 }
 
 $env = $envs[$envName];
 
 if (empty($params['env'])) {
-    echo "\n  Initialize the application under '{$envNames[$answer]}' environment? [yes|no] ";
+    echo "\n  在'{$envNames[$answer]}' 下初始化应用程序? [yes|no] ";
     $answer = trim(fgets(STDIN));
     if (strncasecmp($answer, 'y', 1)) {
-        echo "\n  Quit initialization.\n";
+        echo "\n  退出初始化.\n";
         exit(0);
     }
 }
 
 $rootPath = "$root/environments/{$env['path']}";
 if (!is_dir($rootPath)) {
-    printError("$rootPath directory does not exist. Check path in $envName environment.");
+    printError("$rootPath 目录不存在.在开 $envName 环境中检查路径.");
     exit(3);
 }
 
-echo "\n  Start initialization ...\n\n";
+echo "\n  开始初始化 ...\n\n";
 
 $files = getFileList($rootPath);
 if (isset($env['skipFiles'])) {
@@ -91,7 +91,7 @@ foreach(array_column($envs, 'path') as $envPath) {
 }
 $filesToRemove = array_filter($filesToRemove, 'file_exists');
 if ($filesToRemove) {
-	echo "\n  Remove files from other environments ...\n\n";
+	echo "\n  从其他环境中删除文件 ...\n\n";
 
 	$all = false;
 	foreach ($filesToRemove as $file) {
@@ -109,7 +109,7 @@ foreach ($callbacks as $callback) {
     }
 }
 
-echo "\n  ... initialization completed.\n\n";
+echo "\n  ... 初始化完成.\n\n";
 
 function getFileList($root, $basePath = '')
 {
@@ -143,10 +143,10 @@ function copyFile($root, $source, $target, &$all, $params)
             return true;
         }
         if ($all) {
-            echo "  overwrite $target\n";
+            echo "  覆盖 $target\n";
         } else {
-            echo "      exist $target\n";
-            echo "            ...overwrite? [Yes|No|All|Quit] ";
+            echo "      存在 $target\n";
+            echo "            ...覆盖? [Yes|No|All|Quit] ";
 
 
             $answer = !empty($params['overwrite']) ? $params['overwrite'] : trim(fgets(STDIN));
@@ -154,13 +154,13 @@ function copyFile($root, $source, $target, &$all, $params)
                 return false;
             } else {
                 if (!strncasecmp($answer, 'y', 1)) {
-                    echo "  overwrite $target\n";
+                    echo "  覆盖 $target\n";
                 } else {
                     if (!strncasecmp($answer, 'a', 1)) {
-                        echo "  overwrite $target\n";
+                        echo "  覆盖 $target\n";
                         $all = true;
                     } else {
-                        echo "       skip $target\n";
+                        echo "       跳过 $target\n";
                         return true;
                     }
                 }
@@ -179,9 +179,9 @@ function removeFile($root, $target, &$all, $params)
 {
 	if (is_file($root . '/' . $target)) {
 		if ($all) {
-			echo "  delete $target\n";
+			echo "  删除 $target\n";
 		} else {
-			echo "      delete $target\n";
+			echo "      删除 $target\n";
 			echo "            ...confirm? [Yes|No|All|Quit] ";
 
 			$answer = !empty($params['delete']) ? $params['delete'] : trim(fgets(STDIN));
@@ -189,10 +189,10 @@ function removeFile($root, $target, &$all, $params)
 				return false;
 			} else {
 				if (!strncasecmp($answer, 'y', 1)) {
-					echo "  delete $target\n";
+					echo "  删除 $target\n";
 				} else {
 					if (!strncasecmp($answer, 'a', 1)) {
-						echo "  delete $target\n";
+						echo "  删除 $target\n";
 						$all = true;
 					} else {
 						echo "       skip $target\n";
@@ -237,7 +237,7 @@ function setWritable($root, $paths)
                 printError("Operation chmod not permitted for directory $writable.");
             }
         } else {
-            printError("Directory $writable does not exist.");
+            printError("目录 $writable 不存在.");
         }
     }
 }
@@ -252,7 +252,7 @@ function setExecutable($root, $paths)
                 printError("Operation chmod not permitted for $executable.");
             }
         } else {
-            printError("$executable does not exist.");
+            printError("$executable 不存在.");
         }
     }
 }
@@ -260,7 +260,7 @@ function setExecutable($root, $paths)
 function setCookieValidationKey($root, $paths)
 {
     foreach ($paths as $file) {
-        echo "   generate cookie validation key in $file\n";
+        echo "   生成cookie验证密钥 $file\n";
         $file = $root . '/' . $file;
         $length = 32;
         $bytes = openssl_random_pseudo_bytes($length);
@@ -280,7 +280,7 @@ function createSymlink($root, $links)
             @unlink($root . "/" . $link);
         }
         if (@symlink($root . "/" . $target, $root . "/" . $link)) {
-            echo "      symlink $root/$target $root/$link\n";
+            echo "      符号链接 $root/$target $root/$link\n";
         } else {
             printError("Cannot create symlink $root/$target $root/$link.");
         }
