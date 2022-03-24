@@ -52,6 +52,8 @@ use Yii;
  * @property-read \common\components\Server $server 操作邮件服务器组件
  * @property-read \common\components\Translate $translate 有道翻译api
  * @property-read \common\components\Dns $dns 阿里云dns api
+ * @property-read \common\components\Snoopy $snoopy 爬虫
+ * @property-read \common\components\AssetsDownload $assetsDownload 获取网站的html
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */

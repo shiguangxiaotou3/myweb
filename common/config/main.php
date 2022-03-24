@@ -6,54 +6,9 @@ return [
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
-        //服务器信息组件
-        'server'=>[
-            'class'=>'common\components\Server',
-        ],
-        //缓存组件
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        //markdown解析文件
-        'markdown'=>[
-            'class'=>'common\components\Markdown',
-        ],
-
-        //文件管理
-        'file'=>[
-            'class'=>'common\components\File',
-            'tmpAlias'=>[
-                'backend'=>[
-                    'cache'=>'@backend/runtime/cache',
-                    'debug'=>'@backend/runtime/debug',
-                    'HTML'=>'@backend/runtime/HTML',
-                    'logs'=>'@backend/runtime/logs',
-                    'URI'=>'@backend/runtime/URI',
-                    'mail'=>'@backend/runtime/mail',
-                    'assets'=>'@backend/web/assets',
-
-                ],
-                'frontend'=>[
-                    'cache'=>'@frontend/runtime/cache',
-                    'debug'=>'@frontend/runtime/debug',
-                    'HTML'=>'@frontend/runtime/HTML',
-                    'logs'=>'@frontend/runtime/logs',
-                    'URI'=>'@frontend/runtime/URI',
-                    'mail'=>'@frontend/runtime/mail',
-                    'assets'=>'@frontend/web/assets',
-
-                ],
-                'console'=>[
-                    'cache'=>'@console/runtime/cache',
-                    'mail'=>'@console/runtime/mail',
-                    //'debug'=>'@console/runtime/debug',
-                    //'HTML'=>'@console/runtime/HTML',
-                    'logs'=>'@console/runtime/logs',
-                    //'URI'=>'@console/runtime/URI',
-                ],
-            ]
-        ],
-
         //翻译组件
         'i18n' => [
             'translations' => [

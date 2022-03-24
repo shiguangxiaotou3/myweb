@@ -11,15 +11,6 @@ $this->title ='写邮件';
 BootstrapWysihtml5Assets::register($this);
 Select2Assets::register($this);
 ?>
-<!--
-    <style>
-        select {
-            -webkit-appearance: none;
-            border-radius: 0;
-        }
-    </style>
-
--->
     <div class="box box-primary">
         <div class="box-header with-border">
             <h3 class="box-title">写邮件</h3>
@@ -27,7 +18,11 @@ Select2Assets::register($this);
         <!-- /.box-header -->
         <div class="box-body">
         <?php
-            $from = ActiveForm::begin(['method' => '/email/inbox/reply']);
+            $from = ActiveForm::begin([
+                'action' => ['/email/inbox/reply'],
+                'method' => 'post',
+                'enableAjaxValidation' => $ajax,
+            ]);
 
             //收件人
             echo $from->field($model, 'to', ['options' => ['class' => 'form-group',],])
@@ -51,16 +46,6 @@ Select2Assets::register($this);
                 ->label(false)
                 ->hint(false)
                 ->error(false);
-
-            //附件
-//            echo $from->field($model, 'file', [
-//                'options' => ['class' => 'form-group'],
-//                'template' => "<div class='btn btn-default btn-file'>
-//                                <i class='fa fa-paperclip'></i> 附件\n{input}\n</div> <p class='help-block'>Max. 32MB</p>"])
-//                ->fileInput()
-//                ->label(false)
-//                ->hint(false)
-//                ->error(false);
         ?>
         </div>
         <!-- /.box-body -->
@@ -72,7 +57,6 @@ Select2Assets::register($this);
             <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> 删除</button>
         </div>
         <?php ActiveForm::end(); ?>
-        <!-- /.box-footer -->
     </div>
 <?php
 

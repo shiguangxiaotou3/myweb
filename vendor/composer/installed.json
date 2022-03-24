@@ -3906,6 +3906,57 @@
             "install-path": "../npm-asset/bootstrap"
         },
         {
+            "name": "oonne/yii2-webuploader",
+            "version": "1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oonne/yii2-webuploader.git",
+                "reference": "62bb7c876388204dddab44be1bc418b38fb52a87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oonne/yii2-webuploader/zipball/62bb7c876388204dddab44be1bc418b38fb52a87",
+                "reference": "62bb7c876388204dddab44be1bc418b38fb52a87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "time": "2019-06-28T03:04:41+00:00",
+            "type": "yii2-extension",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "oonne\\webuploader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JAY",
+                    "email": "JAY@oonne.com",
+                    "homepage": "https://www.oonne.com"
+                }
+            ],
+            "description": "Yii2 extension for large file chunk upload. Base on WebUploader.",
+            "keywords": [
+                "extension",
+                "upload",
+                "webuploader",
+                "widget",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/oonne/yii2-webuploader/issues",
+                "source": "https://github.com/oonne/yii2-webuploader"
+            },
+            "install-path": "../oonne/yii2-webuploader"
+        },
+        {
             "name": "opis/closure",
             "version": "3.6.3",
             "version_normalized": "3.6.3.0",

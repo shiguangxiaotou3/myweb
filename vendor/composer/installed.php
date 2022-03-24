@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '03d43d2d85799b3709e4f3850ca399fe989a3893',
+        'reference' => '898db9451bcd81515a251057eeceba841acddd9e',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -575,6 +575,15 @@
             'reference' => NULL,
             'dev_requirement' => false,
         ),
+        'oonne/yii2-webuploader' => array(
+            'pretty_version' => '1.0.4',
+            'version' => '1.0.4.0',
+            'type' => 'yii2-extension',
+            'install_path' => __DIR__ . '/../oonne/yii2-webuploader',
+            'aliases' => array(),
+            'reference' => '62bb7c876388204dddab44be1bc418b38fb52a87',
+            'dev_requirement' => false,
+        ),
         'opis/closure' => array(
             'pretty_version' => '3.6.3',
             'version' => '3.6.3.0',
@@ -986,7 +995,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '03d43d2d85799b3709e4f3850ca399fe989a3893',
+            'reference' => '898db9451bcd81515a251057eeceba841acddd9e',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

@@ -144,6 +144,8 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/jsQR-master" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/vps" />
+      <path value="$PROJECT_DIR$/vendor/oonne/yii2-webuploader" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4">

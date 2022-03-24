@@ -55,6 +55,10 @@ class ComposerStaticInit6366fce40f39275b6700e5fad947046f
             'practically\\chartjs\\' => 20,
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'o' => 
+        array (
+            'oonne\\webuploader\\' => 18,
+        ),
         'm' => 
         array (
             'mdm\\admin\\' => 10,
@@ -242,6 +246,10 @@ class ComposerStaticInit6366fce40f39275b6700e5fad947046f
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'oonne\\webuploader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/oonne/yii2-webuploader',
         ),
         'mdm\\admin\\' => 
         array (

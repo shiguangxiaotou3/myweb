@@ -233,7 +233,10 @@ class Imap extends Component{
         return $this->message->getTo();
     }
     public function getMessageDate(){
-        return $this->message->getDate()->getTimestamp()+$this->_timeDifference;
+        $data =$this->message->getDate();
+        if(!empty($data)){
+            return  $data->getTimestamp() + $this->_timeDifference;
+        }
     }
     public function getMessageType(){
         return $this->message->getType();
@@ -410,7 +413,7 @@ class Imap extends Component{
      * @param bool $save
      * @return array
      */
-    public function saveServer($save =true): array
+    public function saveServer($save =true)
     {
         $path = $this->path;
         if(isset($this->_viewMailbox) && !empty($this->_viewMailbox)){

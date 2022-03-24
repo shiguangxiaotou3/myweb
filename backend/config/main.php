@@ -36,6 +36,9 @@ return [
     ],
     //组件
     'components' => [
+        'assetsDownload'=>[
+            'class'=>'common\components\AssetsDownload',
+        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
@@ -57,6 +60,40 @@ return [
                 // But in the earlier stages of your development, you may probably want to
                 // add a lot of actions here until you finally completed setting up rbac,
                 // otherwise you may not even take a first step.
+            ]
+        ],
+        //文件管理
+        'file'=>[
+            'class'=>'common\components\File',
+            'tmpAlias'=>[
+                'backend'=>[
+                    'cache'=>'@backend/runtime/cache',
+                    'debug'=>'@backend/runtime/debug',
+                    'HTML'=>'@backend/runtime/HTML',
+                    'logs'=>'@backend/runtime/logs',
+                    'URI'=>'@backend/runtime/URI',
+                    'mail'=>'@backend/runtime/mail',
+                    'assets'=>'@backend/web/assets',
+
+                ],
+                'frontend'=>[
+                    'cache'=>'@frontend/runtime/cache',
+                    'debug'=>'@frontend/runtime/debug',
+                    'HTML'=>'@frontend/runtime/HTML',
+                    'logs'=>'@frontend/runtime/logs',
+                    'URI'=>'@frontend/runtime/URI',
+                    'mail'=>'@frontend/runtime/mail',
+                    'assets'=>'@frontend/web/assets',
+
+                ],
+                'console'=>[
+                    'cache'=>'@console/runtime/cache',
+                    'mail'=>'@console/runtime/mail',
+                    //'debug'=>'@console/runtime/debug',
+                    //'HTML'=>'@console/runtime/HTML',
+                    'logs'=>'@console/runtime/logs',
+                    //'URI'=>'@console/runtime/URI',
+                ],
             ]
         ],
 

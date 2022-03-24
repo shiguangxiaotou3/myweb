@@ -18,6 +18,7 @@ return array(
     'rmrevin\\yii\\fontawesome\\' => array($vendorDir . '/rmrevin/yii2-fontawesome'),
     'practically\\chartjs\\' => array($vendorDir . '/practically/yii2-chartjs/src'),
     'phpDocumentor\\Reflection\\' => array($vendorDir . '/phpdocumentor/reflection-common/src', $vendorDir . '/phpdocumentor/reflection-docblock/src', $vendorDir . '/phpdocumentor/type-resolver/src'),
+    'oonne\\webuploader\\' => array($vendorDir . '/oonne/yii2-webuploader'),
     'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
     'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x/src'),
     'kartik\\plugins\\popover\\' => array($vendorDir . '/kartik-v/bootstrap-popover-x'),

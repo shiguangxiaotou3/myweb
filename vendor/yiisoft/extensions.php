@@ -184,4 +184,13 @@ return array (
       '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform/src',
     ),
   ),
+  'oonne/yii2-webuploader' => 
+  array (
+    'name' => 'oonne/yii2-webuploader',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@oonne/webuploader' => $vendorDir . '/oonne/yii2-webuploader',
+    ),
+  ),
 );

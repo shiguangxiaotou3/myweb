@@ -30,10 +30,3 @@ $this->title ='收件箱';
         <?php Pjax::end() ?>
     </div>
 </div>
-<?php Modal::begin([
-    "id"=>"message",
-    "footer"=>"",// always need it for jquery plugin
-]);
-Modal::end();
-
-?>

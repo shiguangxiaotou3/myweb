@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\Response;
 use common\modules\email\models\EmailSendForm;
 
 /**
@@ -117,40 +118,47 @@ class InboxController extends Controller{
     }
 
 
+    /**
+     * 回复
+     *
+     * @return string
+     */
     public function actionReply(){
         $request = Yii::$app->request;
         $model = new EmailSendForm();
-        $model->to ='wanlong757402@outlook.com';
-        $model->subject ='测试邮件 '.date('Y-m-d H:m:s');
         $to =$request->get('to');
-        if(!empty($to)){
-            $model ->to = $to;
-        }
+        $model->to = 'wanlong757402@outlook.com';
+        $model->subject = '测试'.time();
+//        if(!empty($to)){
+//            $model ->to = $to;
+//        }
         if($request->isAjax){
             if($request->post()){
-                logObject($request->post());
                 if($model->load($request->post()) && $model->validate()){
-                    $model->sendEmail();
+                    if( $model->sendEmail()){
+                        logObject('成功');
+                       //return '<h1 class="bg-success">发送成功</h1>';
+                    }else{
+                        logObject('失败');
+                        //return '<h1 class="bg-danger">发送失败</h1>';
+                    }
                 }
+            }else{
+                return $this->renderAjax('reply', ['model'=>$model,'ajax'=>true]);
             }
-            return $this->renderAjax('reply', ['model'=>$model]);
+
         }else{
             if($request->post()){
-                logObject($request->post());
                 if($model->load($request->post()) && $model->validate()){
                    if( $model->sendEmail()){
-                       echo "成功";
-
+                       Yii::$app->session->setFlash('success', '发送成功.');
                    }else{
-                       echo "不成功";
+                       Yii::$app->session->setFlash('success', '失败成功');
                    }
-                    die();
                 }
-
             }
-            return  $this->render('reply', ['model'=>$model]);
+            return  $this->render('reply', ['model'=>$model,'ajax'=>false]);
         }
-
     }
 
 

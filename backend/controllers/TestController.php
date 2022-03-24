@@ -6,6 +6,7 @@ namespace backend\controllers;
 
 
 
+use common\models\snoopy\Snoopy;
 use Yii;
 use yii\web\Controller;
 
@@ -15,13 +16,10 @@ class TestController  extends Controller
 
     public function actionIndex(){
 
-        $dns = Yii::$app->dns;
-        $data= $dns->domainRecords("shiguangxiaotou.com");
-        $dns->delDomainRecord("shiguangxiaotou.com",'_4a4f1af0789c15f6bf6c203ab1fe2f6a.backend');
-
-//       $data = $dns->domainStatistics('7574home.com','2022-03-03');
-//       $data = $dns->domain->domainName;
-       //$dns->DeleteDomain();
+    $imap =Yii::$app->imap;
+    $imap->open('qqMailer');
+    $imap->saveServer();
+    $data ='dasd';
         return $this->render('index',['data'=>  $data ]);
     }
 

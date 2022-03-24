@@ -62,7 +62,13 @@ $username = Yii::$app->user->identity->username;
                             ['label' => 'DNS', 'icon' => 'dashboard', 'url' => ['/dns'],],
                         ],
                     ],
-
+                    [
+                        'label' => '博客',
+                        'icon' => 'dashboard',
+                        'items'=>[
+                            ['label' => '写文章', 'icon' => 'dashboard', 'url' => ['/blog/create']],
+                        ]
+                    ],
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],
                     [
                         'label' => '测试',

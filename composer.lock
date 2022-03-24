@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b862d5a8e7d199c1b42bd7cf6347340",
+    "content-hash": "491f619c2f2aea3fa3165d31efb49642",
     "packages": [
         {
             "name": "abhi1693/yii2-system-info",
@@ -2752,6 +2752,54 @@
             "license": [
                 "MIT"
             ]
+        },
+        {
+            "name": "oonne/yii2-webuploader",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oonne/yii2-webuploader.git",
+                "reference": "62bb7c876388204dddab44be1bc418b38fb52a87"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oonne/yii2-webuploader/zipball/62bb7c876388204dddab44be1bc418b38fb52a87",
+                "reference": "62bb7c876388204dddab44be1bc418b38fb52a87",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "oonne\\webuploader\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JAY",
+                    "email": "JAY@oonne.com",
+                    "homepage": "https://www.oonne.com"
+                }
+            ],
+            "description": "Yii2 extension for large file chunk upload. Base on WebUploader.",
+            "keywords": [
+                "extension",
+                "upload",
+                "webuploader",
+                "widget",
+                "yii2"
+            ],
+            "support": {
+                "issues": "https://github.com/oonne/yii2-webuploader/issues",
+                "source": "https://github.com/oonne/yii2-webuploader"
+            },
+            "time": "2019-06-28T03:04:41+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -8405,8 +8453,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0",
-        "ext-curl": "*"
+        "php": ">=7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "2.2.0"
