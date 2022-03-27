@@ -12,7 +12,7 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('rbac-admin', 'Rules');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="role-index" style="background-color: #FFFFFF;padding: 15px">
+<div class="role-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

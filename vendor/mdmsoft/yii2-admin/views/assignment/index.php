@@ -15,11 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 $columns = [
     ['class' => 'yii\grid\SerialColumn'],
-    [
-        'attribute' => 'username',
-        'format' => 'text',
-        'label' => Yii::t('rbac-admin', 'Username'),
-    ],
+    $usernameField,
 ];
 if (!empty($extraColumns)) {
     $columns = array_merge($columns, $extraColumns);
@@ -29,7 +25,7 @@ $columns[] = [
     'template' => '{view}'
 ];
 ?>
-<div class="assignment-index" style="background-color: #FFFFFF;padding: 15px">
+<div class="assignment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

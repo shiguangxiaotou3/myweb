@@ -9,7 +9,7 @@ use yii\widgets\ActiveForm;
 $this->title = Yii::t('rbac-admin', 'Signup');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup" style="background-color: #FFFFFF;padding: 15px">
+<div class="site-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to signup:</p>

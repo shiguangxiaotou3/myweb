@@ -11,43 +11,26 @@ use mdm\admin\components\Helper;
 $this->title = Yii::t('rbac-admin', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-index" style="background-color: #FFFFFF;padding: 15px">
+<div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <p>
-        <?= Html::a(Yii::t('rbac-admin', 'Login'), ['login'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'Logout'), ['logout'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'Signup'), ['signup'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'Delete'), ['delete'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'RequestPasswordReset'), ['login'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'ResetPassword'), ['login'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('rbac-admin', 'ChangePassword'), ['login'], ['class' => 'btn btn-success']) ?>
-    </p>
+
     <?=
     GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute' => 'username',
-                'format' => 'text',
-                'label' => Yii::t('rbac-admin', 'Username'),
-            ],
-            [
-                'attribute' => 'email',
-                //'format' => 'text',
-                'label' => Yii::t('rbac-admin', 'email'),
-            ],
+            'username',
+            'email:email',
             [
                 'attribute' => 'status',
                 'value' => function($model) {
-                    return $model->status == 0 ? '不活跃的' : '活跃的';
+                    return $model->status == 0 ? 'Inactive' : 'Active';
                 },
-                'label' => '状态',
                 'filter' => [
-                    0 => '不活跃的',
-                    10 => '活跃的'
+                    0 => 'Inactive',
+                    10 => 'Active'
                 ]
             ],
             [

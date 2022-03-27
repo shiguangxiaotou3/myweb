@@ -57,8 +57,16 @@ $username = Yii::$app->user->identity->username;
                         'label' => '模块',
                         'icon' => 'dashboard',
                         'items'=>[
-                            ['label' => '邮件', 'icon' => 'dashboard', 'url' => ['/email/inbox']],
-                            ['label' => '编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
+                            [
+                                'label' => '邮件',
+                                'icon' => 'dashboard',
+                                'items'=>[
+                                    ['label' => '查看', 'icon' => 'dashboard', 'url' => ['/email/inbox/index'],],
+                                    ['label' => '发送', 'icon' => 'dashboard', 'url' => ['/email/inbox/reply'],]
+                                ],
+
+                            ],
+                            ['label' => '在线编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
                             ['label' => 'DNS', 'icon' => 'dashboard', 'url' => ['/dns'],],
                         ],
                     ],
@@ -66,7 +74,8 @@ $username = Yii::$app->user->identity->username;
                         'label' => '博客',
                         'icon' => 'dashboard',
                         'items'=>[
-                            ['label' => '写文章', 'icon' => 'dashboard', 'url' => ['/blog/create']],
+                            ['label' => '写文章', 'icon' => 'dashboard','url'=>['/blog/create']],
+                            ['label' => '写文章', 'icon' => 'dashboard','url'=>["#"]],
                         ]
                     ],
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],

@@ -4,13 +4,13 @@
 namespace console\controllers;
 
 
+use console\models\User;
 use Yii;
 use common\models\gii\shell;
 use yii\console\Controller;
 use frontend\models\SignupForm;
 class AddController extends Controller
 {
-
     /**
      * 数据数据迁移生成 活动记录
      * 默认保存在目录中
@@ -37,13 +37,13 @@ class AddController extends Controller
      */
     public function actionAddUser(){
         $model  = new SignupForm();
-        $model->username ='ShiGongXiaoTou';
+        $model->username ='时光小偷';
         $model->email ='757402123@outlook.com';
         $model->password ='WanLong757402123.';
         if ( $model->signup()) {
-            echo "注册成功";
+            echo "注册成功".'\n';
         }else{
-            echo "注册失败";
+            echo "注册失败".'\n';
         }
     }
 
@@ -61,5 +61,7 @@ class AddController extends Controller
             ->setSubject('邮件配置验证发送 '.'wanlong757402@outlook.com' . Yii::$app->name)
             ->send();
     }
+
+
 }
 

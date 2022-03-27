@@ -11,7 +11,7 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Rules'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="auth-item-view" style="background-color: #FFFFFF;padding: 15px">
+<div class="auth-item-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

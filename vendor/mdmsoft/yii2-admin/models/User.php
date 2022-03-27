@@ -194,15 +194,4 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return Configs::userDb();
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'username' => Yii::t('rbac-admin', 'Username'),
-            'email' => Yii::t('rbac-admin', 'Email'),
-        ];
-    }
 }

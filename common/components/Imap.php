@@ -3,6 +3,7 @@
 namespace common\components;
 
 
+
 use Yii;
 use Exception;
 use yii\base\Component;
@@ -210,7 +211,8 @@ class Imap extends Component{
     }
     /**
      * 设置邮件单例
-     * @param Message $message
+     *
+     * @param $message
      */
     public function setMessage($message)
     {
@@ -237,6 +239,7 @@ class Imap extends Component{
         if(!empty($data)){
             return  $data->getTimestamp() + $this->_timeDifference;
         }
+        return 0;
     }
     public function getMessageType(){
         return $this->message->getType();
@@ -326,10 +329,11 @@ class Imap extends Component{
             return  false;
         }
     }
+
     /**
      * 下载当前邮件的附件,需要确保目录存在并可写
-     * @param string $path
-     * @return Message\Attachment[]|Message\AttachmentInterface[]
+     *
+     * @param $path
      */
     public function saveMessageAttachments($path){
         if($this->_downloadFile){
@@ -411,7 +415,7 @@ class Imap extends Component{
     /**
      * 保存当前服务器中的所有邮件
      * @param bool $save
-     * @return array
+     * @return array|bool
      */
     public function saveServer($save =true)
     {
@@ -426,6 +430,7 @@ class Imap extends Component{
             }
             if ($save){
                 File::addI18n($data,$path,'data');
+                return true;
             }else{
                 return  $data;
             }
@@ -504,6 +509,7 @@ class Imap extends Component{
         }
 
     }
+
     /**
      * @param $server
      * @param $mailboxName
@@ -521,26 +527,38 @@ class Imap extends Component{
             return false;
         }
     }
+
+    /**
+     * @param string $server
+     * @param string $mailboxName
+     * @param string $uid
+     * @return bool
+     */
     public function clearCache($server ='',$mailboxName='',$uid=''){
         $path = Yii::getAlias($this->path);
         $data = require($path . '/' . $this->filename);
         if(empty($server)){//清空全部
             File::clearDir($path);
+            return true;
         }elseif( !empty($server) and empty($mailboxName)){     //清空服务器
             File::clearDir($path.'/'.$server);
             rmdir($path.'/'.$server);
             unset($data[$server]);
             File::writeConfig($path . '/' . $this->filename,$data);
+            return true;
         }elseif (!empty($server) and !empty($mailboxName) and empty($uid)){
             File::clearDir($path.'/'.$server.'/'.$mailboxName);
             rmdir($path.'/'.$server.'/'.$mailboxName);
             unset($data[$server][$mailboxName]);
             File::writeConfig($path . '/' . $this->filename,$data);
+            return true;
         }elseif (!empty($server) and !empty($mailboxName) and !empty($uid)){
             File::clearDir($path.'/'.$server.'/'.$mailboxName.'/'.$uid);
             rmdir($path.'/'.$server.'/'.$mailboxName.'/'.$uid);
             unset($data[$server][$mailboxName]['_'.$uid]);
             File::writeConfig($path . '/' . $this->filename,$data);
+            return true;
         }
+        return false;
     }
 }

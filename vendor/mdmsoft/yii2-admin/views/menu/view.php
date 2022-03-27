@@ -10,7 +10,7 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Menus'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="menu-view" style="background-color: #FFFFFF;padding: 15px">
+<div class="menu-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

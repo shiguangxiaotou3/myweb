@@ -16,7 +16,7 @@ class MailboxListWidget extends Widget{
     public $url ='';
     public $action ='/email/inbox/index';
     public $actionUpdate ='/email/inbox/update';
-    public $actionClaer ='/email/inbox/clear';
+    public $actionClear ='/email/inbox/clear';
     public $onclick = "$.pjax({url: '/action/clear', container: '#assets'});";
 
     /**
@@ -72,9 +72,18 @@ class MailboxListWidget extends Widget{
         }
         return ['icon'=>'inbox','badgeClass'=>'default'];
     }
+
+    /**
+     * 生产请求url
+     *
+     * @param $server
+     * @param $mailbox
+     * @return string
+     */
     public  function getUrl($server,$mailbox){
         return Yii::$app->urlManager->createUrl([$this->action,'server'=>$server,'mailbox'=>$mailbox]);
     }
+
     /**
      * 构造邮箱的html
      * @param $mailbox
@@ -88,7 +97,7 @@ class MailboxListWidget extends Widget{
                     '<span class="'.$this->badgeClass.$category['badgeClass'].'">'. $number. '</span>';
 
             return '<li>'. Html::a( $str, false, [
-                        'onclick'=>"$.pjax({url: '".$this->getUrl($this->server,$mailbox)."', container: '#messages'});"]).'</li>';
+                        'onclick'=>"$.pjax({url: '".$this->getUrl($this->server,$mailbox)."',container: '#messages'});"]).'</li>';
         }else{
             $cont ='<i class="'.$this->icon.$category['icon'].'" ></i>'. Html::encode(Yii::t('app',$mailbox));
             return "<li>".Html::a( $cont,false,[
@@ -111,9 +120,9 @@ class MailboxListWidget extends Widget{
     public function run(){
         return $this->renderFile(__DIR__.'/layouts/box.php', [
                 'data'=>$this->items(),
-                'label'=>$this->server,
+                'server'=>$this->server,
                 'actionUpdate'=>$this->actionUpdate,
-                'actionClaer'=>$this->actionClaer,
+                'actionClear'=>$this->actionClear,
             ]);
     }
 

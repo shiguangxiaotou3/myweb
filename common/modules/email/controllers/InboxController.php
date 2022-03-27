@@ -11,8 +11,9 @@ use yii\web\Controller;
 use yii\data\Pagination;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use yii\web\Response;
 use common\modules\email\models\EmailSendForm;
+use yii\web\Response;
+
 
 /**
  *
@@ -41,7 +42,8 @@ class InboxController extends Controller{
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'clear' => ['post'],
+                    'update' => ['post'],
                 ],
             ],
         ];
@@ -95,6 +97,7 @@ class InboxController extends Controller{
             }
         }
     }
+
     /**
      * 查看邮件
      * @param $server
@@ -129,60 +132,70 @@ class InboxController extends Controller{
         $to =$request->get('to');
         $model->to = 'wanlong757402@outlook.com';
         $model->subject = '测试'.time();
-//        if(!empty($to)){
-//            $model ->to = $to;
-//        }
         if($request->isAjax){
-            if($request->post()){
-                if($model->load($request->post()) && $model->validate()){
-                    if( $model->sendEmail()){
-                        logObject('成功');
-                       //return '<h1 class="bg-success">发送成功</h1>';
-                    }else{
-                        logObject('失败');
-                        //return '<h1 class="bg-danger">发送失败</h1>';
-                    }
+            if($request->isGet){
+                return $this->renderAjax('reply',['model'=>$model,'ajax'=>true]);
+            }elseif($model->load($request->post()) && $model->validate()){
+                Yii::$app->response->format= Response::FORMAT_JSON;
+                if($model->sendEmail()){
+                    return $this->renderAjax('reply',['model'=>$model,'ajax'=>true]);
+                }else{
+                    return [ 'message'=>'发送失败.'];
                 }
-            }else{
-                return $this->renderAjax('reply', ['model'=>$model,'ajax'=>true]);
-            }
 
-        }else{
-            if($request->post()){
-                if($model->load($request->post()) && $model->validate()){
-                   if( $model->sendEmail()){
-                       Yii::$app->session->setFlash('success', '发送成功.');
-                   }else{
-                       Yii::$app->session->setFlash('success', '失败成功');
-                   }
-                }
+            }else{
+                return $this->renderAjax('reply', ['model' => $model,'ajax'=>true]);
             }
-            return  $this->render('reply', ['model'=>$model,'ajax'=>false]);
+        }else{
+            if ($model->load($request->post()) && $model->validate()) {
+                if($model->sendEmail()){
+                    Yii::$app->session->setFlash('success', '发送成功.');
+                }else{
+                    Yii::$app->session->setFlash('success', '发送成功.');
+                }
+                return $this->render('reply', ['model' => $model,'ajax'=>false]);
+            } else {
+                return $this->render('reply', ['model' => $model,'ajax'=>false]);
+            }
         }
     }
-
 
     /**
      * 加载缓存文件
      * @param $server
      * @throws Exception
      */
-    public function actionUpdate($server){
-        $imap = Yii::$app->imap;
-        $imap->open($server);
-        $imap->saveServer();
-        $imap->close();
+    public function actionUpdate(){
+
+        $request = Yii::$app->request;
+        if($request->isAjax ){
+            Yii::$app->response->format=Response::FORMAT_JSON;
+            $server = $request->post('server');
+            if(isset($server) && !empty($server)){
+                return $this->upData($server);
+            }else{
+                return ['message'=>'失败'];
+            }
+        }
+
     }
     /**
-     * 清理服务器缓存文件
-     * @param $server
+     *  清理服务器缓存文件
+     *
+     * @return bool
      */
-    public function actionClear($server){
-        Yii::$app->imap->clearCache($server);
+    public function actionClear(){
+        $request = Yii::$app->request;
+        if($request->isAjax ){
+            Yii::$app->response->format=Response::FORMAT_JSON;
+            $server = $request->post('server');
+            if(isset($server) && !empty($server)){
+                return Yii::$app->imap->clearCache($server);
+            }else{
+                return false;
+            }
+        }
     }
-
-
-
 
     /**
      * @param $data
@@ -230,5 +243,17 @@ class InboxController extends Controller{
         }else{
             return "<h1>什么也没有</h1>";
         }
+    }
+
+    private function upData($server){
+        $imap = Yii::$app->imap;
+        $imap->open($server) ;
+       if($imap->saveServer()){
+           $imap->close();
+           return true;
+       }else{
+           $imap->close();
+           return false;
+       }
     }
 }

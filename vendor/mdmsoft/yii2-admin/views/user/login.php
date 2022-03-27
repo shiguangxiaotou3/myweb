@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = Yii::t('rbac-admin', 'Login');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login" style="background-color: #FFFFFF;padding: 15px">
+<div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>Please fill out the following fields to login:</p>

@@ -7,13 +7,15 @@ use common\assets\adminlte\components\Select2Assets;
 /** @var $content string */
 /** @var  $model frontend\models\Article*/
 
-$this->title ='写邮件';
+$this->title ='博客';
 BootstrapWysihtml5Assets::register($this);
 Select2Assets::register($this);
+$this->blocks['content-header'] ='Blog';
+$this->title ='写文字';
 ?>
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">写邮件</h3>
+            <h3 class="box-title">写文章</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -22,19 +24,16 @@ Select2Assets::register($this);
             //$model->content
             //主题
             echo $from->field($model, 'title')
-                ->textInput(['placeholder' => '主题:', 'class' => 'form-control'])
-                ->label(false)
-                ->hint(false)
-                ->error(false);
+                ->textInput(['placeholder' => '标题', 'class' => 'form-control'])
+                ->label(false);
 
             //内容
             echo $from->field($model, 'content', [
                 'options' => [
                     'class' => 'form-group'],])
                 ->textarea(['placeholder' => '邮件内容:', 'class' => 'form-control', 'row' => 100])
-                ->label(false)
-                ->hint(false)
-                ->error(false);
+                ->label(false);
+
             ?>
         </div>
         <!-- /.box-body -->

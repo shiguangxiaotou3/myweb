@@ -19,9 +19,10 @@ Select2Assets::register($this);
         <div class="box-body">
         <?php
             $from = ActiveForm::begin([
+                'id' =>'reply' ,
                 'action' => ['/email/inbox/reply'],
                 'method' => 'post',
-                'enableAjaxValidation' => $ajax,
+//                'options' => ['data-pjax'=>'123'],
             ]);
 
             //收件人
@@ -48,11 +49,12 @@ Select2Assets::register($this);
                 ->error(false);
         ?>
         </div>
-        <!-- /.box-body -->
         <div class="box-footer">
             <div class="pull-right">
                 <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> 草稿</button>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> 发送</button>
+                <button type="submit" class="btn btn-primary" data-pjax="#messages">
+                    <i class="fa fa-envelope-o"></i> 发送
+                </button>
             </div>
             <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> 删除</button>
         </div>
@@ -61,7 +63,12 @@ Select2Assets::register($this);
 <?php
 
 $js =<<<JS
+
         $("#emailsendform-content").wysihtml5();
         $('.select2').select2();
+         $(document).on('submit', 'from[data-pjax]', function(event) {
+             $.pjax.submit(event, '#messages')
+         })
+      
 JS;
 $this->registerJs($js);

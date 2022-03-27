@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '898db9451bcd81515a251057eeceba841acddd9e',
+        'reference' => 'adbaf328462ea19f4a0d8b620dc68410fe6457e4',
         'name' => 'shiguangxiaotou3/myweb',
         'dev' => true,
     ),
@@ -553,9 +553,6 @@
             'aliases' => array(),
             'reference' => '776f831124e9c62e1a2c601ecc52e776d8bb7220',
             'dev_requirement' => false,
-            'replaced' => array(
-                0 => '1.10.2',
-            ),
         ),
         'myclabs/php-enum' => array(
             'pretty_version' => '1.8.3',
@@ -995,7 +992,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '898db9451bcd81515a251057eeceba841acddd9e',
+            'reference' => 'adbaf328462ea19f4a0d8b620dc68410fe6457e4',
             'dev_requirement' => false,
         ),
         'swiftmailer/swiftmailer' => array(

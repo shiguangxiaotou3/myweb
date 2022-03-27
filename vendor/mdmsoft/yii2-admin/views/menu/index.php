@@ -11,7 +11,7 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('rbac-admin', 'Menus');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="menu-index" style="background-color: #FFFFFF;padding: 15px">
+<div class="menu-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]);  ?>

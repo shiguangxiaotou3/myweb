@@ -9,7 +9,7 @@ $this->title = Yii::t('rbac-admin', 'Create Rule');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Rules'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="auth-item-create" style="background-color: #FFFFFF;padding: 15px">
+<div class="auth-item-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

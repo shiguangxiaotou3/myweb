@@ -9,7 +9,6 @@ namespace yii\base;
 
 use Yii;
 
-
 /**
  * Application is the base class for all application classes.
  *
@@ -41,7 +40,6 @@ use Yii;
  * [[basePath]].
  * @property-read View|\yii\web\View $view The view application component that is used to render various view
  * files.
- *
  *
  * @property-read \common\components\File $file 本地文件管理组件
  * @property-read \common\components\Ip $ip 本地文件管理组件

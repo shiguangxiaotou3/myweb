@@ -1,5 +1,9 @@
 <?php
-use \yii\widgets\ListView;
+
+use kartik\growl\Growl;
+use kartik\icons\FontAwesomeAsset;
+
+FontAwesomeAsset::register($this);
 /* @var $this yii\web\View */
 
 $this->title = '家';
@@ -10,21 +14,146 @@ $this->title = '家';
 
             <?php
 
+//
+//            echo ListView::widget([
+//                'dataProvider' => $dataProvider,//数据提供器
+//                'itemView' => '_diary',//指定item视图（该视图文件与当前视图在同一个目录下)
+//                'viewParams' => [//传参数给每一个item
+//                    'moodCfg' => Mood::getAll()
+//                ],
+//                'layout' => '{items}<div class="col-lg-12 sum-pager">{summary}{pager}</div>',//整个ListView布局
+//                'itemOptions' => [//针对渲染的单个item
+//                    'tag' => 'div',
+//                    'class' => 'col-lg-3'
+//                ],]);
 
-            echo ListView::widget([
-                'dataProvider' => $dataProvider,//数据提供器
-                'itemView' => '_diary',//指定item视图（该视图文件与当前视图在同一个目录下)
-                'viewParams' => [//传参数给每一个item
-                    'moodCfg' => Mood::getAll()
-                ],
-                'layout' => '{items}<div class="col-lg-12 sum-pager">{summary}{pager}</div>',//整个ListView布局
-                'itemOptions' => [//针对渲染的单个item
-                    'tag' => 'div',
-                    'class' => 'col-lg-3'
-                ],]);
+//
+//            echo IpInfo::widget([
+//                'ip' => '27.19.77.208',
+//                /**
+//                 * optionally setup more options
+//                 * refer docs for all options
+//                 */
+//                // 'showFlag' => true,
+//                // 'showPopover' => true,
+//                // 'popoverOptions' => [],
+//                // 'flagWrapperOptions' => []
+//                // 'flagOptions' => []
+//            ]);
+    //form-inline
 
 
-
+            echo Growl::widget([
+                'type' => Growl::TYPE_SUCCESS,
+                'title' => 'Well done!',
+                'icon' => 'fas fa-check-circle',
+                'body' => 'You successfully read this important alert message.',
+                'showSeparator' => true,
+                'delay' => 0,
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ]
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_INFO,
+                'title' => 'Heads up!',
+                'icon' => 'fas fa-info-circle',
+                'body' => 'This alert needs your attention, but it\'s not super important.',
+                'showSeparator' => true,
+                'delay' => 1500,
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ]
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_WARNING,
+                'title' => 'Warning!',
+                'icon' => 'fas fa-exclamation-circle',
+                'body' => 'Better check yourself, you\'re not looking too good.',
+                'showSeparator' => true,
+                'delay' => 3000,
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ]
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_DANGER,
+                'title' => 'Oh snap!',
+                'icon' => 'fas fa-times-circle',
+                'body' => 'Change a few things up and try submitting again.',
+                'showSeparator' => true,
+                'delay' => 4500,
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ]
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_GROWL,
+                'title' => 'Roar!',
+                'icon' => '/images/growl_64x.png',
+                'body' => 'This is a default growling alert you requested for.',
+                'showSeparator' => false,
+                'delay' => 6000,
+                'pluginOptions' => [
+                    'icon_type'=>'image',
+                    'showProgressbar' => false,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ],
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_MINIMALIST,
+                'title' => 'Kartik Visweswaran',
+                'icon' => '/images/kartik.png',
+                'iconOptions' => ['class'=>'img-circle pull-left'],
+                'body' => 'Momentum reduce child mortality effectiveness incubation empowerment connect.',
+                'showSeparator' => false,
+                'delay' => 7500,
+                'pluginOptions' => [
+                    'icon_type'=>'image',
+                    'showProgressbar' => false,
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ],
+                ]
+            ]);
+            echo Growl::widget([
+                'type' => Growl::TYPE_PASTEL,
+                'title' => 'Email: Erica Fisher',
+                'icon' => '/images/growl_64x.png',
+                'body' => 'Investment, stakeholders micro-finance equity health Bloomberg; global citizens climate change. ' .
+                    'Solve positive social change sanitation, opportunity insurmountable challenges...',
+                'showSeparator' => false,
+                'delay' => 9000,
+                'progressBarOptions' => ['class'=>'progress-bar-warning'],
+                'pluginOptions' => [
+                    'showProgressbar' => true,
+                    'icon_type'=>'image',
+                    'placement' => [
+                        'from' => 'top',
+                        'align' => 'right',
+                    ],
+                ]
+            ]);
 
 
             ?>
@@ -57,5 +186,20 @@ $this->title = '家';
             </li>
         </ul>
         <div class="bg-white py-3 text-center  card-footer"><a href="###">加载更多</a></div>
+        <?php
+//        echo IpInfo::widget([
+//            'ip' => '27.19.77.208',
+//            /**
+//             * optionally setup more options
+//             * refer docs for all options
+//             */
+//             'showFlag' => true,
+//             'showPopover' => true,
+//            // 'popoverOptions' => [],
+//            // 'flagWrapperOptions' => []
+//            // 'flagOptions' => []
+//        ]);
+        ?>
     </div>
 </div>
+

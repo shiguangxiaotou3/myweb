@@ -64,17 +64,4 @@ class Signup extends Model
 
         return null;
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'username' => Yii::t('rbac-admin', 'Username'),
-            'email' => Yii::t('rbac-admin', 'Email'),
-            'password' => Yii::t('rbac-admin', 'Password'),
-            'retypePassword' => Yii::t('rbac-admin', 'Retype Password'),
-        ];
-    }
 }

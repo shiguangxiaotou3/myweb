@@ -3,24 +3,18 @@
 
 namespace backend\controllers;
 
-
-
-
-use common\models\snoopy\Snoopy;
 use Yii;
 use yii\web\Controller;
 
+/**
+ * 后台测试代码
+ * @package backend\controllers
+ */
 
-class TestController  extends Controller
-{
+class TestController  extends Controller{
 
     public function actionIndex(){
-
-    $imap =Yii::$app->imap;
-    $imap->open('qqMailer');
-    $imap->saveServer();
-    $data ='dasd';
-        return $this->render('index',['data'=>  $data ]);
+        return $this->render('index',['data'=>  false ]);
     }
 
     /**

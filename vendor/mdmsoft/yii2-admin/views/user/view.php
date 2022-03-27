@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 $controllerId = $this->context->uniqueId . '/';
 ?>
-<div class="user-view" style="background-color: #FFFFFF;padding: 15px">
+<div class="user-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

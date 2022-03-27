@@ -3,7 +3,9 @@
 namespace backend\assets;
 
 use yii\web\AssetBundle;
-
+//"kartik-v/yii2-ipinfo": "dev-master",
+//        "kartik-v/yii2-widget-alert": "dev-master",
+//        "kartik-v/yii2-widget-growl": "dev-master"
 /**
  * Main backend application asset bundle.
  */

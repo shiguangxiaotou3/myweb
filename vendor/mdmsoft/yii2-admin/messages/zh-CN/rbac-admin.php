@@ -65,18 +65,4 @@ return [
     'Menu' => '菜单',
     'Help' => '帮助',
     'Application' => '应用',
-    'username'=>'用户名称',
-    'Email'=>'邮箱',
-    'Search for available'=>'搜索可用的',
-    'Search for assigned'=>'搜索已分配的',
-    'Admin'=>'访问控制',
-    'Login'=>'登陆',
-    'Logout'=>'注销',
-    'Signup'=>'注册',
-    'RequestPasswordReset'=>'请求密码重置',
-    'ResetPassword'=>'重置密码',
-    'ChangePassword'=>'修改密码',
-    'Password'=>'密码',
-    'Retype Password'=>'重新输入密码',
-
 ];
