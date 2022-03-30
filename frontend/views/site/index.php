@@ -1,6 +1,6 @@
 <?php
 
-use kartik\growl\Growl;
+use \kartik\growl\Growl;
 use kartik\icons\FontAwesomeAsset;
 
 FontAwesomeAsset::register($this);
@@ -8,7 +8,7 @@ FontAwesomeAsset::register($this);
 
 $this->title = '家';
 ?>
-<div class="content-list-wrap">
+<div class="content-list-wrap" style="height: 10px">
     <div class="list-card-bg  card">
         <ul class="bg-transparent list-group list-group-flush">
 

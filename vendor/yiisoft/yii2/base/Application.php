@@ -40,7 +40,6 @@ use Yii;
  * [[basePath]].
  * @property-read View|\yii\web\View $view The view application component that is used to render various view
  * files.
- *
  * @property-read \common\components\File $file 本地文件管理组件
  * @property-read \common\components\Ip $ip 本地文件管理组件
  * @property-read \common\components\Imap $imap 操作邮件服务器组件
@@ -52,6 +51,7 @@ use Yii;
  * @property-read \common\components\Dns $dns 阿里云dns api
  * @property-read \common\components\Snoopy $snoopy 爬虫
  * @property-read \common\components\AssetsDownload $assetsDownload 获取网站的html
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
