@@ -3,12 +3,12 @@
 use \kartik\growl\Growl;
 use kartik\icons\FontAwesomeAsset;
 
-FontAwesomeAsset::register($this);
+//FontAwesomeAsset::register($this);
 /* @var $this yii\web\View */
 
 $this->title = '家';
 ?>
-<div class="content-list-wrap" style="height: 10px">
+<div class="content-list-wrap" >
     <div class="list-card-bg  card">
         <ul class="bg-transparent list-group list-group-flush">
 

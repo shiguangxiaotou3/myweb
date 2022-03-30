@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m220326_113547_create_table_tag
+ * Class m220330_144728_update_table_bilibili
  */
-class m220326_113547_create_table_tag extends Migration
+class m220330_144728_update_table_bilibili extends Migration
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class m220326_113547_create_table_tag extends Migration
      */
     public function safeDown()
     {
-        echo "m220326_113547_create_table_tag cannot be reverted.\n";
+        echo "m220330_144728_update_table_bilibili cannot be reverted.\n";
 
         return false;
     }
@@ -29,16 +29,21 @@ class m220326_113547_create_table_tag extends Migration
     // Use up()/down() to run migration code without a transaction.
     public function up()
     {
-        $tableOptions = null;
+        $this->dropTable('{{%bilibili}}');
+
+         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-         $this->createTable('{{%tag}}', [
+         $this->createTable('{{%bilibili}}', [
             'id' => $this->primaryKey(),
-            'parent'=>$this->integer()->comment('父id'),
-            'name'=>$this->string()->notNull()->comment('标签'),
-            'title' => $this->string(255)->comment('标题'),
+            'roomId'=>$this->integer()->comment('房间id'),
+            'unix'=>$this->integer()->comment('发送时间戳'),
+            'user_id'=>$this->integer()->comment('用户id'),
+            'username'=>$this->string()->comment('用户明'),
+            'message'=>$this->string()->comment('消息'),
+            'status'=>$this->boolean()->defaultValue(0)->comment('是否已读'),
             'created_at' => $this->integer()->notNull()->comment('创建时间'),
             'updated_at' => $this->integer()->notNull()->comment('修改时间'),
         ], $tableOptions);
@@ -46,7 +51,7 @@ class m220326_113547_create_table_tag extends Migration
 
     public function down()
     {
-        echo "m220326_113547_create_table_tag cannot be reverted.\n";
+        echo "m220330_144728_update_table_bilibili cannot be reverted.\n";
 
         return false;
     }

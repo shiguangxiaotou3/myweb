@@ -19,9 +19,9 @@ use dmstr\widgets\Alert;
                 if ($this->title !== null) {
                     echo Html::encode($this->title);
                 } else {
-                    echo Inflector::camel2words(
+                    echo Yii::t('app',  Inflector::camel2words(
                         Inflector::id2camel($this->context->module->id)
-                    );
+                    ));
                     echo ($this->context->module->id !== Yii::$app->id) ? '<small>模块</small>' : '';
                 } ?>
             </h1>

@@ -4,6 +4,7 @@
 namespace console\controllers;
 
 
+use common\modules\bilibili\models\Bilibili;
 use console\models\User;
 use Yii;
 use common\models\gii\shell;
@@ -62,6 +63,12 @@ class AddController extends Controller
             ->send();
     }
 
+    /**
+     *  删除弹幕
+     */
+    public function actionDel(){
+        Bilibili::deleteAll();
+    }
 
 }
 

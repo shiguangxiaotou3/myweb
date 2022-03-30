@@ -73,5 +73,6 @@ return [
     'Inbox'=>'收信箱',
     'Sent'=>'已发送',
     'Deleted'=>'已删除',
+    'Bilibili'=>'b站弹幕'
 
 ];

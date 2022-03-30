@@ -3,7 +3,9 @@
 
 namespace backend\controllers;
 
+use common\modules\bilibili\models\Bilibili;
 use Yii;
+use yii\base\Component;
 use yii\web\Controller;
 
 /**
@@ -14,7 +16,8 @@ use yii\web\Controller;
 class TestController  extends Controller{
 
     public function actionIndex(){
-        return $this->render('index',['data'=>  false ]);
+      $data = Bilibili::bulletChatNumber(23439073);
+        return $this->render('index',['data'=>  $data ]);
     }
 
     /**

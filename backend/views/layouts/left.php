@@ -68,6 +68,11 @@ $username = Yii::$app->user->identity->username;
                             ],
                             ['label' => '在线编辑', 'icon' => 'dashboard', 'url' => ['/ace'],],
                             ['label' => 'DNS', 'icon' => 'dashboard', 'url' => ['/dns'],],
+                            ['label' => 'b站弹幕', 'icon' => 'dashboard', 'url' => ['/bilibili'],'items'=>[
+                                ['label' => '统计', 'icon' => 'dashboard', 'url' => ['/bilibili/index/index'] ],
+                                ['label' => '设置', 'icon' => 'dashboard', 'url' => ['/bilibili/index/settings'] ],
+                                ['label' => '设置', 'icon' => 'dashboard', 'url' => ['/bilibili/index/interface?roomId=23439073'] ],
+                            ]],
                         ],
                     ],
                     [

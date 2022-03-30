@@ -51,7 +51,7 @@ use Yii;
  * @property-read \common\components\Dns $dns 阿里云dns api
  * @property-read \common\components\Snoopy $snoopy 爬虫
  * @property-read \common\components\AssetsDownload $assetsDownload 获取网站的html
- *
+ * @property-read \common\components\Bilibili $bilibili 弹幕管理 
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */

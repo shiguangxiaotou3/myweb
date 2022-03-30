@@ -33,11 +33,18 @@ return [
         'dns'=>[
             'class'=>'common\modules\dns\Dns'
         ],
+        'bilibili' => [
+            'class' => 'common\modules\bilibili\BulletChat',
+        ]
     ],
     //组件
     'components' => [
         'assetsDownload'=>[
             'class'=>'common\components\AssetsDownload',
+        ],
+        'bilibili'=>[
+            'class'=>'common\components\Bilibili',
+            'roomId' => 23439073,
         ],
         'request' => [
             'csrfParam' => '_csrf-backend',
