@@ -294,7 +294,7 @@ JS;
      */
     public static function color($key){
         $con =[
-            'rgba(210, 214, 222, 1)','rgba(60,141,188,0.9)','#19CAAD', '#8CC7B5', '#A0EEE1',
+            'rgba(60,141,188,0.9)', 'rgba(210, 214, 222, 1)','#19CAAD', '#8CC7B5', '#A0EEE1',
             '#BEE7E9', '#BEEDC7', '#D6D5B7', '#D1BA74', '#E6CEAC', '#ECAD9E', '#F4606C',
         ];
         return $con[$key];

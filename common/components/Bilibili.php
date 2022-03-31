@@ -16,6 +16,7 @@ class Bilibili extends Component
     public  $url = "https://api.live.bilibili.com/xlive/web-room/v1/dM/gethistory?roomid=";
     public $modelclass ='common\modules\bilibili\models\Bilibili';
     public  $roomId ="";
+    public $day=15;
 
     public function getData(){
         $data =file_get_contents($this->url.$this->roomId);

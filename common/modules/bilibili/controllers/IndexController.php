@@ -2,6 +2,7 @@
 
 namespace common\modules\bilibili\controllers;
 
+use common\modules\bilibili\models\Bilibili;
 use \yii\web\Controller;
 use Yii;
 use yii\web\Response;
@@ -9,7 +10,9 @@ class IndexController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new Bilibili();
+        $model->roomId =23439073;
+        return $this->render('index',['model'=>$model]);
     }
 
     /**
@@ -20,9 +23,9 @@ class IndexController extends Controller
      */
     public function actionInterface($roomId){
         Yii::$app->response->format= Response::FORMAT_JSON;
-        $compent = Yii::$app->bilibili;
-        $compent ->saveMessages($roomId);
-        $data = $compent->getMessage($roomId,24*60*60);
+        $component = Yii::$app->bilibili;
+        $component ->saveMessages($roomId);
+        $data = $component->getMessage($roomId,24*60*60);
         if($data){
             return $data;
         }

@@ -3,11 +3,14 @@
 namespace common\modules\bilibili\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "bilibili".
  *
+ * @property-read  int $day
  * @property int $id
  * @property int|null $roomId 房间id
  * @property int|null $unix 发送时间戳
@@ -18,8 +21,10 @@ use yii\behaviors\TimestampBehavior;
  * @property int $created_at 创建时间
  * @property int $updated_at 修改时间
  */
-class Bilibili extends \yii\db\ActiveRecord
+class Bilibili extends ActiveRecord
 {
+
+    private $_day;
     /**
      * {@inheritdoc}
      */
@@ -75,15 +80,16 @@ class Bilibili extends \yii\db\ActiveRecord
     /**
      * 获取近7天弹幕数量
      *
-     * @param $roomId
      * @return array
      */
-    public static function bulletChatNumber($roomId){
+    public  function bulletChatNumber(){
+        $day = $this->getDay();
+        $roomId = $this ->roomId;
         $time = time();
-        $endDate = $time-( $time % 24*60*60) ;
-        $startDate = $time - 24*60*60*7;
+        //$endDate = $time- ( $time % 24*60*60) ;
+        $startDate = $time - 24*60*60 * $day;
         $res =[];
-        for($i=0;$i<=6;$i++){
+        for($i=0;$i<=($day-1);$i++){
             $unixStart =$startDate + $i *24*60*60;
             $number = Bilibili::find()
                 ->where(['roomId'=>$roomId])
@@ -93,6 +99,46 @@ class Bilibili extends \yii\db\ActiveRecord
             $res[$unixStart]=$number;
         }
         return  $res;
+    }
+
+
+    /**
+     * 弹幕发送着top10
+     *
+     * @return array|boolean
+     */
+    public  function usernameTop10(){
+        $roomId = $this->roomId;
+        $username = Bilibili::find()
+            ->select(['username'])
+            ->where(['roomId'=>$roomId])
+            ->distinct()
+            ->asArray()->all();
+        $users = ArrayHelper::getColumn($username,"username");
+        if($users){
+            $res =[];
+            foreach ($users as $user){
+               $res[$user]=  Bilibili::find()->where(['username'=>$user])->count();
+            }
+            //根据数组的值降序
+            arsort($res);
+            return $res;
+        }
+        return false;
+    }
+
+
+    public function getDay(){
+        if(isset($this->_day)){
+            return  $this->_day;
+        }else{
+            $day = Yii::$app->bilibili->day;
+            if(isset($day) ){
+                return $day;
+            }else{
+                return 7;
+            }
+        }
 
     }
 
