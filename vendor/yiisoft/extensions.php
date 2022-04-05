@@ -174,4 +174,113 @@ return array (
       '@kartik/icons' => $vendorDir . '/kartik-v/yii2-icons/src',
     ),
   ),
+  'froala/yii2-froala-editor' => 
+  array (
+    'name' => 'froala/yii2-froala-editor',
+    'version' => '3.2.7.0',
+    'alias' => 
+    array (
+      '@froala/froalaeditor' => $vendorDir . '/froala/yii2-froala-editor/src',
+    ),
+  ),
+  'mludvik/yii2-tags-input' => 
+  array (
+    'name' => 'mludvik/yii2-tags-input',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@mludvik/tagsinput' => $vendorDir . '/mludvik/yii2-tags-input/src',
+    ),
+  ),
+  'newerton/yii2-fancybox' => 
+  array (
+    'name' => 'newerton/yii2-fancybox',
+    'version' => '1.0.0.0',
+    'alias' => 
+    array (
+      '@newerton/fancybox' => $vendorDir . '/newerton/yii2-fancybox/src',
+    ),
+  ),
+  'himiklab/yii2-handsontable-widget' => 
+  array (
+    'name' => 'himiklab/yii2-handsontable-widget',
+    'version' => '1.1.1.0',
+    'alias' => 
+    array (
+      '@himiklab/handsontable' => $vendorDir . '/himiklab/yii2-handsontable-widget',
+    ),
+  ),
+  'mihaildev/yii2-elfinder' => 
+  array (
+    'name' => 'mihaildev/yii2-elfinder',
+    'version' => '1.4.0.0',
+    'alias' => 
+    array (
+      '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
+    ),
+  ),
+  'mihaildev/yii2-ckeditor' => 
+  array (
+    'name' => 'mihaildev/yii2-ckeditor',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
+    ),
+  ),
+  'kartik-v/yii2-mpdf' => 
+  array (
+    'name' => 'kartik-v/yii2-mpdf',
+    'version' => '1.0.6.0',
+    'alias' => 
+    array (
+      '@kartik/mpdf' => $vendorDir . '/kartik-v/yii2-mpdf/src',
+    ),
+  ),
+  'kartik-v/yii2-widget-activeform' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-activeform',
+    'version' => '1.6.2.0',
+    'alias' => 
+    array (
+      '@kartik/form' => $vendorDir . '/kartik-v/yii2-widget-activeform/src',
+    ),
+  ),
+  'johnitvn/yii2-ajaxcrud' => 
+  array (
+    'name' => 'johnitvn/yii2-ajaxcrud',
+    'version' => '2.1.3.0',
+    'alias' => 
+    array (
+      '@johnitvn/ajaxcrud' => $vendorDir . '/johnitvn/yii2-ajaxcrud/src',
+    ),
+    'bootstrap' => 'johnitvn\\ajaxcrud\\Bootstrap',
+  ),
+  'kartik-v/yii2-dialog' => 
+  array (
+    'name' => 'kartik-v/yii2-dialog',
+    'version' => '1.0.6.0',
+    'alias' => 
+    array (
+      '@kartik/dialog' => $vendorDir . '/kartik-v/yii2-dialog/src',
+    ),
+  ),
+  'kartik-v/yii2-grid' => 
+  array (
+    'name' => 'kartik-v/yii2-grid',
+    'version' => '3.5.0.0',
+    'alias' => 
+    array (
+      '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid/src',
+    ),
+  ),
+  'kartik-v/yii2-editable' => 
+  array (
+    'name' => 'kartik-v/yii2-editable',
+    'version' => '1.7.9.0',
+    'alias' => 
+    array (
+      '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable/src',
+    ),
+  ),
 );

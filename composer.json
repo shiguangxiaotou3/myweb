@@ -25,7 +25,6 @@
         "ipinfo/ipinfo": "^2.3",
         "mdmsoft/yii2-admin": "~2.0",
         "abhi1693/yii2-system-info": "@dev",
-        "phpmailer/phpmailer": "^6.5",
         "ddeboer/imap": "^1.12",
         "eluhr/yii2-aceeditor": "^0.0.6",
         "alibabacloud/alidns-20150109": "2.0.1",
@@ -33,9 +32,15 @@
         "kartik-v/yii2-ipinfo": "dev-master",
         "kartik-v/yii2-widget-alert": "dev-master",
         "kartik-v/yii2-widget-growl": "dev-master",
-        "yiisoft/yii2-bootstrap" :"@dev"
-
-
+        "yiisoft/yii2-bootstrap" :"@dev",
+        "froala/yii2-froala-editor": "^3.2.5",
+        "newerton/yii2-fancybox": "^1.0",
+        "mludvik/yii2-tags-input": "~1.0",
+        "himiklab/yii2-handsontable-widget": "*",
+        "mihaildev/yii2-elfinder": "*",
+        "mihaildev/yii2-ckeditor": "*",
+        "johnitvn/yii2-ajaxcrud": "*",
+        "markrogoyski/math-php": "2.*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

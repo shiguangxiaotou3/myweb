@@ -16,8 +16,8 @@ use yii\web\Controller;
 class TestController  extends Controller{
 
     public function actionIndex(){
-     $data = Bilibili::usernameTop10(23439073);
-        arsort($data);
+        $model =new Bilibili();
+        $data = $model->usernameTop10(23439073);
         return $this->render('index',['data'=>  $data ]);
     }
 

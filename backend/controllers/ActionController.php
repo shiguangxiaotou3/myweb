@@ -9,13 +9,16 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 /**
  * 后台自动化执行工具
+ *
  * @package backend\controllers
  */
 class ActionController extends Controller
 {
 
     /**
-     * @return array
+     * /**
+     * {@inheritdoc}
+     *
      */
     public function behaviors()
     {

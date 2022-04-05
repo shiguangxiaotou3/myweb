@@ -1,0 +1,26 @@
+{
+  "name": "mludvik/yii2-tags-input",
+  "description": "Yii2 integration for [developit/tags-input](https://github.com/developit/tags-input).",
+  "type": "yii2-extension",
+  "keywords": ["yii2", "extension", "widget", "tags", "tags-input"],
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/mludvik/yii2-tags-input/issues",
+    "source": "https://github.com/mludvik/yii2-tags-input"
+  },
+  "authors": [
+    {
+      "name": "Martin Ludvik",
+      "email": "matolud@gmail.com"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0",
+    "bower-asset/tags-input": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "mludvik\\tagsinput\\": "src"
+    }
+  }
+}

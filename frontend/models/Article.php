@@ -36,7 +36,9 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             ['user_id','default','value' => Yii::$app->user->id],
-            [['user_id', 'label', /*'created_at', 'updated_at'*/], 'required'],
+            ['status','default','value' =>1],
+            ['visits','default','value' =>0],
+            [['user_id',  'title'/*'created_at', 'updated_at'*/], 'required'],
             [['user_id', 'status', /*'created_at', 'updated_at'*/], 'integer'],
             [['content'], 'string'],
             [['label', 'title'], 'string', 'max' => 255],
@@ -50,10 +52,10 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'user_id' => Yii::t('app', '模块id'),
+            'user_id' => Yii::t('app', '用户'),
             'label' => Yii::t('app', '标签'),
             'title' => Yii::t('app', '标题'),
-            'content' => Yii::t('app', '类容'),
+            'content' => Yii::t('app', '内容'),
             'status' => Yii::t('app', '可见'),
             'classification' => Yii::t('app', '分类'),
             'visits' => Yii::t('app', '访问量'),

@@ -79,8 +79,8 @@ $username = Yii::$app->user->identity->username;
                         'label' => '博客',
                         'icon' => 'dashboard',
                         'items'=>[
-                            ['label' => '写文章', 'icon' => 'dashboard','url'=>['/blog/create']],
-                            ['label' => '写文章', 'icon' => 'dashboard','url'=>["#"]],
+                            ['label' => '所有文章', 'icon' => 'dashboard','url'=>['/blog/index']],
+                            ['label' => '写文章', 'icon' => 'dashboard','url'=>["/blog/create"]],
                         ]
                     ],
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],
