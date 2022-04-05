@@ -1,10 +1,11 @@
 <?php
-use yii\helpers\Url;
-use yii\helpers\Html;
-use yii\bootstrap\Modal;
-use kartik\grid\GridView;
-use johnitvn\ajaxcrud\CrudAsset;
+
 use johnitvn\ajaxcrud\BulkButtonWidget;
+use johnitvn\ajaxcrud\CrudAsset;
+use kartik\grid\GridView;
+use yii\bootstrap\Modal;
+use yii\helpers\Html;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\SearchArticle */
@@ -23,17 +24,17 @@ $columns = [
         'class' => 'kartik\grid\SerialColumn',
         'width' => '30px',
     ],
-    // [
-    // 'class'=>'\kartik\grid\DataColumn',
-    // 'attribute'=>'id',
-    // ],
     [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'title',
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'id',
     ],
     [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'label',
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'title',
+    ],
+    [
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'label',
     ],
 
 //    [
@@ -41,72 +42,57 @@ $columns = [
 //        'attribute'=>'content',
 //    ],
     [
-        'class'=>'\kartik\grid\DataColumn',
-        'attribute'=>'status',
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'status',
     ],
-    // [
-    // 'class'=>'\kartik\grid\DataColumn',
-    // 'attribute'=>'created_at',
-    // ],
-    // [
-    // 'class'=>'\kartik\grid\DataColumn',
-    // 'attribute'=>'updated_at',
-    // ],
-     [
-     'class'=>'\kartik\grid\DataColumn',
-     'attribute'=>'classification',
-     ],
-     [
-     'class'=>'\kartik\grid\DataColumn',
-     'attribute'=>'visits',
-     ],
-        [
+
+    [
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'classification',
+    ],
+    [
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'visits',
+    ],
+    [
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'created_at',
+    ],
+    [
+        'class' => '\kartik\grid\DataColumn',
+        'attribute' => 'updated_at',
+    ],
+    [
         'class' => 'kartik\grid\ActionColumn',
         'dropdown' => false,
-        'vAlign'=>'middle',
-        'urlCreator' => function($action, $model, $key, $index) {
-            return Url::to([$action,'id'=>$key]);
+        'vAlign' => 'middle',
+        'urlCreator' => function ($action, $model, $key, $index) {
+            return Url::to([$action, 'id' => $key]);
         },
-        'viewOptions'=>['role'=>'modal-remote','title'=>'View','data-toggle'=>'tooltip'],
-        'updateOptions'=>['role'=>'modal-remote','title'=>'Update', 'data-toggle'=>'tooltip'],
-        'deleteOptions'=>['role'=>'modal-remote','title'=>'Delete',
-            'data-confirm'=>false, 'data-method'=>false,// for overide yii data api
-            'data-request-method'=>'post',
-            'data-toggle'=>'tooltip',
-            'data-confirm-title'=>Yii::t('app','Are you sure?'),
-            'data-confirm-message'=>Yii::t('app','Are you sure want to delete this item')],
+        'viewOptions' => ['role' => 'modal-remote', 'title' => 'View', 'data-toggle' => 'tooltip'],
+        'updateOptions' => ['role' => 'modal-remote', 'title' => 'Update', 'data-toggle' => 'tooltip'],
+        'deleteOptions' => ['role' => 'modal-remote', 'title' => 'Delete',
+            'data-confirm' => false, 'data-method' => false,// for overide yii data api
+            'data-request-method' => 'post',
+            'data-toggle' => 'tooltip',
+            'data-confirm-title' => Yii::t('app', 'Are you sure?'),
+            'data-confirm-message' => Yii::t('app', 'Are you sure want to delete this item')],
     ],
 
 ];
 ?>
 <div style="border-right: "></div>
-<!--
-<div class="box box-primary " style="margin: 0px auto ">
-    <div class="box-header with-border ">
-        <i class="fa fa-folder-o"></i><h3 class="box-title">临时文件</h3>
-        <div class="box-tools">
-
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" ><i class="fa fa-minus"></i></button>
-        </div>
-    </div>
-    <div class="box-body btn btn-default">
-
-    </div>
-</div>
--->
 <div class="article-index">
     <div id="ajaxCrudDatatable" >
         <?= GridView::widget([
             'id'=>'crud-datatable',
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
-            //'options'=>['class'=>'box'],
             'pjax'=>true,
             'floatHeader' => true , // 将标题浮动到顶部
             'bordered' => false,
             'columns' => $columns ,
-            //'toggleDataContainer'=>['style'=>'margin:-10px 0px'],
-            //'exportContainer'=>['style'=>'margin:-10px 0px'],
+            //自定义工具栏
             'toolbar'=> [
                 ['content'=>
                     Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'],
@@ -120,23 +106,37 @@ $columns = [
             'striped' => true,
             'condensed' => true,
             'responsive' => true,
-
-            'panelTemplate'=>"{panelHeading}<div class=\"box-body no-padding\">{panelBefore}{items}
-                {panelAfter}</div>{panelFooter}",
-//            'panelHeadingTemplate'=>"{title}{summary}{toolbar}",
-            'panelHeadingTemplate'=>"{title} <div class=\"box-tools-right\">{toolbar}{summary}</div>",
-            'pageSummaryContainer'=>['style'=>'padding-bottom:0'],
+            //主视图渲染模版
+            'panelTemplate'=>"{panelHeading}<div class=\"box-body no-padding\">{panelBefore}{items}{panelAfter}</div>{panelFooter}",
+            //标题渲染模版
+            'panelHeadingTemplate'=>"{title} <div class=\"box-tools-right\">&nbsp;{toolbar}</div>",
+            //页脚渲染模版
+            'panelFooterTemplate'=>"<div class=\"kv-panel-pager\">
+                    {summary}{pager}  
+                </div>
+                {footer}
+                <div class=\"clearfix\"></div>",
+            //items 外框css
+            'containerOptions'=>['style'=>'border-bottom:0;'],
+            //表格css
+            'tableOptions'=>['style'=>'margin-bottom:0;border-bottom:0;'],
+            //下载按钮选择
             'export'=>['options'=>['style'=>'margin: -10px auto ']],
+            //视图转换按钮css
             'toggleDataOptions'=>['page'=>['style'=>'margin: -10px auto '],'all'=>['style'=>'margin: -10px auto ']],
+            //主视图
             'panel' => [
                 'before'=>false,
-                'afterOptions'=>['style'=>'padding:0 5px;border:0'],
+                //主视图css
                 'options'=>['class'=>'box', 'style'=>'border-left: 0;border-right:0;border-bottom:0;'],
+                //标题外框css
                 'headingOptions'=>['class'=>'box-header with-border',],
-                //'summaryOptions'=>['class'=>'box-tools'],
+                //页头css
+                'afterOptions'=>['style'=>'padding:0 5px;border-top:0;'],
+                //box也脚css
                 'footerOptions'=>['class'=>'box-footer'],
-
                 'type' => 'primary',
+                //页脚
                 'after'=>BulkButtonWidget::widget([
                         'buttons'=>Html::a('<i class="glyphicon glyphicon-trash"></i>&nbsp; Delete All',
                             ["bulk-delete"] , [
@@ -155,6 +155,6 @@ $columns = [
 </div>
 <?php Modal::begin([
     "id"=>"ajaxCrudModal",
-    "footer"=>"",// always need it for jquery plugin
+    "footer"=>"",// jquery插件总是需要它
 ])?>
 <?php Modal::end(); ?>

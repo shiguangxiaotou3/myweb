@@ -1,8 +1,7 @@
 <?php
 return [
 
-
-
+    'This is Yii version '=>'yii的版本是:',
     'No commands are found.'=>'找不到任何命令.',
     'The following commands are available:'=>'以下命令可用:',
     '<command-name>'=>'<命令名称>',
@@ -25,6 +24,14 @@ return [
     'Unloads the specified fixtures.' => '卸载指定的夹具',
 
     //gii
+    'YDESCRIPTION'=>'描述',
+    'SUB-COMMANDS'=>'子命令',
+    'OPTIONS'=>'选项',
+    'To see the detailed information about individual sub-commands, enter:'=>'要查看有关单个子命令的详细信息,请输入:',
+    "No help for unknown sub-command "=>'未知子命令没有帮助',
+    'custom application configuration file path.'=>'自定义应用程序配置文件路径',
+    'If not set, default application configuration is used.'=>'如果未设置,则使用默认应用程序配置.',
+    "No help for unknown command"=>'未知命令无帮助.',
     'This is the command line version of Gii - a code generator.' => '这是Gii的命令行版本 - 一个代码生成器',
     'Ajax CRUD Generator' => 'Ajax CRUD 生成器',
     'Controller Generator' => '控制器生成器',
@@ -33,6 +40,20 @@ return [
     'Form Generator' => '表单生成器',
     'Model Generator' => '模型生成器',
     'Module Generator' => '模块生成器',
+    'Code not generated. Please fix the following errors:'=>'未生成代码.请修复以下错误:',
+    "No code to be generated."=>'没有要生成的代码.',
+    'The following files will be generated:'=>'将生成以下文件:',
+    "Do you want to overwrite this file?"=>'是否要覆盖此文件?',
+    'Overwrite this file.'=>"覆盖此文件.",
+    'Skip this file.'=>"跳过这个文件.",
+    'Overwrite this and the rest of the changed files.'=>"覆盖此文件和其他已更改的文件.",
+    'Skip this and the rest of the changed files.'=>"跳过此文件和其他已更改的文件.",
+    'View difference'=>"不同的视图",
+    'No files were chosen to be generated.'=>'没有选择要生成的文件.',
+    'Ready to generate the selected files?'=>'准备好生成所选文件了吗?',
+    'No file was generated.'=>'没有生成任何文件.',
+    'Files were generated successfully!'=>'文件生成成功!',
+    'Some errors occurred while generating the files.'=>'生成文件时发生了一些错误.',
 
 
     'Provides help information about console commands.' => '提供有关控制台命令的帮助信息',

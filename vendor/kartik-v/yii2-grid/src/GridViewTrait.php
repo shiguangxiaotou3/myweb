@@ -1027,7 +1027,6 @@ HTML;
         }
         $tag = ArrayHelper::remove($this->pageSummaryContainer, 'tag', 'tbody');
         $content = Html::tag('tr', $row, $this->pageSummaryRowOptions);
-
         return Html::tag($tag, $content, $this->pageSummaryContainer);
     }
 
@@ -1602,6 +1601,7 @@ HTML;
         if ($this->hideResizeMobile) {
             Html::addCssClass($this->options, 'hide-resize');
         }
+
         $this->replaceLayoutTokens([
             '{toolbarContainer}' => $this->renderToolbarContainer(),
             '{toolbar}' => $this->renderToolbar(),
@@ -1738,6 +1738,7 @@ HTML;
             '{panelBefore}' => $panelBefore,
             '{panelAfter}' => $panelAfter,
         ]);
+
 
         $this->layout = Html::tag('div', Lib::strtr($out, [
             '{title}' => Html::tag($titleTag, $heading, $titleOptions),

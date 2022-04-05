@@ -6,7 +6,7 @@
  */
 
 namespace yii\gii\console;
-
+use Yii;
 use yii\helpers\Console;
 
 /**
@@ -41,7 +41,7 @@ class GenerateAction extends \yii\base\Action
 
     protected function displayValidationErrors()
     {
-        $this->controller->stdout("Code not generated. Please fix the following errors:\n\n", Console::FG_RED);
+        $this->controller->stdout(Yii::t('app', 'Code not generated. Please fix the following errors:') . "\n\n", Console::FG_RED);
         foreach ($this->generator->errors as $attribute => $errors) {
             echo ' - ' . $this->controller->ansiFormat($attribute, Console::FG_CYAN) . ': ' . implode('; ', $errors) . "\n";
         }
@@ -53,10 +53,10 @@ class GenerateAction extends \yii\base\Action
         $files = $this->generator->generate();
         $n = count($files);
         if ($n === 0) {
-            echo "No code to be generated.\n";
+            echo Yii::t('app', "No code to be generated.") . "\n";
             return;
         }
-        echo "The following files will be generated:\n";
+        echo Yii::t('app', "The following files will be generated:") . "\n";
         $skipAll = $this->controller->interactive ? null : !$this->controller->overwrite;
         $answers = [];
         foreach ($files as $file) {
@@ -74,12 +74,12 @@ class GenerateAction extends \yii\base\Action
                         $answers[$file->id] = !$skipAll;
                     } else {
                         do {
-                            $answer = $this->controller->select("Do you want to overwrite this file?", [
-                                'y' => 'Overwrite this file.',
-                                'n' => 'Skip this file.',
-                                'ya' => 'Overwrite this and the rest of the changed files.',
-                                'na' => 'Skip this and the rest of the changed files.',
-                                'v' => 'View difference',
+                            $answer = $this->controller->select(Yii::t('app', "Do you want to overwrite this file?"), [
+                                'y' => Yii::t('app', 'Overwrite this file.'),
+                                'n' => Yii::t('app', 'Skip this file.'),
+                                'ya' => Yii::t('app', 'Overwrite this and the rest of the changed files.'),
+                                'na' => Yii::t('app', 'Skip this and the rest of the changed files.'),
+                                'v' => Yii::t('app', 'View difference'),
                             ]);
 
                             if ($answer === 'v') {
@@ -104,19 +104,19 @@ class GenerateAction extends \yii\base\Action
         }
 
         if (!array_sum($answers)) {
-            $this->controller->stdout("\nNo files were chosen to be generated.\n", Console::FG_CYAN);
+            $this->controller->stdout("\n" . Yii::t('app', 'No files were chosen to be generated.') . "\n", Console::FG_CYAN);
             return;
         }
 
-        if (!$this->controller->confirm("\nReady to generate the selected files?", true)) {
-            $this->controller->stdout("\nNo file was generated.\n", Console::FG_CYAN);
+        if (!$this->controller->confirm("\n" . Yii::t('app', 'Ready to generate the selected files?'), true)) {
+            $this->controller->stdout("\n" . Yii::t('app', 'No file was generated.') . "\n", Console::FG_CYAN);
             return;
         }
 
-        if ($this->generator->save($files, (array) $answers, $results)) {
-            $this->controller->stdout("\nFiles were generated successfully!\n", Console::FG_GREEN);
+        if ($this->generator->save($files, (array)$answers, $results)) {
+            $this->controller->stdout("\n" . Yii::t('app', 'Files were generated successfully!') . "\n", Console::FG_GREEN);
         } else {
-            $this->controller->stdout("\nSome errors occurred while generating the files.", Console::FG_RED);
+            $this->controller->stdout("\n" . Yii::t('app', 'Some errors occurred while generating the files.'), Console::FG_RED);
         }
         echo preg_replace('%<span class="error">(.*?)</span>%', '\1', $results) . "\n";
     }

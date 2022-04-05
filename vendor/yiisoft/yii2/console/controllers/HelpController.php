@@ -52,7 +52,7 @@ class HelpController extends Controller
             $result = Yii::$app->createController($command);
             if ($result === false) {
                 $name = $this->ansiFormat($command, Console::FG_YELLOW);
-                throw new Exception("No help for unknown command \"$name\".");
+                throw new Exception(Yii::t('app',"No help for unknown command")." \"$name\".");
             }
 
             list($controller, $actionID) = $result;
@@ -351,7 +351,7 @@ class HelpController extends Controller
     {
         $controller->color = $this->color;
 
-        $this->stdout("\nDESCRIPTION\n", Console::BOLD);
+        $this->stdout("\n".Yii::t('app','YDESCRIPTION')."\n", Console::BOLD);
         $comment = $controller->getHelp();
         if ($comment !== '') {
             $this->stdout("\n$comment\n\n");
@@ -359,7 +359,7 @@ class HelpController extends Controller
 
         $actions = $this->getActions($controller);
         if (!empty($actions)) {
-            $this->stdout("\nSUB-COMMANDS\n\n", Console::BOLD);
+            $this->stdout("\n".Yii::t('app','SUB-COMMANDS')."\n\n", Console::BOLD);
             $prefix = $controller->getUniqueId();
 
             $maxlen = 5;
@@ -376,12 +376,12 @@ class HelpController extends Controller
                 }
                 $summary = $controller->getActionHelpSummary($controller->createAction($action));
                 if ($summary !== '') {
-                    $this->stdout(str_repeat(' ', $maxlen - $len + 2) . Console::wrapText($summary, $maxlen + 2));
+                    $this->stdout(str_repeat(' ', $maxlen - $len + 2) . Console::wrapText(Yii::t('app',$summary), $maxlen + 2));
                 }
                 $this->stdout("\n");
             }
             $scriptName = $this->getScriptName();
-            $this->stdout("\nTo see the detailed information about individual sub-commands, enter:\n");
+            $this->stdout("\n".Yii::t('app','To see the detailed information about individual sub-commands, enter:')."\n");
             $this->stdout("\n  $scriptName " . $this->ansiFormat('help', Console::FG_YELLOW) . ' '
                 . $this->ansiFormat('<sub-command>', Console::FG_CYAN) . "\n\n");
         }
@@ -398,12 +398,12 @@ class HelpController extends Controller
         $action = $controller->createAction($actionID);
         if ($action === null) {
             $name = $this->ansiFormat(rtrim($controller->getUniqueId() . '/' . $actionID, '/'), Console::FG_YELLOW);
-            throw new Exception("No help for unknown sub-command \"$name\".");
+            throw new Exception(Yii::t('app',"No help for unknown sub-command ")."\"$name\".");
         }
 
         $description = $controller->getActionHelp($action);
         if ($description !== '') {
-            $this->stdout("\nDESCRIPTION\n", Console::BOLD);
+            $this->stdout("\n".Yii::t('app','DESCRIPTION')."\n", Console::BOLD);
             $this->stdout("\n$description\n\n");
         }
 
@@ -428,7 +428,8 @@ class HelpController extends Controller
         $options[\yii\console\Application::OPTION_APPCONFIG] = [
             'type' => 'string',
             'default' => null,
-            'comment' => "custom application configuration file path.\nIf not set, default application configuration is used.",
+            'comment' => Yii::t('app',"custom application configuration file path.")."\n".
+                Yii::t('app','If not set, default application configuration is used.'),
         ];
         ksort($options);
 
@@ -449,7 +450,7 @@ class HelpController extends Controller
         }
 
         if (!empty($options)) {
-            $this->stdout("\nOPTIONS\n\n", Console::BOLD);
+            $this->stdout("\n".Yii::t('app','OPTIONS')."\n\n", Console::BOLD);
             foreach ($options as $name => $option) {
                 $this->stdout($this->formatOptionHelp(
                         $this->ansiFormat('--' . $name . $this->formatOptionAliases($controller, $name),
@@ -540,7 +541,7 @@ class HelpController extends Controller
      */
     protected function getDefaultHelpHeader()
     {
-        return "\nThis is Yii version " . \Yii::getVersion() . ".\n";
+        return "\n".Yii::t('app','This is Yii version ') . \Yii::getVersion() . ".\n";
     }
 
     /**
