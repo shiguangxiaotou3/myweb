@@ -7,7 +7,8 @@ use \eluhr\aceeditor\widgets\AceEditor;
 
 
     $model = new Ace();
-    $model->aliases ='@basic/a.txt';
+    $model->aliases='@basic/../../Apache24/conf/extra/httpd-vhosts.conf';
+//    $model->aliases ='@basic/a.txt';
     $model->str = $model->getContent(); //file_get_contents(Yii::getAlias($model->aliases));
 ?>
 <div class="row">
