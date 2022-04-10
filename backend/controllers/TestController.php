@@ -21,11 +21,9 @@ use yii\web\Controller;
 class TestController  extends Controller{
 
     public function actionIndex(){
-        $data= Comment::find()
-            ->where(['article_id'=>110])
-            ->andWhere(['status'=>1])
-            //->orderBy(['created_at'=>'SORT_DESC'])
-            ->asArray()->all();
+        $imap = Yii::$app->imap;
+        $imap->open( 'qqMailer');
+        $data ='';
 
         return $this->render('index',['data'=>  $data ]);
     }

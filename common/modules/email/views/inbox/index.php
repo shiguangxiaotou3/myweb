@@ -57,15 +57,18 @@ use kartik\icons\FontAwesomeAsset;
         <?php Pjax::end() ?>
     </div>
 </div>
-<script>
-    //改变加载状态
-    function iconLoading(dom){
+<?php
+$js =<<<JS
+
+
+ //改变加载状态
+    window.iconLoading=function iconLoading(dom){
         var icon = $("#"+dom).children('i');
         console.log(dom);
         icon.toggleClass("fa-pulse");
     }
     //更新imap数据
-    function imapUpData(dom,url,server){
+    window.imapUpData=function imapUpData(dom,url,server){
         $.ajax({
             type:'POST',
             beforeSend: iconLoading(dom),
@@ -80,7 +83,7 @@ use kartik\icons\FontAwesomeAsset;
     }
 
     //清空缓存
-    function imapClear(dom ,url,server){
+    window.imapClear =function imapClear(dom ,url,server){
         $.ajax({
             type:'POST',
             beforeSend: iconLoading(dom),
@@ -93,5 +96,10 @@ use kartik\icons\FontAwesomeAsset;
             }
         })
     }
+
+JS;
+$this->registerJs($js);
+?>
+<script>
 
 </script>

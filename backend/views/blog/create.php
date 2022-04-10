@@ -24,6 +24,9 @@ $session =Yii::$app->session;
             <?php
 
             $from = ActiveForm::begin(['id'=>'Article']);
+            if(isset($model->id)){
+                echo $from->field($model,'id')->hiddenInput()->label(false);
+            }
             echo $from->field($model, 'title')
                 ->textInput(['placeholder' => '标题' ,'class' => 'form-control'])->label(false);
 

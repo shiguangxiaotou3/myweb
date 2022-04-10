@@ -3,22 +3,26 @@
 namespace frontend\controllers;
 
 
-use frontend\models\Article;
-use frontend\models\Comment;
-use frontend\models\SearchArticle;
+
+
 use Yii;
+use yii\web\Response;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use frontend\models\Article;
+use frontend\models\Comment;
 use common\models\LoginForm;
 use yii\filters\AccessControl;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\SearchArticle;
 use yii\web\BadRequestHttpException;
 use frontend\models\VerifyEmailForm;
 use frontend\models\ResetPasswordForm;
 use yii\base\InvalidArgumentException;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResendVerificationEmailForm;
+
 
 
 
@@ -30,33 +34,34 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-//    public function behaviors()
-//    {
-//        return [
-//            'access' => [
-//                'class' => AccessControl::className(),
-//                'only' => ['logout', 'signup','comment'],
-//                'rules' => [
-//                    [
-//                        'actions' => ['signup'],
-//                        'allow' => true,
-//                        'roles' => ['?'],
-//                    ],
-//                    [
-//                        'actions' => ['logout','comment'],
-//                        'allow' => true,
-//                        'roles' => ['@'],
-//                    ],
-//                ],
-//            ],
-//            'verbs' => [
-//                'class' => VerbFilter::className(),
-//                'actions' => [
-//                    'logout' => ['post'],
-//                ],
-//            ],
-//        ];
-//    }
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['logout', 'signup','comment'],
+                'rules' => [
+                    [
+                        'actions' => ['signup'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout','comment'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                    'add-fabulous'=>['post'],
+                ],
+            ],
+        ];
+    }
 
     /**
      * {@inheritdoc}
@@ -109,7 +114,6 @@ class SiteController extends Controller
             $model = new Comment();
             if($model->load($request->post()) && $model->save()){
                  $this->goBack();
-                 logObject('评论成功');
             }else{
                 logObject($model->getErrors());
                 return false;
@@ -117,8 +121,23 @@ class SiteController extends Controller
         }
     }
 
-    public function actionAdd(){
-
+    /**
+     * 点赞
+     */
+    public function actionAddFabulous(){
+        $request = Yii::$app->request;
+        if($request->isAjax ){
+            if($request->isPost){
+                $model =Article::findOne($request->post('id'));
+                Yii::$app->response->format=Response::FORMAT_JSON;
+                if($model){
+                    $model->addFabulous();
+                    return ['code'=>true,'message'=>'点赞成功'];
+                }else{
+                    return ['code'=>true,'message'=>'点赞失败'];
+                }
+            }
+        }
     }
 
     /**

@@ -311,21 +311,28 @@ class Imap extends Component{
             $type =$message->getType();
             if($type =="multipart"){
                 $html = $message->getBodyHtml();
-                if (!file_exists($path."/body.html") and $html) {
+                if (!file_exists($path."/body.html") and $html and isset($html) and !empty($html)) {
                     return file_put_contents($path."/body.html", $html, FILE_APPEND);
                 }else{
                     return false;
                 }
             }elseif ($type =="text"){
                 $text = $message->getBodyText();
-                if (!file_exists($path."/body.txt") and $text) {
+                if (!file_exists($path."/body.txt") and $text and isset($text) and !empty($text)) {
                     return file_put_contents($path."/body.txt", $text, FILE_APPEND);
                 }else{
                     return false;
                 }
+            }else{
+                logObject("数据解析失败.数据无法解析");
             }
         }catch (Exception $exception){
+            if(isset($path)){
+                logObject($path);
+            }
+
             logObject($exception->getMessage());
+            logObject($exception->getTrace());
             return  false;
         }
     }

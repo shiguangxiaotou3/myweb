@@ -18,4 +18,22 @@ $this->title = '家';
     ]);
     ?>
 </div>
-
+<?php
+$js= <<<JS
+window.AddFabulous=function AddFabulous(obj){
+       var id = $(obj).attr('id');
+         $.ajax({
+             type:'POST',
+             data:{id:id},
+             url:"/site/add-fabulous",
+             success:function(result){
+                  var sp1 =$(obj).children()[1];
+                  var sp2=$(sp1).children()[0];
+                  var number = $(sp2).text();
+                  sp2.innerHTML = parseInt(number) +1;
+                  alert(result.message+"非常感谢你！");
+             }
+         })
+    }
+JS;
+$this->registerJs($js);

@@ -21,7 +21,7 @@ class BlogController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['create','index','view','delete','bulk-delete'],
+                        'actions' => ['create','index','update','view','delete','bulk-delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -59,6 +59,53 @@ class BlogController extends Controller
     public function actionCreate(){
         $request = Yii::$app->request;
         $model = new Article();
+        $session =Yii::$app->session;
+        if(isset($session['Article'])){
+            $model->content = $session['Article']['content'];
+            $model->title = $session['Article']['title'];
+            $model->label = $session['Article']['label'];
+        }
+
+        if($request->isPost) {
+            $action = $request->post('action');
+            if($action == "save"){
+                if(isset($session['Article'])){
+                    $model->title = $session['Article']['title'];
+                    $model->label = $session['Article']['label'];
+                    $model->content = $session['Article']['content'];
+                    if($model->save()){
+                        Yii::$app->session->setFlash('success', '发布成功');
+                        unset($session['Article']);
+                        return  $this->render('create',['model'=> new Article() ]);
+                    }
+                }else{
+                    Yii::$app->session->setFlash('error', '发不成功.请先保存在发布文章');
+                }
+            }else{
+                //更新session数据
+                if($model->load($request->post()) && $model->validate()){
+                    $session['Article']=[
+                        'title' => $model->title,
+                        'label' => $model->label,
+                        'content' => $model->content ,
+                    ];
+                    Yii::$app->session->setFlash('success', '数据保存成功');
+                }else{
+                    Yii::$app->session->setFlash('success', '数据保存不成功');
+                }
+            }
+        }
+        return  $this->render('create',['model'=>$model]);
+    }
+
+    /**
+     * 写文章
+     *
+     * @return string
+     */
+    public function actionUpdate($id){
+        $request = Yii::$app->request;
+        $model = Article::findOne($id);
         $session =Yii::$app->session;
         if(isset($session['Article'])){
             $model->content = $session['Article']['content'];
