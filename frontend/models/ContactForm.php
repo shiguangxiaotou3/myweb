@@ -32,13 +32,18 @@ class ContactForm extends Model
         ];
     }
 
+
     /**
      * {@inheritdoc}
      */
     public function attributeLabels()
     {
         return [
-            'verifyCode' => 'Verification Code',
+            'verifyCode' => Yii::t('app','Verification Code'),
+            'name'=> Yii::t('app', 'Name'),
+            'email'=> Yii::t('app', 'Email'),
+            'subject'=> Yii::t('app', 'Subject'),
+            'body'=> Yii::t('app', 'Body'),
         ];
     }
 

@@ -48,7 +48,7 @@ $username = Yii::$app->user->identity->username;
                             ['label' => '授权管理', 'icon' => 'dashboard', 'url' => ['/admin/assignment'],],
                             ['label' => '角色管理', 'icon' => 'dashboard', 'url' => ['/admin/role'],],
                             ['label' => '权限管理', 'icon' => 'dashboard', 'url' => ['/admin/permission'],],
-                            ['label' => '权限管理', 'icon' => 'dashboard', 'url' => ['/admin/route'],],
+                            ['label' => '路由管理', 'icon' => 'dashboard', 'url' => ['/admin/route'],],
                             ['label' => '规则', 'icon' => 'dashboard', 'url' => ['/admin/rule'],],
                             ['label' => '菜单', 'icon' => 'dashboard', 'url' => ['/admin/menu'],],
                         ],
@@ -81,6 +81,7 @@ $username = Yii::$app->user->identity->username;
                         'items'=>[
                             ['label' => '所有文章', 'icon' => 'dashboard','url'=>['/blog/index']],
                             ['label' => '写文章', 'icon' => 'dashboard','url'=>["/blog/create"]],
+                            ['label' => '标签', 'icon' => 'dashboard','url'=>["/tag/index"]],
                         ]
                     ],
                     ['label' => '控制台', 'icon' => 'dashboard', 'url' => ['/action'],],
@@ -96,10 +97,9 @@ $username = Yii::$app->user->identity->username;
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
 
+
                 ],
             ]
         ) ?>
-
     </section>
-
 </aside>

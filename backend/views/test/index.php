@@ -27,16 +27,16 @@ use yii\web\JsExpression;
 //    'multiple'      => false       // возможность выбора нескольких файлов
 //]);
 
-echo ElFinder::widget([
-    'language'         => 'zh_CN',
-    'controller'       => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
-    'path' => 'image', // будет открыта папка из настроек контроллера с добавлением указанной под деритории
-    'filter'           => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
-    'callbackFunction' => new JsExpression('function(file, id){}'), // id - id виджета
-//    'frameOptions'=>['style'=>'width: 1200px;height: 600px'],
-    'containerOptions'=>['class'=>'col clo-lg-12 no-margin no-padding','style'=>'height: 600px'],
-]);
-
+//echo ElFinder::widget([
+//    'language'         => 'zh_CN',
+//    'controller'       => 'elfinder', // вставляем название контроллера, по умолчанию равен elfinder
+//    'path' => 'image', // будет открыта папка из настроек контроллера с добавлением указанной под деритории
+//    'filter'           => 'image',    // фильтр файлов, можно задать массив фильтров https://github.com/Studio-42/elFinder/wiki/Client-configuration-options#wiki-onlyMimes
+//    'callbackFunction' => new JsExpression('function(file, id){}'), // id - id виджета
+////    'frameOptions'=>['style'=>'width: 1200px;height: 600px'],
+//    'containerOptions'=>['class'=>'col clo-lg-12 no-margin no-padding','style'=>'height: 600px'],
+//]);
+dump($data);
 ?>
 <!--
 <div class="row">

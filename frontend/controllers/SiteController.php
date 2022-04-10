@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 
+use frontend\models\SearchArticle;
 use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -78,7 +79,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $searchModel = new SearchArticle();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        return $this->render('index',[
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,]);
     }
 
     /**
@@ -88,6 +93,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $this->layout ='blank';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -111,6 +117,7 @@ class SiteController extends Controller
      */
     public function actionLogout()
     {
+
         Yii::$app->user->logout();
 
         return $this->goHome();
@@ -123,6 +130,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $this->layout ='blank';
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
@@ -146,6 +154,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $this->layout ='blank';
         return $this->render('about');
     }
 
@@ -156,6 +165,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $this->layout ='blank';
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
@@ -174,6 +184,7 @@ class SiteController extends Controller
      */
     public function actionRequestPasswordReset()
     {
+        $this->layout ='blank';
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -199,6 +210,7 @@ class SiteController extends Controller
      */
     public function actionResetPassword($token)
     {
+        $this->layout ='blank';
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidArgumentException $e) {
@@ -225,6 +237,7 @@ class SiteController extends Controller
      */
     public function actionVerifyEmail($token)
     {
+        $this->layout ='blank';
         try {
             $model = new VerifyEmailForm($token);
         } catch (InvalidArgumentException $e) {
@@ -246,6 +259,7 @@ class SiteController extends Controller
      */
     public function actionResendVerificationEmail()
     {
+        $this->layout ='blank';
         $model = new ResendVerificationEmailForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
@@ -259,6 +273,5 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
-
 
 }

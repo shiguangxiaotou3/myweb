@@ -32,6 +32,16 @@ class ResendVerificationEmailForm extends Model
     }
 
     /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'email'=> Yii::t('app', 'Email'),
+        ];
+    }
+
+    /**
      * Sends confirmation email to user
      *
      * @return bool whether the email was sent

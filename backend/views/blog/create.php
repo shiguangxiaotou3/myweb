@@ -28,13 +28,14 @@ $session =Yii::$app->session;
                 ->textInput(['placeholder' => '标题' ,'class' => 'form-control'])->label(false);
 
 
-            echo  $from->field($model, 'label')->widget(TagsInputWidget::className());
+            echo  $from->field($model, 'label')
+                ->widget(TagsInputWidget::className(),['options' => ['class'=>'form-control']]);
 
             //内容
             echo $from->field($model, 'content', [
                 'options' => [
                     'class' => 'form-group'],])
-                ->textarea(['placeholder' => '邮件内容:', 'class' => 'form-control', 'row' => 200])
+                ->textarea(['placeholder' => '请输入。。。。', 'class' => 'form-control','style'=>'height: 300px' ])
                 ->label(false);
             ?>
         </div>

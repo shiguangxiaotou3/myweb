@@ -8,6 +8,7 @@ use frontend\assets\AppAsset;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\NavBar;
+use \common\models\basic\Color;
 
 AppAsset::register($this);
 ?>
@@ -20,8 +21,11 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style type="text/css">
+        a:hover{text-decoration: none}
+    </style>
 </head>
-<body class="d-flex flex-column h-100" style="background-color:#d2d6de ">
+<body class="d-flex flex-column h-100" style="background-color:rgb(239,239,239) ">
 <?php $this->beginBody() ?>
 
 <header>
@@ -56,7 +60,6 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav ml-auto'],
         'items' => $menuItems,
     ]);
-//    NavBar::end();
     ?>
 </header>
 
@@ -66,20 +69,62 @@ AppAsset::register($this);
             <?= Alert::widget(); ?>
         </div>
         <div class="row">
-            <!-- 主体  -->
-            <div class="col-xl w-0 col-12">
-                <?=  $content; ?>
-            </div>
-            <!-- 卡片  -->
-            <div class="col-xl-auto col-12">
-                <div id="gridAd" class="w-xl-300 mb-4 ">
-                    <div class="card">
-                        <div class="bg-white border-0 card-header">
-                            <strong>宣传栏</strong>
-                        </div>
-                        <div class="card-body">
+            <!-- 左 -->
+            <div class="d-none d-lg-block col-2"></div>
+            <div class="col">
+                <div class="row">
+                    <!-- 主体-->
+                    <div class="middle-wrap col">
+                        <?=  $content; ?>
+                    </div>
+                    <!-- 右侧 -->
+                    <div class="col-xl-auto w-xl-300 d-none d-xl-block p-0 right-side col-12">
+                        <!-- 标签云 -->
+                        <div class="md-4 " style="max-width:300px;">
+                            <div class="hot-tag-wrap rounded card">
+                                <div class="d-flex justify-content-between bg-transparent card-header" style="padding: 8px 16px">
+                                    <strong>热门标签</strong>
+                                    <?= Html::a("全部<i class='ms-1 right-icon fa fa-chevron-right fa-xs'></i>","#",['class'=>" float-end text-success"]) ?>
+                                </div>
+                                <div class="card-body ">
+                                    <?php
+                                        $data = \frontend\models\Tag::getTags();
+                                        if(is_array($data) && !empty($data)){
 
-                           iufgggocwertwertwertwert
+                                            foreach ($data as $value){
+                                                echo Html::a($value,['site/index',['SearchArticle[label]'=>$value],['class'=>'btn btn-default']]);
+                                            }
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 热门文章 -->
+                        <div class="w-xl-300 mb-4 mt-4" style="max-width:300px; ">
+                            <div class="overflow-hidden card">
+                                <div class="bg-transparent  card-header"><strong>热门文章</strong></div>
+                                <div class="list-group list-group-flush">
+                                    <?php
+                                        $top10 = \frontend\models\Article::ArticleTop10();
+                                        if(!empty($top10) && is_array($top10)){
+                                            $i=1;
+                                            foreach ($top10 as $article){
+                                    ?>
+                                    <a href="<?= \yii\helpers\Url::to(['site/view','id'=>$article['id']]) ?>" target="_blank" class="list-group-item ">
+                                        <div class="media">
+                                            <span class="text-white me-3 mt-1 badge-1 badge bg-secondary"><?= $i ?></span>&nbsp;
+                                            <div class="media-body">
+                                                <div class="text-body"><?= $article['title'] ?></div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <?php
+                                                $i++;
+                                            }
+                                        }
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

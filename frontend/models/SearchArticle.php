@@ -18,8 +18,7 @@ class SearchArticle extends Article
     public function rules()
     {
         return [
-            ['user_id','default','value' =>Yii::$app->user->id ],
-            [['id', 'user_id', 'created_at', 'updated_at', 'visits'], 'integer'],
+            [['id', 'user_id', 'created_at', 'updated_at', 'visits', 'fabulous'], 'integer'],
             [['label', 'title', 'content', 'status', 'classification'], 'safe'],
         ];
     }
@@ -62,6 +61,7 @@ class SearchArticle extends Article
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'visits' => $this->visits,
+            'fabulous' => $this->fabulous,
         ]);
 
         $query->andFilterWhere(['like', 'label', $this->label])

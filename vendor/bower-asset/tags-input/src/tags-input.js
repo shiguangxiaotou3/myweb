@@ -104,7 +104,7 @@ export default function tagsInput(input) {
 		return false;
 	}
 
-	let base = createElement('div', 'tags-input'),
+	let base = createElement('div', 'tags-input form-control'),
 		sib = input.nextSibling;
 	input.parentNode[sib?'insertBefore':'appendChild'](base, sib);
 
@@ -113,6 +113,8 @@ export default function tagsInput(input) {
 
 	base.input = createElement('input');
 	base.input.setAttribute('type', 'text');
+
+	//base.input.className +='form-control';
 	COPY_PROPS.forEach( prop => {
 		if (input[prop]!==base.input[prop]) {
 			base.input[prop] = input[prop];

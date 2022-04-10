@@ -18,6 +18,11 @@ class Bilibili extends Component
     public  $roomId ="";
     public $day=15;
 
+    /**
+     * 获取b站api数据
+     *
+     * @return mixed
+     */
     public function getData(){
         $data =file_get_contents($this->url.$this->roomId);
         return json_decode($data);

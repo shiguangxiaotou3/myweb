@@ -2,13 +2,13 @@
 
 use yii\helpers\Html;
 
-
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Article */
-
+/* @var $model frontend\models\Tag */
 ?>
-<div class="article-create">
+<div class="tag-update">
+
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+
 </div>

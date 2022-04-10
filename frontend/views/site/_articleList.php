@@ -1,51 +1,47 @@
 <?php
 use \yii\helpers\Html;
+use common\assets\adminlte\components\IoniconsAssets;
+use common\assets\adminlte\components\FontAwesomeAssets;
+FontAwesomeAssets::register($this);
+/** @var  $model frontend\models\Article*/
 
-/** @var $model frontend\models\Article*/
 ?>
 
+<div class="content" style="">
+    <h5>
+        <!-- 标题 -->
+        <?= Html::a($model->title,'#',['class'=>'title text-body','target'=>'_blank']); ?>
+    </h5>
+    <div class="info-wrap d-flex align-items-center text-secondary pt-1">
+        <!-- 作者头像 -->
+        <?= Html::a(Html::img('/img/avatar.png',['alt'=>$model->username,
+            'class'=>'avatar rounded-circle','style'=>'width: 24px;height: 24px;']),
+                "#",['rel'=>'noreferrer','target'=>'_blank']).'&nbsp;';?>
 
-<li class="item-wrap py-3 mb-2 mb-sm-0 list-group-item">
-    <div class="content">
-        <h5>
-            <!--标题 -->
-            <?= Html::a($model->title,["inbox/view"],[
-                'class'=>'title text-body',
-                'target'=>'_blank']);
-            ?>
-        </h5>
-        <div class="info-wrap d-flex align-items-center text-secondary pt-1">
-            <!-- 作者头像 -->
-            <?= Html::a(
-                Html::beginTag('img',['src'=>"", 'alt'=>'',]).Html::beginTag('img'),
-                ['inbox/view'],
-                ['rel'=>'noreferrer','target'=>'_blank'])
-            ?>
-            <!-- 作者名称 -->
-            <?= Html::a(
-                '<span class=\'name ms-2 me-1\'>'.$model->userName.'</span>',
-                ['inbox/view'],
-                ['rel'=>'noreferrer','target'=>'_blank'])
-            ?>
+        <!-- 作者名称 -->
+        <?= Html::a(Html::beginTag('span',['class'=>'name ms-2 me-1 text text-success'])
+            .$model->username. Html::endTag('span'),
+            "#",['class'=>'text-primary','target'=>'_blank']).'&nbsp;&nbsp;&nbsp;';?>
 
-            <i class="me-1 text-warning fas fa-badge-check"></i>
-            <span class="split-dot"></span>
-            <!-- 发布日期 -->
-            <span class="create-time  d-flex align-items-center">3 月 23 日</span>
-            <!-- 点赞数量 -->
-            <?= Html::a(
-                "<i class=\"far fa-thumbs-up\"></i><span class=\"ms-1\">6</span></a>",
-                '#',
-                    ['class'=>'like ms-3 me-3 d-flex align-items-center text-secondary']);
-            ?>
-            <a class="like ms-3 me-3 d-flex align-items-center text-secondary">
-                <i class="far fa-thumbs-up"></i>
-                <span class="ms-1">6</span></a>
-            <!-- 评论数量 -->
-            <a class="comment d-flex align-items-center text-secondary me-3" href="/a/1190000041592141#comment-area" target="_blank">
-                <i class="far fa-message-lines"></i>
-                <span class="ms-1">3</span>
-            </a>
-        </div>
+
+        <!--<i class="me-1 text-warning fas fa-badge-check"></i>-->
+        <!--<span class="split-dot"></span>-->
+
+         <!--发布时间 -->
+        <?=  Html::beginTag('span',['class'=>'create-time  d-flex align-items-center ']).
+            "&nbsp;&nbsp;<i class='fa fa-calendar-check-o'></i> ".'&nbsp;'.date('Y-m-d', $model->created_at).'&nbsp;&nbsp;'.
+            Html::endTag('span').'&nbsp;&nbsp;&nbsp;';?>
+
+
+        <!--访问量 -->
+        <?= Html::a('<i class="fa fa-signal"></i><span class="ms-1 ">&nbsp;'.$model->visits.' </span></a>','#',
+            ['class'=>'like ms-3 me-3 d-flex align-items-center text-secondary','title'=>'访问量']).'&nbsp;&nbsp;&nbsp;';?>
+
+        <!--点赞数量 -->
+        <?= Html::a('<i class="fa fa-thumbs-o-up text-danger"></i><span class="ms-1">&nbsp;6</span></a>','#',
+            ['class'=>'comment d-flex align-items-center text-secondary me-3','title'=>'点赞']).'&nbsp;&nbsp;&nbsp;';?>
+
+        <!--评论数量 -->
+        <?= Html::a('<i class="fa fa-comments"></i><span class="ms-1">&nbsp;6</span></a>').'&nbsp;&nbsp;&nbsp;'; ?>
     </div>
-</li>
+</div>
