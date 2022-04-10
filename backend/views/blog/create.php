@@ -61,10 +61,6 @@ $session =Yii::$app->session;
     </div>
 
 <?php
-if (isset($session['Article'])){
-    dump($session['Article']);
-}
-
 $js =<<<JS
     $("#article-content").wysihtml5();
 JS;

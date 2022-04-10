@@ -3,6 +3,7 @@
 
 namespace backend\controllers;
 use frontend\models\Article;
+use frontend\models\Comment;
 use frontend\models\Tag;
 use MathPHP\Statistics\Correlation;
 use common\components\dns\Domain;
@@ -20,9 +21,11 @@ use yii\web\Controller;
 class TestController  extends Controller{
 
     public function actionIndex(){
-//        $a=array("red","green","blue","yellow","brown");
-//        $data =array_slice($a,0,4);
-        $data= Article::ArticleTop10();
+        $data= Comment::find()
+            ->where(['article_id'=>110])
+            ->andWhere(['status'=>1])
+            //->orderBy(['created_at'=>'SORT_DESC'])
+            ->asArray()->all();
 
         return $this->render('index',['data'=>  $data ]);
     }

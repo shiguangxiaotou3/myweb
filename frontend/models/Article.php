@@ -85,6 +85,24 @@ class Article extends \yii\db\ActiveRecord
     }
 
     /**
+     * 访问量
+     */
+    public function addVisits(){
+       $this->visits +=1;
+       $this->save(false);
+    }
+
+    /**
+     * 点赞
+     */
+    public function addFabulous(){
+       $this->fabulous +=1;
+       $this->save(false);
+    }
+
+
+
+    /**
      * 获取作者名字
      * @return string
      */
@@ -99,4 +117,16 @@ class Article extends \yii\db\ActiveRecord
         $model= self::find()->select(['id','title'])->orderBy(['fabulous'=>'SORT_DESC'])->asArray()->all();
        return array_slice($model,0,10);
     }
+
+    /**
+     * 获取评论
+     * @return \yii\db\ActiveQuery
+     */
+    public function getComment(){
+        return Comment::find()
+            ->where(['article_id'=>$this->id])
+            ->andWhere(['status'=>1])
+            ->orderBy(['created_at'=>'SORT_DESC']) ->all();
+    }
+
 }

@@ -14,7 +14,6 @@ $this->title = '家';
         'beforeItem'=>'',
         'afterItem'=>'<div class="bg-white py-3 text-center  card-footer"><a href="###">加载更多</a></div>',
         'dataProvider' => $dataProvider,
-//               'filterModel' => $searchModel,
         'itemView' => '_articleList',
     ]);
     ?>

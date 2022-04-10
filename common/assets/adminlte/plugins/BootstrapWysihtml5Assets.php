@@ -13,7 +13,7 @@ class BootstrapWysihtml5Assets extends AssetBundle
         'bootstrap3-wysihtml5.all.js'
     ];
     public $depends = [
-        'dmstr\web\AdminLteAsset',
+       'dmstr\web\AdminLteAsset',
     ];
 
 //    /**

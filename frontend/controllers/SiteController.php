@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 
+use frontend\models\Article;
+use frontend\models\Comment;
 use frontend\models\SearchArticle;
 use Yii;
 use yii\web\Controller;
@@ -28,33 +30,33 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
-                'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
+//    public function behaviors()
+//    {
+//        return [
+//            'access' => [
+//                'class' => AccessControl::className(),
+//                'only' => ['logout', 'signup','comment'],
+//                'rules' => [
+//                    [
+//                        'actions' => ['signup'],
+//                        'allow' => true,
+//                        'roles' => ['?'],
+//                    ],
+//                    [
+//                        'actions' => ['logout','comment'],
+//                        'allow' => true,
+//                        'roles' => ['@'],
+//                    ],
+//                ],
+//            ],
+//            'verbs' => [
+//                'class' => VerbFilter::className(),
+//                'actions' => [
+//                    'logout' => ['post'],
+//                ],
+//            ],
+//        ];
+//    }
 
     /**
      * {@inheritdoc}
@@ -84,6 +86,39 @@ class SiteController extends Controller
         return $this->render('index',[
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,]);
+    }
+
+    /**
+     * 查看文章
+     * @param $id
+     * @return string
+     */
+    public function actionView($id){
+
+        $model = Article::findOne($id);
+        $model->addVisits();
+        return $this->render('view',['model'=>$model]);
+    }
+
+    /**
+     * 提交评论
+     */
+    public function actionComment(){
+        $request =Yii::$app->request;
+        if($request->isPost){
+            $model = new Comment();
+            if($model->load($request->post()) && $model->save()){
+                 $this->goBack();
+                 logObject('评论成功');
+            }else{
+                logObject($model->getErrors());
+                return false;
+            }
+        }
+    }
+
+    public function actionAdd(){
+
     }
 
     /**

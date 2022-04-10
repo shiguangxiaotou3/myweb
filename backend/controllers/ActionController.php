@@ -4,6 +4,7 @@
 namespace backend\controllers;
 
 
+use frontend\models\Article;
 use Yii;
 use yii\web\Controller;
 use yii\filters\AccessControl;
@@ -42,6 +43,7 @@ class ActionController extends Controller
      * @return string
      */
     public function actionIndex(){
+        Article::deleteAll();
         return $this->render('index');
     }
 

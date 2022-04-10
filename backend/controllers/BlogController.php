@@ -75,7 +75,7 @@ class BlogController extends Controller
                     $model->content = $session['Article']['content'];
                     if($model->save()){
                         Yii::$app->session->setFlash('success', '发布成功');
-                        //unset($session['Article']);
+                        unset($session['Article']);
                         return  $this->render('create',['model'=> new Article() ]);
                     }
                 }else{

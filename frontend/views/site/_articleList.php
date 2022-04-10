@@ -1,8 +1,7 @@
 <?php
 use \yii\helpers\Html;
 use common\assets\adminlte\components\IoniconsAssets;
-use common\assets\adminlte\components\FontAwesomeAssets;
-FontAwesomeAssets::register($this);
+
 /** @var  $model frontend\models\Article*/
 
 ?>
@@ -10,7 +9,7 @@ FontAwesomeAssets::register($this);
 <div class="content" style="">
     <h5>
         <!-- 标题 -->
-        <?= Html::a($model->title,'#',['class'=>'title text-body','target'=>'_blank']); ?>
+        <?= Html::a($model->title,['site/view','id'=>$model->id],['class'=>'title text-body','target'=>'_blank'])."&nbsp;<small class='text-info'>dasd</small>"; ?>
     </h5>
     <div class="info-wrap d-flex align-items-center text-secondary pt-1">
         <!-- 作者头像 -->
@@ -34,14 +33,14 @@ FontAwesomeAssets::register($this);
 
 
         <!--访问量 -->
-        <?= Html::a('<i class="fa fa-signal"></i><span class="ms-1 ">&nbsp;'.$model->visits.' </span></a>','#',
+        <?= Html::a('<i class="fa fa-signal"></i><span class="ms-1 ">&nbsp;<span class="badge badge-success">'.$model->visits.' </span></span></a>','#',
             ['class'=>'like ms-3 me-3 d-flex align-items-center text-secondary','title'=>'访问量']).'&nbsp;&nbsp;&nbsp;';?>
 
         <!--点赞数量 -->
-        <?= Html::a('<i class="fa fa-thumbs-o-up text-danger"></i><span class="ms-1">&nbsp;6</span></a>','#',
+        <?= Html::a('<i class="fa fa-thumbs-o-up text-danger"></i><span class="ms-1">&nbsp;<span class="badge badge-warning">'.$model->fabulous.'</span></span></a>','#',
             ['class'=>'comment d-flex align-items-center text-secondary me-3','title'=>'点赞']).'&nbsp;&nbsp;&nbsp;';?>
 
         <!--评论数量 -->
-        <?= Html::a('<i class="fa fa-comments"></i><span class="ms-1">&nbsp;6</span></a>').'&nbsp;&nbsp;&nbsp;'; ?>
+        <?= Html::a('<i class="fa fa-comments"></i><span class="ms-1">&nbsp;<span class="badge badge-info">6</span></span></a>').'&nbsp;&nbsp;&nbsp;'; ?>
     </div>
 </div>
