@@ -21,9 +21,12 @@ use yii\web\Controller;
 class TestController  extends Controller{
 
     public function actionIndex(){
-        $imap = Yii::$app->imap;
-        $imap->open( 'qqMailer');
-        $data ='';
+
+        $file = Yii::$app->file;
+        $file->alias ='@frontend/runtime/debug';
+        $data['frontend'] =$file->permissionsNumber;
+        $file->alias ='@backend/runtime/debug';
+        $data['backend'] =$file->permissionsNumber;
 
         return $this->render('index',['data'=>  $data ]);
     }

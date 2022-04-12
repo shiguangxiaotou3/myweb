@@ -1,6 +1,7 @@
 <?php
 
 namespace backend\controllers;
+use frontend\models\Comment;
 use frontend\models\SearchArticle;
 use Yii;
 use yii\filters\AccessControl;
@@ -70,6 +71,10 @@ class BlogController extends Controller
             $action = $request->post('action');
             if($action == "save"){
                 if(isset($session['Article'])){
+                    /** 发布文章被提交到这里 保存 */
+                    if( isset( $session['Article']['id'])){
+                        $model= Article::findOne($session['Article']['id']);
+                    }
                     $model->title = $session['Article']['title'];
                     $model->label = $session['Article']['label'];
                     $model->content = $session['Article']['content'];
@@ -112,26 +117,15 @@ class BlogController extends Controller
             $model->title = $session['Article']['title'];
             $model->label = $session['Article']['label'];
         }
-
         if($request->isPost) {
             $action = $request->post('action');
             if($action == "save"){
-                if(isset($session['Article'])){
-                    $model->title = $session['Article']['title'];
-                    $model->label = $session['Article']['label'];
-                    $model->content = $session['Article']['content'];
-                    if($model->save()){
-                        Yii::$app->session->setFlash('success', '发布成功');
-                        unset($session['Article']);
-                        return  $this->render('create',['model'=> new Article() ]);
-                    }
-                }else{
-                    Yii::$app->session->setFlash('error', '发不成功.请先保存在发布文章');
-                }
+
             }else{
                 //更新session数据
                 if($model->load($request->post()) && $model->validate()){
                     $session['Article']=[
+                        'id' => $model->id,
                         'title' => $model->title,
                         'label' => $model->label,
                         'content' => $model->content ,
@@ -198,6 +192,8 @@ class BlogController extends Controller
     {
         $request = Yii::$app->request;
         $this->findModel($id)->delete();
+        //删除评论
+        Comment::deleteAll(['article_id'=>$id]);
 
         if($request->isAjax){
             /*
@@ -228,6 +224,7 @@ class BlogController extends Controller
         $pks = explode(',', $request->post( 'pks' )); // Array or selected records primary keys
         foreach ( $pks as $pk ) {
             $model = $this->findModel($pk);
+            Comment::deleteAll(['article_id'=>$pk]);
             $model->delete();
         }
 

@@ -3,31 +3,33 @@
 /* @var $this yii\web\View */
 /* @var $content string */
 
+
+use yii\bootstrap4\Nav;
+use yii\bootstrap4\Html;
+use yii\bootstrap4\NavBar;
 use common\widgets\Alert;
 use frontend\assets\AppAsset;
-use yii\bootstrap4\Html;
-use yii\bootstrap4\Nav;
-use yii\bootstrap4\NavBar;
-use \common\models\basic\Color;
+use \common\widgets\tag\TagWidget;
 use common\assets\adminlte\components\FontAwesomeAssets;
+
 FontAwesomeAssets::register($this);
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class="h-100">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-    <style type="text/css">
-        a:hover{text-decoration: none}
-    </style>
-</head>
-<body class="d-flex flex-column h-100" style="background-color:rgb(239,239,239) ">
-<?php $this->beginBody() ?>
+    <!DOCTYPE html>
+    <html lang="<?= Yii::$app->language ?>" class="h-100">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <?php $this->registerCsrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+        <style type="text/css">
+            a:hover{text-decoration: none}
+        </style>
+    </head>
+    <body class="d-flex flex-column h-100" style="background-color:rgb(239,239,239) ">
+    <?php $this->beginBody() ?>
     <!-- 页头 -->
     <header >
         <?php
@@ -65,13 +67,14 @@ AppAsset::register($this);
     </header >
     <!-- 内容 -->
     <div class="container" style="padding-top: 20px">
-        <div class="row">
-            <?= Alert::widget(); ?>
+        <div class="row ">
+            <div class="col">
+                <?= Alert::widget(); ?>
+            </div>
         </div>
         <div class="content" >
             <!-- 左侧边栏 -->
-            <!--
-            <div class="d-none d-lg-block col-2" style="padding:0;"></div>-->
+
             <!-- 中栏 -->
             <div class="col" style="margin: 0px;padding: 0">
                 <div class="row">
@@ -107,7 +110,7 @@ AppAsset::register($this);
                                     </a>
 
                                     <?php
-                                        $url =Yii::$app->request->getHostInfo().Yii::$app->request->url;
+                                    $url =Yii::$app->request->getHostInfo().Yii::$app->request->url;
                                     echo Html::hiddenInput('copyUrl',$url,['id'=>'copyUrl']);
                                     ?>
                                     <a href="<?= \yii\helpers\Url::to(['site/contact']) ?>" class="btn btn-default  col" >
@@ -117,18 +120,21 @@ AppAsset::register($this);
                                 </div>
                             </div>
                             <!-- 标签云 -->
-                            <div class="hot-tag-wrap rounded card" style="margin-bottom: 20px">
+                            <div class="hot-tag-wrap rounded card bg " style="margin-bottom: 20px">
                                 <div class="d-flex justify-content-between bg-transparent card-header" style="padding: 8px 16px">
                                     <strong>热门标签</strong>
                                     <?= Html::a("全部<i class='ms-1 right-icon fa fa-chevron-right fa-xs'></i>","#",['class'=>" float-end text-success"]) ?>
                                 </div>
-                                <div class="card-body ">
+                                <div class="card-body " style="padding: 10px">
                                     <?php
                                     $data = \frontend\models\Tag::getTags();
                                     if(is_array($data) && !empty($data)){
 
                                         foreach ($data as $value){
-                                            echo Html::a($value,['site/index',['SearchArticle[label]'=>$value],['class'=>'btn btn-default']]);
+                                            echo Html::a(
+                                                    Html::tag('span', $value, ['class'=>"badge rounded-pill ".TagWidget::randomBg()]),
+                                                    ['site/index', ['SearchArticle[label]'=>$value]]
+                                                )."\n";
                                         }
                                     }
                                     ?>
@@ -172,20 +178,20 @@ AppAsset::register($this);
             <p class="float-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
-<?php
-    $js=<<<JS
+    <?php
+$js=<<<JS
     $("#cy").on('onclick',function(){
         var url = $("#copyUrl").val();
         console.log(url);
-        //window.clipboardData.setData('Text',url);
+        
         alert('复制链接成功！');
     });
 JS;
     $this->registerJs($js);
 
-?>
+    ?>
 
-<?php $this->endBody() ?>
-</body>
-</html>
+    <?php $this->endBody() ?>
+    </body>
+    </html>
 <?php $this->endPage();

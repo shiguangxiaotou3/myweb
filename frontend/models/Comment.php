@@ -9,6 +9,7 @@ use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "comment".
  *
+ *
  * @property int $id
  * @property int|null $article_id 文章id
  * @property string $username 用户名
@@ -18,6 +19,7 @@ use yii\behaviors\TimestampBehavior;
  * @property int|null $status 是否已读
  * @property int $created_at 创建时间
  * @property int $updated_at 修改时间
+ * @property-read  $commentReply 评论回复
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -36,9 +38,11 @@ class Comment extends \yii\db\ActiveRecord
     {
         return [
             ['user_id','default','value' => Yii::$app->user->id],
+            ['message_id','default','value'=>0],
             ['status','default','value' => 1],
             [['article_id', 'user_id', 'message_id', 'status', /*'created_at', 'updated_at'*/], 'integer'],
 //            [['created_at', 'updated_at'], 'required'],
+            ['message_id','integer'],
             [['message'], 'string', 'max' => 255],
         ];
     }
@@ -80,5 +84,14 @@ class Comment extends \yii\db\ActiveRecord
      */
     public function getUsername(){
         return User::findOne($this->user_id)->username;
+    }
+
+    /**
+     *  获取评论回复
+     */
+    public  function getCommentReply(){
+        return Comment::find()
+            ->where(['message_id'=>$this->id])
+            ->orderBy(['created_at'=>'SORT_DESC'])->all();
     }
 }

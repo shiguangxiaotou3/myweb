@@ -46,6 +46,7 @@ class Article extends \yii\db\ActiveRecord
             [['user_id', 'status', 'fabulous'/*'created_at', 'updated_at'*/], 'integer'],
             [['content'], 'string'],
             [['label', 'title'], 'string', 'max' => 255],
+            [['label'], 'validateTags'],
         ];
     }
 
@@ -67,6 +68,29 @@ class Article extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app', '修改时间'),
             'fabulous' => Yii::t('app', '点赞'),
         ];
+    }
+
+    /**
+     * 验证标签是否定义
+     * @param $attribute
+     * @param bool $clearErrors
+     */
+    public function validateTags($attribute , $clearErrors = true)
+    {
+        $tags= Tag::getTags();
+        $str= $this->label;
+        if(strpos($str,",")){
+            $data = explode(',',$str);
+            foreach ($data as $datum){
+                if(!in_array($datum,$tags)){
+                    return $this->addError($attribute,"标签".$datum."为定义");
+                }
+            }
+        }else{
+            if(!in_array($str,$tags)){
+                return $this->addError($attribute,"标签".$str."为定义");
+            }
+        }
     }
 
     /**
@@ -126,7 +150,7 @@ class Article extends \yii\db\ActiveRecord
         return Comment::find()
             ->where(['article_id'=>$this->id])
             ->andWhere(['status'=>1])
+            ->andWhere(['message_id'=>0])
             ->orderBy(['created_at'=>'SORT_DESC']) ->all();
     }
-
 }

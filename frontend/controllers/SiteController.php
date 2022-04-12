@@ -2,13 +2,11 @@
 
 namespace frontend\controllers;
 
-
-
-
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use yii\widgets\ActiveForm;
 use frontend\models\Article;
 use frontend\models\Comment;
 use common\models\LoginForm;
@@ -22,9 +20,6 @@ use frontend\models\ResetPasswordForm;
 use yii\base\InvalidArgumentException;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResendVerificationEmailForm;
-
-
-
 
 /**
  * Site controller
@@ -58,6 +53,7 @@ class SiteController extends Controller
                 'actions' => [
                     'logout' => ['post'],
                     'add-fabulous'=>['post'],
+                    //'reply'=>['ajax']
                 ],
             ],
         ];
@@ -113,11 +109,58 @@ class SiteController extends Controller
         if($request->isPost){
             $model = new Comment();
             if($model->load($request->post()) && $model->save()){
-                 $this->goBack();
+                Yii::$app->session->setFlash('success', '留言成功！');
+
+               return    $this->redirect(['/site/view/'.$model->article_id]);
             }else{
                 logObject($model->getErrors());
                 return false;
             }
+        }
+    }
+
+    /**
+     * 评论留言
+     *
+     */
+    public function actionReply(){
+        $request =Yii::$app->request;
+        $model = new Comment();
+        if($request->isAjax){
+
+            if($request->isGet){
+                $article_id =$request->get('article_id');
+                $message_id = $request->get('message_id');
+                if(isset($message_id) && !empty($message_id) &&
+                    isset($article_id) && !empty($article_id)){
+                    $model->article_id = $article_id;
+                    $model->message_id =$message_id;
+                    return $this->renderAjax('reply',['model'=>$model]);
+                }
+
+            }elseif ($request->isPost){
+                if($model->load($request->post()) && $model->save()){
+                    Yii::$app->session->setFlash('success', '留言成功！');
+                    $model->message ='';
+                    return $this->renderAjax('reply',['model'=>$model]);
+                }else{
+                    \Yii::$app->response->format = Response::FORMAT_JSON;
+                    return ActiveForm::validate($model);
+                }
+            }
+        }
+    }
+
+    /**
+     * 评论留言
+     * @return mixed
+     */
+    public function actionValidateReply(){
+        $model = new Comment();
+        $request = \Yii::$app->getRequest();
+        if ($request->isPost && $model->load($request->post())) {
+            \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
         }
     }
 
