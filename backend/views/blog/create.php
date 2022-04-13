@@ -1,6 +1,7 @@
 <?php
 use \yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use common\widgets\tag\TagWidget;
 use mludvik\tagsinput\TagsInputWidget;
 use common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
 
@@ -24,15 +25,31 @@ $session =Yii::$app->session;
             <?php
 
             $from = ActiveForm::begin(['id'=>'Article']);
+            //文章id
             if(isset($model->id)){
                 echo $from->field($model,'id')->hiddenInput()->label(false);
             }
+
+            //标题
             echo $from->field($model, 'title')
                 ->textInput(['placeholder' => '标题' ,'class' => 'form-control'])->label(false);
 
-
+            //标签
             echo  $from->field($model, 'label')
                 ->widget(TagsInputWidget::className(),['options' => ['class'=>'form-control']]);
+
+            //标签快速按钮
+            echo "<div class=\"form-group\">";
+                $data = \frontend\models\Tag::getTags();
+                if(is_array($data) && !empty($data)){
+                    foreach ($data as $value){
+                       echo Html::tag('span', $value, [
+                           'class'=>"badge rounded-pill ".TagWidget::randomBg(),
+                           'onclick'=>"addTag(this)",
+                       ])."\n";
+                    }
+                }
+            echo '</div>';
 
             //内容
             echo $from->field($model, 'content', [
@@ -45,6 +62,7 @@ $session =Yii::$app->session;
         <div class="box-footer">
             <div class="pull-right">
                 <?php
+                //发布按钮
                   echo  Html::a('<i class="fa fa-pencil"></i> 发布',
                         ['blog/create'],[
                             'data'=>[
@@ -65,6 +83,17 @@ $session =Yii::$app->session;
 
 <?php
 $js =<<<JS
+    
     $("#article-content").wysihtml5();
+    window.addTag = function addTag(obj){
+        var tag= $(obj);
+        var input = $('.tags-input input');
+        //设置值
+        $(input).val(tag.text());
+        //获得焦点
+        $(input).focus();
+        //失去焦点
+        $(input).blur();
+    }
 JS;
 $this->registerJs($js);

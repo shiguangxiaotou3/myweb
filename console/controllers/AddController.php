@@ -29,7 +29,7 @@ class AddController extends Controller
      * 数据迁移生成 rbac数据表
      */
     public function actionRbac(){
-        $PATH =  "sudo php ".dirname(Yii::getAlias("@common"))."/yii  ";
+        $PATH =  " php ".dirname(Yii::getAlias("@common"))."/yii  ";
         system($PATH.' migrate/up --migrationPath=@yii/rbac/migrations ');
     }
 

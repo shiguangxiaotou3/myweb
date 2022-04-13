@@ -38,15 +38,15 @@ use common\assets\adminlte\components\IoniconsAssets;
 
         <!--访问量 -->
         <?= Html::a('<i class="fa fa-signal"></i><span class="ms-1 ">&nbsp;<span class="badge badge-success">'.$model->visits.' </span></span></a>','#',
-            ['class'=>'like ms-3 me-3 d-flex align-items-center text-secondary','title'=>'访问量']).'&nbsp;&nbsp;&nbsp;';?>
+            ['class'=>'like ms-3 me-3 d-flex align-items-center text-secondary','title'=>'访问量']).'&nbsp;&nbsp;';?>
 
         <!--点赞数量 -->
         <?= Html::a('<i class="fa fa-thumbs-o-up text-danger"></i>
                 <span class="ms-1">&nbsp;<span class="badge badge-warning">'.$model->fabulous.'</span></span></a>','javascript:;', [
             'class'=>'comment d-flex align-items-center text-secondary me-3',
-            'title'=>'点赞','id'=>$model->id, 'onclick'=>'AddFabulous(this)']).'&nbsp;&nbsp;&nbsp;';?>
+            'title'=>'点赞','id'=>$model->id, 'onclick'=>'AddFabulous(this)']).'&nbsp;&nbsp;';?>
 
         <!--评论数量 -->
-        <?= Html::a('<i class="fa fa-comments"></i><span class="ms-1">&nbsp;<span class="badge badge-info">6</span></span></a>').'&nbsp;&nbsp;&nbsp;'; ?>
+        <?= Html::a('<i class="fa fa-comments"></i><span class="ms-1">&nbsp;<span class="badge badge-info">'.$model->commentNumber.'</span></span></a>').'&nbsp;&nbsp;'; ?>
     </div>
 </div>

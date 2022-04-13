@@ -11,6 +11,7 @@ use yii\behaviors\TimestampBehavior;
  *
  * @property int $id
  * @property int $user_id 模块id
+ * @property-read integer $commentNumber 评论数量
  * @property-read string $username 用户名
  * @property string $label 标签
  * @property string|null $title 标题
@@ -109,11 +110,18 @@ class Article extends \yii\db\ActiveRecord
     }
 
     /**
-     * 访问量
+     * 保存访问量
      */
     public function addVisits(){
        $this->visits +=1;
        $this->save(false);
+    }
+
+    /**
+     * @return int|string|null
+     */
+    public function getCommentNumber(){
+        return Comment::find()->where(['article_id'=>$this->id])->count();
     }
 
     /**
@@ -144,7 +152,7 @@ class Article extends \yii\db\ActiveRecord
 
     /**
      * 获取评论
-     * @return \yii\db\ActiveQuery
+     * @return yii\db\ActiveQuery
      */
     public function getComment(){
         return Comment::find()
