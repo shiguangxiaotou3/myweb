@@ -1,19 +1,29 @@
 <?php
 
+use yii\web\View;
+use yii\helpers\Url;
+use yii\widgets\Pjax;
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
 use frontend\models\Comment;
-use \yii\helpers\Html;
-use  \yii\widgets\ActiveForm;
-use \yii\widgets\Pjax;
-use \yii\helpers\Url;
+use common\assets\MacCodeAssets;
+use common\assets\HighlightAssets;
+
 
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Article */
+
+
 $this->title = '家';
 
-//$str =json_decode()
-?>
-<div class="content-list-wrap bg-white" style="padding: 10px 15px">
 
+MacCodeAssets::register($this);
+HighlightAssets::register($this,View::POS_HEAD);
+
+$this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
+?>
+<span class="code-titer" style="border-left: white solid 1px;border-bottom-left-radius: "> </span>
+<div class="content-list-wrap bg-white" style="padding: 10px 15px">
     <div class="row">
         <div class="col col-lg-12">
             <?php if(isset($model)){ ?>
@@ -25,9 +35,7 @@ $this->title = '家';
                 <!--页脚 -->
                 <div class="footer" style="margin: 0px -15px;
                 border-top:rgb(200,200,200) solid 1px;
-                border-bottom:rgb(200,200,200) solid 1px ">
-                    页脚
-                </div>
+                border-bottom:rgb(200,200,200) solid 1px "></div>
 
                 <!-- 留言-->
                 <h2>留言</h2>
@@ -108,3 +116,5 @@ $this->title = '家';
     </div>
 
 </div>
+<?php
+

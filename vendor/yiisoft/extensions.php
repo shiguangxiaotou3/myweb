@@ -210,24 +210,6 @@ return array (
       '@himiklab/handsontable' => $vendorDir . '/himiklab/yii2-handsontable-widget',
     ),
   ),
-  'mihaildev/yii2-elfinder' => 
-  array (
-    'name' => 'mihaildev/yii2-elfinder',
-    'version' => '1.4.0.0',
-    'alias' => 
-    array (
-      '@mihaildev/elfinder' => $vendorDir . '/mihaildev/yii2-elfinder',
-    ),
-  ),
-  'mihaildev/yii2-ckeditor' => 
-  array (
-    'name' => 'mihaildev/yii2-ckeditor',
-    'version' => '1.0.1.0',
-    'alias' => 
-    array (
-      '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
-    ),
-  ),
   'kartik-v/yii2-mpdf' => 
   array (
     'name' => 'kartik-v/yii2-mpdf',

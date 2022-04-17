@@ -13,25 +13,6 @@ return [
     'name'=>'前台模块',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'controllerMap' => [
-        'elfinder' => [
-            'class' => 'mihaildev\elfinder\PathController',
-            'access' => ['@'],
-            'root' => [
-                'path' => 'files',
-                'name' => 'Files'
-            ],
-            'watermark' => [
-                'source'         => __DIR__.'/logo.png', // Path to Water mark image
-                'marginRight'    => 5,          // Margin right pixel
-                'marginBottom'   => 5,          // Margin bottom pixel
-                'quality'        => 95,         // JPEG image save quality
-                'transparency'   => 70,         // Water mark image transparency ( other than PNG )
-                'targetType'     => IMG_GIF|IMG_JPG|IMG_PNG|IMG_WBMP, // Target image formats ( bit-field )
-                'targetMinPixel' => 200         // Target image minimum pixel size
-            ]
-        ]
-    ],
     'bootstrap' => ['log'],
     'language'=>'zh-CN',
     //模块

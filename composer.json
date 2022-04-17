@@ -37,8 +37,6 @@
         "newerton/yii2-fancybox": "^1.0",
         "mludvik/yii2-tags-input": "~1.0",
         "himiklab/yii2-handsontable-widget": "*",
-        "mihaildev/yii2-elfinder": "*",
-        "mihaildev/yii2-ckeditor": "*",
         "johnitvn/yii2-ajaxcrud": "*",
         "markrogoyski/math-php": "2.*"
     },

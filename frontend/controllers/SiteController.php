@@ -97,8 +97,11 @@ class SiteController extends Controller
     public function actionView($id){
 
         $model = Article::findOne($id);
-        $model->addVisits();
-        return $this->render('view',['model'=>$model]);
+        if($model){
+            $model->addVisits();
+            return $this->render('view',['model'=>$model]);
+        }
+
     }
 
     /**

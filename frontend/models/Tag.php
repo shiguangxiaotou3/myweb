@@ -3,9 +3,10 @@
 namespace frontend\models;
 
 use Yii;
-use yii\behaviors\TimestampBehavior;
+use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-
+use common\widgets\tag\TagWidget;
+use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "tag".
  *
@@ -98,5 +99,24 @@ class Tag extends \yii\db\ActiveRecord
         if(count($model)>0){
             return ArrayHelper::getColumn($model,'name');
         }
+    }
+
+
+    /**
+     * 生产标签云  无前端css
+     * @return bool|string
+     */
+    public static function TagsWidget(){
+        $tags = self::getTags();
+        $res =false;
+        if(is_array( $tags) && !empty( $tags)){
+            foreach ( $tags as $value){
+                $res .= Html::tag('span', $value, [
+                        'class'=>"badge rounded-pill ".TagWidget::randomBg(),
+                        'onclick'=>"addTag(this)",
+                    ])."\n";
+            }
+        }
+        return $res;
     }
 }

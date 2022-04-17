@@ -3,20 +3,14 @@ namespace common\assets\adminlte\components;
 
 use yii\web\AssetBundle;
 use yii;
-class CkeditorAssets extends AssetBundle
+class CKeditorAssets extends AssetBundle
 {
     public $sourcePath = '@vendor/almasaeed2010/adminlte/bower_components/ckeditor';
-    public $css = [];
+    public $css = [
+
+];
     public $js = [
-        'dist/jquery.js'
+        'ckeditor.js'
     ];
-    public $depends = [];
-
-//    /**
-//     * @inheritdoc
-//     */
-//    public $jsOptions = [
-//        'position' => yii\web\View::POS_HEAD,   // 这是设置所有js放置的位置
-//    ];
-
+    public $depends = ['common\assets\HighlightAssets'];
 }

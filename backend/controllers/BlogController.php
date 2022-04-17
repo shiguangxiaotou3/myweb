@@ -1,32 +1,38 @@
 <?php
 
 namespace backend\controllers;
-use frontend\models\Comment;
-use frontend\models\SearchArticle;
+
+use AlibabaCloud\SDK\Alidns\V20150109\Models\DescribeGtmLogsResponseBody\logs\log;
 use Yii;
-use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
 use yii\helpers\Html;
-use \yii\web\Controller;
-use frontend\models\Article;
-use yii\web\NotFoundHttpException;
 use yii\web\Response;
+use \yii\web\Controller;
+use yii\web\UploadedFile;
+use yii\filters\VerbFilter;
+use frontend\models\Article;
+use frontend\models\Comment;
+use yii\filters\AccessControl;
+use frontend\models\SearchArticle;
+use yii\web\NotFoundHttpException;
 
 class BlogController extends Controller
 {
 
+    /**
+     * {@inheritdoc}
+     */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
-                    [
-                        'actions' => ['create','index','update','view','delete','bulk-delete'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
+            [
+                'actions' => ['create','index','update','view','delete','file','bulk-delete'],
+                'allow' => true,
+                'roles' => ['@'],
+            ],
+        ],
             ],
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -104,7 +110,7 @@ class BlogController extends Controller
     }
 
     /**
-     * 写文章
+     * 修改文章
      *
      * @return string
      */
@@ -139,14 +145,15 @@ class BlogController extends Controller
         return  $this->render('create',['model'=>$model]);
     }
 
-
     /**
-     * Displays a single Article model.
-     * @param integer $id
-     * @return mixed
+     * 显示文章
+     * @param $id
+     * @return array|string
+     * @throws NotFoundHttpException
      */
     public function actionView($id)
     {
+        /** @var yii\web\Request $request */
         $request = Yii::$app->request;
         if($request->isAjax){
             Yii::$app->response->format = Response::FORMAT_JSON;
@@ -165,28 +172,18 @@ class BlogController extends Controller
         }
     }
 
-    /**
-     * Finds the Article model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Article the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Article::findOne($id)) !== null) {
-            return $model;
-        } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
-        }
+    public function actionFile(){
+
+        return $this->render('file');
     }
 
     /**
-     * Delete an existing Article model.
-     * For ajax request will return json object
-     * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
+     * 删除文章
+     *
+     * @param $id
+     * @return array|Response
+     * @throws NotFoundHttpException
+     * @throws yii\db\StaleObjectException
      */
     public function actionDelete($id)
     {
@@ -212,11 +209,11 @@ class BlogController extends Controller
     }
 
     /**
-     * Delete multiple existing Article model.
-     * For ajax request will return json object
-     * and for non-ajax request if deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
+     * 批量删除文章
+     *
+     * @return array|Response
+     * @throws NotFoundHttpException
+     * @throws yii\db\StaleObjectException
      */
     public function actionBulkDelete()
     {
@@ -241,6 +238,22 @@ class BlogController extends Controller
             return $this->redirect(['index']);
         }
 
+    }
+
+    /**
+     * Finds the Article model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Article the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Article::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
 }

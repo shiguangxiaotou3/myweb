@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/views/blog/file.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/assets/MacCode/js/code.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/assets/MacCodeAssets.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/models/basic/UploadForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/BcController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/blog/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/blog/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/test/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/assets/adminlte/components/CkeditorAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/adminlte/components/CkeditorAssets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/components/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/Tag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/almasaeed2010/adminlte/bower_components/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/almasaeed2010/adminlte/bower_components/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/Assets.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/AssetsJQueryAdapter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/CKEditor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/CHANGES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/adapters/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/build-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/ckeditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/contents.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/af.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/bn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/bs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/en-au.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/en-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/en-gb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/eo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/eu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/fo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/fr-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/gu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/is.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ka.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ku.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/mn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/pt-br.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/si.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sr-latn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/tt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/ug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/lang/zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/a11yhelp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/en-gb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/eo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/fr-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/gu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/hi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ku.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/lt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/mk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/mn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/pt-br.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/si.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sr-latn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/tt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/ug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/a11yhelp/dialogs/lang/zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/about/dialogs/about.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/about/dialogs/hidpi/logo_ckeditor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/about/dialogs/logo_ckeditor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/clipboard/dialogs/paste.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/colordialog/dialogs/colordialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/dialog/dialogDefinition.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/div/dialogs/div.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/find/dialogs/find.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/flash/dialogs/flash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/flash/images/placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/checkbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/form.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/hiddenfield.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/radio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/textarea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/dialogs/textfield.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/forms/images/hiddenfield.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/icons_hidpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/iframe/dialogs/iframe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/iframe/images/placeholder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/image/dialogs/image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/image/images/noimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/link/dialogs/anchor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/link/dialogs/link.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/link/images/anchor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/link/images/hidpi/anchor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/liststyle/dialogs/liststyle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/magicline/images/hidpi/icon-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/magicline/images/hidpi/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/magicline/images/icon-rtl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/magicline/images/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/pagebreak/images/pagebreak.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/pastefromword/filter/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/preview/preview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/scayt/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/scayt/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/scayt/dialogs/options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/scayt/dialogs/toolbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_address.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_blockquote.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_div.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_h6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/showblocks/images/block_pre.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/dialogs/smiley.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/angel_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/angel_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/angry_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/angry_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/broken_heart.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/broken_heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/confused_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/confused_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/cry_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/cry_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/devil_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/devil_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/embaressed_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/embarrassed_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/embarrassed_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/envelope.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/envelope.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/heart.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/heart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/kiss.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/kiss.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/lightbulb.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/lightbulb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/omg_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/omg_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/regular_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/regular_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/sad_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/sad_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/shades_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/shades_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/teeth_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/teeth_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/thumbs_down.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/thumbs_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/thumbs_up.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/thumbs_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/tongue_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/tongue_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/tounge_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/whatchutalkingabout_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/whatchutalkingabout_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/wink_smile.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/smiley/images/wink_smile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/_translationstatus.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/en-gb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/en.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/eo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/et.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/fi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/fr-ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/gl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/km.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ku.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/lv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/nb.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/pt-br.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/pt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/si.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/sq.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/th.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/tt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/ug.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/zh-cn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/lang/zh.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/specialchar/dialogs/specialchar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/table/dialogs/table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/tabletools/dialogs/tableCell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/dialogs/templates.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/dialogs/templates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/templates/default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/templates/images/template1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/templates/images/template2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/templates/templates/images/template3.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/dialogs/ciframe.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/dialogs/tmpFrameset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/dialogs/wsc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/dialogs/wsc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/plugins/wsc/dialogs/wsc_ie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/ajax.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/api.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/appendto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/assets/inlineall/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/assets/outputxhtml/outputxhtml.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/assets/posteddata.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/assets/sample.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/assets/uilanguages/languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/datafiltering.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/divreplace.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/inlineall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/inlinebycode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/inlinetextarea.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/jquery.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/dialog/assets/my_dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/dialog/dialog.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/enterkey/enterkey.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/htmlwriter/outputforflash.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/htmlwriter/outputhtml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/magicline/magicline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/toolbar/toolbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/plugins/wysiwygarea/fullpage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/readonly.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/replacebyclass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/replacebycode.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/sample.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/sample.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/sample_posteddata.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/tabindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/uicolor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/uilanguages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/samples/xhtmlstyle.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/dialog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/dialog_ie.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/dialog_ie7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/dialog_ie8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/dialog_iequirks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor_gecko.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor_ie.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor_ie7.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor_ie8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/editor_iequirks.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/icons_hidpi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/hidpi/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/hidpi/lock-open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/hidpi/lock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/hidpi/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/lock-open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/lock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/images/refresh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/skins/moono/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor/editor/styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/Assets.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/AssetsCallBack.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/ButtonWidget.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/ElFinder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/InputFile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/PathController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/PluginInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/assets/elfinder.callback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/assets/no.conflict.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/elFinderApi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/plugin/Sluggable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/views/connect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/views/manager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/volume/Base.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/volume/Local.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder/volume/UserPath.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/Changelog" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/css/elfinder.full.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/css/elfinder.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/css/theme.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/elfinder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/elfinder.legacy.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/files/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/files/.trash/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/arrows-active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/arrows-normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/crop.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/dialogs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_aceeditor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_ckeditor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_ckeditor5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_codemirror.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_creativecloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_onlineconvert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_pixlreditor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_pixlrexpress.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_simplemde.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_tinymce.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_tuiimgedit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/edit_zohooffice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/editor-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/icons-big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/icons-big.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/icons-small.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/progress.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/quicklook-bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/quicklook-icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/resize.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/spinner-mini.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/toolbar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/trashmesh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/tui-icon-a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/tui-icon-b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/tui-icon-c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/tui-icon-d.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/ui-icons_ffffff_256x240.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_box.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_box.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_dropbox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_dropbox.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_ftp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_ftp.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_googledrive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_googledrive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_local.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_local.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_network.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_network.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_onedrive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_onedrive.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_sql.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_sql.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_trash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_zip.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/img/volume_icon_zip.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/elfinder.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/elfinder.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/extras/editors.default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/extras/editors.default.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/extras/quicklook.googledocs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/extras/quicklook.googledocs.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.LANG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.bg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.cs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.da.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.el.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.es.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.fa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.fallback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.fo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.fr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.fr_CA.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.he.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.hr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.hu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.id.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.it.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ja.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ko.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.nl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.no.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.pl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.pt_BR.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ro.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ru.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.si.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.sk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.sl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.sr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.sv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.tr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.ug_CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.uk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.vi.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.zh_CN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/elfinder.zh_TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/cs.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/de.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/en.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/es.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/ja.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/ko.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/pl.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/ru.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/sk.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/i18n/help/tr.html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/proxy/elFinderSupportVer1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/worker/calcfilehash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/worker/quicklook.tiff.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/js/worker/quicklook.unzip.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/main.default.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/.tmp/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/MySQLStorage.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/connector.maximal.php-dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/connector.minimal.php-dist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/editors/OnlineConvert/editor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/editors/ZipArchive/editor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/editors/ZohoOffice/editor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/editors/editor.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinder.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderConnector.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderFlysystemGoogleDriveNetmount.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderPlugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderSession.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderSessionInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeBox.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeDriver.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeDropbox.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeDropbox2.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeFTP.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeGoogleDrive.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeGroup.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeLocalFileSystem.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeMySQL.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeOneDrive.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeSFTPphpseclib.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeTrash.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/elFinderVolumeTrashMySQL.class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/libs/GdBmp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/mime.types" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/AutoResize/plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/AutoRotate/plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/Normalizer/plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/Sanitizer/plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/Watermark/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/plugins/Watermark/plugin.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/resources/image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/php/resources/video.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/studio-42/elfinder/sounds/rm.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/extensions.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/markrogoyski/math-php" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/tags-input" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/handsontable" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
+      <path value="$PROJECT_DIR$/vendor/himiklab/yii2-handsontable-widget" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/johnitvn/yii2-ajaxcrud" />
+      <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/froala/wysiwyg-editor" />
+      <path value="$PROJECT_DIR$/vendor/froala/yii2-froala-editor" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-ipinfo" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-growl" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/mdmsoft/yii2-admin" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-icons" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-alert" />
+      <path value="$PROJECT_DIR$/vendor/npm-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/ipinfo/ipinfo" />
+      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <path value="$PROJECT_DIR$/vendor/components/flag-icon-css" />
+      <path value="$PROJECT_DIR$/vendor/oonne/yii2-webuploader" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-yii2" />
+      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
+      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-filesystem" />
+      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-asserts" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sabre/cache" />
+      <path value="$PROJECT_DIR$/vendor/ddeboer/imap" />
+      <path value="$PROJECT_DIR$/vendor/abhi1693/yii2-system-info" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
+      <path value="$PROJECT_DIR$/vendor/newerton/yii2-fancybox" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/practically/yii2-chartjs" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/mludvik/yii2-tags-input" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="27kakBQIgpWxEziOft8WbHLqM1P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="codeception.yml" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings scope="ConfigurationFile" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="" />
+      <created>1649866678020</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649866678020</updated>
+      <workItem from="1649866681981" duration="7210000" />
+      <workItem from="1649923894097" duration="17207000" />
+      <workItem from="1650030606536" duration="11711000" />
+      <workItem from="1650112518466" duration="25421000" />
+      <workItem from="1650138595827" duration="21000" />
+      <workItem from="1650174484591" duration="1985000" />
+      <workItem from="1650194445725" duration="2314000" />
+      <workItem from="1650202527657" duration="1265000" />
+      <workItem from="1650208014025" duration="9571000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="401" y="175" key="#Deployment" timestamp="1650198012784">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="401" y="175" key="#Deployment/0.0.1920.1032@0.0.1920.1032" timestamp="1650198012784" />
+    <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1650119678593">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119678593" />
+    <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1650217133938">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650217133938" />
+    <state x="266" y="258" key="FileChooserDialogImpl" timestamp="1650202552132">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1650202552132" />
+    <state x="818" y="355" key="NewPhpClassDialog" timestamp="1650119853399">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="818" y="355" key="NewPhpClassDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119853399" />
+    <state x="776" y="439" key="NewPhpFileDialog" timestamp="1650210915080">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="776" y="439" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650210915080" />
+    <state x="839" y="248" key="ftp.server.browser" timestamp="1650195095318">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="839" y="248" key="ftp.server.browser/0.0.1920.1032@0.0.1920.1032" timestamp="1650195095318" />
+    <state x="877" y="411" key="publish.login" timestamp="1650194656974">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="877" y="411" key="publish.login/0.0.1920.1032@0.0.1920.1032" timestamp="1650194656974" />
+    <state x="700" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1649934474377">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="700" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1649934474377" />
+  </component>
+</project>

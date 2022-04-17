@@ -62,7 +62,6 @@ if (Yii::$app->controller->action->id === 'login') {
     <?php $this->endPage() ?>
 <?php } ?>
 <script>
-    // $(document).ready(function () {
     //域名
     var domain = document.domain;
 

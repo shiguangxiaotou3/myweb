@@ -3,11 +3,12 @@
 /* @var $this yii\web\View */
 /* @var $content string */
 
-
+use \yii\helpers\Url;
 use yii\bootstrap4\Nav;
 use yii\bootstrap4\Html;
 use yii\bootstrap4\NavBar;
 use common\widgets\Alert;
+use frontend\models\Article;
 use frontend\assets\AppAsset;
 use \common\widgets\tag\TagWidget;
 use common\assets\adminlte\components\FontAwesomeAssets;
@@ -24,9 +25,6 @@ AppAsset::register($this);
         <?php $this->registerCsrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
-        <style type="text/css">
-            a:hover{text-decoration: none}
-        </style>
     </head>
     <body class="d-flex flex-column h-100" style="background-color:rgb(239,239,239) ">
     <?php $this->beginBody() ?>
@@ -74,7 +72,6 @@ AppAsset::register($this);
         </div>
         <div class="content" >
             <!-- 左侧边栏 -->
-
             <!-- 中栏 -->
             <div class="col" style="margin: 0px;padding: 0">
                 <div class="row">
@@ -96,27 +93,33 @@ AppAsset::register($this);
                                     </p>
                                 </div>
                                 <div class="card-body" style="padding: 10px" >
+                                    <!--介绍-->
                                     <div class="row">
                                         <p class="card-text col" style="font-size: 14px">一个单身30的程序猿,一个肆意生长的老韭菜</p>
                                     </div>
                                 </div>
                                 <div class="card-footer row" style="padding: 5px;margin-right: 0;margin-left: 0" >
-                                    <button  class="btn btn-success-md col"  id="copyUrl">
-                                        <i class="fa fa-share-alt"></i><span class="text-success">分享</span>
-                                    </button>
-                                    <a href="https://github.com/shiguangxiaotou3/myweb"  class="btn btn-default  col" id="cy" >
-                                        <i class="fa fa-github"></i>
-                                        <span class="text-danger">仓库</span>
-                                    </a>
+                                    <span >
+                                        <!--分享-->
+                                        <a  class="btn  " id="copyUrl">
+                                            <i class="fa fa-share-alt"></i><span class="text-success">分享</span>
+                                        </a>
+                                        <!--仓库-->
+                                        <a href="https://github.com/shiguangxiaotou3/myweb"  class="btn btn-default  " id="cy" >
+                                            <i class="fa fa-github"></i>
+                                            <span class="text-danger">仓库</span>
+                                        </a>
 
-                                    <?php
-                                    $url =Yii::$app->request->getHostInfo().Yii::$app->request->url;
-                                    echo Html::hiddenInput('copyUrl',$url,['id'=>'copyUrl']);
-                                    ?>
-                                    <a href="<?= \yii\helpers\Url::to(['site/contact']) ?>" class="btn btn-default  col" >
-                                        <i class="fa  fa-comments-o"></i>
-                                        <span class="text-info">联系我</span>
-                                    </a>
+                                        <?php
+                                        //$url =Yii::$app->request->getHostInfo().Yii::$app->request->url;
+                                        //echo Html::hiddenInput('copyUrl',$url,['id'=>'copyUrl']);
+                                        ?>
+                                        <!--联系我-->
+                                        <a href="<?= Url::to(['site/contact']) ?>" class="btn btn-default  " >
+                                            <i class="fa  fa-comments-o"></i>
+                                            <span class="text-info">联系我</span>
+                                        </a>
+                                    </>
                                 </div>
                             </div>
                             <!-- 标签云 -->
@@ -145,12 +148,12 @@ AppAsset::register($this);
                                 <div class="bg-transparent  card-header"><strong>热门文章</strong></div>
                                 <div class="list-group list-group-flush">
                                     <?php
-                                    $top10 = \frontend\models\Article::ArticleTop10();
+                                    $top10 = Article::ArticleTop10();
                                     if(!empty($top10) && is_array($top10)){
                                         $i=1;
                                         foreach ($top10 as $article){
                                             ?>
-                                            <a href="<?= \yii\helpers\Url::to(['site/view','id'=>$article['id']]) ?>" target="_blank" class="list-group-item ">
+                                            <a href="<?= Url::to(['site/view','id'=>$article['id']]) ?>" target="_blank" class="list-group-item ">
                                                 <div class="media">
                                                     <span class="text-white me-3 mt-1 badge-1 badge bg-secondary"><?= $i ?></span>&nbsp;
                                                     <div class="media-body">
@@ -178,19 +181,6 @@ AppAsset::register($this);
             <p class="float-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
-    <?php
-$js=<<<JS
-    $("#cy").on('onclick',function(){
-        var url = $("#copyUrl").val();
-        console.log(url);
-        
-        alert('复制链接成功！');
-    });
-JS;
-    $this->registerJs($js);
-
-    ?>
-
     <?php $this->endBody() ?>
     </body>
     </html>

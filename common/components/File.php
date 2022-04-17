@@ -5,7 +5,7 @@ namespace common\components;
 use Yii;
 use yii\base\Component;
 use yii\helpers\ArrayHelper;
-
+use yii\helpers\FileHelper;
 
 /**
  * Class File
@@ -344,6 +344,18 @@ class File extends  Component{
         }else{
             return false;
         }
+    }
+
+    public static function randomFile($alias,$options=[]){
+        $path = Yii::getAlias($alias);
+        $files = FileHelper::findFiles($path,$options);
+        $i=0;
+       foreach ($files as $file){
+           $files[$i] = basename($file,'.'.pathinfo($file)['extension']);
+           $i++;
+       }
+
+       return $files[rand(0,count($files)-1)];
     }
 
 

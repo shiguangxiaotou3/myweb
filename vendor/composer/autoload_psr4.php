@@ -23,8 +23,6 @@ return array(
     'oonne\\webuploader\\' => array($vendorDir . '/oonne/yii2-webuploader'),
     'newerton\\fancybox\\' => array($vendorDir . '/newerton/yii2-fancybox/src'),
     'mludvik\\tagsinput\\' => array($vendorDir . '/mludvik/yii2-tags-input/src'),
-    'mihaildev\\elfinder\\' => array($vendorDir . '/mihaildev/yii2-elfinder'),
-    'mihaildev\\ckeditor\\' => array($vendorDir . '/mihaildev/yii2-ckeditor'),
     'mdm\\admin\\' => array($vendorDir . '/mdmsoft/yii2-admin'),
     'kartik\\popover\\' => array($vendorDir . '/kartik-v/yii2-popover-x/src'),
     'kartik\\plugins\\popover\\' => array($vendorDir . '/kartik-v/bootstrap-popover-x'),

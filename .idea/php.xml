@@ -85,11 +85,9 @@
       <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
       <path value="$PROJECT_DIR$/vendor/codeception/verify" />
       <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
-      <path value="$PROJECT_DIR$/vendor/mihaildev/yii2-ckeditor" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
       <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-filesystem" />
-      <path value="$PROJECT_DIR$/vendor/mihaildev/yii2-elfinder" />
       <path value="$PROJECT_DIR$/vendor/codeception/stub" />
       <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
@@ -109,7 +107,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/studio-42/elfinder" />
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
@@ -156,7 +153,5 @@
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
-    <option name="suggestChangeDefaultLanguageLevel" value="false" />
-  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
 </project>
