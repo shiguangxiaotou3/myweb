@@ -1,6 +1,7 @@
 <?php
 namespace common\models\basic;
-
+use Yii;
+use common\components\File;
 class Color
 {
     const COLOR_PRIMARY = 'primary';
@@ -28,6 +29,18 @@ class Color
     public static function randomSize(){
         $size =['xs','sm','md','lg'];
         return $size[rand(0,count($size)-1)];
+    }
+
+    public static function Alias($assets,$options=[]){
+        $path = Yii::getAlias($assets);
+        $cssName = File::randomFile($path,['only'=>['*.css']]);
+        return file_get_contents($path."/".$cssName.'.css');
+    }
+
+    public static function assetsFile($assets,$options=[]){
+        $path = Yii::getAlias($assets);
+        $cssName = File::randomFile($path,['only'=>['*.css']]);
+        return $path."/".$cssName.'.css';
     }
 
 }

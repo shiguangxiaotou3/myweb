@@ -114,7 +114,7 @@ class SiteController extends Controller
             if($model->load($request->post()) && $model->save()){
                 Yii::$app->session->setFlash('success', '留言成功！');
 
-               return    $this->redirect(['/site/view/'.$model->article_id]);
+               return $this->redirect(['/site/view/'.$model->article_id]);
             }else{
                 logObject($model->getErrors());
                 return false;

@@ -90,7 +90,13 @@ class Imap extends Component{
             $this->_viewMailbox = ArrayHelper::getValue($servers,$serverName.".mailboxs");
         }
         $imap = new Server($host, $port, $flags);
-        $this->_connection = $imap->authenticate($username, $password);
+        $conn =$imap->authenticate($username, $password);
+        if($conn){
+            $this->_connection = $imap->authenticate($username, $password);
+        }else{
+            throw new Exception('服务器连接失败');
+        }
+
     }
     /**
      * 关闭连接
@@ -306,19 +312,23 @@ class Imap extends Component{
      * @return false|int
      */
     public function saveBody($path){
-        try {
+
             $message = $this->message;
             $type =$message->getType();
             if($type =="multipart"){
-                $html = $message->getBodyHtml();
-                if (!file_exists($path."/body.html") and $html and isset($html) and !empty($html)) {
+                try{
+                    $html = $message->getBodyHtml();
+                }catch (\Exception $exception){
+                    return false;
+                }
+                if (!file_exists($path."/body.html") and  !empty($html) and $html) {
                     return file_put_contents($path."/body.html", $html, FILE_APPEND);
                 }else{
                     return false;
                 }
             }elseif ($type =="text"){
                 $text = $message->getBodyText();
-                if (!file_exists($path."/body.txt") and $text and isset($text) and !empty($text)) {
+                if (!file_exists($path."/body.txt") and  !empty($text) and $text) {
                     return file_put_contents($path."/body.txt", $text, FILE_APPEND);
                 }else{
                     return false;
@@ -326,15 +336,7 @@ class Imap extends Component{
             }else{
                 logObject("数据解析失败.数据无法解析");
             }
-        }catch (Exception $exception){
-            if(isset($path)){
-                logObject($path);
-            }
 
-            logObject($exception->getMessage());
-            logObject($exception->getTrace());
-            return  false;
-        }
     }
 
     /**
@@ -370,35 +372,29 @@ class Imap extends Component{
      * @return array|false
      */
     public function saveMessage($save =true){
-        try {
-            $serverName =$this->serverName;
-            $mailboxName = $this->mailboxName;
-            $number = $this->message->getNumber();
-            $path = Yii::getAlias( $this->path).'/'.$serverName.
-                "/".$mailboxName."/".$number;
-            //创建目录
-            if(!is_dir($path )){
-                mkdir($path ,0775,true);
-            }
-            //下载附件
-            if($this->_downloadFile){
-                $this->saveMessageAttachments($path);
-            }
-            //写入正文
-            $this->saveBody($path);
-            //写入数据
-            $data[$serverName][$mailboxName]['_'.$number]= $this->messageInfo;
-            if($save){
-                File::addI18n($data,$this->path,'data');
-            }else{
-                return $data;
-            }
-        }catch (Exception $exception){
-            logObject($exception->getMessage());
-            return false;
+
+        $serverName =$this->serverName;
+        $mailboxName = $this->mailboxName;
+        $number = $this->message->getNumber();
+        $path = Yii::getAlias( $this->path).'/'.$serverName.
+            "/".$mailboxName."/".$number;
+        //创建目录
+        if(!is_dir($path )){
+            mkdir($path ,0775,true);
         }
-
-
+        //下载附件
+        if($this->_downloadFile){
+            $this->saveMessageAttachments($path);
+        }
+        //写入正文
+        $this->saveBody($path);
+        //写入数据
+        $data[$serverName][$mailboxName]['_'.$number]= $this->messageInfo;
+        if($save){
+            File::addI18n($data,$this->path,'data');
+        }else{
+            return $data;
+        }
     }
     /**
      * 保存当前邮箱的所有邮件

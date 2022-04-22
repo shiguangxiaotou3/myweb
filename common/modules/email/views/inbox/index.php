@@ -64,7 +64,6 @@ $js =<<<JS
  //改变加载状态
     window.iconLoading=function iconLoading(dom){
         var icon = $("#"+dom).children('i');
-        console.log(dom);
         icon.toggleClass("fa-pulse");
     }
     //更新imap数据
@@ -76,9 +75,10 @@ $js =<<<JS
             url:url,
             success:function(result){
                 iconLoading(dom);
-                location.reload(true);
+                 location.reload(true);
                 console.log(result);
-            }
+            },
+          
         })
     }
 
@@ -92,7 +92,6 @@ $js =<<<JS
             success:function(result){
                 iconLoading(dom);
                 location.reload(true);
-                console.log(result);
             }
         })
     }

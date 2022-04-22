@@ -12,7 +12,7 @@ use yii\helpers\FileHelper;
 class HighlightAssets extends AssetBundle
 {
     public $sourcePath = '@vendor/almasaeed2010/adminlte/bower_components/ckeditor/plugins/codesnippet/lib/highlight';
-    public $css = ['styles/docco.css'];
+    public $css = [];
     public $js = [
         'highlight.pack.js',
     ];

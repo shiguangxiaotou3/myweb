@@ -4,6 +4,7 @@ use yii\web\View;
 use yii\helpers\Url;
 use yii\widgets\Pjax;
 use yii\helpers\Html;
+use common\components\File;
 use yii\widgets\ActiveForm;
 use frontend\models\Comment;
 use common\assets\MacCodeAssets;
@@ -17,9 +18,13 @@ use common\assets\HighlightAssets;
 $this->title = '家';
 
 
+
+    $Alias= '@vendor/almasaeed2010/adminlte/bower_components/ckeditor/plugins/codesnippet/lib/highlight/styles';
+    $css = \common\models\basic\Color::Alias($Alias,['only'=>['*.css']]);
+    $this->registerCss($css);
+
 MacCodeAssets::register($this);
 HighlightAssets::register($this,View::POS_HEAD);
-
 $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
 ?>
 <span class="code-titer" style="border-left: white solid 1px;border-bottom-left-radius: "> </span>
@@ -28,7 +33,7 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
         <div class="col col-lg-12">
             <?php if(isset($model)){ ?>
                 <!-- 标题-->
-                <h2><?= Html::encode($model->title) ?></h2>
+               <h2><?= Html::encode($model->title) ?></h2>
                 <hr>
                 <!-- 博客-->
                 <p><?=$model->content ?></p>
@@ -47,9 +52,9 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
                     if(isset($comments) ){
                         $i=1;
                         foreach ($comments as $comment){
-                    ?>
-                    <!-- 楼主信息 -->
-                    <div class="row">
+                            ?>
+                            <!-- 楼主信息 -->
+                            <div class="row">
                         <span class="col" >
                             <span class="badge badge-success"><?= $i?></span>
                             <img src="/img/user3-128x128.jpg" class="rounded-circle " alt="" style="width: 32px;height: 32px;margin: 5px auto">
@@ -63,30 +68,64 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
                             ]);
                             ?>
                         </span>
-                    </div>
-                    <!-- 楼主评论 -->
-                    <div class="row">
-                        <div class="col">
-                            <div style="width: 100%;background-color: #bbccee;border: #bbccee solid 1px;margin-bottom: 0px;min-height: 80px">
-                                <span><?= $comment->message  ?></span>
+                            </div>
+                            <!-- 楼主评论 -->
+                            <div class="row">
+                                <div class="col" style="border:  #bbccee  solid 1px;margin: 0px 15px">
+                                    <!-- 楼主帖子 -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <figure style="margin-bottom: 0px">
+                                                <blockquote class="blockquote" style="margin-bottom: 0px">
+                                                    <p class="text-danger" style="margin-bottom: 0px"><?=$comment->message ?></p>
+                                                </blockquote>
+                                                <figcaption class="blockquote-footer">
+                                                    <?=$comment->username ?> <cite title="Source Title"><?= date('Y/m/d ',$comment->created_at)?></cite>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </div>
+
+                                    <!-- 跟帖 -->
+                                    <div class="row">
+                                        <?php
+                                        /** @var Comment $item */
+                                        $commentReply=$comment->commentReply;
+                                        if(isset($commentReply) ){
+                                            foreach ($commentReply as $item){
+                                                ?>
+                                                <div class="col-12">
+                                                    <figure style="margin-bottom: 0px;border-top: rgb(200,200,200) solid 1px">
+                                                        <blockquote class="blockquote" style="margin-bottom: 0px">
+                                                            <p class="text-success" style="margin-bottom: 0px"><?=$item->message ?></p>
+                                                        </blockquote>
+                                                        <figcaption class="blockquote-footer">
+                                                            <?=$item->username ?> <cite title="Source Title"><?= date('Y/m/d ',$item->created_at)?></cite>
+                                                        </figcaption>
+                                                    </figure>
+                                                </div>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--跟帖 -->
+                            <div class="row">
                                 <?php
-                                /** @var Comment $item */
-                                $commentReply=$comment->commentReply;
-                                if(isset($commentReply) ){
-                                    foreach ($commentReply as $item){
-                                        echo "<br><span>".$item->username.":".$item->message."</span>";
-                                    }
-                                }
+                                Pjax::begin([
+                                    'id' => 'm'.$i,
+                                    'enablePushState'=>false,
+                                    'options' => [
+                                        'class'=>'col-12',
+                                        'style'=>'"width: 100%;border: #bbccee solid 1px;margin-bottom: 0px;min-height: 80px'
+                                    ]
+                                ]);
+                                Pjax::end();
                                 ?>
                             </div>
                             <?php
-                                Pjax::begin(['id' => 'm'.$i,'enablePushState'=>false]);
-                                Pjax::end();
-                            ?>
-                        </div>
-                    </div>
-                    <hr>
-                    <?php
                             $i++;
                         }
                     }

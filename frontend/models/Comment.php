@@ -39,6 +39,7 @@ class Comment extends \yii\db\ActiveRecord
         return [
             ['user_id','default','value' => Yii::$app->user->id],
             ['message_id','default','value'=>0],
+            ['message','required'],
             ['status','default','value' => 1],
             [['article_id', 'user_id', 'message_id', 'status', /*'created_at', 'updated_at'*/], 'integer'],
 //            [['created_at', 'updated_at'], 'required'],

@@ -10,26 +10,33 @@ use yii\bootstrap4\ActiveForm;
 $this->title = Yii::t('app','Signup');
 $this->params['breadcrumbs'][] = Yii::t('app',$this->title);
 ?>
-<div class="site-signup " >
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p> <?= Yii::t('app', 'Please fill out the following fields to signup:')?></p>
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-lg-4 offset-lg-4 ">
+        <div class="site-signup " >
+            <h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="row">
-        <div class="col col-sm-12  col-md-6 col-lg-4 bg bg-white">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+            <p> <?= Yii::t('app', 'Please fill out the following fields to signup:')?></p>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <div class="row">
+                <div class="col  bg bg-white">
+                    <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
 
-                <?= $form->field($model, 'email') ?>
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                    <?= $form->field($model, 'email') ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton(Yii::t('app','Signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    <?= $form->field($model, 'password')->passwordInput() ?>
+
+                    <div class="form-group">
+                        <?= Html::submitButton(Yii::t('app','Signup'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                    </div>
+
+                    <?php ActiveForm::end(); ?>
                 </div>
-
-            <?php ActiveForm::end(); ?>
+            </div>
         </div>
+
     </div>
 </div>
+

@@ -172,9 +172,14 @@ class InboxController extends Controller{
             Yii::$app->response->format=Response::FORMAT_JSON;
             $server = $request->post('server');
             if(isset($server) && !empty($server)){
-                return $this->upData($server);
+                try {
+                    return $this->upData($server);
+                }catch (\yii\base\Exception $exception){
+                    return ['code'=>0,'message'=>$exception->getMessage()];
+                }
+
             }else{
-                return ['message'=>'失败'];
+                return ['code'=>0,'message'=>'失败'];
             }
         }
 

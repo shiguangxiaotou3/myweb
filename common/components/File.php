@@ -354,7 +354,6 @@ class File extends  Component{
            $files[$i] = basename($file,'.'.pathinfo($file)['extension']);
            $i++;
        }
-
        return $files[rand(0,count($files)-1)];
     }
 

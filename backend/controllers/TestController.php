@@ -2,20 +2,9 @@
 
 
 namespace backend\controllers;
-use common\components\File;
-use frontend\models\Article;
-use frontend\models\Comment;
-use frontend\models\Tag;
-use MathPHP\Statistics\Correlation;
-use common\components\dns\Domain;
-use common\modules\bilibili\models\Bilibili;
-use mdm\admin\components\Configs;
-use mdm\admin\components\MenuHelper;
-use Yii;
-use yii\base\Component;
+
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
-use yii\helpers\FileHelper;
 use yii\web\Controller;
 
 /**
@@ -53,6 +42,12 @@ class TestController  extends Controller{
 
     public function actionIndex(){
 
+        $imap = \Yii::$app->imap;
+        $imap->open('qqMailer');
+        $imap->mailbox ='INBOX';
+//        $imap->open('outlook');
+//        $imap->mailbox ='Inbox';
+        $imap->saveMailbox();
         return $this->render('index',);
     }
 

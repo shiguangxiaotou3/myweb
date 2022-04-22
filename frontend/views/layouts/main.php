@@ -70,17 +70,17 @@ AppAsset::register($this);
                 <?= Alert::widget(); ?>
             </div>
         </div>
-        <div class="content" >
+        <div class="row" >
             <!-- 左侧边栏 -->
             <!-- 中栏 -->
-            <div class="col" style="margin: 0px;padding: 0">
-                <div class="row">
+            <div class="middle-wrap col" style="margin: 0px;padding: 0">
+                <div class="row d-flex">
                     <!-- 主体-->
-                    <div class="middle-wrap col">
+                    <div class=" col " style="flex:1">
                         <?=  $content; ?>
                     </div>
                     <!-- 右侧 -->
-                    <div class="col-xl-auto w-xl-300 d-none d-xl-block p-0 right-side col-12">
+                    <div class="col-xl-auto w-xl-300  d-none d-xl-block p-0 right-side col-12" style="width: 300px">
                         <div class="w-xl-300 mb-4 mt-4" style="margin-top: 0px">
                             <!-- 作者 -->
                             <div class="card" style="margin-bottom: 20px">
@@ -144,7 +144,7 @@ AppAsset::register($this);
                                 </div>
                             </div>
                             <!-- 热门文章 -->
-                            <div class="overflow-hidden card" style="margin-bottom: 20px">
+                            <div class="overflow-hidden card w-xl-300" style="margin-bottom: 20px">
                                 <div class="bg-transparent  card-header"><strong>热门文章</strong></div>
                                 <div class="list-group list-group-flush">
                                     <?php
@@ -153,8 +153,8 @@ AppAsset::register($this);
                                         $i=1;
                                         foreach ($top10 as $article){
                                             ?>
-                                            <a href="<?= Url::to(['site/view','id'=>$article['id']]) ?>" target="_blank" class="list-group-item ">
-                                                <div class="media">
+                                            <a href="<?= Url::to(['site/view','id'=>$article['id']]) ?>" target="_blank"  class="list-group-item ">
+                                                <div class="media text-truncate">
                                                     <span class="text-white me-3 mt-1 badge-1 badge bg-secondary"><?= $i ?></span>&nbsp;
                                                     <div class="media-body">
                                                         <div class="text-body"><?= $article['title'] ?></div>
