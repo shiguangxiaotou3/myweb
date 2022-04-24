@@ -9,7 +9,5 @@ $("pre code").each(function(){
         codename + "</div>";
     $(this).parent().prepend(str);
     $(this).css('padding-top','0');
-    $(this).css('border-bottom-right-radius','5px');
-    $(this).css('border-bottom-left-radius','5px');
     $(this).css('opacity','0.95');
 });

@@ -66,15 +66,15 @@ class PasswordResetRequestForm extends Model
             }
         }
 
-        return Yii::$app
-            ->mailer
-            ->compose(
+        $mail= Yii::$app->mailer;
+        $mail->htmlLayout ='layouts/main';
+         return  $mail->compose(
                 ['html' => 'passwordResetToken-html', 'text' => 'passwordResetToken-text'],
                 ['user' => $user]
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)
-            ->setSubject('Password reset for ' . Yii::$app->name)
+            ->setSubject(Yii::t('app','Password reset for ') . Yii::$app->name)
             ->send();
     }
 }

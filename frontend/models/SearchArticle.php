@@ -64,7 +64,7 @@ class SearchArticle extends Article
             'fabulous' => $this->fabulous,
         ]);
 
-        $query->andFilterWhere(['like', 'label', $this->label])
+        $query->andFilterWhere(['like', 'label', "*".$this->label."*"])
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'status', $this->status])

@@ -4,7 +4,7 @@ return [
     'This email address has already been taken.' => '此电子邮件地址已被占用。',
     'This username has already been taken.' => '此用户名已被使用。',
     'Please fill out your email. A link to reset password will be sent there.'=>'请填写你的电子邮件.重置密码的链接将被发送到那里.',
-
+    'Password reset for '=>'密码重置为',
     'If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.' => '如果您有业务咨询或其他问题，请填写以下表格与我们联系。非常感谢。',
     'Please fill out the following fields to login:' => '请填写以下字段以登录:',
     'Please fill out the following fields to signup:'=>'请填写以下字段以注册:',

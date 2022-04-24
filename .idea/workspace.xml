@@ -2,25 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/controllers/ApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/models/Sample.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mail/layouts/footer/footer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mail/layouts/sign/Sign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mail/layouts/title/logo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/a.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/assets/HighlightAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/HighlightAssets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/components/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/components/Imap.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/Imap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/basic/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/basic/Color.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/email/controllers/InboxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/email/controllers/InboxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/email/views/inbox/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/email/views/inbox/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/Comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/assets/MacCode/js/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/MacCode/js/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mail/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mail/layouts/text.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/layouts/text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/messages/zh-CN/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/zh-CN/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/ContactForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ContactForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/PasswordResetRequestForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/PasswordResetRequestForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/ResendVerificationEmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ResendVerificationEmailForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/SearchArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SearchArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/reply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/signup.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/signup.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/site/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +200,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -211,6 +213,11 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\AppServ\www\myweb\common\mail\layouts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="codeception.yml" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -245,7 +252,13 @@
       <workItem from="1650533096946" duration="2278000" />
       <workItem from="1650537268484" duration="686000" />
       <workItem from="1650616280261" duration="2016000" />
-      <workItem from="1650627945692" duration="10960000" />
+      <workItem from="1650627945692" duration="16676000" />
+      <workItem from="1650686674055" duration="7805000" />
+      <workItem from="1650717798706" duration="2259000" />
+      <workItem from="1650722044824" duration="679000" />
+      <workItem from="1650726143359" duration="1073000" />
+      <workItem from="1650727537563" duration="5884000" />
+      <workItem from="1650808553750" duration="7162000" />
     </task>
     <servers />
   </component>
@@ -262,25 +275,29 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119678593" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1650300909388">
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1650738180673">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650217133938" />
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650738180673" />
     <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650300909388" />
-    <state x="355" y="348" key="FileChooserDialogImpl" timestamp="1650293367632">
+    <state x="355" y="348" key="FileChooserDialogImpl" timestamp="1650722057190">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1650202552132" />
+    <state x="355" y="348" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1650722057190" />
     <state x="355" y="348" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650293367632" />
-    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1650386051643">
+    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1650737801266">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="818" y="355" key="NewPhpClassDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119853399" />
+    <state x="1091" y="479" key="NewPhpClassDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650737801266" />
     <state x="1091" y="479" key="NewPhpClassDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650386051643" />
-    <state x="776" y="439" key="NewPhpFileDialog" timestamp="1650210915080">
-      <screen x="0" y="0" width="1920" height="1032" />
+    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1650814339334">
+      <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="776" y="439" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650210915080" />
+    <state x="595" y="318" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650710140662" />
+    <state x="793" y="429" key="NewPhpFileDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650814339334" />
     <state x="839" y="248" key="ftp.server.browser" timestamp="1650195095318">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>

@@ -57,9 +57,9 @@ class ResendVerificationEmailForm extends Model
             return false;
         }
 
-        return Yii::$app
-            ->mailer
-            ->compose(
+        $mail= Yii::$app->mailer;
+        $mail->htmlLayout ='layouts/main';
+        return $mail->compose(
                 ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
                 ['user' => $user]
             )

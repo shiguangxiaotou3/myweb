@@ -6,7 +6,8 @@ namespace backend\controllers;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
-
+use yii\swiftmailer\Mailer;
+use Yii;
 /**
  * 后台测试代码
  * @package backend\controllers
@@ -41,13 +42,6 @@ class TestController  extends Controller{
 
 
     public function actionIndex(){
-
-        $imap = \Yii::$app->imap;
-        $imap->open('qqMailer');
-        $imap->mailbox ='INBOX';
-//        $imap->open('outlook');
-//        $imap->mailbox ='Inbox';
-        $imap->saveMailbox();
         return $this->render('index',);
     }
 

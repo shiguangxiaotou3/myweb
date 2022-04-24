@@ -5,6 +5,7 @@
  */
 
 /**
+ * 记录函数被调用的位置，被logStr()和logObject()调用
  * @param array $conf 被调用位置
  */
 function dumpInfo($conf){
@@ -12,11 +13,14 @@ function dumpInfo($conf){
     $path =$conf[0]['file'];
     $line =$conf[0]['line'];
     unset($conf);
-    $str ='/*=========================================start=========================================*\\'."\r\n";
-    $str .='//调用文件:'.$path."\r\n";
-    $str .='//调用行数:'." 第".$line."行被调用\r\n";
-    $str .='//调用时间:'.date('Y-m-d h:m:s',time())."\r\n";
-    $str .='/*=========================================data=========================================*\\'."\r\n";
+    $str ='// +----------------------------------------------------------------------'."\r\n";
+    $str .='// | 调用文件: '.$path."\r\n";
+    $str .='// +----------------------------------------------------------------------'."\r\n";
+    $str .='// | 调用行数: '."第".$line."行被调用\r\n";
+    $str .='// +----------------------------------------------------------------------'."\r\n";
+    $str .='// | 调用时间: '.date('Y-m-d h:m:s',time())."\r\n";
+    $str .='// +----------------------------------------------------------------------'."\r\n";
+
     file_put_contents($file,"\r\n".$str,FILE_APPEND);
 }
 
@@ -26,10 +30,9 @@ function dumpInfo($conf){
  */
 function logStr($str){
     $file = dirname(__DIR__)."/a.txt";
-    $s= '\*=========================================end data=========================================*/'."\r\n";
     $conf = debug_backtrace();
     dumpInfo($conf);
-    file_put_contents($file,"\r\n".$str.$s,FILE_APPEND);
+    file_put_contents($file,$str."\r\n",FILE_APPEND);
 }
 
 /**
@@ -38,10 +41,10 @@ function logStr($str){
  */
 function logObject($obj){
     $file = dirname(__DIR__)."/a.txt";
-    $s='/*=========================================end data=========================================*\\'."\r\n";
+
     $conf = debug_backtrace();
     dumpInfo($conf);
-    file_put_contents( $file, print_r($obj, true)."\r\n".$s,FILE_APPEND);
+    file_put_contents( $file, print_r($obj, true)."\r\n",FILE_APPEND);
 }
 
 /**
@@ -49,8 +52,6 @@ function logObject($obj){
  * @param $res
  */
 function dump($res){
-    //$s= debug_backtrace();
-    //echo $s."\n";
     echo "<pre>";
     print_r($res);
     echo "</pre>";
