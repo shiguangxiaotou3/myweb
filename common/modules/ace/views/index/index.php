@@ -80,7 +80,7 @@ $tmp[0]='/ace/index/index';
                     'mode' => $mode,
                     'theme'=>$theme,
                     'model' => $model,
-                    'container_options'=>['style'=>'width:100%; min-height: 550px',],
+                    'container_options'=>['style'=>'width:100%; min-height: 800px',],
                     'plugin_options'=>[
                         'readOnly'=> $model->writable(),
                         "autoScrollEditorIntoView"=> true,

@@ -122,16 +122,14 @@ class InboxController extends Controller{
 
 
     /**
-     * 回复
+     * 邮件回复
      *
      * @return string
      */
     public function actionReply(){
         $request = Yii::$app->request;
         $model = new EmailSendForm();
-        $to =$request->get('to');
-        $model->to = 'wanlong757402@outlook.com';
-        $model->subject = '测试'.time();
+        $model->to =$request->get('to');
         if($request->isAjax){
             if($request->isGet){
                 return $this->renderAjax('reply',['model'=>$model,'ajax'=>true]);
@@ -162,11 +160,11 @@ class InboxController extends Controller{
 
     /**
      * 加载缓存文件
-     * @param $server
-     * @throws Exception
+     *
+     * @return array|bool
      */
     public function actionUpdate(){
-
+        set_time_limit(5*60);
         $request = Yii::$app->request;
         if($request->isAjax ){
             Yii::$app->response->format=Response::FORMAT_JSON;
@@ -177,13 +175,13 @@ class InboxController extends Controller{
                 }catch (\yii\base\Exception $exception){
                     return ['code'=>0,'message'=>$exception->getMessage()];
                 }
-
             }else{
                 return ['code'=>0,'message'=>'失败'];
             }
         }
 
     }
+
     /**
      *  清理服务器缓存文件
      *

@@ -41,8 +41,8 @@ class SearchArticle extends Article
      */
     public function search($params)
     {
+        logObject($params);
         $query = Article::find();
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -50,8 +50,8 @@ class SearchArticle extends Article
         $this->load($params);
 
         if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+            // 如果不想在验证失败时返回任何记录，请取消对以下行的注释
+             $query->where('0=1');
             return $dataProvider;
         }
 
@@ -64,7 +64,7 @@ class SearchArticle extends Article
             'fabulous' => $this->fabulous,
         ]);
 
-        $query->andFilterWhere(['like', 'label', "*".$this->label."*"])
+        $query->andFilterWhere(['like', 'label', $this->label])
             ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'content', $this->content])
             ->andFilterWhere(['like', 'status', $this->status])

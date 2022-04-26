@@ -313,29 +313,29 @@ class Imap extends Component{
      */
     public function saveBody($path){
 
-            $message = $this->message;
-            $type =$message->getType();
-            if($type =="multipart"){
-                try{
-                    $html = $message->getBodyHtml();
-                }catch (\Exception $exception){
-                    return false;
-                }
-                if (!file_exists($path."/body.html") and  !empty($html) and $html) {
-                    return file_put_contents($path."/body.html", $html, FILE_APPEND);
-                }else{
-                    return false;
-                }
-            }elseif ($type =="text"){
-                $text = $message->getBodyText();
-                if (!file_exists($path."/body.txt") and  !empty($text) and $text) {
-                    return file_put_contents($path."/body.txt", $text, FILE_APPEND);
-                }else{
-                    return false;
-                }
-            }else{
-                logObject("数据解析失败.数据无法解析");
+        $message = $this->message;
+        $type =$message->getType();
+        if($type =="multipart"){
+            try{
+                $html = $message->getBodyHtml();
+            }catch (\Exception $exception){
+                return false;
             }
+            if (!file_exists($path."/body.html") and  !empty($html) and $html) {
+                return file_put_contents($path."/body.html", $html, FILE_APPEND);
+            }else{
+                return false;
+            }
+        }elseif ($type =="text"){
+            $text = $message->getBodyText();
+            if (!file_exists($path."/body.txt") and  !empty($text) and $text) {
+                return file_put_contents($path."/body.txt", $text, FILE_APPEND);
+            }else{
+                return false;
+            }
+        }else{
+            logObject("数据解析失败.数据无法解析");
+        }
 
     }
 
@@ -422,22 +422,28 @@ class Imap extends Component{
      */
     public function saveServer($save =true)
     {
-        $path = $this->path;
-        if(isset($this->_viewMailbox) && !empty($this->_viewMailbox)){
-            $data = [];
-            $mailboxs = $this->_viewMailbox;
-            foreach ($mailboxs as $mailbox){
-                $this->mailbox =$mailbox;
-                $arr = $this->saveMailbox(false);
-                $data= ArrayHelper::merge($data,$arr);
+
+        try{
+            $path = $this->path;
+            if(isset($this->_viewMailbox) && !empty($this->_viewMailbox)){
+                $data = [];
+                $mailboxs = $this->_viewMailbox;
+                foreach ($mailboxs as $mailbox){
+                    $this->mailbox =$mailbox;
+                    $arr = $this->saveMailbox(false);
+                    $data= ArrayHelper::merge($data,$arr);
+                }
+                if ($save){
+                    File::addI18n($data,$path,'data');
+                    return true;
+                }else{
+                    return  $data;
+                }
             }
-            if ($save){
-                File::addI18n($data,$path,'data');
-                return true;
-            }else{
-                return  $data;
-            }
+        }catch (Exception $exception){
+            logObject($exception->getMessage());
         }
+
     }
     /**
      * 删除本地全部缓存文件

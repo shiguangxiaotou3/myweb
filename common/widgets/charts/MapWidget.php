@@ -5,6 +5,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use common\assets\adminlte\plugins\JvectormapAssets;
 
+
 class MapWidget extends Widget
 {
 
@@ -83,7 +84,9 @@ JS;
     public function getMarkerStr(){
 
         //修改默认高度
-        $this->Options['style']='height: 325px;';
+        if(!isset( $this->Options['style'])){
+            $this->Options['style']='height: 325px;';
+        }
         $data = $this->markers;
         $res =array();
         foreach ($data as $row){

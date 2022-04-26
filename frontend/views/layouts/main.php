@@ -11,6 +11,7 @@ use common\widgets\Alert;
 use frontend\models\Article;
 use frontend\assets\AppAsset;
 use \common\widgets\tag\TagWidget;
+use common\widgets\charts\MapWidget;
 use common\assets\adminlte\components\FontAwesomeAssets;
 
 FontAwesomeAssets::register($this);
@@ -117,7 +118,7 @@ AppAsset::register($this);
                                     <i class="fa  fa-comments-o"></i>
                                     <span class="text-info">联系我</span>
                                 </a>
-                            </>
+                            </span>
                         </div>
                     </div>
                     <!-- 标签云 -->
@@ -134,7 +135,7 @@ AppAsset::register($this);
                                 foreach ($data as $value){
                                     echo Html::a(
                                             Html::tag('span', $value, ['class'=>"badge rounded-pill ".TagWidget::randomBg()]),
-                                            ['site/index', ['SearchArticle[label]'=>$value]]
+                                            ['site/index', 'SearchArticle[label]'=>$value]
                                         )."\n";
                                 }
                             }
@@ -163,6 +164,23 @@ AppAsset::register($this);
                                     $i++;
                                 }
                             }
+                            ?>
+                        </div>
+                    </div>
+                    <!-- 访问量 -->
+                    <div class="hot-tag-wrap rounded card bg " style="margin-bottom: 20px">
+                        <div class="d-flex justify-content-between bg-transparent card-header" style="padding: 8px 16px">
+                            <strong>访问地址</strong>
+                        </div>
+                        <div class="card-body " style="padding: 0px">
+                            <?php
+                            $data =Yii::$app->ip->visitsDataByCity();
+                            if(isset($data) and !empty($data)){
+                                $data['Options']=['id' => 'ao',
+                                    'style' => "height: 150px; width: 100%;"];
+                                echo MapWidget::widget($data);
+                            }
+
                             ?>
                         </div>
                     </div>

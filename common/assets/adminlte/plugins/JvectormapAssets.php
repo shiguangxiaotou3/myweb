@@ -12,8 +12,8 @@ class JvectormapAssets extends AssetBundle
         'jquery-jvectormap-world-mill-en.js'
     ];
     public $depends = [
-        'dmstr\web\AdminLteAsset',
-        'common\assets\adminlte\components\JvectormapAssets',
+        'yii\web\JqueryAsset',
+        //'common\assets\adminlte\components\JvectormapAssets',
     ];
 
 //    /**

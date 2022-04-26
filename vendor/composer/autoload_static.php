@@ -13,10 +13,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'd767e4fc2dc52fe66584ab8c6684783e' => __DIR__ . '/..' . '/adbario/php-dot-notation/src/helpers.php',
@@ -26,8 +26,11 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
+        '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
+        '66453932bc1be9fb2f910a27947d11b6' => __DIR__ . '/..' . '/alibabacloud/client/src/Functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -111,6 +114,7 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         ),
         'c' => 
         array (
+            'clagiordano\\weblibs\\configmanager\\' => 34,
             'chenkby\\region\\' => 15,
             'cebe\\markdown\\' => 14,
         ),
@@ -147,6 +151,7 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'Stringy\\' => 8,
             'Sabre\\Cache\\' => 12,
         ),
         'P' => 
@@ -171,6 +176,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
             'Mpdf\\' => 5,
             'Matrix\\' => 7,
             'MathPHP\\' => 8,
+        ),
+        'J' => 
+        array (
+            'JmesPath\\' => 9,
         ),
         'G' => 
         array (
@@ -208,7 +217,9 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
             'AlibabaCloud\\SDK\\Alidns\\V20150109\\' => 34,
             'AlibabaCloud\\OpenApiUtil\\' => 25,
             'AlibabaCloud\\Endpoint\\' => 22,
+            'AlibabaCloud\\Dysmsapi\\' => 22,
             'AlibabaCloud\\Credentials\\' => 25,
+            'AlibabaCloud\\Client\\' => 20,
             'Adbar\\' => 6,
         ),
     );
@@ -360,6 +371,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
         ),
+        'clagiordano\\weblibs\\configmanager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/clagiordano/weblibs-configmanager/src',
+        ),
         'chenkby\\region\\' => 
         array (
             0 => __DIR__ . '/..' . '/chenkby/yii2-region',
@@ -456,6 +471,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Stringy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/danielstjules/stringy/src',
+        ),
         'Sabre\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/sabre/cache/lib',
@@ -516,6 +535,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         'MathPHP\\' => 
         array (
             0 => __DIR__ . '/..' . '/markrogoyski/math-php/src',
+        ),
+        'JmesPath\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mtdowling/jmespath.php/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -595,9 +618,17 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         array (
             0 => __DIR__ . '/..' . '/alibabacloud/endpoint-util/src',
         ),
+        'AlibabaCloud\\Dysmsapi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alibabacloud/dysmsapi',
+        ),
         'AlibabaCloud\\Credentials\\' => 
         array (
             0 => __DIR__ . '/..' . '/alibabacloud/credentials/src',
+        ),
+        'AlibabaCloud\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alibabacloud/client/src',
         ),
         'Adbar\\' => 
         array (

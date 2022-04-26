@@ -43,7 +43,6 @@ class ActionController extends Controller
      * @return string
      */
     public function actionIndex(){
-        Article::deleteAll();
         return $this->render('index');
     }
 

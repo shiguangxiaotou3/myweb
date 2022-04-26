@@ -1,15 +1,18 @@
 <?php
 
 use yii\bootstrap\ActiveForm;
-use common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
-use common\assets\adminlte\components\Select2Assets;
+//use common\assets\adminlte\components\Select2Assets;
+use common\assets\adminlte\components\CKeditorAssets;
+//use common\assets\adminlte\plugins\BootstrapWysihtml5Assets;
+
 /** @var $this yii\web\View */
 /** @var $content string */
 /** @var common\modules\email\models\EmailSendForm $model string */
 
 $this->title ='写邮件';
-BootstrapWysihtml5Assets::register($this);
-Select2Assets::register($this);
+CKeditorAssets::register($this);
+//BootstrapWysihtml5Assets::register($this);
+//Select2Assets::register($this);
 ?>
     <div class="box box-primary">
         <div class="box-header with-border">
@@ -63,9 +66,12 @@ Select2Assets::register($this);
 <?php
 
 $js =<<<JS
-
-        $("#emailsendform-content").wysihtml5();
-        $('.select2').select2();
+        CKEDITOR.replace('emailsendform-content',{'extraPlugins' : "codesnippet",'height':'600px'});
+        //内联编辑
+       // CKEDITOR.disableAutoInline = true;
+        //CKEDITOR.inline( 'emailsendform-content',{'extraPlugins' : "codesnippet"} );
+        // $("#emailsendform-content").wysihtml5();
+        // $('.select2').select2();
          $(document).on('submit', 'from[data-pjax]', function(event) {
              $.pjax.submit(event, '#messages')
          })

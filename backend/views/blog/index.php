@@ -1,11 +1,14 @@
 <?php
 
-use johnitvn\ajaxcrud\BulkButtonWidget;
-use johnitvn\ajaxcrud\CrudAsset;
-use kartik\grid\GridView;
-use yii\bootstrap\Modal;
-use yii\helpers\Html;
+;
+
 use yii\helpers\Url;
+use yii\helpers\Html;
+USE frontend\models\Tag;
+use yii\bootstrap\Modal;
+use kartik\grid\GridView;
+use johnitvn\ajaxcrud\CrudAsset;
+use johnitvn\ajaxcrud\BulkButtonWidget;
 
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\SearchArticle */
@@ -15,6 +18,7 @@ $this->title = Yii::t('app', 'Articles');
 $this->params['breadcrumbs'][] = $this->title;
 
 CrudAsset::register($this);
+$tags = Tag::getTags();
 $columns = [
     [
         'class' => 'kartik\grid\CheckboxColumn',
@@ -27,6 +31,7 @@ $columns = [
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'id',
+        'width' => '30px',
     ],
     [
         'class' => '\kartik\grid\DataColumn',
@@ -35,6 +40,7 @@ $columns = [
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'label',
+        'filter' =>  array_combine($tags,$tags),
     ],
 
 //    [
@@ -44,6 +50,7 @@ $columns = [
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'status',
+        'filter' =>  [0=>'不可见',1=>'可见'],
     ],
 
     [
@@ -53,14 +60,23 @@ $columns = [
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'visits',
+        'width' => '30px',
     ],
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'created_at',
+        'width' => '120px',
+        'value' => function($mode){
+            return date('Y-m-d',$mode->created_at);
+        }
     ],
     [
         'class' => '\kartik\grid\DataColumn',
         'attribute' => 'updated_at',
+        'width' => '120px',
+        'value' => function($mode){
+                return date('Y-m-d',$mode->updated_at);
+        }
     ],
     [
         'class' => 'kartik\grid\ActionColumn',

@@ -26,6 +26,8 @@ use frontend\models\ResendVerificationEmailForm;
  */
 class SiteController extends Controller
 {
+    const EVENT_ANALYSIS_IP ='analysisIp';
+
     /**
      * {@inheritdoc}
      */
@@ -83,7 +85,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
         $searchModel = new SearchArticle();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search( Yii::$app->request->queryParams);
         return $this->render('index',[
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,]);
@@ -95,10 +97,14 @@ class SiteController extends Controller
      * @return string
      */
     public function actionView($id){
-
+        $request= Yii::$app->request;
+        $this->on(self::EVENT_ANALYSIS_IP,[Yii::$app->ip,'autoAnalysis'], ['ip'=>$request->remoteIP]);
         $model = Article::findOne($id);
         if($model){
+            //添加访问量
             $model->addVisits();
+            //记录客户端ip
+            $this->trigger(self::EVENT_ANALYSIS_IP);
             return $this->render('view',['model'=>$model]);
         }
 

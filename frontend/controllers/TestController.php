@@ -24,12 +24,6 @@ class TestController extends Controller
     }
 
     public function actionTest(){
-//        $url ='http://www.weifeng.com';
-//        $data = Curl::Download($url);
-//        logObject($data);
-//        var_dump(User::findUsernameById(1));
-//
-        Author::find()->where(['id'=>2]);
         die();
     }
 
@@ -126,10 +120,6 @@ class TestController extends Controller
         die( );
     }
 
-    public function actionD(){
-            echo '<h1>Hello word!</h1>';
-            die();
-    }
 
 
 }

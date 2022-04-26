@@ -1,5 +1,5 @@
 <?php
-namespace common\assets;
+namespace common\assets\adminlte;
 
 
 use yii\web\AssetBundle;

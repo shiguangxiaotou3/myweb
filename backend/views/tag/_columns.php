@@ -31,7 +31,9 @@ return [
                 }
 
             }
-        }
+        },
+        'filter' => \frontend\models\Tag::getTagsArr(),
+
     ],
     [
         'class'=>'\kartik\grid\DataColumn',

@@ -3,6 +3,9 @@
 
 namespace backend\controllers;
 
+use frontend\models\Article;
+use frontend\models\Tag;
+
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -42,7 +45,10 @@ class TestController  extends Controller{
 
 
     public function actionIndex(){
-        return $this->render('index',);
+        $model = Article::find()->where(['like','label','JavaScript'])->asArray()->all();
+      dump( $model);
+      die();
+        return $this->render('index');
     }
 
     /**

@@ -119,4 +119,13 @@ class Tag extends \yii\db\ActiveRecord
         }
         return $res;
     }
+
+    /**
+     * 获取下拉列表数据
+     * @return array|false
+     */
+    public static function getTagsArr(){
+        $model = self::find()->select(['id','name'])->where(['NOT',['name'=>'NULL']])->asArray()->all();
+        return array_combine(ArrayHelper::getColumn($model,'id'),ArrayHelper::getColumn($model,'name'));
+    }
 }

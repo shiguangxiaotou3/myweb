@@ -13,7 +13,7 @@ use common\assets\adminlte\components\CKeditorAssets;
 /** @var  $model frontend\models\Article*/
 
 CKeditorAssets::register($this);
-HighlightAssets::register($this,View::POS_HEAD);
+//HighlightAssets::register($this,View::POS_HEAD);
 
 $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
 $this->blocks['content-header'] ='Blog';
@@ -61,7 +61,7 @@ $session =Yii::$app->session;
                         'class'=>'btn btn-default'
                     ]); ?>
             <!--保存 -->
-            <button type="submit" class="btn btn-primary" ><i class="fa fa-envelope-o"></i> 保存</button>
+            <button type="submit" class="btn btn-primary" ><i class="fa fa-envelope-o" style="height: "></i> 保存</button>
         </div>
         <!--删除 -->
         <button type="reset" class="btn btn-default"><i class="fa fa-times"></i> 删除</button>
@@ -70,7 +70,8 @@ $session =Yii::$app->session;
 </div>
 <?php
 $js =<<<JS
-    CKEDITOR.replace('editor1',{'extraPlugins' : "codesnippet"});
+    CKEDITOR.replace('editor1',{'extraPlugins' : "codesnippet",'optinos':'height: 500px'});
+    
     window.addTag = function addTag(obj){
         var tag= $(obj);
         var input = $('.tags-input input');

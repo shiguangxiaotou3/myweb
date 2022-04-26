@@ -357,8 +357,6 @@ class File extends  Component{
        return $files[rand(0,count($files)-1)];
     }
 
-
-
     /**
      * 获取目录或文件大小
      * @param $path
@@ -607,6 +605,11 @@ class File extends  Component{
         return  self::saveConfig($path,$tmp);
     }
 
+    /**
+     * 搜索目录下的文件,返回[dmstr\widgets\Menu] 菜单项
+     * @param $aliases
+     * @return array
+     */
     public static function recursionDir($aliases){
         $path =Yii::getAlias($aliases);
         $file_arr = scandir($path);

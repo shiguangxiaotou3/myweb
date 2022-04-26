@@ -8,6 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/api/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/vba/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/dysmsapi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/clagiordano/weblibs-configmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/danielstjules/stringy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

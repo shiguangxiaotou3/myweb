@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '5d908b66baa7604632fd65925d31c73c29a8d42f',
+    'reference' => '23a4e5e2ff7730a82b1a4d93d4aeb584d0161a05',
     'name' => 'shiguangxiaotou3/myweb',
   ),
   'versions' => 
@@ -39,6 +39,15 @@
       ),
       'reference' => '2da52ead9bd27e4047890e985db0cd6d6f6a4dd1',
     ),
+    'alibabacloud/client' => 
+    array (
+      'pretty_version' => '1.5.31',
+      'version' => '1.5.31.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '19224d92fe27ab8ef501d77d4891e7660bc023c1',
+    ),
     'alibabacloud/credentials' => 
     array (
       'pretty_version' => '1.1.4',
@@ -56,6 +65,15 @@
       array (
       ),
       'reference' => '6f03803394ab48ef54a498e079a3575881e7fc34',
+    ),
+    'alibabacloud/dysmsapi' => 
+    array (
+      'pretty_version' => '1.8.958',
+      'version' => '1.8.958.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1715a5e4c10520116cf531ed20c287ae488b3489',
     ),
     'alibabacloud/endpoint-util' => 
     array (
@@ -220,6 +238,15 @@
       ),
       'reference' => 'b377af6986f0372bb0707512e52a7b54f7d323c2',
     ),
+    'clagiordano/weblibs-configmanager' => 
+    array (
+      'pretty_version' => 'v1.2.0',
+      'version' => '1.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5c8ebcc62782313b1278afe802b120d18c07a059',
+    ),
     'codeception/codeception' => 
     array (
       'pretty_version' => '4.1.30',
@@ -309,6 +336,15 @@
       array (
       ),
       'reference' => '5141384c57972b0b08fc3bb67bea297321fbd799',
+    ),
+    'danielstjules/stringy' => 
+    array (
+      'pretty_version' => '3.1.0',
+      'version' => '3.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'df24ab62d2d8213bbbe88cc36fc35a4503b4bd7e',
     ),
     'ddeboer/imap' => 
     array (
@@ -645,6 +681,15 @@
       array (
       ),
       'reference' => '5f64118317c8145c0abc606b310aa0a66808398a',
+    ),
+    'mtdowling/jmespath.php' => 
+    array (
+      'pretty_version' => '2.6.1',
+      'version' => '2.6.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9b87907a81b87bc76d19a7fb2d61e61486ee9edb',
     ),
     'myclabs/deep-copy' => 
     array (
@@ -1100,7 +1145,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '5d908b66baa7604632fd65925d31c73c29a8d42f',
+      'reference' => '23a4e5e2ff7730a82b1a4d93d4aeb584d0161a05',
     ),
     'swiftmailer/swiftmailer' => 
     array (

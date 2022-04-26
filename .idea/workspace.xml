@@ -2,28 +2,194 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/controllers/ApiController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/Sample.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mail/layouts/footer/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mail/layouts/sign/Sign.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/mail/layouts/title/logo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/web/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/components/Dysms.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/mail/send.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/web/logo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/NOTICE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/README-zh-CN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/UPGRADING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Accept.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/AlibabaCloud.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/AccessKeyClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/BearerTokenClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/Client.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/EcsRamRoleClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/ManageTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/RamRoleArnClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/RsaKeyPairClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Clients/StsClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Config/Config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Config/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/AccessKeyCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/BearerTokenCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/CredentialsInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/EcsRamRoleCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Ini/CreateTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Ini/IniCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Ini/OptionsTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Providers/CredentialsProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Providers/EcsRamRoleProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Providers/Provider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Providers/RamRoleArnProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Providers/RsaKeyPairProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/RamRoleArnCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Requests/AssumeRole.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/Requests/GenerateSessionAccessKey.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/RsaKeyPairCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Credentials/StsCredential.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/DefaultAcsClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Encode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Exception/AlibabaCloudException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Exception/ClientException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Exception/ServerException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Filter/ApiFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Filter/ClientFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Filter/CredentialFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Filter/Filter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Filter/HttpFilter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Log/LogFormatter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Profile/DefaultProfile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Regions/EndpointProvider.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Regions/LocationService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Regions/LocationServiceRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Release.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Request.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/RoaRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/RpcRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Traits/AcsTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Traits/ClientTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Traits/DeprecatedRoaTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Traits/DeprecatedTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/Traits/RetryTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Request/UserAgent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/ActionResolverTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/ApiResolver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/CallTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/Roa.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/Rpc.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Resolver/VersionResolver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Result/Result.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/SDK.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/BearerTokenSignature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/ShaHmac1Signature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/ShaHmac256Signature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/ShaHmac256WithRsaSignature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/Signature.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Signature/SignatureInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Support/Arrays.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Support/Path.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Support/Sign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/ArrayAccessTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/ClientTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/DefaultRegionTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/EndpointTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/HasDataTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/HistoryTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/HttpTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/LogTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/MockTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/ObjectAccessTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/RegionTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/client/src/Traits/RequestTrait.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/Dysmsapi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/DysmsapiVersion.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/README-EN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/V20170525/Dysmsapi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/V20170525/DysmsapiApiResolver.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi/endpoints.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/bin/jp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/bin/jp.php.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/.github/workflows/php.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/src/ConfigManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/src/IConfigurable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/tests/ConfigManagerTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager/testsdata/sample_config_data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/Create.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/StaticStringy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/danielstjules/stringy/src/Stringy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/README.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/bin/jp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/bin/perf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/AstRuntime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/CompilerRuntime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/DebugRuntime.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/Env.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/FnDispatcher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/JmesPath.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/Lexer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/Parser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/SyntaxErrorException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/TreeCompiler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/TreeInterpreter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/mtdowling/jmespath.php/src/Utils.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/myweb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/myweb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/ActionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ActionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/assets/HighlightAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/HighlightAssets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/assets/MacCode/js/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/MacCode/js/code.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mail/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mail/layouts/text.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/layouts/text.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/blog/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/blog/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/blog/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/blog/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/tag/_columns.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/tag/_columns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/assets/adminlte/AdminAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/adminlte/AdminAssets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/assets/adminlte/plugins/JvectormapAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/adminlte/plugins/JvectormapAssets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/components/Dns.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/Dns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/components/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/File.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/components/Imap.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/Imap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config/params.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/params.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mail/layouts/title/logo.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/mail/layouts/title/logo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/messages/zh-CN/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/messages/zh-CN/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/ContactForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ContactForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/modules/ace/views/index/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/ace/views/index/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/modules/email/controllers/InboxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/email/controllers/InboxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/modules/email/models/EmailSendForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/email/models/EmailSendForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/modules/email/views/inbox/reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/email/views/inbox/reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/widgets/charts/MapWidget.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/widgets/charts/MapWidget.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/config/params.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/config/params.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/SiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/TestpController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/models/PasswordResetRequestForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/PasswordResetRequestForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/models/ResendVerificationEmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/ResendVerificationEmailForm.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/models/SearchArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SearchArticle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/SignupForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/VerifyEmailForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/models/Tag.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/models/Tag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/views/site/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/resendVerificationEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/views/site/resendVerificationEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/test.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/views/site/text.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/logo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,15 +356,24 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/danielstjules/stringy" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/client" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager" />
     </include_path>
   </component>
   <component name="ProjectId" id="27kakBQIgpWxEziOft8WbHLqM1P" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="添加" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
@@ -213,6 +388,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -258,12 +434,23 @@
       <workItem from="1650722044824" duration="679000" />
       <workItem from="1650726143359" duration="1073000" />
       <workItem from="1650727537563" duration="5884000" />
-      <workItem from="1650808553750" duration="7162000" />
+      <workItem from="1650808553750" duration="16768000" />
+      <workItem from="1650825703320" duration="206000" />
+      <workItem from="1650851108364" duration="178000" />
+      <workItem from="1650851669571" duration="2233000" />
+      <workItem from="1650854057483" duration="4765000" />
+      <workItem from="1650869786183" duration="796000" />
+      <workItem from="1650871400455" duration="1744000" />
+      <workItem from="1650972117712" duration="3359000" />
+      <workItem from="1650977398592" duration="13697000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="535" y="236" key="#Deployment" timestamp="1650288661089">
@@ -275,29 +462,33 @@
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119678593" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1650738180673">
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1650995464437">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650217133938" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650738180673" />
+    <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650852555077" />
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650995464437" />
     <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650300909388" />
-    <state x="355" y="348" key="FileChooserDialogImpl" timestamp="1650722057190">
-      <screen x="0" y="0" width="2560" height="1392" />
+    <state x="266" y="258" key="FileChooserDialogImpl" timestamp="1650869468878">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
-    <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1650202552132" />
+    <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1650869468878" />
     <state x="355" y="348" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1650722057190" />
     <state x="355" y="348" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650293367632" />
-    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1650737801266">
+    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1650819851529">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="818" y="355" key="NewPhpClassDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119853399" />
-    <state x="1091" y="479" key="NewPhpClassDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650737801266" />
+    <state x="1091" y="479" key="NewPhpClassDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650819851529" />
     <state x="1091" y="479" key="NewPhpClassDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650386051643" />
-    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1650814339334">
+    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1650979887491">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="595" y="318" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650710140662" />
-    <state x="793" y="429" key="NewPhpFileDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650814339334" />
+    <state x="793" y="429" key="NewPhpFileDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650979887491" />
+    <state x="314" y="342" key="SettingsEditor" timestamp="1650820287677">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="314" y="342" key="SettingsEditor/0.0.2560.1392@0.0.2560.1392" timestamp="1650820287677" />
     <state x="839" y="248" key="ftp.server.browser" timestamp="1650195095318">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
