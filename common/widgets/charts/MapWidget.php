@@ -16,7 +16,6 @@ class MapWidget extends Widget
 
     /** @var $Options array  容器样式 */
     public $Options = [
-        'id' => 'ao',
         'style' => "height: 250px; width: 100%;"
     ];
 
@@ -42,7 +41,7 @@ class MapWidget extends Widget
     public function jvectorMapJs(){
         $id = $this->tagId;
         $visitorsData =str_replace('"','',json_encode($this->visitorsData));
-$js =<<<JS
+        $js =<<<JS
   var visitorsData = {$visitorsData};
   // World map by jvectormap
   $("#{$id}").vectorMap({
@@ -77,23 +76,7 @@ JS;
         return $js;
     }
 
-    /**
-     * 构造点数据json
-     * @return string
-     */
-    public function getMarkerStr(){
 
-        //修改默认高度
-        if(!isset( $this->Options['style'])){
-            $this->Options['style']='height: 325px;';
-        }
-        $data = $this->markers;
-        $res =array();
-        foreach ($data as $row){
-            $res[] ="{latLng:".json_encode($row['latLng']).",name:'".$row['name']."'}";
-        }
-        return "[".implode(',',$res)." ]";
-    }
 
     /**
      * 构造点图js代码
@@ -102,7 +85,7 @@ JS;
     public function vectorMapJs(){
         $id = $this->tagId;
         $markers = $this->getMarkerStr();
-$js =<<<JS
+        $js =<<<JS
 /* jVector Maps
    * ------------
    * Create a world map with markers
@@ -148,21 +131,45 @@ JS;
      */
     public function run()
     {
-        //加载js文件和css文件
+
         $view = $this->getView();
-        if (!empty($this->Options['id'])) {
+        //获取容器id
+        if (!isset($this->Options['id'])) {
             $this->Options['id'] = $this->addId();
+        }else{
+            $this-> tagId= $this->Options['id'];
         }
+
         if (!empty($this->visitorsData)) {
-            JvectormapAssets::register($view);
             $js = $this->jvectorMapJs();
         } elseif (!empty($this->markers)) {
-            JvectormapAssets::register($view);
             $js = $this->vectorMapJs();
         } else {
             return false;
         }
+        //加载js文件和css文件
+        JvectormapAssets::register($view);
+        //加载js代码
         $view->registerJs($js);
         return Html::beginTag('div', $this->Options) . Html::endTag('div');
+    }
+
+
+    /**
+     * 构造点数据json
+     * @return string
+     */
+    private function getMarkerStr(){
+
+        //修改默认高度
+        if(!isset( $this->Options['style'])){
+            $this->Options['style']='height: 325px;';
+        }
+        $data = $this->markers;
+        $res =array();
+        foreach ($data as $row){
+            $res[] ="{latLng:".json_encode($row['latLng']).",name:'".$row['name']."'}";
+        }
+        return "[".implode(',',$res)." ]";
     }
 }

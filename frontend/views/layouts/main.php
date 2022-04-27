@@ -70,7 +70,7 @@ AppAsset::register($this);
         <div class="row ">
             <div class="col"><?= Alert::widget(); ?></div>
         </div>
-        <!-- 第一行 主题-->
+        <!-- 第二行 主题-->
         <div class="row d-flex" >
             <!-- 左侧边栏 -->
             <!--<div class="col"></div>-->
@@ -108,11 +108,6 @@ AppAsset::register($this);
                                     <i class="fa fa-github"></i>
                                     <span class="text-danger">仓库</span>
                                 </a>
-
-                                <?php
-                                //$url =Yii::$app->request->getHostInfo().Yii::$app->request->url;
-                                //echo Html::hiddenInput('copyUrl',$url,['id'=>'copyUrl']);
-                                ?>
                                 <!--联系我-->
                                 <a href="<?= Url::to(['site/contact']) ?>" class="btn btn-default  " >
                                     <i class="fa  fa-comments-o"></i>
@@ -167,20 +162,35 @@ AppAsset::register($this);
                             ?>
                         </div>
                     </div>
-                    <!-- 访问量 -->
+                    <!-- 点图 -->
                     <div class="hot-tag-wrap rounded card bg " style="margin-bottom: 20px">
                         <div class="d-flex justify-content-between bg-transparent card-header" style="padding: 8px 16px">
-                            <strong>访问地址</strong>
+                            <strong>City</strong>
                         </div>
                         <div class="card-body " style="padding: 0px">
                             <?php
                             $data =Yii::$app->ip->visitsDataByCity();
                             if(isset($data) and !empty($data)){
-                                $data['Options']=['id' => 'ao',
-                                    'style' => "height: 150px; width: 100%;"];
+                                $data['Options']=['style' => "height: 150px; width: 100%;"];
                                 echo MapWidget::widget($data);
                             }
-
+                            ?>
+                        </div>
+                    </div>
+                    <!-- 热力图 -->
+                    <div class="hot-tag-wrap rounded card bg " style="margin-bottom: 20px">
+                        <div class="d-flex justify-content-between bg-transparent card-header" style="padding: 8px 16px">
+                            <strong>Country</strong>
+                        </div>
+                        <div class="card-body " style="padding: 0px">
+                            <?php
+                            $res =Yii::$app->ip->visitsDataByCountry();
+                            if(isset($res) and !empty($res)){
+                                echo Mapwidget::widget([
+                                    'Options' => ['style' => "height: 150px; width: 100%;"],
+                                    'visitorsData' =>  $res['visitorsData']
+                                ]);
+                            }
                             ?>
                         </div>
                     </div>
@@ -189,7 +199,7 @@ AppAsset::register($this);
         </div>
     </div>
     <!-- 页脚 -->
-    <footer class="footer mt-auto py-3 text-muted">
+    <footer class="footer mt-auto py-3 text-muted" style="color: #ebf4f9" >
         <div class="container">
             <p class="float-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
             <p class="float-right"><?= Yii::powered() ?></p>

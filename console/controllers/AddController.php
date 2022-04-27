@@ -67,7 +67,8 @@ class AddController extends Controller
      *  删除弹幕
      */
     public function actionDel(){
-        Bilibili::deleteAll();
+        $d =Yii::$app->dysms;
+        $d->main('17762482477',254635);
     }
 
 }

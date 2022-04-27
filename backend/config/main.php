@@ -45,9 +45,7 @@ return [
         'assetsDownload'=>[
             'class'=>'common\components\AssetsDownload',
         ],
-        'dysms'=>[
-            'class'=>'common\components\Dysms',
-        ],
+
         'bilibili'=>[
             'class'=>'common\components\Bilibili',
             'roomId' => 23439073,

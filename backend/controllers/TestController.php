@@ -3,6 +3,7 @@
 
 namespace backend\controllers;
 
+use common\components\Dysms;
 use frontend\models\Article;
 use frontend\models\Tag;
 
@@ -45,9 +46,11 @@ class TestController  extends Controller{
 
 
     public function actionIndex(){
-        $model = Article::find()->where(['like','label','JavaScript'])->asArray()->all();
-      dump( $model);
-      die();
+        /** @var common\components\Dysms $d */
+//       $d =Yii::$app->dysms;
+//      $d->main('17762482477',254635);
+   $str =   Dysms::main('17762482477',254635);
+    dump($str);
         return $this->render('index');
     }
 
