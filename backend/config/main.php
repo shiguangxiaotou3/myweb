@@ -17,6 +17,7 @@ return [
     'language'=>'zh-CN',
     //模块
     'modules' => [
+        //Gii模块
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
         ] ,
@@ -33,23 +34,17 @@ return [
         'ace' => [
             'class' => 'common\modules\ace\Ace',
         ],
+        //DNS模块
         'dns'=>[
             'class'=>'common\modules\dns\Dns'
         ],
+        //b站弹幕模块
         'bilibili' => [
             'class' => 'common\modules\bilibili\BulletChat',
         ]
     ],
     //组件
     'components' => [
-        'assetsDownload'=>[
-            'class'=>'common\components\AssetsDownload',
-        ],
-
-        'bilibili'=>[
-            'class'=>'common\components\Bilibili',
-            'roomId' => 23439073,
-        ],
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
@@ -107,7 +102,7 @@ return [
                 ],
             ]
         ],
-
+        //用户组件
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,

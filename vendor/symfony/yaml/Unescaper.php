@@ -11,8 +11,6 @@
 
 namespace Symfony\Component\Yaml;
 
-use Symfony\Component\Yaml\Exception\ParseException;
-
 /**
  * Unescaper encapsulates unescaping rules for single and double-quoted
  * YAML strings.
@@ -24,16 +22,28 @@ use Symfony\Component\Yaml\Exception\ParseException;
 class Unescaper
 {
     /**
+     * Parser and Inline assume UTF-8 encoding, so escaped Unicode characters
+     * must be converted to that encoding.
+     *
+     * @deprecated since version 2.5, to be removed in 3.0
+     *
+     * @internal
+     */
+    const ENCODING = 'UTF-8';
+
+    /**
      * Regex fragment that matches an escaped character in a double quoted string.
      */
-    public const REGEX_ESCAPED_CHARACTER = '\\\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8}|.)';
+    const REGEX_ESCAPED_CHARACTER = '\\\\(x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8}|.)';
 
     /**
      * Unescapes a single quoted string.
      *
      * @param string $value A single quoted string
+     *
+     * @return string The unescaped string
      */
-    public function unescapeSingleQuotedString(string $value): string
+    public function unescapeSingleQuotedString($value)
     {
         return str_replace('\'\'', '\'', $value);
     }
@@ -42,11 +52,14 @@ class Unescaper
      * Unescapes a double quoted string.
      *
      * @param string $value A double quoted string
+     *
+     * @return string The unescaped string
      */
-    public function unescapeDoubleQuotedString(string $value): string
+    public function unescapeDoubleQuotedString($value)
     {
-        $callback = function ($match) {
-            return $this->unescapeCharacter($match[0]);
+        $self = $this;
+        $callback = function ($match) use ($self) {
+            return $self->unescapeCharacter($match[0]);
         };
 
         // evaluate the string
@@ -57,8 +70,13 @@ class Unescaper
      * Unescapes a character that was found in a double-quoted string.
      *
      * @param string $value An escaped character
+     *
+     * @return string The unescaped character
+     *
+     * @internal This method is public to be usable as callback. It should not
+     *           be used in user code. Should be changed in 3.0.
      */
-    private function unescapeCharacter(string $value): string
+    public function unescapeCharacter($value)
     {
         switch ($value[1]) {
             case '0':
@@ -108,14 +126,20 @@ class Unescaper
             case 'U':
                 return self::utf8chr(hexdec(substr($value, 2, 8)));
             default:
-                throw new ParseException(sprintf('Found unknown escape character "%s".', $value));
+                @trigger_error('Not escaping a backslash in a double-quoted string is deprecated since Symfony 2.8 and will throw a ParseException in 3.0.', E_USER_DEPRECATED);
+
+                return $value;
         }
     }
 
     /**
      * Get the UTF-8 character for the given code point.
+     *
+     * @param int $c The unicode code point
+     *
+     * @return string The corresponding UTF-8 character
      */
-    private static function utf8chr(int $c): string
+    private static function utf8chr($c)
     {
         if (0x80 > $c %= 0x200000) {
             return \chr($c);

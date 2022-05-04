@@ -3,10 +3,13 @@
 
 namespace backend\controllers;
 
-use common\components\Dysms;
-use frontend\models\Article;
-use frontend\models\Tag;
+use AlibabaCloud\Client\AlibabaCloud;
+use AlibabaCloud\Client\Exception\ClientException;
+use AlibabaCloud\Client\Exception\ServerException;
 
+use AlibabaCloud\Dysmsapi\Dysmsapi;
+use common\models\basic\Statistics;
+use Darabonba\OpenApi\Models\Config;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -44,13 +47,7 @@ class TestController  extends Controller{
         ];
     }
 
-
     public function actionIndex(){
-        /** @var common\components\Dysms $d */
-//       $d =Yii::$app->dysms;
-//      $d->main('17762482477',254635);
-   $str =   Dysms::main('17762482477',254635);
-    dump($str);
         return $this->render('index');
     }
 
@@ -60,6 +57,9 @@ class TestController  extends Controller{
     public function actionRead(){
         return $this->render('read');
     }
+
+
+
 
 
 }

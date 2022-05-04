@@ -6,35 +6,35 @@ namespace common\components;
 
 use yii\base\Component;
 
-class Snoopy extends Component
+class Snoopy
 {
     /**** Public variables ****/
 
     /* user definable vars */
 
-    var $scheme = 'http'; // http or https
-    var $host = "www.php.net"; // host name we are connecting to
-    var $port = 80; // port we are connecting to
-    var $proxy_host = ""; // proxy host to use
-    var $proxy_port = ""; // proxy port to use
-    var $proxy_user = ""; // proxy user to use
-    var $proxy_pass = ""; // proxy password to use
+    var $scheme = 'http';               // http or https
+    var $host = "www.php.net";          // 连接的主机
+    var $port = 80;                     // 连接的端口
+    var $proxy_host = "";               // 使用的代理主机，如果有的话
+    var $proxy_port = "";               // 使用的代理主机端口，如果有的话
+    var $proxy_user = "";               // 使用的代理主机用户名
+    var $proxy_pass = "";               // 使用的代理主机密码
 
-    var $agent = "Snoopy v2.0.0"; // agent we masquerade as
-    var $referer = ""; // referer info to pass
-    var $cookies = array(); // array of cookies to pass
+    var $agent = "Snoopy v2.0.0";       // 用户代理伪装 (Snoopy v0.1)
+    var $referer = "";                  // 来路信息，如果有的话
+    var $cookies = array();             // 如果有的话
     // $cookies["username"]="joe";
-    var $rawheaders = array(); // array of raw headers to send
+    var $rawheaders = array();          // 其他的头信息, 如果有的话
     // $rawheaders["Content-type"]="text/html";
 
-    var $maxredirs = 5; // http redirection depth maximum. 0 = disallow
-    var $lastredirectaddr = ""; // contains address of last redirected address
-    var $offsiteok = true; // allows redirection off-site
-    var $maxframes = 0; // frame content depth maximum. 0 = disallow
-    var $expandlinks = true; // expand links to fully qualified URLs.
+    var $maxredirs = 5;                 // 最大重定向次数， 0=不允许 (5)
+    var $lastredirectaddr = "";         // 包含上次重定向地址的地址
+    var $offsiteok = true;              // 允许异地重定向
+    var $maxframes = 0;                 // 帧内容深度最大。0=不允许
+    var $expandlinks = true;            // 是否将链接都补全为完整地址 (true)
     // this only applies to fetchlinks()
     // submitlinks(), and submittext()
-    var $passcookies = true; // pass set cookies back through redirects
+    var $passcookies = true;            // pass set cookies back through redirects
     // NOTE: this currently does not respect
     // dates, domains or paths.
 
@@ -44,19 +44,21 @@ class Snoopy extends Component
     // http accept types
     var $accept = "image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*";
 
-    var $results = ""; // where the content is put
+    var $results = "";                 // where the content is put
 
-    var $error = ""; // error messages sent here
-    var $response_code = ""; // response code returned from server
-    var $headers = array(); // headers returned from server sent here
-    var $maxlength = 500000; // max return data length (body)
-    var $read_timeout = 0; // timeout on read operations, in seconds
+    var $error = "";                // 从服务器返回哪里报错, 如果有的话
+    var $response_code = "";        // 从服务器返回的响应代码
+    var $headers = array();         // 从服务器返回的头信息
+    var $maxlength = 500000;        // 最大返回数据长度（正文）
+    var $read_timeout = 0;          // 读取操作超时，以秒为单位
     // supported only since PHP 4 Beta 4
+    // 仅在PHP 4 Beta 4之后支持
     // set to 0 to disallow timeouts
-    var $timed_out = false; // if a read operation timed out
-    var $status = 0; // http request status
+    // 设置为0以禁止超时
+    var $timed_out = false;         // 如果读取操作超时
+    var $status = 0;                // http请求状态
 
-    var $temp_dir = "/tmp"; // temporary directory that the webserver
+    var $temp_dir = "/tmp";         // temporary directory that the webserver
     // has permission to write to.
     // under Windows, this should be C:\temp
 
@@ -75,18 +77,18 @@ class Snoopy extends Component
 
     var $_maxlinelen = 4096; // max line length (headers)
 
-    var $_httpmethod = "GET"; // default http request method
-    var $_httpversion = "HTTP/1.0"; // default http request version
-    var $_submit_method = "POST"; // default submit method
+    var $_httpmethod = "GET";               // default http request method
+    var $_httpversion = "HTTP/1.0";         // default http request version
+    var $_submit_method = "POST";           // default submit method
     var $_submit_type = "application/x-www-form-urlencoded"; // default submit type
-    var $_mime_boundary = ""; // MIME boundary for multipart/form-data submit type
-    var $_redirectaddr = false; // will be set if page fetched is a redirect
-    var $_redirectdepth = 0; // increments on an http redirect
-    var $_frameurls = array(); // frame src urls
-    var $_framedepth = 0; // increments on frame depth
+    var $_mime_boundary = "";               // MIME boundary for multipart/form-data submit type
+    var $_redirectaddr = false;             // will be set if page fetched is a redirect
+    var $_redirectdepth = 0;                // increments on an http redirect
+    var $_frameurls = array();              // frame src urls
+    var $_framedepth = 0;                   // increments on frame depth
 
-    var $_isproxy = false; // set if using a proxy server
-    var $_fp_timeout = 30; // timeout for socket connection
+    var $_isproxy = false;                  // set if using a proxy server
+    var $_fp_timeout = 30;                  // timeout for socket connection
 
     /*======================================================================*\
         Function:	fetch

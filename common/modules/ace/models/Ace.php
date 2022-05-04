@@ -153,21 +153,17 @@ class Ace extends Model
      * @return false|int|string
      */
     public function saveFile(){
-
         $path = Yii::getAlias($this->aliases);
-
         // 是目录则返回fales
         if(is_dir($path)){
             return false;
         }
-            //如果文件存在
-            if (file_exists($path)){
-                return file_put_contents($path,$this->str);
-            }else{
-                return '文件不存在'.$path;
-            }
-
-
+        //如果文件存在
+        if (file_exists($path)){
+            return file_put_contents($path,$this->str);
+        }else{
+            return '文件不存在'.$path;
+        }
     }
 
     /**

@@ -25,6 +25,7 @@ class AddController extends Controller
         $model->tableName =$table;
         system($model->ConstructShell($appName));
     }
+
     /**
      * 数据迁移生成 rbac数据表
      */
@@ -54,9 +55,7 @@ class AddController extends Controller
     public function actionOutlook(){
         Yii::$app
             ->outlook
-            ->compose(
-                ['html' => 'index']
-            )
+            ->compose(['html' => 'index'])
             ->setFrom(['wanlong757402@outlook.com'=> "outlook"])
             ->setTo("757402123@qq.com")
             ->setSubject('邮件配置验证发送 '.'wanlong757402@outlook.com' . Yii::$app->name)

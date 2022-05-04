@@ -47,5 +47,30 @@ return [
         'authManager'=>[
             'class'=>'yii\rbac\DbManager',
         ],
+        //文件管理模块
+        'file' => [
+            'class' => 'common\modules\file\File',
+        ],
+        //服务器信息组件
+        'server'=>[
+            'class'=>'common\components\Server',
+        ],
+        //爬虫
+        'snoopy' => [
+            'class' => 'common\components\Snoopy',
+        ],
+        //markdown解析文件
+        'markdown'=>[
+            'class'=>'common\components\Markdown',
+        ],
+        //文件下载组件
+        'assetsDownload'=>[
+            'class'=>'common\components\AssetsDownload',
+        ],
+        //b站弹幕组件
+        'bilibili'=>[
+            'class'=>'common\components\Bilibili',
+            'roomId' => 23439073,
+        ],
     ],
 ];

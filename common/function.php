@@ -255,3 +255,4 @@ function str_replace_all($arr,$replace){
     }
     return $res;
 }
+

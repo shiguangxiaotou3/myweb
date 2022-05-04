@@ -53,6 +53,7 @@ class IndexController extends Controller
                 return $this->render('index',['model'=>$model,'data'=>$request->get()]);
             }
         }elseif ($request->isPost){
+            //保存文件
             if($model->load($request->post()) && $model->validate()  ){
                if($model->saveFile()){
                    return  $this->render('index',['model'=>$model,'data'=>$request->get()]);

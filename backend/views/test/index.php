@@ -1,5 +1,6 @@
 <?php
-use himiklab\handsontable\HandsontableWidget;
+use  common\models\tool\MySteel;
+use common\components\Snoopy;
 /** @var $this yii\web\View */
 /** @var $content string */
 /** @var $data string|array|bool */
@@ -11,18 +12,11 @@ use himiklab\handsontable\HandsontableWidget;
 <div class="row">
     <div class="col col-lg-12">
         <?php
-            //显示excel数据
-            echo HandsontableWidget::widget([
-                'settings' => [
-                    'licenseKey' => 'non-commercial-and-evaluation',
-                    'data'=>[['asd','asda'],['asd','asdasd']],
-                    'contextMenu'=> ['row_above', 'row_below', 'remove_row'],
-                    'colHeaders' => true,
-                    'rowHeaders' => true,
-                ]
-            ]);
 
-
+            $mysteel = new MySteel();
+            $path = Yii::getAlias('@backend/runtime/data');
+            $data =$mysteel->getAll('https://jiancai.mysteel.com/market/pa228a15354aa0aaaaa1.html',$path);
+//            dump($data);
         ?>
     </div>
     <div class="col col-lg-12"><? ?></div>

@@ -58,6 +58,7 @@ $username = Yii::$app->user->identity->username;
                             ['label' => '自述文件', 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>"@basic/README.md"]],
                             ['label' => '版本文件', 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>"@basic/LICENSE.md"]],
                             ['label' => '输出结果', 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>"@basic/a.txt"]],
+                            ['label' => '日志', 'icon' => 'files-o', 'url' => ['/ace/index/index',"aliases"=>"@basic/log.txt"]],
                         ],
 
                     ],

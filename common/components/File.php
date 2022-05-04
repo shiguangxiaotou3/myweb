@@ -207,7 +207,6 @@ class File extends  Component{
         }
     }
 
-
     /**
      * 获取文件配置信息
      * @param $path
@@ -268,7 +267,6 @@ class File extends  Component{
             return false;
         }
     }
-
 
     /**
      * 获取目录下的所有目录和文件
@@ -346,15 +344,35 @@ class File extends  Component{
         }
     }
 
-    public static function randomFile($alias,$options=[]){
+    /**
+     * 按条件搜索文件，返回满足条件的文件的绝对路径数组
+     *
+     * @param $alias
+     * @param array $options
+     * @return mixed
+     */
+    public static function getAliasFilesPath($alias,$options=[]){
+        $path = Yii::getAlias($alias);
+        return FileHelper::findFiles($path,$options);
+    }
+
+    /**
+     * 按条件搜索文件，返回满足条件的文件的名称数组
+     *
+     * @param $alias
+     * @param array $options
+     * @return mixed
+     */
+    public static function getAliasFileNames($alias,$options=[]){
         $path = Yii::getAlias($alias);
         $files = FileHelper::findFiles($path,$options);
-        $i=0;
-       foreach ($files as $file){
-           $files[$i] = basename($file,'.'.pathinfo($file)['extension']);
-           $i++;
-       }
-       return $files[rand(0,count($files)-1)];
+        if(is_array($files) and !empty($files)){
+            $filenames =[];
+            foreach ($files as $file){
+                $filenames[] =  basename($file);
+            }
+            return $filenames ;
+        }
     }
 
     /**

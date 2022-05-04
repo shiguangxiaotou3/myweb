@@ -75,15 +75,6 @@ return array (
       '@yii/bootstrap4' => $vendorDir . '/yiisoft/yii2-bootstrap4/src',
     ),
   ),
-  'yiisoft/yii2-debug' => 
-  array (
-    'name' => 'yiisoft/yii2-debug',
-    'version' => '2.1.18.0',
-    'alias' => 
-    array (
-      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
-    ),
-  ),
   'yiisoft/yii2-faker' => 
   array (
     'name' => 'yiisoft/yii2-faker',
@@ -201,15 +192,6 @@ return array (
       '@newerton/fancybox' => $vendorDir . '/newerton/yii2-fancybox/src',
     ),
   ),
-  'himiklab/yii2-handsontable-widget' => 
-  array (
-    'name' => 'himiklab/yii2-handsontable-widget',
-    'version' => '1.1.1.0',
-    'alias' => 
-    array (
-      '@himiklab/handsontable' => $vendorDir . '/himiklab/yii2-handsontable-widget',
-    ),
-  ),
   'kartik-v/yii2-mpdf' => 
   array (
     'name' => 'kartik-v/yii2-mpdf',
@@ -259,10 +241,28 @@ return array (
   'kartik-v/yii2-editable' => 
   array (
     'name' => 'kartik-v/yii2-editable',
-    'version' => '1.7.9.0',
+    'version' => '1.8.0.0',
     'alias' => 
     array (
       '@kartik/editable' => $vendorDir . '/kartik-v/yii2-editable/src',
+    ),
+  ),
+  'yiisoft/yii2-debug' => 
+  array (
+    'name' => 'yiisoft/yii2-debug',
+    'version' => '2.1.19.0',
+    'alias' => 
+    array (
+      '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
+  'himiklab/yii2-handsontable-widget' => 
+  array (
+    'name' => 'himiklab/yii2-handsontable-widget',
+    'version' => '1.1.1.0',
+    'alias' => 
+    array (
+      '@himiklab/handsontable' => $vendorDir . '/himiklab/yii2-handsontable-widget',
     ),
   ),
 );

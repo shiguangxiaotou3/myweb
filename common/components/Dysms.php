@@ -7,6 +7,7 @@ use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
 use AlibabaCloud\Dysmsapi\Dysmsapi;
+use Darabonba\OpenApi\Models\Config;
 use yii\base\Component;
 
 /**
@@ -26,38 +27,47 @@ class Dysms extends Component
     private $_Client;
 
     /**
-     * 线程池
      * @throws ClientException
      */
     public  function createClient(){
-        AlibabaCloud::accessKeyClient($this->accessKeyId, $this->accessKeySecret)
-            ->regionId('cn-beijing')
+        AlibabaCloud::accessKeyClient($this->accessKeyId, $this->accessKeySecret )
+            ->regionId('cn-hangzhou')
             ->asDefaultClient();
     }
 
     /**
-     * 发送短信
-     * @param $phone
+     * 发送邮件
+     * @param $phoneNumbers
      * @param $code
-     * @return array
+     * @return mixed|null
      * @throws ClientException
      * @throws ServerException
      */
-    public  function main($phone,$code){
-        $client = $this->createClient();
-        $request = Dysmsapi::v20170525()->sendSms();
-        $result = $request
-            ->withPhoneNumbers($phone)
-            ->withSignName($this->SignName)
-            ->withTemplateCode($this->TemplateCode)
-            ->withTemplateParam("{code:".$code."}")
-            ->debug(true) // Enable the debug will output detailed information
-            ->connectTimeout(10) // Throw an exception when Connection timeout
-            ->host("dysmsapi.aliyuncs.com")
-            ->accept("application/json")
-            ->timeout(10)
-            ->request();
-       return  $result->toArray();
+    public  function send($phoneNumbers,$code){
+        try {
+            $this->createClient();
+            $request = Dysmsapi::v20170525()->sendSms();
+            $result = $request
+                ->withPhoneNumbers($phoneNumbers)
+                ->withSignName($this->SignName)
+                ->withTemplateCode($this->TemplateCode)
+                ->withTemplateParam("{code:".$code."}}")
+                ->debug(true)               // Enable the debug will output detailed information
+                ->connectTimeout(10)    // Throw an exception when Connection timeout
+                ->timeout(10)
+                ->host("dysmsapi.aliyuncs.com")
+                ->accept("application/json")
+                ->request();
+            return($result->toArray());
+        }catch (ClientException $exception) {
+            echo $exception->getMessage() . PHP_EOL;
+        } catch (ServerException $exception) {
+            echo $exception->getMessage() . PHP_EOL;
+            echo $exception->getErrorCode() . PHP_EOL;
+            echo $exception->getRequestId() . PHP_EOL;
+            echo $exception->getErrorMessage() . PHP_EOL;
+        }
+
     }
 
 }

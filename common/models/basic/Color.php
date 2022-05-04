@@ -31,6 +31,7 @@ class Color
         return $size[rand(0,count($size)-1)];
     }
 
+
     public static function Alias($assets,$options=[]){
         $path = Yii::getAlias($assets);
         $cssName = File::randomFile($path,['only'=>['*.css']]);
@@ -39,7 +40,7 @@ class Color
 
     public static function assetsFile($assets,$options=[]){
         $path = Yii::getAlias($assets);
-        $cssName = File::randomFile($path,['only'=>['*.css']]);
+        $cssName = File::randomFile($path,$options);
         return $path."/".$cssName.'.css';
     }
 

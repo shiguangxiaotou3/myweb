@@ -12,7 +12,6 @@ class Ace extends \yii\base\Module
      */
     public $controllerNamespace = 'common\modules\ace\controllers';
     public $layout ='main';
-
     public $defaultRoute ='index';
     /**
      * {@inheritdoc}
