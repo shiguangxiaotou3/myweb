@@ -14,9 +14,9 @@ use common\components\Snoopy;
         <?php
 
             $mysteel = new MySteel();
-            $path = Yii::getAlias('@backend/runtime/data');
-            $data =$mysteel->getAll('https://jiancai.mysteel.com/market/pa228a15354aa0aaaaa1.html',$path);
-//            dump($data);
+            $mysteel->aa();
+//           dump( $mysteel->getListAll("https://jiancai.mysteel.com/market/pa228a15346aa0aaaaa1.html"));
+
         ?>
     </div>
     <div class="col col-lg-12"><? ?></div>

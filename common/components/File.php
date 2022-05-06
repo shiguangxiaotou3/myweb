@@ -652,5 +652,25 @@ class File extends  Component{
         }
         return $new_arr;
     }
+
+    /**
+     * 递归创建目录
+     * @param $path
+     */
+    public static function mk_dir($path){
+         //第1种情况，该目录已经存在
+         if(is_dir($path)){
+            return;
+         }
+        //第2种情况，父目录存在，本身不存在
+        if(is_dir(dirname($path))){
+            mkdir($path);
+        }
+        //第3种情况，父目录不存在
+        if(!is_dir(dirname($path))){
+            self:: mk_dir(dirname($path));//创建父目录
+            mkdir($path);
+        }
+    }
 }
 

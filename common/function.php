@@ -256,3 +256,12 @@ function str_replace_all($arr,$replace){
     return $res;
 }
 
+/**
+ * 返回当前时间戳 毫秒
+ * @return false|float|mixed
+ */
+function getMicroTime(){
+   $data= explode(' ', microtime());
+    return $data[1]+round($data[0],3);
+}
+

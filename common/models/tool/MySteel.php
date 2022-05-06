@@ -3,10 +3,10 @@
 
 namespace common\models\tool;
 
-
-
-use \DiDom\Document;
+use common\components\File;
+use Yii;
 use Exception;
+use \DiDom\Document;
 use yii\base\Model;
 use common\components\Snoopy;
 
@@ -27,10 +27,10 @@ use common\components\Snoopy;
 class MySteel extends Model
 {
     //登录cookie
-    public $cookieStr='href=https://www.mysteel.com/; accessId=5d36a9e0-919c-11e9-903c-ab24dbab411b; Hm_lvt_1c4432afacfa2301369a5625795031b8=1651651145; _last_loginuname=jh88919070;'.
-    ' _login_psd=5b029af0216c174dbd9ab8a395834f500; _rememberStatus=true;'. ' _login_token=132df255a2667a9e1fd00eeec6db5535; _login_uid=6008832; _login_mid=6658376;'.
-    ' _login_ip=27.19.78.218; 132df255a2667a9e1fd00eeec6db5535=1=10; '. 'qimo_seosource_5d36a9e0-919c-11e9-903c-ab24dbab411b=其他网站; qimo_seokeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=未知; '.
-    'qimo_xstKeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=;'. ' pageViewNum=2; Hm_lpvt_1c4432afacfa2301369a5625795031b8=1651655408; _last_ch_r_t=1651655406071';
+    public $cookieStr='accessId=5d36a9e0-919c-11e9-903c-ab24dbab411b; _last_loginuname=jh88919070; _login_psd=5b029af0216c174dbd9ab8a395834f500; _rememberStatus=true; '.
+    'qimo_xstKeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=; href=https://www.mysteel.com/; Hm_lvt_1c4432afacfa2301369a5625795031b8=1651651145,1651719445,1651764255,1651767167;'.
+    ' _login_token=e273b01776a9d1a121f2bfbbe3de145a; _login_uid=6008832; _login_mid=6658376; _login_ip=27.19.78.218; e273b01776a9d1a121f2bfbbe3de145a=1=10; _last_ch_r_t=1651767170256; '.
+    'qimo_seosource_5d36a9e0-919c-11e9-903c-ab24dbab411b=其他网站;'. ' qimo_seokeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=未知; pageViewNum=31; Hm_lpvt_1c4432afacfa2301369a5625795031b8=1651767173';
     protected $_snoopy;
     public $url ='';
     public $charset='GBK';
@@ -41,6 +41,32 @@ class MySteel extends Model
         'pass'=>'jhr123456'
     ];
     public $pageMax =20;
+    public $data=[
+        'wuhan'=>[
+            ['name'=>'建筑钢材','url'=>'https://jiancai.mysteel.com/market/pa228a15346aa0aaaaa1.html'],
+//            ['name'=>'冷轧带肋钢筋','url'=>'https://jiancai.mysteel.com/market/pa2158aa01010104aaaaaa1.html'],
+//            ['name'=>'热轧板卷','url'=>'https://list1.mysteel.com/market/p-231-----01010301-0-01030204-------1.html'],
+//            ['name'=>'热轧开平板','url'=>'https://list1.mysteel.com/market/p-231-----01010306-0-01030204-------1.html'],
+//            ['name'=>'耐候钢','url'=>'https://list1.mysteel.com/market/p-231-----01010307-0-01030204-------1.html'],
+//            ['name'=>'中厚板','url'=>'https://list1.mysteel.com/market/p-219-----01010204-0-01030204-------1.html'],
+//            ['name'=>'中厚板','url'=>'https://list1.mysteel.com/market/p-219-----01010204-0-01030204-------1.html'],
+//            ['name'=>'低合金高强板','url'=>'https://list1.mysteel.com/market/p-219-----01010211-0-01030204-------1.html'],
+//            ['name'=>'造船板','url'=>'https://list1.mysteel.com/market/p-219-----01010201-0-01030204-------1.html'],
+//            ['name'=>'锅炉容器板','url'=>'https://list1.mysteel.com/market/p-219-----01010202-0-01030204-------1.html'],
+//            ['name'=>'碳结板','url'=>'https://list1.mysteel.com/market/p-219-----01010206-0-01030204-------1.html'],
+//            ['name'=>'耐磨钢','url'=>'https://list1.mysteel.com/market/p-219-----01010205-0-01030204-------1.html'],
+//
+//            ['name'=>'工角钢','url'=>'https://list1.mysteel.com/market/p-223-----01010701-0-01030204-------1.html'],
+//            ['name'=>'H型钢','url'=>'https://list1.mysteel.com/market/p-223-----01010705-0-01030204-------1.html'],
+//            ['name'=>'涂镀','url'=>'https://list1.mysteel.com/market/p-435-----010105-0-01030204-------1.html'],
+//            ['name'=>'管材','url'=>'https://list1.mysteel.com/market/p-236-----010109-0-01030204-------1.html'],
+//            ['name'=>'带钢','url'=>'https://list1.mysteel.com/market/p-231-----010108-0-01030204-------1.html'],
+        ],
+    ];
+    public $alias='@backend/runtime/data';
+    public $links=[];
+    public $sleep=5;
+
 
     // +----------------------------------------------------------------------
     // | Snoopy 配置
@@ -170,38 +196,55 @@ class MySteel extends Model
     // +----------------------------------------------------------------------
 
     /**
-     * 获取某个材料历史记录的url
+     * 获取某个材料历史记录的的某一页的所有url
      * @param $url
      * @return array
      * @throws \DiDom\Exceptions\InvalidSelectorException
      */
-    public function getList($url){
-        $res=[];
+    public function getListOne($url){
         $this->cookies =$this->cookieStr;
-        for ($i=1; $i<=$this->pageMax;$i++){
-            $this->url =str_replace("1.html", $i.".html",$url);
-            $data =$this->results;
-            if($data){
-                $document = new Document($data);
-                $lis = $document->find('ul.nlist li');
-                foreach ($lis as $item){
-                    $a =$item->find('a');
-                    $span =$item->find('span');
-                    if( count($a)>0 and count($span)>0){
-                        $res[] =[
-                            'time'=> self::str_value($span[0]->text()),
-                            'url'=>$a[0]->getAttribute('href'),
-                            'titer'=>self::str_value($a[0]->text()),
-                        ];
-                    }
+        $this->url =$url;
+        $data =$this->results;
+        if($data){
+            $document = new Document($data);
+            $lis = $document->find('ul.nlist li');
+            foreach ($lis as $item){
+                $a =$item->find('a');
+                $span =$item->find('span');
+                if( count($a)>0 and count($span)>0){
+                    array_push($this->links,[
+                        'time'=> self::str_value($span[0]->text()),
+                        'url'=>$a[0]->getAttribute('href'),
+                        'titer'=>self::str_value($a[0]->text()),
+                    ]);
                 }
-            }else{
-                logObject('第'.$i .'页面打开失败');
-                continue;
             }
             unset( $document);
+        }else{
+            logObject($url.'页面打开失败');
+            return false;
         }
-        return $res;
+    }
+
+    /**
+     * 获取某个材料历史记录的所有分页的全部url
+     * @param $url
+     * @return array
+     * @throws \DiDom\Exceptions\InvalidSelectorException
+     */
+    public function getListAll($url){
+        $this->links =[];
+        for ($i=1; $i<=$this->pageMax;$i++){
+            $url_tmp = str_replace("1.html", $i.".html",$url);
+            $data = $this->getListOne($url_tmp);
+            if($data){
+            }else{
+                logObject($url_tmp."列表第".$i."页打开失败");
+            }
+            //等待5秒
+            sleep($this->sleep);
+        }
+        return $this->links;
     }
 
     /**
@@ -284,18 +327,43 @@ class MySteel extends Model
      */
     public function getAll($url,$path){
         set_time_limit(500000);
-        $urls =$this->getList($url);
+        //获取所有url
+        $urls =$this->getListAll($url);
+        $str = '共搜索到'.count($urls)."和文件";
+        $i=1;
         foreach ($urls as $url){
             try{
-                $fileName = $path.'/'.self::createFile( $url['time']).'.txt';
-                $arr = $this->getOne($url['url']);
-                file_put_contents($fileName,serialize($arr));
+                $fileName = $path.'/'.self::createFile($url['time']).'.txt';
+                if(!file_exists($fileName)){
+                    $arr = $this->getOne($url['url']);
+                    if($arr and !empty($arr)){
+                        $i++;
+                        if(! file_put_contents($fileName,serialize($arr))){
+                            logObject($fileName."写入失败");
+                            continue;
+                        }
+                    }
+                }
             }catch (Exception $exception){
                 logObject($url['url']."打开失败");
                 continue;
             }
             //等待5秒
-            sleep(5);
+            sleep($this->sleep);
+        }
+        logObject($str.",其中解析".$i."个");
+    }
+
+
+    public function aa(){
+        $data = $this->data;
+        set_time_limit(50000000000);
+        $path =Yii::getAlias($this->alias);
+        foreach ($data as $key =>$datum){
+            foreach ($datum as $item){
+               File::mk_dir($path."/".$key."/".$item['name'],0777);
+                $this->getAll($item['url'],$path."/".$key."/".$item['name']);
+           }
         }
     }
 
@@ -303,7 +371,6 @@ class MySteel extends Model
     // +----------------------------------------------------------------------
     // | 自定义功能
     // +----------------------------------------------------------------------
-
     /**
      * 自动改变编码格式
      * @param $html
@@ -359,5 +426,4 @@ class MySteel extends Model
         $str= str_replace("：", "_",$str);
         return str_replace(" ", "T",$str);
     }
-
 }
