@@ -16,10 +16,9 @@
 
  ### 主要模块展示
  - ![后台](https://www.shiguangxiaotou.com/wp-content/uploads/2022/05/1.png)
- - ![前台](https://www.shiguangxiaotou.com/10/)
- - ![邮件模块]( https://www.shiguangxiaotou.com/6/)
- - ![rbac](https://www.shiguangxiaotou.com/3-2/)
- - ![图片](https://www.shiguangxiaotou.com/5/)
+ - ![前台](https://www.shiguangxiaotou.com/wp-content/uploads/2022/05/10.png)
+ - ![邮件模块](https://www.shiguangxiaotou.com/wp-content/uploads/2022/05/6.png)
+ - ![rbac](https://www.shiguangxiaotou.com/wp-content/uploads/2022/05/5.png)
  - ![图片]( https://www.shiguangxiaotou.com/6/)
  - ![在线编辑]( https://www.shiguangxiaotou.com/7/)
  - ![模块模块](https://www.shiguangxiaotou.com/8/)
