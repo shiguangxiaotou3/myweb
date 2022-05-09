@@ -53,6 +53,7 @@ use Yii;
  * @property-read \common\components\AssetsDownload $assetsDownload 获取网站的html
  * @property-read \common\components\Bilibili $bilibili 弹幕管理
  * @property-read \common\components\Dysms $dysms 阿里源短信
+ * @property-read \common\components\Reptile $reptile 爬虫组件
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */

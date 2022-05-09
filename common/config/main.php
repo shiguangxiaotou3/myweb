@@ -72,5 +72,9 @@ return [
             'class'=>'common\components\Bilibili',
             'roomId' => 23439073,
         ],
+        //爬虫组件
+        'reptile'=>[
+            'class'=>'common\components\Reptile',
+        ],
     ],
 ];

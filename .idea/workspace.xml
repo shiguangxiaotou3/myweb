@@ -66,6 +66,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IlluminatedCloudWorkspaceSettings">
+    <option name="projectWorkspaceSettings">
+      <ProjectWorkspaceSettings>
+        <option name="anonymousApexSettings">
+          <AnonymousApexSettings>
+            <option name="savedDocuments">
+              <list>
+                <AnonymousApexSavedDocument>
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+              </list>
+            </option>
+            <option name="selectedSavedDocumentIndex" value="0" />
+          </AnonymousApexSettings>
+        </option>
+        <option name="soqlQuerySettings">
+          <SoqlQuerySettings>
+            <option name="savedDocuments">
+              <list>
+                <SoqlQuerySavedDocument>
+                  <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
+              </list>
+            </option>
+            <option name="selectedSavedDocumentIndex" value="0" />
+          </SoqlQuerySettings>
+        </option>
+      </ProjectWorkspaceSettings>
+    </option>
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
@@ -223,6 +253,9 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/handsontable" />
       <path value="$PROJECT_DIR$/vendor/himiklab/yii2-handsontable-widget" />
       <path value="$PROJECT_DIR$/vendor/imangazaliev/didom" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/mui" />
+      <path value="$PROJECT_DIR$/vendor/wechatpay/wechatpay" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
     </include_path>
   </component>
   <component name="ProjectId" id="27kakBQIgpWxEziOft8WbHLqM1P" />
@@ -251,7 +284,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -328,6 +361,13 @@
       <workItem from="1651819562869" duration="2429000" />
       <workItem from="1651826006495" duration="54000" />
       <workItem from="1651826071814" duration="943000" />
+      <workItem from="1651829957127" duration="153000" />
+      <workItem from="1651830123351" duration="2056000" />
+      <workItem from="1651839032270" duration="2538000" />
+      <workItem from="1651929474028" duration="14518000" />
+      <workItem from="1651999102542" duration="2802000" />
+      <workItem from="1652020514947" duration="4995000" />
+      <workItem from="1652101777580" duration="1742000" />
     </task>
     <servers />
   </component>
@@ -347,40 +387,47 @@
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="232" y="358" key="#Inspections/0.0.2560.1392@0.0.2560.1392" timestamp="1651659556030" />
-    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1651687897581">
+    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1651999313113">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1392@0.0.2560.1392" timestamp="1651687897581" />
+    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999313113" />
     <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1650119678593">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119678593" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1651152204728">
+    <state x="850" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1651939209508">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="850" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651939209508" />
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1651999548688">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650852555077" />
     <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650995464437" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651152204728" />
+    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999548688" />
     <state x="266" y="258" key="FileChooserDialogImpl" timestamp="1651738687746">
       <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1651738687746" />
     <state x="355" y="348" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1650722057190" />
     <state x="355" y="348" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651242420268" />
-    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1651651172487">
+    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1651999532611">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="818" y="355" key="NewPhpClassDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119853399" />
     <state x="1091" y="479" key="NewPhpClassDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1651651172487" />
-    <state x="1091" y="479" key="NewPhpClassDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650386051643" />
-    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1650979887491">
+    <state x="1091" y="479" key="NewPhpClassDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999532611" />
+    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1651999617792">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="595" y="318" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650710140662" />
     <state x="793" y="429" key="NewPhpFileDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650979887491" />
-    <state x="314" y="342" key="SettingsEditor" timestamp="1650820287677">
-      <screen x="0" y="0" width="2560" height="1392" />
+    <state x="793" y="429" key="NewPhpFileDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999617792" />
+    <state x="236" y="254" key="SettingsEditor" timestamp="1651830109877">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
+    <state x="236" y="254" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1651830109877" />
     <state x="314" y="342" key="SettingsEditor/0.0.2560.1392@0.0.2560.1392" timestamp="1650820287677" />
     <state x="839" y="248" key="ftp.server.browser" timestamp="1651799296366">
       <screen x="0" y="0" width="1920" height="1032" />

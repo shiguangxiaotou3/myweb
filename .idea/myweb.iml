@@ -11,15 +11,18 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/alibabacloud/dysmsapi" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/handsontable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/mui" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clagiordano/weblibs-configmanager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/codeception" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/danielstjules/stringy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/uri-template" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/himiklab/yii2-handsontable-widget" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/imangazaliev/didom" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-editable" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mtdowling/jmespath.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/php-http/message-factory" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wechatpay/wechatpay" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
     </content>
     <orderEntry type="inheritedJdk" />

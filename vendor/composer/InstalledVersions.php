@@ -498,6 +498,15 @@ private static $installed = array (
       ),
       'reference' => '089edd38f5b8abba6cb01567c2a8aaa47cec4c72',
     ),
+    'guzzlehttp/uri-template' => 
+    array (
+      'pretty_version' => 'v1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b945d74a55a25a949158444f09ec0d3c120d69e2',
+    ),
     'himiklab/yii2-handsontable-widget' => 
     array (
       'pretty_version' => '1.1.1',
@@ -1395,6 +1404,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '6964c76c7804814a842473e0c8fd15bab0f18e25',
+    ),
+    'wechatpay/wechatpay' => 
+    array (
+      'pretty_version' => '1.4.3',
+      'version' => '1.4.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd384ebae883f6c9075d11fda4a59e969818b91b7',
     ),
     'yiisoft/yii2' => 
     array (

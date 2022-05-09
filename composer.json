@@ -40,7 +40,8 @@
         "johnitvn/yii2-ajaxcrud": "*",
         "markrogoyski/math-php": "2.*",
         "alibabacloud/dysmsapi": "^1.8",
-        "imangazaliev/didom": "^1.18"
+        "imangazaliev/didom": "^1.18",
+        "wechatpay/wechatpay": "^1.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

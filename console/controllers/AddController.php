@@ -70,5 +70,13 @@ class AddController extends Controller
         $d->main('17762482477',254635);
     }
 
+    /**
+     * 测试
+     */
+    public function actionTest(){
+        echo "\n  你的选择 [0-". '5, or "q" to quit] ';
+        $answer = trim(fgets(STDIN));
+        echo $answer;
+    }
 }
 

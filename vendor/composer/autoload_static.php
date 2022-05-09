@@ -128,6 +128,7 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+            'WeChatPay\\' => 10,
         ),
         'S' => 
         array (
@@ -185,6 +186,7 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         ),
         'G' => 
         array (
+            'GuzzleHttp\\UriTemplate\\' => 23,
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
@@ -398,6 +400,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'WeChatPay\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wechatpay/wechatpay/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -542,6 +548,10 @@ class ComposerStaticInit12bf5b1638e9d7251bfa172bf76f2321
         'Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'GuzzleHttp\\UriTemplate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/uri-template/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (

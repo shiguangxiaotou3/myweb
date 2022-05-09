@@ -157,6 +157,9 @@
       <path value="$PROJECT_DIR$/vendor/bower-asset/handsontable" />
       <path value="$PROJECT_DIR$/vendor/himiklab/yii2-handsontable-widget" />
       <path value="$PROJECT_DIR$/vendor/imangazaliev/didom" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/mui" />
+      <path value="$PROJECT_DIR$/vendor/wechatpay/wechatpay" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
     </include_path>
   </component>
 </project>
