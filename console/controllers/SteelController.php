@@ -3,13 +3,15 @@
 
 namespace console\controllers;
 
+
+
 use Yii;
 use common\components\File;
 use DiDom\Document;
 use yii\console\Controller;
 use common\components\Reptile;
 use yii\helpers\Console;
-
+use console\models\PrintTable;
 /**
  *
  *
@@ -20,12 +22,35 @@ class SteelController extends Controller
 {
 
     public $snoopy;
-    public $cookieStr='_last_loginuname=jh88919070; _login_psd=5b029af0216c174dbd9ab8a395834f500; _rememberStatus=true; Hm_lvt_1c4432afacfa2301369a5625795031b8=1651719445,1651764255,1651767167,1651929747; UM_distinctid=1809eb18b58b4-0c21534ac930fa-60306731-c7764-1809eb18b595c0; _last_ch_r_t=1651929877089; href=https://wuhan.mysteel.com/; accessId=5d36a9e0-919c-11e9-903c-ab24dbab411b; pageViewNum=1; Hm_lpvt_1c4432afacfa2301369a5625795031b8=1651934355';
+    public $cookieStr='qimo_xstKeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=; href=https://www.mysteel.com/; accessId=5d36a9e0-919c-11e9-903c-ab24dbab411b; Hm_lvt_1c4432afacfa2301369a5625795031b8=1652707459; _last_loginuname=jh88919070; _login_psd=5b029af0216c174dbd9ab8a395834f500; _rememberStatus=true; _login_token=040518d3d264fa4b5c8ae8f55c90455a; _login_uid=6008832; _login_mid=6658376; _login_ip=27.19.76.57; 040518d3d264fa4b5c8ae8f55c90455a=1=10; _last_ch_r_t=1652707535830; qimo_seosource_5d36a9e0-919c-11e9-903c-ab24dbab411b=其他网站; qimo_seokeywords_5d36a9e0-919c-11e9-903c-ab24dbab411b=未知; pageViewNum=2; Hm_lpvt_1c4432afacfa2301369a5625795031b8=1652707536';
     public $url='https://jiancai.mysteel.com/market/pa228a15346aa0aaaaa1.html';
     public $pageMax=25;
     public $i=1;
     public $status= true;
 
+    public $config=[
+        '武汉'=>[
+            ['name'=>'建筑钢材价格','url'=>'https://jiancai.mysteel.com/market/pa228a15346aa0aaaaa1.html'],
+            ['name'=>'冷轧带肋钢筋价格','url'=>'https://jiancai.mysteel.com/market/pa2158aa01010104aaaaaa1.html'],
+            ['name'=>'热轧板卷价格','url'=>'https://list1.mysteel.com/market/p-231-----01010301-0-01030204-------1.html'],
+            ['name'=>'热轧开平板','url'=>'https://list1.mysteel.com/market/p-231-----01010306-0-01030204-------1.html'],
+            ['name'=>'耐候钢','url'=>'https://list1.mysteel.com/market/p-231-----01010307-0-01030204-------1.html'],
+            ['name'=>'中厚板','url'=>'https://list1.mysteel.com/market/p-219-----01010204-0-01030204-------1.html'],
+            ['name'=>'低合金高强板','url'=>'https://list1.mysteel.com/market/p-219-----01010211-0-01030204-------1.html'],
+            ['name'=>'造船板','url'=>'https://list1.mysteel.com/market/p-219-----01010201-0-01030204-------1.html'],
+            ['name'=>'锅炉容器板','url'=>'https://list1.mysteel.com/market/p-219-----01010202-0-01030204-------1.html'],
+            ['name'=>'碳结板','url'=>'https://list1.mysteel.com/market/p-219-----01010206-0-01030204-------1.html'],
+            ['name'=>'耐磨钢','url'=>'https://list1.mysteel.com/market/p-219-----01010205-0-01030204-------1.html'],
+            ['name'=>'工角钢','url'=>'https://list1.mysteel.com/market/p-223-----01010701-0-01030204-------1.html'],
+            ['name'=>'H型钢','url'=>'https://list1.mysteel.com/market/p-223-----01010705-0-01030204-------1.html'],
+            ['name'=>'涂镀价格','url'=>'https://list1.mysteel.com/market/p-435-----010105-0-01030204-------1.html'],
+            ['name'=>'管材价格','url'=>'https://list1.mysteel.com/market/p-236-----010109-0-01030204-------1.html'],
+            ['name'=>'带钢价格','url'=>'https://list1.mysteel.com/market/p-231-----010108-0-01030204-------1.html'],
+        ]
+    ];
+    // +----------------------------------------------------------------------
+    // | 功能实现
+    // +----------------------------------------------------------------------
     public function init(){
         $this->snoopy = new Reptile();
     }
@@ -60,7 +85,6 @@ class SteelController extends Controller
                 $a =$item->find('a');
                 $span =$item->find('span');
                 if( count($a)>0 and count($span)>0){
-                    $this->message($a[0]->getAttribute('href'));
                     array_push( $arr,[
                         'time'=> $span[0]->text(),
                         'url'=>$a[0]->getAttribute('href'),
@@ -71,7 +95,6 @@ class SteelController extends Controller
             unset( $document);
             return  $arr;
         }else{
-            echo $url.":获取列表失败".'\n\n';
             return false;
         }
     }
@@ -91,8 +114,6 @@ class SteelController extends Controller
                 foreach ($data as $datum){
                     array_push($arr,$datum);
                 }
-            }else{
-                $this->message("列表". $url_tmp." 第".$i."页打开失败");
             }
         }
         return $arr;
@@ -198,7 +219,6 @@ class SteelController extends Controller
         Console::endProgress();
     }
 
-
     /**
      * 获取一个地区多种材料的所有数据
      * @param $config
@@ -231,6 +251,9 @@ class SteelController extends Controller
         }
     }
 
+    // +----------------------------------------------------------------------
+    // | 控制台交互
+    // +----------------------------------------------------------------------
     /**
      * 获取材料的列表的一页的所有url
      * @throws \DiDom\Exceptions\InvalidSelectorException
@@ -238,7 +261,7 @@ class SteelController extends Controller
     public function actionListOne(){
         $data = $this->getListOne($this->url);
         if($data){
-            $this->message( " 用搜索到".count($data).'条记录');
+            echo PrintTable::Print_table( $data) ;
         }
     }
 
@@ -249,15 +272,8 @@ class SteelController extends Controller
     public function actionListAll(){
         $data = $this->getListAll($this->url);
         if($data){
-            $this->message( " 用搜索到".count($data).'条记录');
+            echo PrintTable::Print_table( $data) ;
         }
-        Console::startProgress(0, 1000);
-        for ($n = 1; $n <= 1000; $n++) {
-            usleep(1000);
-            Console::updateProgress($n, 1000);
-
-        }
-        Console::endProgress();
     }
 
     /**
@@ -265,7 +281,10 @@ class SteelController extends Controller
      * @throws \DiDom\Exceptions\InvalidSelectorException
      */
     public function actionDataOne(){
-        $this->getDataOne($this->url);
+        $data =  $this->getDataOne($this->url);
+        if($data){
+            echo PrintTable::Print_table( $data) ;
+        }
     }
 
     /**

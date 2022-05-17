@@ -31,6 +31,12 @@ class Reptile extends Component
     public $alias='@backend/runtime/data';
     public $links=[];
     public $sleep=5;
+    //HTML 符号替换
+    public $strReplace =[
+       "（"=> "(", "）"=> ")",
+        "("=> "", ")"=> "", "\r"=>"",
+        "\n"=> "", "\r\n"=>"",
+    ];
 
 
     // +----------------------------------------------------------------------
@@ -167,17 +173,15 @@ class Reptile extends Component
     }
 
     /**
-     * 替换字符串中的 空格 换行
+     * 替换HTML中的特殊字符
      * @param $str
      * @return string|string[]
      */
     public  function str_value($str){
         $str= trim($str);
-        $str= str_replace("（", "(",$str);
-        $str= str_replace("）", ")",$str);
-        $str= str_replace("\r", "",$str);
-        $str= str_replace("\n", "",$str);
-        $str= str_replace("\r\n", "",$str);
+        foreach ($this->strReplace as $key=>$value){
+            $str= str_replace($key, $value,$str);
+        }
         return $str;
     }
 
@@ -192,6 +196,5 @@ class Reptile extends Component
         $str= str_replace("：", "_",$str);
         return str_replace(" ", "T",$str);
     }
-
 
 }

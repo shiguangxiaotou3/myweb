@@ -29,11 +29,12 @@ use common\assets\JvectormapAssets;
         <!-- 头部-->
         <?= $this->render('header.php', ['asset' => $asset]) ?>
         <!-- 类容 -->
-        <div id="main">
-            <div class="wrapper clearfix">
-                <?= $content ?>
+        <main role="main">
+                <article id="webslides">
+                    <?= $content ?>
+                </article>
             </div>
-        </div>
+        </main>
         <!--页脚 -->
         <?= $this->render('footer.php', ['asset' => $asset]) ?>
     <?php $this->endBody() ?>

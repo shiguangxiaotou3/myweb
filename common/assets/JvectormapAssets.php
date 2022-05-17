@@ -8,30 +8,15 @@ use yii\web\AssetBundle;
 
 class JvectormapAssets extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower-asset/jvectormap';
+    public $sourcePath = '@vendor/almasaeed2010/adminlte/plugins/jvectormap';
     public $baseUrl = '@web';
-    public $css = [
-        'css/skin.css',
-        'css/style.css',
-        'css/reset.css',
-        'css/jsdoc.css',
-        'css/social.css',
-        'css/syntax.css',
-        'css/widgets.css',
-        'css/comments.css',
-        'css/elements.css',
-        'css/jquery-ui.min.css',
-        'css/lessframework.css',
-        'css/jquery-jvectormap-2.0.5.css',
-    ];
+    public $css = [];
     public $js = [
-        'js/css3-mediaqueries.js',
-        'js/gdp-data.js',
-        'js/modernizr.js',
-        'js/tabs.js',
-        'js/jquery-jvectormap-2.0.5.min.js',
-        'js/jquery-jvectormap-world-mill.js',
+        //'jquery-jvectormap-cn_merc_en.js',
+        //'jquery-jvectormap-1.2.2.min.js'
+//        'jquery-jvectormap-world-mill-en.js',
+
     ];
-    public $depends = [];
+    public $depends = ['common\assets\adminlte\components\JvectormapCss'];
 
 }

@@ -30,9 +30,6 @@ common\assets\webslidesAssets::register($this);
                 <?= $content ?>
             </article>
         </main>
-
-        <!-- 页脚 -->
-
     <?php $this->endBody() ?>
     </body>
     </html>

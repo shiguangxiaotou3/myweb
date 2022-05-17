@@ -38,7 +38,7 @@ class HighlightAssets extends AssetBundle
 //        'styles/magula.css',
 //        'styles/mono-blue.css',
 //        'styles/monokai.css',
-//        'styles/monokai_sublime.css',
+        'styles/monokai_sublime.css',
 //        'styles/obsidian.css',
 //        'styles/paraiso.dark.css',
 //        'styles/paraiso.light.css',

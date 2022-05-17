@@ -8,7 +8,7 @@ use yii\web\AssetBundle;
 
 class webslidesAssets  extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower-asset/webslides';
+    public $sourcePath = '@vendor/bower-asset/WebSlides';
     public $baseUrl = '@web';
     public $css = [
         'static/css/webslides.css',

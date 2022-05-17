@@ -4,7 +4,6 @@
 namespace console\controllers;
 
 
-use common\modules\bilibili\models\Bilibili;
 use console\models\User;
 use Yii;
 use common\models\gii\shell;
@@ -37,12 +36,14 @@ class AddController extends Controller
     /**
      * 注册用户
      */
-    public function actionAddUser(){
-        $model  = new SignupForm();
-        $model->username ='时光小偷';
-        $model->email ='757402123@outlook.com';
-        $model->password ='WanLong757402123.';
-        if ( $model->signup()) {
+    public function actionUser(){
+
+        $user = new \common\models\User();
+        $user->username ='时光小偷';
+        $user->setPassword('757402123');
+        $user->email ='wanlong757402@outlook.com';
+        $user->status =10;
+        if($user->validate() && $user->save()){
             echo "注册成功".'\n';
         }else{
             echo "注册失败".'\n';

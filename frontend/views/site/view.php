@@ -147,7 +147,4 @@ $this->registerJs('hljs.initHighlightingOnLoad();',View::POS_HEAD);
                 <?php }?>
             </div>
         </div>
-
     </div>
-<?php
-

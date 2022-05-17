@@ -1,67 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/common/assets/indx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/modules/file/File.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/modules/file/controllers/DefaultController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/modules/file/views/default/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/a.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/test/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/assets/HighlightAssets.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/assets/HighlightAssets.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/components/Dysms.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/Dysms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/components/File.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/File.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/components/Snoopy.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/components/Snoopy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/basic/Color.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/basic/Color.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/basic/Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/basic/Statistics.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/ace/Ace.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/ace/Ace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/ace/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/ace/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/ace/models/Ace.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/ace/models/Ace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/modules/ace/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/common/modules/ace/views/layouts/left.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/controllers/AddController.php" beforeDir="false" afterPath="$PROJECT_DIR$/console/controllers/AddController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Application.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yiisoft/yii2/base/Application.php" afterDir="false" />
-    </list>
+    <list default="true" id="f52224f6-5601-471a-88f1-dc342d7733bf" name="默认更改列表" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
-  </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,197 +48,184 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
-      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
-      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
+      <path value="$PROJECT_DIR$/vendor/wechatpay/wechatpay" />
+      <path value="$PROJECT_DIR$/vendor/practically/yii2-chartjs" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/mui" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
       <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
-      <path value="$PROJECT_DIR$/vendor/markrogoyski/math-php" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
-      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
-      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
-      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
-      <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/tags-input" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/inputmask" />
-      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
-      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
-      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
-      <path value="$PROJECT_DIR$/vendor/johnitvn/yii2-ajaxcrud" />
-      <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/froala/wysiwyg-editor" />
-      <path value="$PROJECT_DIR$/vendor/froala/yii2-froala-editor" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-ipinfo" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-growl" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/client" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-alert" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-icons" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
       <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
-      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/mdmsoft/yii2-admin" />
       <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-icons" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-alert" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-ipinfo" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-growl" />
       <path value="$PROJECT_DIR$/vendor/npm-asset/bootstrap" />
-      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
-      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
-      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
-      <path value="$PROJECT_DIR$/vendor/ipinfo/ipinfo" />
-      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <path value="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/froala/wysiwyg-editor" />
+      <path value="$PROJECT_DIR$/vendor/fortawesome/font-awesome" />
       <path value="$PROJECT_DIR$/vendor/components/flag-icon-css" />
-      <path value="$PROJECT_DIR$/vendor/oonne/yii2-webuploader" />
-      <path value="$PROJECT_DIR$/vendor/codeception/module-yii2" />
-      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
-      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
-      <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
-      <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
-      <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
+      <path value="$PROJECT_DIR$/vendor/danielstjules/stringy" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/tags-input" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
       <path value="$PROJECT_DIR$/vendor/codeception/module-filesystem" />
-      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
-      <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
-      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
       <path value="$PROJECT_DIR$/vendor/codeception/lib-asserts" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/sabre/cache" />
+      <path value="$PROJECT_DIR$/vendor/johnitvn/yii2-ajaxcrud" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-asserts" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/vendor/codeception/lib-innerbrowser" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/codeception/module-yii2" />
+      <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
       <path value="$PROJECT_DIR$/vendor/ddeboer/imap" />
-      <path value="$PROJECT_DIR$/vendor/abhi1693/yii2-system-info" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
-      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/chenkby/yii2-region" />
       <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
-      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
-      <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea" />
-      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/tea-utils" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/credentials" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/darabonba-openapi" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/openapi-util" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/endpoint-util" />
-      <path value="$PROJECT_DIR$/vendor/newerton/yii2-fancybox" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/alidns-20150109" />
-      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
-      <path value="$PROJECT_DIR$/vendor/practically/yii2-chartjs" />
-      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
-      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
-      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
-      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
-      <path value="$PROJECT_DIR$/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
-      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
-      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
-      <path value="$PROJECT_DIR$/vendor/mludvik/yii2-tags-input" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
-      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/client" />
-      <path value="$PROJECT_DIR$/vendor/alibabacloud/dysmsapi" />
-      <path value="$PROJECT_DIR$/vendor/clagiordano/weblibs-configmanager" />
-      <path value="$PROJECT_DIR$/vendor/danielstjules/stringy" />
-      <path value="$PROJECT_DIR$/vendor/mtdowling/jmespath.php" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/lizhichao/one-sm" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/imangazaliev/didom" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/adbario/php-dot-notation" />
+      <path value="$PROJECT_DIR$/vendor/sabre/cache" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
-      <path value="$PROJECT_DIR$/vendor/codeception/codeception" />
-      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
       <path value="$PROJECT_DIR$/vendor/bower-asset/handsontable" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap4" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
       <path value="$PROJECT_DIR$/vendor/himiklab/yii2-handsontable-widget" />
-      <path value="$PROJECT_DIR$/vendor/imangazaliev/didom" />
-      <path value="$PROJECT_DIR$/vendor/bower-asset/mui" />
-      <path value="$PROJECT_DIR$/vendor/wechatpay/wechatpay" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/d3" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/oonne/yii2-webuploader" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/ace-builds" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/mludvik/yii2-tags-input" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/WebSlides" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/eluhr/yii2-aceeditor" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/ipinfo/ipinfo" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/newerton/yii2-fancybox" />
+      <path value="$PROJECT_DIR$/vendor/froala/yii2-froala-editor" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/uilkit" />
+      <path value="$PROJECT_DIR$/vendor/markrogoyski/math-php" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/abhi1693/yii2-system-info" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
     </include_path>
   </component>
-  <component name="ProjectId" id="27kakBQIgpWxEziOft8WbHLqM1P" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="添加" />
-  </component>
+  <component name="ProjectId" id="29IdWUWteDPzW7THFz8OV8E8SJa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
-    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/runtime" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\AppServ\www\myweb\common\mail\layouts" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\AppServ\www\myweb\frontend\runtime" />
     </key>
   </component>
   <component name="RunManager">
@@ -302,163 +239,29 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdf7f9ed-67d0-4107-88e4-453057903dfd" name="默认更改列表" comment="" />
-      <created>1649866678020</created>
+      <changelist id="f52224f6-5601-471a-88f1-dc342d7733bf" name="默认更改列表" comment="" />
+      <created>1652804565189</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1649866678020</updated>
-      <workItem from="1649866681981" duration="7210000" />
-      <workItem from="1649923894097" duration="17207000" />
-      <workItem from="1650030606536" duration="11711000" />
-      <workItem from="1650112518466" duration="25421000" />
-      <workItem from="1650138595827" duration="21000" />
-      <workItem from="1650174484591" duration="1985000" />
-      <workItem from="1650194445725" duration="2314000" />
-      <workItem from="1650202527657" duration="1265000" />
-      <workItem from="1650208014025" duration="9571000" />
-      <workItem from="1650218138204" duration="897000" />
-      <workItem from="1650288613738" duration="2680000" />
-      <workItem from="1650294769279" duration="7122000" />
-      <workItem from="1650368474915" duration="2158000" />
-      <workItem from="1650374292591" duration="13707000" />
-      <workItem from="1650533096946" duration="2278000" />
-      <workItem from="1650537268484" duration="686000" />
-      <workItem from="1650616280261" duration="2016000" />
-      <workItem from="1650627945692" duration="16676000" />
-      <workItem from="1650686674055" duration="7805000" />
-      <workItem from="1650717798706" duration="2259000" />
-      <workItem from="1650722044824" duration="679000" />
-      <workItem from="1650726143359" duration="1073000" />
-      <workItem from="1650727537563" duration="5884000" />
-      <workItem from="1650808553750" duration="16768000" />
-      <workItem from="1650825703320" duration="206000" />
-      <workItem from="1650851108364" duration="178000" />
-      <workItem from="1650851669571" duration="2233000" />
-      <workItem from="1650854057483" duration="4765000" />
-      <workItem from="1650869786183" duration="796000" />
-      <workItem from="1650871400455" duration="1744000" />
-      <workItem from="1650972117712" duration="3359000" />
-      <workItem from="1650977398592" duration="17232000" />
-      <workItem from="1651025528392" duration="6610000" />
-      <workItem from="1651032460135" duration="4055000" />
-      <workItem from="1651045378779" duration="6355000" />
-      <workItem from="1651065093141" duration="3123000" />
-      <workItem from="1651147628989" duration="10017000" />
-      <workItem from="1651160968973" duration="4691000" />
-      <workItem from="1651221781517" duration="363000" />
-      <workItem from="1651230876676" duration="7251000" />
-      <workItem from="1651242844843" duration="8000" />
-      <workItem from="1651411814584" duration="1111000" />
-      <workItem from="1651486031960" duration="350000" />
-      <workItem from="1651521451874" duration="1124000" />
-      <workItem from="1651525044276" duration="638000" />
-      <workItem from="1651554023835" duration="12403000" />
-      <workItem from="1651570177740" duration="10000" />
-      <workItem from="1651586179535" duration="42198000" />
-      <workItem from="1651738527418" duration="163000" />
-      <workItem from="1651762849737" duration="11163000" />
-      <workItem from="1651798974133" duration="1732000" />
-      <workItem from="1651819562869" duration="2429000" />
-      <workItem from="1651826006495" duration="54000" />
-      <workItem from="1651826071814" duration="943000" />
-      <workItem from="1651829957127" duration="153000" />
-      <workItem from="1651830123351" duration="2056000" />
-      <workItem from="1651839032270" duration="2538000" />
-      <workItem from="1651929474028" duration="14518000" />
-      <workItem from="1651999102542" duration="2802000" />
-      <workItem from="1652020514947" duration="4995000" />
-      <workItem from="1652101777580" duration="1742000" />
+      <updated>1652804565189</updated>
+      <workItem from="1652804575113" duration="528000" />
+      <workItem from="1652805653194" duration="755000" />
+      <workItem from="1652806428528" duration="149000" />
+      <workItem from="1652807200592" duration="1000000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="401" y="175" key="#Deployment" timestamp="1651800798203">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="401" y="175" key="#Deployment/0.0.1920.1032@0.0.1920.1032" timestamp="1651800798203" />
-    <state x="535" y="236" key="#Deployment/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1650288661089" />
-    <state x="232" y="358" key="#Inspections" timestamp="1651659556030">
+    <state x="1060" y="451" key="FileChooserDialogImpl" timestamp="1652807412211">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="232" y="358" key="#Inspections/0.0.2560.1392@0.0.2560.1392" timestamp="1651659556030" />
-    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1651999313113">
+    <state x="1060" y="451" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652807412211" />
+    <state x="781" y="338" key="SettingsEditor" timestamp="1652808160429">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1392@0.0.2560.1392" timestamp="1651687897581" />
-    <state x="457" y="502" key="#com.intellij.fileTypes.FileTypeChooser/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999313113" />
-    <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1650119678593">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="678" y="287" width="1175" height="466" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119678593" />
-    <state x="850" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1651939209508">
-      <screen x="0" y="0" width="2560" height="1392" />
-    </state>
-    <state x="850" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651939209508" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1651999548688">
-      <screen x="0" y="0" width="2560" height="1392" />
-    </state>
-    <state x="398" y="314" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650852555077" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650995464437" />
-    <state x="531" y="424" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999548688" />
-    <state x="266" y="258" key="FileChooserDialogImpl" timestamp="1651738687746">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="266" y="258" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1651738687746" />
-    <state x="355" y="348" key="FileChooserDialogImpl/0.0.2560.1392@0.0.2560.1392" timestamp="1650722057190" />
-    <state x="355" y="348" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651242420268" />
-    <state x="1091" y="479" key="NewPhpClassDialog" timestamp="1651999532611">
-      <screen x="0" y="0" width="2560" height="1392" />
-    </state>
-    <state x="818" y="355" key="NewPhpClassDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650119853399" />
-    <state x="1091" y="479" key="NewPhpClassDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1651651172487" />
-    <state x="1091" y="479" key="NewPhpClassDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999532611" />
-    <state x="793" y="429" key="NewPhpFileDialog" timestamp="1651999617792">
-      <screen x="0" y="0" width="2560" height="1392" />
-    </state>
-    <state x="595" y="318" key="NewPhpFileDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1650710140662" />
-    <state x="793" y="429" key="NewPhpFileDialog/0.0.2560.1392@0.0.2560.1392" timestamp="1650979887491" />
-    <state x="793" y="429" key="NewPhpFileDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1651999617792" />
-    <state x="236" y="254" key="SettingsEditor" timestamp="1651830109877">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="236" y="254" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1651830109877" />
-    <state x="314" y="342" key="SettingsEditor/0.0.2560.1392@0.0.2560.1392" timestamp="1650820287677" />
-    <state x="839" y="248" key="ftp.server.browser" timestamp="1651799296366">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="839" y="248" key="ftp.server.browser/0.0.1920.1032@0.0.1920.1032" timestamp="1651799296366" />
-    <state x="877" y="411" key="publish.login" timestamp="1650194656974">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="877" y="411" key="publish.login/0.0.1920.1032@0.0.1920.1032" timestamp="1650194656974" />
-    <state x="1311" y="344" key="run.anything.popup" timestamp="1650632330929">
-      <screen x="0" y="0" width="2560" height="1392" />
-    </state>
-    <state x="1311" y="344" key="run.anything.popup/0.0.2560.1392@0.0.2560.1392" timestamp="1650632330929" />
-    <state x="700" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1649934474377">
-      <screen x="0" y="0" width="1920" height="1032" />
-    </state>
-    <state x="700" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1649934474377" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php-line-method">
-          <url>remoteDeploymentFS://&lt;728b2050-8024-4642-9aad-63b6f95b8475&gt;/fastAdmin/application/admin/command/Install.php</url>
-          <line>86</line>
-          <properties>
-            <option name="className" value="\app\admin\command\Install" />
-            <option name="methodName" value="index" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="781" y="338" key="SettingsEditor/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652808160429" />
   </component>
 </project>

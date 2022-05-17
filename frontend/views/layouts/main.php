@@ -42,6 +42,7 @@ AppAsset::register($this);
 
         $menuItems = [
             ['label' => '家', 'url' => ['/site/index']],
+            ['label' => '演示', 'url' => ['/demos/index']],
             ['label' => '关于', 'url' => ['/site/about']],
             ['label' => '联系我', 'url' => ['/site/contact']],
         ];

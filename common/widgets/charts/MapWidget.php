@@ -3,6 +3,7 @@ namespace  common\widgets\charts;
 
 use yii\base\Widget;
 use yii\helpers\Html;
+use common\assets\adminlte\components\JvectormapCss;
 use common\assets\adminlte\plugins\JvectormapAssets;
 
 
@@ -13,17 +14,12 @@ class MapWidget extends Widget
     public $tagId;
 
     public $type ='';
-
-    /** @var $Options array  容器样式 */
     public $Options = [
         'style' => "height: 250px; width: 100%;"
     ];
-
-    /** @var $visitorsData array  显示数据 */
     public $visitorsData=[];
-
-    /** @var $visitorsData array  显示数据 */
     public $markers = [];
+    public $map ='world_mill_en';
 
     /**
      * 元素id
@@ -45,7 +41,7 @@ class MapWidget extends Widget
   var visitorsData = {$visitorsData};
   // World map by jvectormap
   $("#{$id}").vectorMap({
-    map              : 'world_mill_en',
+    map              : '{$this->map}',
     //map              : 'map_format_cn',
     backgroundColor  : 'transparent',
     regionStyle      : {
@@ -76,8 +72,6 @@ JS;
         return $js;
     }
 
-
-
     /**
      * 构造点图js代码
      * @return string
@@ -91,7 +85,7 @@ JS;
    * Create a world map with markers
    */
 $("#{$id}").vectorMap({
-    map              : 'world_mill_en',
+    map              : '{$this->map}',
     normalizeFunction: 'polynomial',
     hoverOpacity     : 0.7,
     hoverColor       : false,
@@ -129,8 +123,7 @@ JS;
      * 生成矢量图
      * @return bool|string
      */
-    public function run()
-    {
+    public function run(){
 
         $view = $this->getView();
         //获取容器id
@@ -147,6 +140,8 @@ JS;
         } else {
             return false;
         }
+        //加载和css文件
+        JvectormapCss::register($view);
         //加载js文件和css文件
         JvectormapAssets::register($view);
         //加载js代码
