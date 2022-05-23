@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use frontend\models\SearchTag;
+use frontend\models\SteelSearch;
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
@@ -378,6 +380,15 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionSteel(){
+        $searchModel = new SteelSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('steel', [
+            'dataProvider' => $dataProvider,
+            ]);
     }
 
 }

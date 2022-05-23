@@ -4,8 +4,9 @@
 namespace console\controllers;
 
 
-use console\models\User;
+
 use Yii;
+use console\models\User;
 use common\models\gii\shell;
 use yii\console\Controller;
 use frontend\models\SignupForm;

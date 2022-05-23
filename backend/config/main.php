@@ -17,10 +17,7 @@ return [
     'language'=>'zh-CN',
     //模块
     'modules' => [
-        //Gii模块
-        'gridview' =>  [
-            'class' => '\kartik\grid\Module'
-        ] ,
+
         //权限管理模块
         'admin' => [
             'class' => 'mdm\admin\Module',

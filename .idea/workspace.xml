@@ -13,8 +13,23 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="PHP Controller" />
+        <option value="Yii2 PHP View File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/shiguangxiaotou3/myweb.git" />
+      </set>
+    </option>
   </component>
   <component name="IlluminatedCloudWorkspaceSettings">
     <option name="projectWorkspaceSettings">
@@ -45,6 +60,12 @@
         </option>
       </ProjectWorkspaceSettings>
     </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -219,9 +240,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/runtime" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -235,7 +268,7 @@
     </configuration>
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>C:\Users\时光小偷\AppData\Roaming\Subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -247,21 +280,73 @@
       <workItem from="1652804575113" duration="528000" />
       <workItem from="1652805653194" duration="755000" />
       <workItem from="1652806428528" duration="149000" />
-      <workItem from="1652807200592" duration="1000000" />
+      <workItem from="1652807200592" duration="11856000" />
+      <workItem from="1652885585511" duration="3456000" />
+      <workItem from="1652966092232" duration="24083000" />
+      <workItem from="1653037348508" duration="664000" />
+      <workItem from="1653046395952" duration="6072000" />
+      <workItem from="1653134146574" duration="7391000" />
+      <workItem from="1653228612907" duration="5858000" />
+      <workItem from="1653312344889" duration="12069000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="1060" y="451" key="FileChooserDialogImpl" timestamp="1652807412211">
+    <state x="869" y="410" key="#Deployment" timestamp="1652967031194">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="1060" y="451" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652807412211" />
-    <state x="781" y="338" key="SettingsEditor" timestamp="1652808160429">
+    <state x="869" y="410" key="#Deployment/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652967031194" />
+    <state x="345" y="358" key="#Notifications" timestamp="1652811984785">
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
-    <state x="781" y="338" key="SettingsEditor/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652808160429" />
+    <state x="345" y="358" key="#Notifications/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652811984785" />
+    <state x="616" y="327" width="741" height="852" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1652809772355">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="616" y="327" width="741" height="852" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652809772355" />
+    <state x="1010" y="451" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1653320875236">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1010" y="451" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1653320875236" />
+    <state x="1060" y="451" key="FileChooserDialogImpl" timestamp="1653053105877">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1060" y="451" key="FileChooserDialogImpl/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1653053105877" />
+    <state x="367" y="623" key="NewPhpFileDialog" timestamp="1652968730470">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="367" y="623" key="NewPhpFileDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652968730470" />
+    <state x="614" y="338" width="1276" height="715" key="SettingsEditor" timestamp="1653135122402">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="614" y="338" width="1276" height="715" key="SettingsEditor/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1653135122402" />
+    <state width="82" height="461" key="SqlResolveConfigurable" timestamp="1652808733765">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state width="82" height="461" key="SqlResolveConfigurable/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652808733765" />
+    <state x="345" y="520" key="com.intellij.ide.util.TipDialog" timestamp="1652966139288">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="345" y="520" key="com.intellij.ide.util.TipDialog/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652966139288" />
+    <state x="1105" y="482" key="ftp.server.browser" timestamp="1652809046946">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1105" y="482" key="ftp.server.browser/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652809046946" />
   </component>
 </project>

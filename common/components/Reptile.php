@@ -8,7 +8,7 @@ use DiDom\Document;
 use yii\base\Component;
 
 /**
- * Class Reptile
+ * 重写snoopy为yii2组件风格
  * @property $snoopy
  * @package common\components
  */
@@ -144,7 +144,7 @@ class Reptile extends Component
     // | 自定义功能
     // +----------------------------------------------------------------------
     /**
-     * 自动改变编码格式
+     * 将结果字符串 转换为utf-8
      * @param $html
      * @return bool|false|string
      */
@@ -173,7 +173,7 @@ class Reptile extends Component
     }
 
     /**
-     * 替换HTML中的特殊字符
+     * 替换HTML中的中文特殊字符
      * @param $str
      * @return string|string[]
      */

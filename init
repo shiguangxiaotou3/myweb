@@ -234,7 +234,7 @@ function setWritable($root, $paths)
             if (@chmod("$root/$writable", 0777)) {
                 echo "      chmod 0777 $writable\n";
             } else {
-                printError("Operation chmod not permitted for directory $writable.");
+                printError("目录不允许使用操作chmod $writable.");
             }
         } else {
             printError("目录 $writable 不存在.");
@@ -249,7 +249,7 @@ function setExecutable($root, $paths)
             if (@chmod("$root/$executable", 0755)) {
                 echo "      chmod 0755 $executable\n";
             } else {
-                printError("Operation chmod not permitted for $executable.");
+                printError("不允许操作chmod $executable.");
             }
         } else {
             printError("$executable 不存在.");
@@ -282,7 +282,7 @@ function createSymlink($root, $links)
         if (@symlink($root . "/" . $target, $root . "/" . $link)) {
             echo "      符号链接 $root/$target $root/$link\n";
         } else {
-            printError("Cannot create symlink $root/$target $root/$link.");
+            printError("无法创建符号链接 $root/$target $root/$link.");
         }
     }
 }

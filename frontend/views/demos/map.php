@@ -14,7 +14,7 @@ use common\widgets\charts\MapWidget;
     $data =[
     'markers'=>[['latLng'=>["30.5833","114.2667"],'name'=>'Wuhan'],['latLng'=>["45.8399","-119.7006"],'name'=>'Boardman']] ,
     'Options' => ['style' => "width:100%;height: 600px;"],
-//    'map'=>'cn-merc-en.'
+    'map'=>'cn-merc-en.'
     ];
     $html =<<<HTML
 jQuery(function ($) {

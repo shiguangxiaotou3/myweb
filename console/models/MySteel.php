@@ -50,13 +50,16 @@ class MySteel extends Reptile
             foreach ($lis as $item){
                 $a =$item->find('a');
                 $span =$item->find('span');
-                if( count($a)>0 and count($span)>0){
-                    array_push( $arr,[
-                        'time'=> self::str_value($span[0]->text()),
-                        'url'=>$a[0]->getAttribute('href'),
-                        'titer'=>self::str_value($a[0]->text()),
-                    ]);
+                if($a and $span){
+                    if( count($a)>0 and count($span)>0){
+                        array_push( $arr,[
+                            'time'=> self::str_value($span[0]->text()),
+                            'url'=>$a[0]->getAttribute('href'),
+                            'titer'=>self::str_value($a[0]->text()),
+                        ]);
+                    }
                 }
+
             }
             unset( $document);
             return  $arr;
