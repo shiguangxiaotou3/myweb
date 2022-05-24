@@ -187,6 +187,7 @@ class SteelController extends Controller
                 }
             }
             unset($document);
+            unset($data);
         }else{
             return false;
         }
@@ -208,18 +209,6 @@ class SteelController extends Controller
         Console::startProgress(0, count($urls));
             foreach ($urls as $url){
                 $arr = $this->getDataOne($url['url']);
-//                $fileName = $path.'/'.self::createFile($url['time']).'.txt';
-//                if(!file_exists($fileName)){
-//                    $arr = $this->getOne($url['url']);
-//                    if($arr and !empty($arr)){
-//                        $i++;
-//                        if(! file_put_contents($fileName,serialize($arr))){
-//                            logObject($fileName."写入失败");
-//                            continue;
-//                        }
-//                    }
-//                }
-
             usleep(1000);
             Console::updateProgress($i, count($urls));
             $i++;
@@ -299,11 +288,12 @@ class SteelController extends Controller
             foreach ($item as $row){
                 echo "----".$row["name"]."\n";
                 //判断是否获取全部列表
-                if(  is_dir($this->_path."/".$city."/".$row["name"])){
-                    $list = $this->getListOne($row['url']);
-                }else{
-                    $list = $this->getListAll($row['url']);
-                }
+                $list = $this->getListAll($row['url']);
+//                if(  is_dir($this->_path."/".$city."/".$row["name"])){
+//                    $list = $this->getListOne($row['url']);
+//                }else{
+//                    $list = $this->getListAll($row['url']);
+//                }
                 //遍历列表加载数据
                 $i=0;
                 $n =count($list);

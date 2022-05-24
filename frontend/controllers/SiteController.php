@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Excel;
 use frontend\models\SearchTag;
 use frontend\models\SteelSearch;
 use Yii;
@@ -389,6 +390,16 @@ class SiteController extends Controller
         return $this->render('steel', [
             'dataProvider' => $dataProvider,
             ]);
+    }
+
+    public function actionSteelView(){
+        $request =Yii::$app->request;
+        $path = Yii::getAlias("@frontend/web/excel/");
+        $city = $request->get('city');
+        $type =$request->get('type');
+        $time =$request->get("time");
+        $path .= $city."/".$type."/".$time.".xls";
+       return $this->render('steelView',['path'=>$path]);
     }
 
 }

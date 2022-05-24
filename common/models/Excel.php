@@ -2,8 +2,10 @@
 namespace common\models;
 
 
+use frontend\models\Steel;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use Yii;
+use \PhpOffice\PhpSpreadsheet\IOFactory;
 use yii\base\Model;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
@@ -36,7 +38,38 @@ class Excel extends Model{
             unset($spreadsheet,$data);
             $xls->save($path);
         }
+    }
 
+
+    /**
+     * 读取数据
+     * @param $path
+     * @param null $formName
+     * @return array
+     * @throws \PhpOffice\PhpSpreadsheet\Reader\Exception
+     */
+    public static function loadExcel($path, $formName = null){
+        if(file_exists($path)){
+            $reader = IOFactory::createReader('Xls');
+            $reader->setReadDataOnly(TRUE);
+            $spreadsheet = $reader->load($path);
+            $worksheet = $spreadsheet->getActiveSheet();
+            $titer = $worksheet->getTitle();
+            $arr=[];
+            foreach ($worksheet->getRowIterator() as $row) {
+                echo '<tr>' . PHP_EOL;
+                $cellIterator = $row->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(FALSE); // This loops through all cells,
+                $arr2 =[];
+                foreach ($cellIterator as $cell) {
+                    $arr2[]= $cell->getValue();
+                }
+                $arr[] =$arr2;
+                unset($arr2);
+            }
+            unset($reader,$worksheet);
+            return ['titer'=>$titer,"data"=>$arr];
+        }
 
     }
 }

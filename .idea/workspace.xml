@@ -17,7 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="PHP Controller" />
+        <option value="Yii2 Smarty View File" />
         <option value="Yii2 PHP View File" />
+        <option value="Yii views" />
       </list>
     </option>
   </component>
@@ -287,7 +289,7 @@
       <workItem from="1653046395952" duration="6072000" />
       <workItem from="1653134146574" duration="7391000" />
       <workItem from="1653228612907" duration="5858000" />
-      <workItem from="1653312344889" duration="12069000" />
+      <workItem from="1653312344889" duration="28197000" />
     </task>
     <servers />
   </component>
@@ -348,5 +350,9 @@
       <screen x="0" y="0" width="2560" height="1392" />
     </state>
     <state x="1105" y="482" key="ftp.server.browser/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1652809046946" />
+    <state x="1583" y="318" width="672" height="678" key="search.everywhere.popup" timestamp="1653398950884">
+      <screen x="0" y="0" width="2560" height="1392" />
+    </state>
+    <state x="1583" y="318" width="672" height="678" key="search.everywhere.popup/2560.157.1920.1032/0.0.2560.1392@0.0.2560.1392" timestamp="1653398950884" />
   </component>
 </project>
