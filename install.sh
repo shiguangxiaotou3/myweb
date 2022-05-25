@@ -19,28 +19,29 @@ deb-src http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted unive
 EOF
 
 #更新操作系统
-sudo apt-get update -y
+sudo apt-get update
 #清理系统垃圾
-sudo apt-get autoclean -y
+sudo apt-get autoclean
 #清理所有软件缓存
-sudo apt-get clean -y
+sudo apt-get clean
 #删除系统不再使用的孤立软件执行
-sudo apt-get autoremove -y
+sudo apt-get autoremove
 
-sudo apt-get install php -y
-sudo apt-get install apche2 -y
-sudo apt-get install mysql-server -y
-sudo apt-get install mysql-client -y
+sudo apt-get install php
+sudo apt-get install php-cil
+sudo apt-get install apche2
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
 
 #安装snapd
-sudo apt-get install snapd -y
-sudo snap install core -y
-sudo snap refresh core -y
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/bin/certbot
-sudo certbot --apache
-sudo certbot certonly --apache
-sudo certbot renew --dry-run
+#sudo apt-get install snapd
+#sudo snap install core
+#sudo snap refresh core
+#sudo snap install --classic certbot
+#sudo ln -s /snap/bin/certbot /usr/bin/certbot
+#sudo certbot --apache
+#sudo certbot certonly --apache
+#sudo certbot renew --dry-run
 
 #安装composer
 cd /var/www/html

@@ -23,8 +23,7 @@ class Reptile extends Component
     public $options=[
         'scheme'=>'https',
         'host'=>'https://wuhan.mysteel.com/',
-        'user'=>'jh88919070',
-        'pass'=>'jhr123456'
+       
     ];
     public $pageMax =20;
     public $data=[];
